@@ -24,10 +24,11 @@ public class EditorFragment extends Fragment {
         binding = FragmentEditorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textEditor;
-        EditorViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-    }
+        /*final TextView textView = binding.textEditor;
+        EditorViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);*/
+        return root ;
+   
+        }
 
     @Override
     public void onDestroyView() {
