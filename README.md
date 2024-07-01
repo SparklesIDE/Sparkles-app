@@ -1,2 +1,2 @@
 # Sparkles-android
-The Android App of Sparkles
+WIP We are working In progress
