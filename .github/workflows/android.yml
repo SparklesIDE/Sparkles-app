@@ -70,24 +70,18 @@ jobs:
           
       - name: Rename file 
         run: |
-          mv app-debug.apk sparkles-app-debug.apk
+          mv app/build/outputs/apk/debug/app-debug.apk sparkles-app-debug.apk
           ls 
 
-      - name: Send APK to Debug Channel Telegram
+      - name: Send APK to Debug Channel Telegram with Topic ID
         if: success()
-        uses: appleboy/telegram-action@master
-        with:
-          to:  ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          format: markdown
-          document: sparkles-app-debug.apk
-          disable_web_page_preview: false
-          message: |
-            *${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})
+        run: |
+          curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument" \
+            -F chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -F message_thread_id="11" \
+            -F document=@"sparkles-app-debug.apk" \
+            -F caption="*${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})\n\nBranch: *${{ github.head_ref }}*\nCommit message: `${{ steps.get_commit_msg.outputs.message }}`"
 
-            Branch: *${{ github.head_ref }}*
-            Commit message: `${{ steps.get_commit_msg.outputs.message }}`
-            
       - name: Upload all
         uses: actions/upload-artifact@v4
         with:
