@@ -42,6 +42,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
+            storePassword = "testkey"
+            keyAlias = "testkey"
+            keyPassword = "testkey"
+        }
+    }
 }
 
 dependencies {
