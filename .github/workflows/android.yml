@@ -1,15 +1,15 @@
 name: Android CI
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - .github/workflows/android.yml
-      - **
+    branches: [ "**" ]
+    paths-ignore:
+      - '**/*.md'
   pull_request:
-    paths:
-      - .github/workflows/android.yml
-      - **
+    branches: [ "**" ]
+    paths-ignore:
+      - '**/*.md'
+  workflow_dispatch:
 
 jobs:
   build_signed_debug_apk:
