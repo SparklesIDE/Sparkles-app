@@ -73,16 +73,15 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     
-   @Override
-public boolean onOptionsItemSelected(MenuItem item) {
-    switch(item.getItemId())
-    {
-    case R.id.action_settings:
-           
-        break;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
     
+    if (id == R.id.action_settings) { 
+        return true; 
     }
-    return true;
+    
+    return super.onOptionsItemSelected(item);
 }
 
     @Override
