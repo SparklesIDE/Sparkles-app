@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.sparkleseditor.android"
+    namespace = "org.sparkles.editor"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        applicationId = "com.sparkleseditor.android"
+        applicationId = "org.sparkles.editor"
         
         versionCode = 1
         versionName = "1.0"

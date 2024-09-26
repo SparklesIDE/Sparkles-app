@@ -1,16 +1,16 @@
-package com.sparkleseditor.android.ui.editor;
+package org.sparkles.editor.ui.ai;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class EditorViewModel extends ViewModel {
+public class AiViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public EditorViewModel() {
+    public AiViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Editor fragment");
+        mText.setValue("This is Ai fragment");
     }
 
     public LiveData<String> getText() {

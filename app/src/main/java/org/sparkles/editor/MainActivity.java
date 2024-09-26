@@ -1,4 +1,4 @@
-package com.sparkleseditor.android;
+package org.sparkles.editor;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +24,7 @@ import com.google.android.material.bottomsheet.*;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import com.sparkleseditor.android.databinding.ActivityMainBinding;
+import org.sparkles.editor.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.sparkleseditor.android.ui.editor;
+package org.sparkles.editor.ui.editor;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.sparkleseditor.android.databinding.FragmentEditorBinding;
+import org.sparkles.editor.databinding.FragmentEditorBinding;
 
 public class EditorFragment extends Fragment {
 

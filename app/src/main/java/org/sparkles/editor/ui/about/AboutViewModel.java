@@ -1,4 +1,4 @@
-package com.sparkleseditor.android.ui.about;
+package org.sparkles.editor.ui.about;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package com.sparkleseditor.android.ui.about;
+package org.sparkles.editor.ui.ai;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.sparkleseditor.android.databinding.FragmentAboutBinding;
+import org.sparkles.editor.databinding.FragmentAiBinding;
 
-public class AboutFragment extends Fragment {
+public class AiFragment extends Fragment {
 
-    private FragmentAboutBinding binding;
+    private FragmentAiBinding binding;
 
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        AboutViewModel AboutViewModel = new ViewModelProvider(this).get(AboutViewModel.class);
+        AiViewModel AiViewModel = new ViewModelProvider(this).get(AiViewModel.class);
 
-        binding = FragmentAboutBinding.inflate(inflater, container, false);
+        binding = FragmentAiBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAbout;
-        AboutViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAi;
+        AiViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
