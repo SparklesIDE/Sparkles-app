@@ -59,9 +59,8 @@ jobs:
         with:
           name: app-debug
           
-       - name: list repo
-        run: |
-          ls 
+      - name: List repo contents
+        run: ls
           
       - name: Get the last commit message
         id: get_commit_msg
