@@ -53,4 +53,7 @@
   </style>
 
   <style name="AppTheme" parent="Base.AppTheme" />
+    <style name="Compilefab" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="android:drawable">@drawable/scallops</item>
+        </style>
 </resources>
