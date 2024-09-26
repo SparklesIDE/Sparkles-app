@@ -1,0 +1,25 @@
+[versions]
+agp = "8.0.0"
+androidxLifecycle = "2.5.1"
+androidxNavigation = "2.5.3"
+androidxAppcompat = "1.6.1"
+androidxConstraintlayout = "2.1.4"
+googleMaterial = "1.9.0"
+androidxActivity = "1.6.0"
+soraEditor = "0.23.4"
+
+[plugins]
+agp-lib = { id = "com.android.library", version.ref = "agp" }
+agp-app = { id = "com.android.application", version.ref = "agp" }
+
+[libraries]
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "androidxNavigation" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "androidxNavigation" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidxLifecycle" }
+lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata", version.ref = "androidxLifecycle" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintlayout" }
+material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "androidxActivity" }
+sora-editor = { group = "io.github.Rosemoe.sora-editor", name = "editor", version.ref = "soraEditor" }
+sora-editor-bom = { group = "io.github.Rosemoe.sora-editor", name = "bom", version.ref = "soraEditor" }
