@@ -35,7 +35,7 @@ jobs:
 
       - name: Build with Gradle
         id: gradle_build_debug
-        run: ./gradlew assembleDebug -p android
+        run: ./gradlew assembleDebug 
 
       - name: Upload debug apk
         uses: actions/upload-artifact@v4
