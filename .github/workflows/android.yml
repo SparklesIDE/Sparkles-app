@@ -35,7 +35,7 @@ jobs:
 
       - name: Build with Gradle
         id: gradle_build_debug
-        run: ./android/gradlew assembleDebug -p android
+        run: ./gradlew assembleDebug -p android
 
       - name: Upload debug apk
         uses: actions/upload-artifact@v4
@@ -77,7 +77,7 @@ jobs:
           to:  ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           format: markdown
-          document: tool-telegram-debug.apk
+          document: sparkles-app-debug.apk
           disable_web_page_preview: false
           message: |
             *${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})
