@@ -70,7 +70,7 @@ jobs:
           
       - name: Rename file 
         run: |
-          mv app/build/outputs/apk/debug/app-debug.apk sparkles-app-debug.apk
+          mv app-debug.apk sparkles-app-debug.apk
           ls 
 
       - name: Send APK to Debug Channel Telegram with Topic ID
