@@ -59,22 +59,7 @@
           "line": 28
         }
       }
-    },
-    {
-      "file": "/storage/emulated/0/Sparkles-app/app/src/main/java/com/sparkleseditor/android/MainActivity.java",
-      "selection": {
-        "end": {
-          "column": 11,
-          "index": 3051,
-          "line": 78
-        },
-        "start": {
-          "column": 11,
-          "index": 3051,
-          "line": 78
-        }
-      }
     }
   ],
-  "selectedFile": "/storage/emulated/0/Sparkles-app/app/src/main/java/com/sparkleseditor/android/MainActivity.java"
+  "selectedFile": "/storage/emulated/0/Android SparklesIDE/Sparkles-android/app/src/main/java/com/sparkleseditor/android/ui/editor/EditorFragment.java"
 }
