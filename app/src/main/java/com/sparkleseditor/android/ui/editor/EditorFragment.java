@@ -16,19 +16,17 @@ public class EditorFragment extends Fragment {
 
     private FragmentEditorBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        EditorViewModel EditorViewModel =
-                new ViewModelProvider(this).get(EditorViewModel.class);
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        EditorViewModel EditorViewModel = new ViewModelProvider(this).get(EditorViewModel.class);
 
         binding = FragmentEditorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         /*final TextView textView = binding.textEditor;
         EditorViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);*/
-        return root ;
-   
-        }
+        return root;
+    }
 
     @Override
     public void onDestroyView() {

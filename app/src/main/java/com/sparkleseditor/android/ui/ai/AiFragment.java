@@ -16,10 +16,9 @@ public class AiFragment extends Fragment {
 
     private FragmentAiBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        AiViewModel AiViewModel =
-                new ViewModelProvider(this).get(AiViewModel.class);
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        AiViewModel AiViewModel = new ViewModelProvider(this).get(AiViewModel.class);
 
         binding = FragmentAiBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
