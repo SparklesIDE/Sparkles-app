@@ -19,3 +19,4 @@ dependencyResolutionManagement {
 rootProject.name = "Sparkles IDE"
 
 include(":app")
+include(":easy-components")

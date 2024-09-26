@@ -7,10 +7,16 @@ androidxConstraintlayout = "2.1.4"
 googleMaterial = "1.9.0"
 androidxActivity = "1.6.0"
 soraEditor = "0.23.4"
+kotlin = "1.8.21"
+android-jvm = "17"
+android-compileSdk = "34"
+android-targetSdk = "34"
+android-minSdk = "26"
 
 [plugins]
 agp-lib = { id = "com.android.library", version.ref = "agp" }
 agp-app = { id = "com.android.application", version.ref = "agp" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 [libraries]
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "androidxNavigation" }

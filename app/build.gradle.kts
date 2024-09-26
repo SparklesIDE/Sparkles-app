@@ -1,15 +1,17 @@
 plugins {
     alias(libs.plugins.agp.app)
+    alias(libs.plugins.kotlin)
 }
 
 android {
     namespace = "com.sparkleseditor.android"
-    compileSdk = 33
-
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    
     defaultConfig {
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         applicationId = "com.sparkleseditor.android"
-        minSdk = 21
-        targetSdk = 33
+        
         versionCode = 1
         versionName = "1.0"
 
@@ -29,8 +31,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.android.jvm.get().toInt())
+    }
+
+    kotlinOptions {
+        jvmTarget = libs.versions.android.jvm.get()
     }
 
     buildFeatures {
