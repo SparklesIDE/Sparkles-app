@@ -7,7 +7,7 @@
     tools:context=".ui.home.HomeFragment">
 
    <io.github.rosemoe.sora.widget.CodeEditor
-    android:id="@+id/text_editor"
+    android:id="@+id/editor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:text="Hello, world!"

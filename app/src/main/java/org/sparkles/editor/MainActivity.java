@@ -24,6 +24,7 @@ import com.google.android.material.bottomsheet.*;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import io.
 import org.sparkles.editor.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -82,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.menu_more) {
+            return true;
+        }
+        if (id == R.id.menu_undo) {
+            binding.editor.undo();
+            return true;
+        }
+        if (id == R.id.menu_redo) {
+            binding.editor.redo();
             return true;
         }
 
