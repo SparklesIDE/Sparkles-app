@@ -1,8 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style
-            name="Base.AppTheme"
-            parent="Theme.Material3.DayNight.NoActionBar">
+<resources>
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -49,17 +46,5 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@color/md_theme_surface</item>
-
-    </style>
-
-    <style
-            name="AppTheme"
-            parent="Base.AppTheme" />
-    <style
-            name="Compilefab"
-            parent="ShapeAppearance.Material3.SmallComponent">
-        <item name="android:drawable">@drawable/scallops</item>
     </style>
 </resources>
