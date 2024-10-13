@@ -23,8 +23,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomsheet.*;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import io.github.rosemoe.sora.widget.CodeEditor;
 
-import io.
 import org.sparkles.editor.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
