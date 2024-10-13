@@ -2,9 +2,21 @@
 <menu
         xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
+    android:id="@+id/menu_undo"
+    app:showAsAction="always"
+    android:icon="@drawable/undo_24px"
+    android:title="Undo"/>
+    <item
+    android:id="@+id/menu_redo"
+    app:showAsAction="always"
+    android:icon="@drawable/redo_24px"
+    android:title="Redo"/>
+    <item
+        android:id="@+id/menu_more"
+        android:icon="@drawable/circle_24px"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
+        
 </menu>
