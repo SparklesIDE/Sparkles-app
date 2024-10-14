@@ -14,6 +14,11 @@
     android:icon="@drawable/redo_24px"
     android:title="Redo"/>
     <item
+    android:id="@+id/menu_save"
+    app:showAsAction="always"
+    android:icon="@drawable/save_24px"
+    android:title="Save"/>
+    <item
         android:id="@+id/menu_more"
         android:icon="@drawable/circle_24px"
         android:title="More"

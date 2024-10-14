@@ -29,46 +29,45 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
-				<ImageView
+				<Button
 					android:id="@+id/cut"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginTop="8dp"
-					android:layout_marginBottom="8dp"
-					android:padding="8dp"
-					
-					android:scaleType="fitCenter"
-					android:layout_weight="1" />
-				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="08dp"
+					android:layout_marginBottom="08dp"
+					android:padding="09dp"
+					style="?attr/materialIconButtonStyle"
+                    app:icon="@drawable/settings_24px"
+					android:scaleType="fitCenter"/>
+				<Button
 					android:id="@+id/copy"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginTop="8dp"
-					android:layout_marginBottom="8dp"
-					android:padding="8dp"
-					
-					android:scaleType="fitCenter"
-					android:layout_weight="1" />
-				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="08dp"
+					android:layout_marginBottom="08dp"
+					android:padding="09dp"
+					style="?attr/materialIconButtonStyle"
+                    app:icon="@drawable/settings_24px"
+					android:scaleType="fitCenter"/>
+				<Button
 					android:id="@+id/clear"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="08dp"
+					android:layout_marginBottom="08dp"
+					android:padding="09dp"
+					style="?attr/materialIconButtonStyle"
+                    app:icon="@drawable/settings_24px"
+					android:scaleType="fitCenter" />
+				<Button
+					android:id="@+id/settings"
+                    style="?attr/materialIconButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
 					android:layout_marginBottom="8dp"
 					android:padding="8dp"
-					
-					android:scaleType="fitCenter"
-					android:layout_weight="1" />
-				<ImageView
-					android:id="@+id/save_btn"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginTop="8dp"
-					android:layout_marginBottom="8dp"
-					android:padding="8dp"
-					
-					android:scaleType="fitCenter"
-					android:layout_weight="1" />
+					app:icon="@drawable/settings_24px"/>
 			</LinearLayout>
 		</com.sparkleside.component.ExpandableLayout>
 		<LinearLayout
