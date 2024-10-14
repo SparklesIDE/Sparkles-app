@@ -84,6 +84,9 @@
 					app:icon="@drawable/settings_24px"/></LinearLayout>
 			</LinearLayout>
 		</com.sparkleside.component.ExpandableLayout>
+        <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
 		<LinearLayout
 			android:id="@+id/editor_container"
 			android:layout_width="match_parent"
@@ -103,7 +106,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
+        android:layout_margin="24dp"
         app:icon="@drawable/ic_fab_play"
         android:background="@drawable/compilerr"
         app:backgroundTint="@color/md_theme_primary"
