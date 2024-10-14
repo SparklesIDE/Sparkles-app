@@ -1,4 +1,5 @@
 package com.sparkleside;
+import android.graphics.Typeface;
 import androidx.activity.EdgeToEdge;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.component.ExpandableLayout;
+import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 
 public class MainActivity extends AppCompatActivity {
 	
@@ -38,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             
            } );
+        binding.editor.setTypefaceText(Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono"+".ttf"));
+        
+        var scheme = binding.editor.getColorScheme();
+        scheme.setColor(EditorColorScheme.WHOLE_BACKGROUND, 0xFF000000);
+        scheme.setColor(EditorColorScheme.CURRENT_LINE , 0xF000000);
+        scheme.setColor(EditorColorScheme.LINE_NUMBER_PANEL , 0xFF000000);
+        scheme.setColor(EditorColorScheme.LINE_NUMBER_BACKGROUND , 0xFF000000);
+        scheme.setColor(EditorColorScheme.KEYWORD , 0xFF62DE8A);
+        scheme.setColor(EditorColorScheme.FUNCTION_NAME , 0xFF62DE8A);
+        scheme.setColor(EditorColorScheme.TEXT_NORMAL , 0XFFA2D2A9);
+        scheme.setColor(EditorColorScheme.OPERATOR , 0xFFDDE5DB);
+
+        
+        
+        
+        
         
     }
         @Override
