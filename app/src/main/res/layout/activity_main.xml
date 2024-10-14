@@ -4,11 +4,13 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+    android:id="@+id/coordinator">
 	<com.google.android.material.appbar.AppBarLayout
 		android:id="@+id/appbar"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 	  <com.google.android.material.appbar.MaterialToolbar  
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
@@ -24,50 +26,62 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
-			<LinearLayout
+       <LinearLayout
 				android:id="@+id/linear"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+				android:layout_height="?attr/actionBarSize"
+				android:orientation="horizontal"
+                android:gravity="center">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"    
+                android:gravity="center">
+                    
 				<Button
-					android:id="@+id/cut"
+					android:id="@+id/file"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="08dp"
-					android:layout_marginBottom="08dp"
-					android:padding="09dp"
 					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/settings_24px"
-					android:scaleType="fitCenter"/>
-				<Button
-					android:id="@+id/copy"
+                    app:icon="@drawable/draft_24px"/></LinearLayout>
+			 <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"    
+        
+                android:gravity="center">
+            	<Button
+					android:id="@+id/folder"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="08dp"
-					android:layout_marginBottom="08dp"
-					android:padding="09dp"
 					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/settings_24px"
-					android:scaleType="fitCenter"/>
-				<Button
-					android:id="@+id/clear"
+                    app:icon="@drawable/folder_open_24px"/></LinearLayout>
+			 <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"    
+        
+                android:gravity="center">
+            	<Button
+					android:id="@+id/search"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="08dp"
-					android:layout_marginBottom="08dp"
-					android:padding="09dp"
+                    android:contentDescription="Clear"
 					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/settings_24px"
-					android:scaleType="fitCenter" />
-				<Button
+                    app:icon="@drawable/search_24px"/></LinearLayout>
+			 <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"    
+        
+                android:gravity="center">
+                	<Button
 					android:id="@+id/settings"
                     style="?attr/materialIconButtonStyle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="8dp"
-					android:layout_marginBottom="8dp"
-					android:padding="8dp"
-					app:icon="@drawable/settings_24px"/>
+                    android:contentDescription="Settings"
+					app:icon="@drawable/settings_24px"/></LinearLayout>
 			</LinearLayout>
 		</com.sparkleside.component.ExpandableLayout>
 		<LinearLayout

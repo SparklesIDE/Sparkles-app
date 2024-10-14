@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+        >
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+            android:layout_width="match_parent"
+            app:liftOnScrollColor="@color/md_theme_background"
+            app:liftOnScroll="false"
+            
+            app:statusBarScrim="@color/md_theme_surfaceContainer"     
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/com_word_settings"
+            app:layout_collapseMode="pin"   
+        	app:liftOnScroll="false"
+            app:liftOnScrollColor="@color/md_theme_background"
+            
+            app:statusBarScrim="@color/md_theme_surfaceContainer"     
+ />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <!-- Your content below appbar right here -->
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

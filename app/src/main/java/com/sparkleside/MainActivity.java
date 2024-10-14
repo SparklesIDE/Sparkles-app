@@ -1,20 +1,27 @@
 package com.sparkleside;
+import androidx.activity.EdgeToEdge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.component.ExpandableLayout;
 
 public class MainActivity extends AppCompatActivity {
 	
 	  private ActivityMainBinding binding;
-	
+	  private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
+
         super.onCreate(savedInstanceState);
 		    binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -25,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
             binding.toolbox.setOrientatin(ExpandableLayout.VERTICAL);
 		    binding.fab.setOnClickListener(v ->
           Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show()
-        );
+        ); 
+            binding.settings.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,SettingsActivity.class);
+            startActivity(intent);
+            
+           } );
         
     }
         @Override
