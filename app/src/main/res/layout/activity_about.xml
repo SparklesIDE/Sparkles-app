@@ -185,7 +185,7 @@
 						android:textSize="20sp" />
 				</LinearLayout>
 				<LinearLayout
-					android:id="@+id/neo"
+					android:id="@+id/trindade"
 					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
 					android:layout_marginLeft="18dp"
@@ -202,7 +202,7 @@
 						android:orientation="vertical"
                         android:background="?selectableItemBackgroundBorderless">
 						<com.google.android.material.imageview.ShapeableImageView
-							android:id="@+id/img_neo"
+							android:id="@+id/img_trindade"
 							android:layout_width="60dp"
 							android:layout_height="60dp"  
                             app:shapeAppearance="@style/circleImage"/>
@@ -211,7 +211,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:padding="8dp"
-							android:text="Neo"
+							android:text="Aquiles"
 							android:textSize="16sp"/>
 					</LinearLayout>
 				</LinearLayout>
