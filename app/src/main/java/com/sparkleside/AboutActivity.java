@@ -28,6 +28,8 @@ public class AboutActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/skinvent").into(binding.imgSk);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/thdev-only").into(binding.aboutAvatarThiarley);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/RohitKushvaha01").into(binding.aboutAvatarRohit);
         binding.tg.setOnClickListener(v->{
       String url = "http://www.telegram.me/sparkleside";
       Intent i = new Intent(Intent.ACTION_VIEW);
@@ -60,6 +62,21 @@ public class AboutActivity extends AppCompatActivity {
       String url5 = "http://github.com/trindadedev13";
       Intent i = new Intent(Intent.ACTION_VIEW);
       i.setData(Uri.parse(url5));
+      startActivity(i);
+                
+        });
+        binding.thiarley.setOnClickListener(v->{
+      String url6 = "http://github.com/thdev-only";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url6));
+      startActivity(i);
+                
+                
+        });
+        binding.rohit.setOnClickListener(v->{
+      String url7 = "http://github.com/RohitKushvaha01";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url7));
       startActivity(i);
                 
         });

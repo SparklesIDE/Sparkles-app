@@ -216,6 +216,109 @@
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
+            
+            <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:text="@string/about_team"
+            android:textColor="@color/md_theme_primary"
+                android:layout_margin="12dp"
+            />
+            <com.google.android.material.card.MaterialCardView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp">
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                style="?attr/materialCardViewFilledStyle">
+                    
+                    <RelativeLayout
+    android:id="@+id/thiarley"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/about_avatar_thiarley"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true" 
+                android:layout_marginRight="64px"
+                            app:shapeAppearance="@style/circleImage"/>
+
+                    />
+
+    <TextView
+        android:id="@+id/about_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/about_avatar_thiarley"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="Thiarley Rocha"
+                    android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_name"
+        android:layout_toRightOf="@id/about_avatar_thiarley"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/about_tag_developer"/>    </RelativeLayout>
+<com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"/>
+        <RelativeLayout
+    android:id="@+id/rohit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/about_avatar_rohit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true" 
+                android:layout_marginRight="64px"
+                            app:shapeAppearance="@style/circleImage"/>
+
+                    />
+
+    <TextView
+        android:id="@+id/about_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/about_avatar_rohit"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="Rohit Kushvaha"
+                    android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about_desc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_name1"
+        android:layout_toRightOf="@id/about_avatar_rohit"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/about_tag_developer"/>    </RelativeLayout>
+               
+            </LinearLayout>
+                
+            </com.google.android.material.card.MaterialCardView>
 		</LinearLayout>
         
 
