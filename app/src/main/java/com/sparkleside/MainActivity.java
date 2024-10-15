@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.view.MarginLayoutParamsCompat;
+import 	android.view.ViewGroup.MarginLayoutParams;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.sparkleside.databinding.ActivityMainBinding;
@@ -52,7 +54,15 @@ public class MainActivity extends AppCompatActivity {
         scheme.setColor(EditorColorScheme.TEXT_NORMAL , 0XFFA2D2A9);
         scheme.setColor(EditorColorScheme.OPERATOR , 0xFFDDE5DB);
 
-        
+  ViewCompat.setOnApplyWindowInsetsListener(binding.fab, (v, windowInsets) -> {
+  Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+  MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
+  //mlp.leftMargin = insets.left;
+  mlp.bottomMargin = insets.bottom;
+//  mlp.rightMargin = insets.right;
+  v.setLayoutParams(mlp);
+    return WindowInsetsCompat.CONSUMED;
+});
         
         
         

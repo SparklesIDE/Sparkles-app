@@ -107,6 +107,7 @@
         android:layout_height="72dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
+        android:layout_marginBottom="44dp"
         app:icon="@drawable/ic_fab_play"
         android:background="@drawable/compilerr"
         app:backgroundTint="@color/md_theme_primary"
@@ -118,5 +119,5 @@
         android:insetTop="0dp"
         android:insetRight="0dp"
         android:insetBottom="0dp"
-        android:padding="24dp" />
+        android:padding="24dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
