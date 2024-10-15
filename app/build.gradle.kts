@@ -48,6 +48,7 @@ dependencies {
     implementation(platform("io.github.Rosemoe.sora-editor:bom:0.23.4"))
     implementation("io.github.Rosemoe.sora-editor:editor:0.23.4")
   //  implementation(dir: "libs", include: ["*.jar", "*.aar"])
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     
    // implementation("com.github.Ruan625Br:FilePickerSphere:1.0.0")
 }
