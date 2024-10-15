@@ -5,7 +5,7 @@ import androidx.activity.EdgeToEdge;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.sparkleside.databinding.ActivitySettingsBinding;
-import dev.trindadedev.easyui.components.preferences.withicon.Preference;
+//import dev.trindadedev.easyui.components.preferences.withicon.Preference;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -24,9 +24,9 @@ public class SettingsActivity extends AppCompatActivity {
 			onBackPressed();
 			}
 		);
-     binding.main.setTitle("Test");
+/*binding.main.setTitle("Test");
      binding.main.setDescription("Testing this lib");
-     binding.main.setIcon(R.drawable.save_24px);
+     binding.main.setIcon(R.drawable.save_24px);*/
 
     }
     @Override

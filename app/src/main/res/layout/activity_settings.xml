@@ -43,11 +43,42 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <dev.trindadedev.easyui.components.preferences.withicon.Preference
+      <!--  <dev.trindadedev.easyui.components.preferences.withicon.Preference
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:id="@+id/main"    
-         />
+         />-->
+        
+    <RelativeLayout
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="20dp"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/preference_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/preference_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon"
+        android:textColor="?colorOnSurface"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/preference_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name"
+        android:layout_toRightOf="@id/preference_icon"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="14sp" />    </RelativeLayout>
 
 
     </androidx.core.widget.NestedScrollView>
