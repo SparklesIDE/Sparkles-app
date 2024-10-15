@@ -2,6 +2,7 @@
 
 <manifest 
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application 
         android:allowBackup="true" 
         android:icon="@mipmap/ic_launcher" 
@@ -22,6 +23,9 @@
         </activity>
         <activity 
             android:name="SettingsActivity" 
+            android:exported="true"></activity>
+         <activity 
+            android:name="AboutActivity" 
             android:exported="true"></activity>
     </application>
 </manifest>

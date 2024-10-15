@@ -1,6 +1,7 @@
 package com.sparkleside;
 
 import android.R;
+import android.content.Intent;
 import androidx.activity.EdgeToEdge;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,11 @@ public class SettingsActivity extends AppCompatActivity {
 /*binding.main.setTitle("Test");
      binding.main.setDescription("Testing this lib");
      binding.main.setIcon(R.drawable.save_24px);*/
-
+      binding.about.setOnClickListener(v->{
+          Intent intent = new Intent(SettingsActivity.this,AboutActivity.class);
+            startActivity(intent);
+      }
+        );
     }
     @Override
     public void onBackPressed() {

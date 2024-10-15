@@ -51,5 +51,10 @@
     <!-- This is optional, however recommended -->
     <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
         <item name="android:fontFamily">@font/afacadfluxregular</item>
+        
     </style>
+     <style name="circleImage"> 
+2	        <item name="cornerFamily">rounded</item> 
+3	        <item name="cornerSize">50%</item> 
+4	    </style> 
 </resources>
