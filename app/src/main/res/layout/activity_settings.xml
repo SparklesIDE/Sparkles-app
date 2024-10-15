@@ -42,19 +42,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-       <com.sparkleside.component.preferences.withicon.PreferenceSwitch
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/main"    
-         />
+     <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+            android:padding="20dp"
+            >
+       
         
     <RelativeLayout
-    android:id="@+id/root"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="24dp"
-    android:paddingVertical="20dp"
+    android:paddingVertical="16dp"
     android:background="?selectableItemBackground">
 
     <ImageView
@@ -62,8 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true" 
-        android:src="@drawable/settings_24px"
-                android:layout_marginEnd="20px"/>
+        android:src="@drawable/android_24px"
+                android:layout_marginRight="64px"
+                    android:tint="@color/md_theme_primary"/>
 
     <TextView
         android:id="@+id/preference_name"
@@ -71,8 +73,9 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/preference_icon"
         android:textColor="?colorOnSurface"
-        android:textSize="16sp"
-        android:text="@string/set_main" />
+        android:textSize="18sp"
+        android:text="@string/set_main"
+                    android:textStyle="bold" />
 
     <TextView
         android:id="@+id/preference_description"
@@ -81,10 +84,159 @@
         android:layout_below="@id/preference_name"
         android:layout_toRightOf="@id/preference_icon"
         android:textColor="?colorOnSurfaceVariant"
-        android:textSize="14sp" 
+        android:textSize="16sp" 
         android:text="@string/set_main_desc"/>    </RelativeLayout>
 
+<RelativeLayout
+    android:id="@+id/editor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
 
+    <ImageView
+        android:id="@+id/preference_icon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+        android:src="@drawable/edit_24px"
+                android:layout_marginRight="64px"
+                    android:tint="@color/md_theme_primary"/>
+
+    <TextView
+        android:id="@+id/preference_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon2"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="@string/set_editor" 
+                    android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/preference_description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name2"
+        android:layout_toRightOf="@id/preference_icon2"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/set_editor_desc"/>    </RelativeLayout>
+
+            <RelativeLayout
+    android:id="@+id/terminal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/preference_icon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+        android:src="@drawable/terminal_24px"
+                android:layout_marginRight="64px"
+                    android:tint="@color/md_theme_primary"/>
+
+    <TextView
+        android:id="@+id/preference_name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon3"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="@string/set_terminal" 
+                    android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/preference_description3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name3"
+        android:layout_toRightOf="@id/preference_icon3"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/set_terminal_desc"/>    </RelativeLayout>
+            
+            <RelativeLayout
+    android:id="@+id/lib"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/preference_icon4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+        android:src="@drawable/book_24px"
+                android:layout_marginRight="64px"
+                    android:tint="@color/md_theme_primary"/>
+
+    <TextView
+        android:id="@+id/preference_name4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon4"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="@string/set_lib" 
+                    android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/preference_description4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name4"
+        android:layout_toRightOf="@id/preference_icon4"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/set_lib_desc"/>    </RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/about"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/preference_icon5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+        android:src="@drawable/info_24px"
+                android:layout_marginRight="64px"
+                    android:tint="@color/md_theme_primary"/>
+
+    <TextView
+        android:id="@+id/preference_name5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon5"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="@string/com_word_about" 
+                    android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/preference_description5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name5"
+        android:layout_toRightOf="@id/preference_icon5"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/set_about_desc"/>    </RelativeLayout>
+
+            
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
