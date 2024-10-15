@@ -21,8 +21,9 @@ android {
     }
     
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
 
     buildTypes {
@@ -47,8 +48,8 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation(platform("io.github.Rosemoe.sora-editor:bom:0.23.4"))
     implementation("io.github.Rosemoe.sora-editor:editor:0.23.4")
-  //  implementation(dir: "libs", include: ["*.jar", "*.aar"])
+    //  implementation(dir: "libs", include: ["*.jar", "*.aar"])
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
-    
-   // implementation("com.github.Ruan625Br:FilePickerSphere:1.0.0")
+   coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    // implementation("com.github.Ruan625Br:FilePickerSphere:1.0.0")
 }

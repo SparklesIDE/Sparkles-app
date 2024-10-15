@@ -43,11 +43,11 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <!-- Your content below appbar right here -->
-        <!--<dev.trindadedev.easyui.components.preferences.withicon.Preference
+        <dev.trindadedev.easyui.components.preferences.withicon.Preference
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         />-->
+         android:id="@+id/main"    
+         />
 
 
     </androidx.core.widget.NestedScrollView>
