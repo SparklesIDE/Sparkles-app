@@ -8,6 +8,7 @@ android {
     namespace = "com.sparkleside"
     compileSdk = 34
     
+    
     defaultConfig {
         applicationId = "com.sparkleside"
         minSdk = 21
@@ -15,6 +16,8 @@ android {
         versionCode = 1
         versionName = "1.0"
         
+        
+      
         vectorDrawables { 
             useSupportLibrary = true
         }

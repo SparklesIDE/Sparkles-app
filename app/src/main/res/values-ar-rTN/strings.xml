@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparkles IDE</string>
+    <string name="com_word_settings">الإعدادات</string>
+    <string name="set_main">إعدادت التطبيق</string>
+    <string name="set_main_desc">بعض من إعدادات حول سباركلز</string>
+     <string name="common_word_allow">السماح</string>
+     <string name="common_word_deny">الرفض</string>
+    <string name ="set_editor">محرر الكود</string>
+    <string name ="set_editor_desc">تنسيق محرر الكود</string>
+    <string name="set_terminal">موجه الأوامر</string>
+    <string name="set_terminal_desc">تنسيق موجه الأوامر</string>
+    <string name="set_lib">برامج الطرف الثالث</string>
+    <string name="set_lib_desc">المكتبات و البرامج المستعملة في سباركلز</string>
+     <string name="com_word_about">حول التطبيق</string>
+    <string name="set_about_desc">حول Sparkles IDE </string>
+    <string name="about_team">الفريق</string>
+    <string name="about_tag_translator">مترجم</string>
+    <string name="about_tag_developer">مطور</string>
+    
+
+</resources>

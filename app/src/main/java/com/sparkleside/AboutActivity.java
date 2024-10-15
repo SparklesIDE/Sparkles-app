@@ -30,6 +30,7 @@ public class AboutActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/thdev-only").into(binding.aboutAvatarThiarley);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/RohitKushvaha01").into(binding.aboutAvatarRohit);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/jetrom17").into(binding.aboutAvatarJetrom);
         binding.tg.setOnClickListener(v->{
       String url = "http://www.telegram.me/sparkleside";
       Intent i = new Intent(Intent.ACTION_VIEW);
@@ -77,6 +78,13 @@ public class AboutActivity extends AppCompatActivity {
       String url7 = "http://github.com/RohitKushvaha01";
       Intent i = new Intent(Intent.ACTION_VIEW);
       i.setData(Uri.parse(url7));
+      startActivity(i);
+                
+        });
+        binding.jetrom.setOnClickListener(v->{
+      String url8 = "http://github.com/jetrom17";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url8));
       startActivity(i);
                 
         });
