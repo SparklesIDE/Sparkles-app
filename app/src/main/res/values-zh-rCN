@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparkles IDE</string>
+    <string name="com_word_settings">设置</string>
+    <string name="set_main">应用程序设置</string>
+    <string name="set_main_desc">一些Sparkles外观设置</string>
+    <string name="common_word_allow">允许</string>
+    <string name="common_word_deny">拒绝</string>
+    <string name="set_editor">代码编辑器</string>
+    <string name="set_editor_desc">修改编辑器的样式</string>
+    <string name="set_terminal">终端</string>
+    <string name="set_terminal_desc">终端样式</string>
+    <string name="set_lib">第三方软件</string>
+    <string name="set_lib_desc">在Sparkles中使用的库和软件</string>
+    <string name="com_word_about">关于</string>
+    <string name="set_about_desc">关于Sparkles IDE</string>
+    <string name="about_team">团队</string>
+    <string name="about_tag_translator">翻译者</string>
+    <string name="about_tag_developer">开发者</string>
+</resources>
