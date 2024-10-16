@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.component.ExpandableLayout;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
+import com.sparkleside.component.terminal.Terminal;
 
 public class MainActivity extends AppCompatActivity {
 	
@@ -64,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
     return WindowInsetsCompat.CONSUMED;
 });
         
-        
+         binding.term.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity.this,TerminalActivity.class);
+            startActivity(intent);
+            
+           } );
         
         
     }

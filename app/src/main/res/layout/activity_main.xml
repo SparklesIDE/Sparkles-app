@@ -51,11 +51,11 @@
         
                 android:gravity="center">
             	<Button
-					android:id="@+id/folder"
+					android:id="@+id/term"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/folder_open_24px"/></LinearLayout>
+                    app:icon="@drawable/terminal_24px"/></LinearLayout>
 			 <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"

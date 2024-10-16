@@ -1,4 +1,4 @@
-package com.rk.xededitor.terminal
+package com.sparkleside.component.terminal
 
 import android.content.Context
 import android.content.Intent

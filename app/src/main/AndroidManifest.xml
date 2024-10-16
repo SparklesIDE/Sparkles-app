@@ -29,6 +29,15 @@
          <activity 
             android:name="AboutActivity" 
             android:exported="true"></activity>
+        <activity
+            android:name=".terminal.Terminal"
+            android:exported="true"
+            android:label="Terminal"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <service
     android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
     android:enabled="false"
@@ -36,6 +45,8 @@
     <meta-data
       android:name="autoStoreLocales"
       android:value="true" />
+     
+            
   </service>
     </application>
 </manifest>
