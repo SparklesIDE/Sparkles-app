@@ -3,4 +3,9 @@
     <locale android:name = "en-US" />          <!-- English -->
     <locale android:name = "ar-TN" />             <!-- Arabic (Tunisia) --> 
     <locale android:name = "pt-BR" />          <!-- Portuguese (Portugal) --> 
+    <locale android:name = "es-ES"/>           <!-- Spanish (Spain)-->
+    <locale android:name = "fr-TN"/>           <!-- french (Tunisia)-->
+    <locale android:name = "zh-CN"/>           <!-- Mandarian (China)-->
+
+
 </locale-config>
