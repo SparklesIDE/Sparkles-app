@@ -1,9 +1,13 @@
 <div align="center">
-  <img src="bannersp.png"/>
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt" target="_blank">
+    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" style="width: 5rem; height: auto;">
+  </a>
+  <br>
+  <img src="bannersp.png" style="width: 45rem; height: auto;"/>
   <p>Sparkles IDE is an All-in-one Integrated Development Environment 
 with Supporting full languages & Material Design 3</p>
   <br>
-<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg">
+  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg">
   <img src="https://m3-markdown-badges.vercel.app/stars/4/2/sparkleside/sparkles-app">
   <img src="https://m3-markdown-badges.vercel.app/issues/4/2/sparkleside/sparkles-app">
 </div>
