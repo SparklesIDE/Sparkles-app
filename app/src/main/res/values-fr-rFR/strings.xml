@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparkles IDE</string>
+    <string name="com_word_settings">Paramètres</string>
+    <string name="set_main">Paramètres de l'application</string>
+    <string name="set_main_desc">Certains des paramètres d'apparence de Sparkles</string>
+    <string name="common_word_allow">Autoriser</string>
+    <string name="common_word_deny">Refuser</string>
+    <string name="set_editor">Éditeur de code</string>
+    <string name="set_editor_desc">Modifier le style de l'éditeur</string>
+    <string name="set_terminal">Terminal</string>
+    <string name="set_terminal_desc">Styliser le terminal</string>
+    <string name="set_lib">Logiciels tiers</string>
+    <string name="set_lib_desc">Bibliothèques et logiciels utilisés dans Sparkles</string>
+    <string name="com_word_about">À propos</string>
+    <string name="set_about_desc">À propos de Sparkles IDE</string>
+    <string name="about_team">Équipe</string>
+    <string name="about_tag_translator">Traducteur</string>
+    <string name="about_tag_developer">Développeur</string>
+</resources>
