@@ -1,6 +1,6 @@
 <div align="center">
- <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt" target="_blank">-->
-    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" style="width: 5rem; height: auto;">
+ <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt" target="_blank">
+    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" style="width: 5rem; height: auto;">-->
   </a>
   <br>
   <img src="bannersp.png" style="width: 45rem; height: auto;"/>
