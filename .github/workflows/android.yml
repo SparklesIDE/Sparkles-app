@@ -83,6 +83,21 @@ jobs:
             -F caption="*${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})" 
             #\n\nBranch: *${{ github.head_ref }}*\nCommit message: `${{ steps.get_commit_msg.outputs.message }}`"
 
+      - name: Send APK to Release Channel Telegram
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: -1002355760766
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          format: markdown
+          document: tool-telegram-release.apk
+          disable_web_page_preview: false
+          message: |
+            *${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})
+
+            Branch: *${{ github.head_ref }}*
+            Commit message: `${{ steps.get_commit_msg.outputs.message }}`
+
       - name: Upload all
         uses: actions/upload-artifact@v4
         with:
