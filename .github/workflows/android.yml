@@ -88,6 +88,7 @@ jobs:
         uses: appleboy/telegram-action@master
         with:
           to: -1002355760766
+          topic: 11
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           format: markdown
           document: tool-telegram-release.apk
