@@ -80,7 +80,8 @@ jobs:
             -F chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
             -F message_thread_id="11" \
             -F document=@"sparkles-app-debug.apk" \
-            -F caption="*${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})\n\nBranch: *${{ github.head_ref }}*\nCommit message: `${{ steps.get_commit_msg.outputs.message }}`"
+            -F caption="*${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})" 
+            #\n\nBranch: *${{ github.head_ref }}*\nCommit message: `${{ steps.get_commit_msg.outputs.message }}`"
 
       - name: Upload all
         uses: actions/upload-artifact@v4
