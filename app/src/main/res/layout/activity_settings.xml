@@ -52,7 +52,7 @@
             <RelativeLayout
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:background="?selectableItemBackground"
+                 android:background="@drawable/drawable_settings_item_background"
                  android:paddingVertical="16dp"
                  android:paddingHorizontal="24dp"
                  android:id="@+id/main">
@@ -91,7 +91,7 @@
             <RelativeLayout
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:background="?selectableItemBackground"
+                 android:background="@drawable/drawable_settings_item_background"
                  android:paddingVertical="16dp"
                  android:paddingHorizontal="24dp"
                  android:id="@+id/editor">
@@ -130,7 +130,7 @@
             <RelativeLayout
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:background="?selectableItemBackground"
+                 android:background="@drawable/drawable_settings_item_background"
                  android:paddingVertical="16dp"
                  android:paddingHorizontal="24dp"
                  android:id="@+id/terminal">
@@ -169,7 +169,7 @@
             <RelativeLayout
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:background="?selectableItemBackground"
+                 android:background="@drawable/drawable_settings_item_background"
                  android:paddingVertical="16dp"
                  android:paddingHorizontal="24dp"
                  android:id="@+id/lib">
