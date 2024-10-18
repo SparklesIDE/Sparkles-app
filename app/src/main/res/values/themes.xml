@@ -46,13 +46,22 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
-    
-<item name="android:navigationBarColor">@android:color/transparent</item>
-
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     <!-- This is optional, however recommended -->
     <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
         <item name="android:fontFamily">@font/afacadfluxregular</item>
+    </style>
         
+    <style name="Theme.Sparkle.TextAppearance.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/afacadfluxregular</item>
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+    </style>
+
+    <style name="Theme.Sparkle.TextAppearance.CollapsedTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+       <item name="android:fontFamily">@font/afacadfluxregular</item>
+       <item name="android:textColor">@color/md_theme_onSurface</item>
+       <item name="android:textSize">24dp</item>
     </style>
      <style name="circleImage"> 
 2	        <item name="cornerFamily">rounded</item> 
