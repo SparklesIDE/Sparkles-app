@@ -33,6 +33,11 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(intent);
       }
         );
+       binding.main.setOnClickListener(v->{
+          Intent intent = new Intent(SettingsActivity.this,AppearanceActivity.class);
+            startActivity(intent);
+      }
+        );
     }
     @Override
     public void onBackPressed() {

@@ -29,6 +29,9 @@
          <activity 
             android:name="AboutActivity" 
             android:exported="true"></activity>
+        <activity 
+            android:name="AppearanceActivity"  
+            android:exported="true"></activity>
         <activity
             android:name=".terminal.Terminal"
             android:exported="true"
