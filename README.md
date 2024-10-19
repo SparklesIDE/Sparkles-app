@@ -20,6 +20,6 @@ with Supporting full languages & Material Design 3</p>
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
 
 ## Contributors 
-<a href="https://github.com/SparklesIDE/Sparkles-app/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=SparklesIDE/Sparkles-app&max=100" alt="Contributors" width="120px"/>
+<a href="https://github.com/SparklesIDE/sparkles-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SparklesIDE/sparkles-app" />
 </a>
