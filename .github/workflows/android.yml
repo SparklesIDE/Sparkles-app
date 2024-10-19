@@ -12,6 +12,21 @@ on:
   workflow_dispatch:
 
 jobs:
+  init:
+    name: Init
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: notify telegram
+        uses: EverythingSuckz/github-telegram-notify@main
+        continue-on-error: true
+        with:
+          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: -1002355760766
+          topic_id: 11
+          
   build_debug_apk:
     name: Build App Debug APK
     runs-on: ubuntu-latest
@@ -82,11 +97,3 @@ jobs:
             -F message_thread_id="11" \
             -F document=@"sparkles-app-debug.apk" \
             -F caption="${{ github.event.head_commit.message }} by ${{ github.actor }}"
-
-      - name: notify telegram
-        uses: EverythingSuckz/github-telegram-notify@main
-        continue-on-error: true
-        with:
-          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          chat_id: -1002355760766
-          topic_id: 11
