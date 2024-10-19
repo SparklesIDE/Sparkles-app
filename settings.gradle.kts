@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "SparklesIDE"
 
 include(":app")
+include(":terminalview")
