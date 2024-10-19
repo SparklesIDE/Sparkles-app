@@ -75,6 +75,7 @@ jobs:
 
       - name: Send APK to Debug Channel Telegram with Topic ID
         if: success()
+        continue-on-error: true
         run: |
           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument" \
             -F chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
@@ -82,24 +83,10 @@ jobs:
             -F document=@"sparkles-app-debug.apk" \
             -F caption="${{ github.event.head_commit.message }} by ${{ github.actor }}"
 
-      - name: Send APK to Release Channel Telegram
-        if: success()
-        uses: appleboy/telegram-action@master
+      - name: notify telegram
+        uses: EverythingSuckz/github-telegram-notify@main
+        continue-on-error: true
         with:
-          to: -1002355760766
-          topic: 11
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          format: markdown
-          document: tool-telegram-release.apk
-          disable_web_page_preview: false
-          message: |
-            *${{ github.actor }}* committed to [${{ github.repository }}](https://github.com/${{ github.repository }})
-
-            Branch: *${{ github.head_ref }}*
-            Commit message: `${{ steps.get_commit_msg.outputs.message }}`
-
-      - name: Upload all
-        uses: actions/upload-artifact@v4
-        with:
-          name: all-repo-now
-          path: ./
+          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: -1002355760766
+          topic_id: 11
