@@ -1,7 +1,4 @@
 <div align="center">
- <!-- <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt" target="_blank">
-    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" style="width: 5rem; height: auto;">-->
-  </a>
   <br>
   <img src="bannersp.png" style="width: 45rem; height: auto;"/>
   <p>Sparkles IDE is an All-in-one Integrated Development Environment 
@@ -24,5 +21,5 @@ with Supporting full languages & Material Design 3</p>
 
 ## Contributors 
 <a href="https://github.com/SparklesIDE/Sparkles-app/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=SparklesIDE/Sparkles-app&max=100" alt="Contributors" width="12%"/>
+  <img src="https://contributors-img.web.app/image?repo=SparklesIDE/Sparkles-app&max=100" alt="Contributors" width="120px"/>
 </a>
