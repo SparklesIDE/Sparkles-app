@@ -235,6 +235,50 @@
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 style="?attr/materialCardViewFilledStyle">
+           
+<RelativeLayout
+    android:id="@+id/yamen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="16dp"
+    android:background="?selectableItemBackground">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/about_avatar_yamen"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true" 
+                android:layout_marginRight="64px"
+                            app:shapeAppearance="@style/circleImage"/>
+
+                    />
+
+    <TextView
+        android:id="@+id/about_name9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/about_avatar_yamen"
+        android:textColor="?colorOnSurface"
+        android:textSize="18sp"
+        android:text="YamenHer"
+                    android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about_desc9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_name9"
+        android:layout_toRightOf="@id/about_avatar_yamen"
+        android:textColor="?colorOnSurfaceVariant"
+        android:textSize="16sp" 
+        android:text="@string/about_tag_developer"/>    </RelativeLayout>
+  <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"/>
+
                     
                     <RelativeLayout
     android:id="@+id/thiarley"

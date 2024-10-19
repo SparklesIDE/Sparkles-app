@@ -26,6 +26,7 @@ public class AboutActivity extends AppCompatActivity {
 			} 
 		);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/skinvent").into(binding.imgSk);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/yamenher").into(binding.aboutAvatarYamen);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/thdev-only").into(binding.aboutAvatarThiarley);
@@ -49,6 +50,12 @@ public class AboutActivity extends AppCompatActivity {
       String url3 = "http://github.com/hanzodev1375";
       Intent i = new Intent(Intent.ACTION_VIEW);
       i.setData(Uri.parse(url3));
+      startActivity(i);
+                });
+                binding.yamen.setOnClickListener(v->{
+      String url9 = "http://github.com/yamenher";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url9));
       startActivity(i);
                 
         });
