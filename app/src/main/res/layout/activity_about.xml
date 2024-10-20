@@ -160,11 +160,11 @@
 							android:layout_height="wrap_content"
 							android:padding="8dp"
 							android:text="Hanzo"
-							android:textSize="16sp" />
+							android:textSize="12sp" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
-					android:id="@+id/skinvent"
+					android:id="@+id/syn"
 					android:layout_width="110dp"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
@@ -172,7 +172,7 @@
 					android:orientation="vertical"
                     android:background="?selectableItemBackgroundBorderless">
 					<com.google.android.material.imageview.ShapeableImageView
-						android:id="@+id/img_sk"
+						android:id="@+id/img_syn"
 						android:layout_width="80dp"
 						android:layout_height="80dp" 
                         app:shapeAppearance="@style/circleImage"/>
@@ -181,8 +181,8 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
-						android:text="Skinvent"
-						android:textSize="20sp" />
+						android:text="SyntaxSpin"
+						android:textSize="16sp" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/trindade"
@@ -212,7 +212,7 @@
 							android:layout_height="wrap_content"
 							android:padding="8dp"
 							android:text="Aquiles"
-							android:textSize="16sp"/>
+							android:textSize="12sp"/>
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>

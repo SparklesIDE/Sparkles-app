@@ -25,7 +25,7 @@ public class AboutActivity extends AppCompatActivity {
 			onBackPressed();
 			} 
 		);
-        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/skinvent").into(binding.imgSk);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/yamenher").into(binding.aboutAvatarYamen);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
@@ -59,8 +59,8 @@ public class AboutActivity extends AppCompatActivity {
       startActivity(i);
                 
         });
-        binding.skinvent.setOnClickListener(v->{
-      String url4 = "http://github.com/skinvent";
+        binding.syn.setOnClickListener(v->{
+      String url4 = "http://github.com/syntaxspin";
       Intent i = new Intent(Intent.ACTION_VIEW);
       i.setData(Uri.parse(url4));
       startActivity(i);
