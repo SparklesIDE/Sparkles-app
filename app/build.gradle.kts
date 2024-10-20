@@ -40,7 +40,15 @@ android {
         viewBinding = true
         
     }
-    
+
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
+            storePassword = "testkey"
+            keyAlias = "testkey"
+            keyPassword = "testkey"
+        }
+    }
 }
 
 dependencies {
@@ -55,6 +63,8 @@ dependencies {
     implementation("androidx.activity:activity:1.6.0-alpha05")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    implementation(project(":terminalview"))
+    implementation("com.blankj:utilcodex:1.31.1")
    
     // implementation("com.github.Ruan625Br:FilePickerSphere:1.0.0")
 }
