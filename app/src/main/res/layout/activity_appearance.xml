@@ -16,10 +16,7 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
-             app:liftOnScrollColor="?colorSurface"
-             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-             app:liftOnScroll="false"
-             app:statusBarScrim="?colorSurfaceContainer">
+             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
                  android:layout_height="?attr/actionBarSize"
@@ -27,9 +24,7 @@
                  app:liftOnScrollColor="?colorSurface"
                  app:title="@string/set_main"
                  app:layout_collapseMode="pin"
-                 app:liftOnScroll="false"
-                 android:id="@+id/toolbar"
-                 app:statusBarScrim="?colorSurfaceContainer" />
+                 android:id="@+id/toolbar"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
