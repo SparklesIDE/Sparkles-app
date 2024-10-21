@@ -1,5 +1,5 @@
 <resources>
-    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Sparkle" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -46,15 +46,12 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
-         <item name="android:navigationBarColor">@android:color/transparent</item>
-
-    <!-- This is optional, however recommended -->
-    <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:fontFamily">@font/afacadfluxregular</item>
-        
+        <item name="fontFamily">@font/afacadfluxregular</item>
+        <item name="collapsingToolbarLayoutStyle">?attr/collapsingToolbarLayoutLargeStyle</item>
+        <item name="collapsingToolbarLayoutLargeSize">@dimen/collapsing_toolbar_large_size</item>
+        <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Sparkle.CollapsingToolbar</item>
     </style>
-     <style name="circleImage"> 
-2	        <item name="cornerFamily">rounded</item> 
-3	        <item name="cornerSize">50%</item> 
-4	    </style> 
 </resources>

@@ -6,8 +6,8 @@
     <group>
         <path
             android:pathData="M39,0 L266,0 C290,0 305,15 305,39 L305,622 C305,646 290,661 266,661 L39,661 C15,661 0,646 0,622 L0,39 C0,15 15,0 39,0 Z"
-            android:fillColor="@color/md_theme_surface"
-            android:strokeColor="@color/md_theme_primary"
+            android:fillColor="?colorSurface"
+            android:strokeColor="?colorPrimary"
             android:strokeWidth="0"
             android:strokeLineJoin="round"
             android:strokeLineCap="round"/>

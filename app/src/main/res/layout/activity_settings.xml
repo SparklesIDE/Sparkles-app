@@ -16,22 +16,14 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
-             app:expandedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.ExpandedTextAppearance"
-             app:collapsedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.CollapsedTextAppearance"
-             app:liftOnScrollColor="@color/md_theme_background"
-             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-             app:liftOnScroll="false"
-             app:statusBarScrim="@color/md_theme_surfaceContainer">
+             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
                  android:layout_height="?attr/actionBarSize"
                  android:layout_width="match_parent"
-                 app:liftOnScrollColor="@color/md_theme_background"
                  app:title="@string/com_word_settings"
                  app:layout_collapseMode="pin"
-                 app:liftOnScroll="false"
-                 android:id="@+id/toolbar"
-                 app:statusBarScrim="@color/md_theme_surfaceContainer" />
+                 android:id="@+id/toolbar" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -63,7 +55,7 @@
                      android:src="@drawable/android_24px"
                      android:layout_centerVertical="true"
                      android:layout_marginRight="64px"
-                     android:tint="@color/md_theme_primary"
+                     android:tint="?colorPrimary"
                      android:id="@+id/preference_icon" />
 
                 <TextView
@@ -102,7 +94,7 @@
                      android:src="@drawable/edit_24px"
                      android:layout_centerVertical="true"
                      android:layout_marginRight="64px"
-                     android:tint="@color/md_theme_primary"
+                     android:tint="?colorPrimary"
                      android:id="@+id/preference_icon2" />
 
                 <TextView
@@ -141,7 +133,7 @@
                      android:src="@drawable/terminal_24px"
                      android:layout_centerVertical="true"
                      android:layout_marginRight="64px"
-                     android:tint="@color/md_theme_primary"
+                     android:tint="?colorPrimary"
                      android:id="@+id/preference_icon3" />
 
                 <TextView
@@ -180,7 +172,7 @@
                      android:src="@drawable/book_24px"
                      android:layout_centerVertical="true"
                      android:layout_marginRight="64px"
-                     android:tint="@color/md_theme_primary"
+                     android:tint="?colorPrimary"
                      android:id="@+id/preference_icon4" />
 
                 <TextView
@@ -219,7 +211,7 @@
                      android:src="@drawable/info_24px"
                      android:layout_centerVertical="true"
                      android:layout_marginRight="64px"
-                     android:tint="@color/md_theme_primary"
+                     android:tint="?colorPrimary"
                      android:id="@+id/preference_icon5" />
 
                 <TextView

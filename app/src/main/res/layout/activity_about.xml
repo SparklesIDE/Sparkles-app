@@ -153,7 +153,7 @@
 							android:id="@+id/img_hanzo"
 							android:layout_width="60dp"
 							android:layout_height="60dp"
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 						<TextView
 							android:id="@+id/textview4"
 							android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
 						android:id="@+id/img_syn"
 						android:layout_width="80dp"
 						android:layout_height="80dp" 
-                        app:shapeAppearance="@style/circleImage"/>
+                        app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 					<TextView
 						android:id="@+id/textview5"
 						android:layout_width="wrap_content"
@@ -205,7 +205,7 @@
 							android:id="@+id/img_trindade"
 							android:layout_width="60dp"
 							android:layout_height="60dp"  
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 						<TextView
 							android:id="@+id/textview6"
 							android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
             android:layout_width="match_parent"
             android:textSize="16sp"
             android:text="@string/about_team"
-            android:textColor="@color/md_theme_primary"
+            android:textColor="?colorPrimary"
                 android:layout_margin="12dp"
             />
             <com.google.android.material.card.MaterialCardView
@@ -250,7 +250,7 @@
         android:layout_height="40dp"
         android:layout_centerVertical="true" 
                 android:layout_marginRight="64px"
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 
                     />
 
@@ -294,7 +294,7 @@
         android:layout_height="40dp"
         android:layout_centerVertical="true" 
                 android:layout_marginRight="64px"
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 
                     />
 
@@ -336,7 +336,7 @@
         android:layout_height="40dp"
         android:layout_centerVertical="true" 
                 android:layout_marginRight="64px"
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 
                     />
 
@@ -378,7 +378,7 @@
         android:layout_height="40dp"
         android:layout_centerVertical="true" 
                 android:layout_marginRight="64px"
-                            app:shapeAppearance="@style/circleImage"/>
+                            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"/>
 
                     />
 
