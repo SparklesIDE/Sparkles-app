@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         // Dialog temp
-        new AlertDialog.Builder(this, R.style.Theme_Material3_Dialog)
+        new MaterialAlertDialogBuilder(this)
     .setTitle("Welcome")
     .setMessage("The app is in the testing phase. Please do not criticize the app.")
     .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
