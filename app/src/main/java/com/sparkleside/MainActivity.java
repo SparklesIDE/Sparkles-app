@@ -3,6 +3,7 @@ package com.sparkleside;
 import android.graphics.Typeface;
 import androidx.activity.EdgeToEdge;
 import android.content.res.Configuration;
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -20,16 +21,31 @@ import com.sparkleside.component.ExpandableLayout;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 // import com.sparkleside.component.terminal.Terminal;
 import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class MainActivity extends AppCompatActivity {
 
   private ActivityMainBinding binding;
   private Intent intent;
+    
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     EdgeToEdge.enable(this);
-
+    SharedPreferences sp = getSharedPreferences("com.sparkleside.app_prefs", MODE_PRIVATE);
+    if (sp.contains("theme")) {
+        switch (sp.getString("theme","")) {
+            case ("dark") :
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case ("light") :
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case ("auto") :
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+        }
+    }       
     super.onCreate(savedInstanceState);
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
