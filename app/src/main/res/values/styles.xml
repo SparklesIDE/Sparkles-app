@@ -1,14 +1,4 @@
 <resources>
-    <style name="Theme.Sparkle.TextAppearance.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Large">
-        <item name="android:fontFamily">@font/afacadfluxregular</item>
-        <item name="android:textColor">@color/md_theme_onSurface</item>
-    </style>
-
-    <style name="Theme.Sparkle.TextAppearance.CollapsedTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-       <item name="android:fontFamily">@font/afacadfluxregular</item>
-       <item name="android:textColor">@color/md_theme_onSurface</item>
-    </style>
-    
     <style name="Theme.Sparkle.CircleImageView"> 
         <item name="cornerFamily">rounded</item> 
         <item name="cornerSize">50%</item> 

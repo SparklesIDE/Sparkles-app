@@ -16,11 +16,9 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
-             app:expandedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.ExpandedTextAppearance"
              app:liftOnScrollColor="?colorSurface"
              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
              app:liftOnScroll="false"
-             app:collapsedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.CollapsedTextAppearance"
              app:statusBarScrim="?colorSurfaceContainer">
 
             <com.google.android.material.appbar.MaterialToolbar
