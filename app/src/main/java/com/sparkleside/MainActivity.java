@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;  // Adicione esta importação
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.MarginLayoutParamsCompat;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         // Dialog temp
-        new AlertDialog.Builder(this)
-            .setTitle("Welcome")
-            .setMessage("The app is in the testing phase. Please do not criticize the app.")
-            .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
-            .show();
+        new AlertDialog.Builder(this, R.style.Theme_Material3_Dialog)
+    .setTitle("Welcome")
+    .setMessage("The app is in the testing phase. Please do not criticize the app.")
+    .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+    .show();
 
         setSupportActionBar(binding.toolbar);
         binding.toolbox.setExpansion(false);
