@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder; 
 import androidx.core.graphics.Insets;
 import androidx.core.view.MarginLayoutParamsCompat;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.component.ExpandableLayout;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
+import androidx.core.content.ContextCompat;
 // import com.sparkleside.component.terminal.Terminal;
 import androidx.core.content.ContextCompat;
 
