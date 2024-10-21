@@ -4,7 +4,7 @@
 	android:height="24dp"
 	android:viewportHeight="24"
 	android:viewportWidth="24"
-	android:tint="@color/md_theme_onBackground">
+	android:tint="?colorOnSurface">
 
 		<path
 			android:fillColor="#ff000000"

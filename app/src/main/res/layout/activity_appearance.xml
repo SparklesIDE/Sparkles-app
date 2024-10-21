@@ -17,21 +17,21 @@
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
              app:expandedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.ExpandedTextAppearance"
-             app:liftOnScrollColor="@color/md_theme_background"
+             app:liftOnScrollColor="?colorSurface"
              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
              app:liftOnScroll="false"
              app:collapsedTitleTextAppearance="@style/Theme.Sparkle.TextAppearance.CollapsedTextAppearance"
-             app:statusBarScrim="@color/md_theme_surfaceContainer">
+             app:statusBarScrim="?colorSurfaceContainer">
 
             <com.google.android.material.appbar.MaterialToolbar
                  android:layout_height="?attr/actionBarSize"
                  android:layout_width="match_parent"
-                 app:liftOnScrollColor="@color/md_theme_background"
+                 app:liftOnScrollColor="?colorSurface"
                  app:title="@string/set_main"
                  app:layout_collapseMode="pin"
                  app:liftOnScroll="false"
                  android:id="@+id/toolbar"
-                 app:statusBarScrim="@color/md_theme_surfaceContainer" />
+                 app:statusBarScrim="?colorSurfaceContainer" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -115,7 +115,7 @@
                         android:layout_width="wrap_content"
                         android:textSize="28dp"
                         android:layout_marginTop="14dp"
-                        android:textColor="@color/md_theme_onSurface"
+                        android:textColor="?colorOnSurface"
                         android:text="System" />
 
                 </LinearLayout>
