@@ -6,6 +6,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
 import androidx.appcompat.app.AppCompatDelegate;
+import android.content.res.Configuration;
+import android.view.View;
 
 public class AppearanceActivity extends AppCompatActivity {
     private ActivityAppearanceBinding binding;

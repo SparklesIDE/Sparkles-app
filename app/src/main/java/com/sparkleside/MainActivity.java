@@ -32,20 +32,6 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     EdgeToEdge.enable(this);
-    SharedPreferences sp = getSharedPreferences("com.sparkleside.app_prefs", MODE_PRIVATE);
-    if (sp.contains("theme")) {
-        switch (sp.getString("theme","")) {
-            case ("dark") :
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case ("light") :
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case ("auto") :
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
-        }
-    }       
     super.onCreate(savedInstanceState);
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
