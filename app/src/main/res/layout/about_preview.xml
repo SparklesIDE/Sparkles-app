@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
@@ -9,24 +10,29 @@
      android:layout_height="match_parent"
      android:layout_width="match_parent"
      android:orientation="vertical">
- <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
-    android:id="@+id/your_id"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    app:porterduffxfermode="DST_IN"
-    app:mask="@drawable/scallop_mask">
-
-    <ImageView android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:scaleType="centerCrop"
-               android:id="@+id/preview_img"/>
-</com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
-    	<TextView
-						android:id="@+id/preview_txt"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="Dev"
-						android:textSize="36sp" /> </LinearLayout>
+     
+     <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+        android:id="@+id/maskFrame"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:porterduffxfermode="DST_IN"
+        app:mask="@drawable/scallop_mask">
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:id="@+id/preview_img"/>
+     </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+     
+     <TextView
+        android:id="@+id/preview_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="trindadedev"
+        android:textSize="36sp" />
+        
+   </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

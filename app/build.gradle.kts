@@ -58,8 +58,11 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.activity:activity:1.6.0-alpha05")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    implementation("com.blankj:utilcodex:1.31.1")
+    
     implementation(project(":terminalview"))
     implementation(project(":peekandpop"))
-    implementation("com.blankj:utilcodex:1.31.1")
+    implementation(project(":maskable"))
+    
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
 }
