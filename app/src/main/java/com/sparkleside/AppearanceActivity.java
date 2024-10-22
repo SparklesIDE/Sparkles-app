@@ -6,7 +6,10 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
 import androidx.appcompat.app.AppCompatDelegate;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener;
 import android.content.res.Configuration;
+import android.animation.ArgbEvaluator;
 import android.view.View;
 
 public class AppearanceActivity extends AppCompatActivity {
@@ -55,5 +58,17 @@ public class AppearanceActivity extends AppCompatActivity {
             editor.putString("theme", "auto");
             editor.apply();    
         });
+        
+        binding.appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                int totalScrollRange = appBarLayout.getTotalScrollRange();
+                float scrollPercentage = Math.abs(verticalOffset) / (float) totalScrollRange;
+                ArgbEvaluator argbEvaluator = new ArgbEvaluator();                
+                int toolbarColor = (int) argbEvaluator.evaluate(scrollPercentage, getColor(R.color.md_theme_surface), getColor(R.color.md_theme_surfaceVariant));                
+                binding.appbar.setBackgroundColor(toolbarColor);
+            }
+        });  
+        
     }
 }

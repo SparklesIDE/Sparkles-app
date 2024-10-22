@@ -16,6 +16,8 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
+             android:id="@+id/collapsingtoolbar"
+             app:contentScrim="@android:color/transparent"
              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -32,7 +34,7 @@
     <androidx.core.widget.NestedScrollView
          android:layout_height="match_parent"
          android:layout_width="match_parent"
-         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         app:layout_behavior="@string/appbar_scrolling_view_behavior"
          android:id="@+id/nested_scroll_view">
 
         <LinearLayout
