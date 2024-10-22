@@ -2,6 +2,7 @@ package com.sparkleside.component;
 
 import android.net.Uri;
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
