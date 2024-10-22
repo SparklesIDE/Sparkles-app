@@ -28,6 +28,6 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:text="Dev"
-						android:textSize="36sp" /> </LinearLayout>
+						android:textSize="36sp" /> </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout> </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
