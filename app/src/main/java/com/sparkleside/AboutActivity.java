@@ -97,7 +97,8 @@ public class AboutActivity extends AppCompatActivity {
         newContributor(
             "Jaiel Lima Miranda",
             "Developer",
-            "https://github.com/jetrom17"
+            "https://github.com/jetrom17",
+            false
         );
     }
     
