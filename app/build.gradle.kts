@@ -65,7 +65,7 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
     implementation(project(":terminalview"))
     implementation("com.blankj:utilcodex:1.31.1")
-    implementation("com.github.shalskar:PeekAndPop:-v1.0.1-gd4f47af-6")
+    implementation("com.github.shalskar:PeekAndPop:1.1.0")
     implementation("com.github.christophesmet:android_maskable_layout:1.3.2")
 
    
