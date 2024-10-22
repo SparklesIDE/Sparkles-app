@@ -18,6 +18,7 @@ public class ContributorView extends RelativeLayout {
     private LayoutContributorViewBinding binding;
     private String url;
     private Context context;
+    private boolean hasDivider;
 
     public ContributorView(Context context) {
         super(context);
@@ -69,5 +70,9 @@ public class ContributorView extends RelativeLayout {
     
     public String getURL() {
         return url;
+    }
+    
+    public void setHasDivider(boolean hasDivider) {
+        this.hasDivider = hasDivider;
     }
 }

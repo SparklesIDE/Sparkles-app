@@ -40,32 +40,32 @@ public class AboutActivity extends AppCompatActivity {
             .longClickViews(binding.syn)
             .build();
             
-        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
-        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
-        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
+        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
+        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
+        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
         
         binding.tg.setOnClickListener(v->{
-            String url = "http://www.telegram.me/sparkleside";
+            String url = "https://www.telegram.me/sparkleside";
             openURL(url);
         });
         
         binding.github.setOnClickListener(v->{
-            String url2 = "http://github.com/sparkleside/sparkles-app";
+            String url2 = "https://github.com/sparkleside/sparkles-app";
             openURL(url2);
         });
         
         binding.hanzo.setOnClickListener(v->{
-            String url3 = "http://github.com/hanzodev1375";
+            String url3 = "https://github.com/hanzodev1375";
             openURL(url3);
         });
         
         binding.syn.setOnClickListener(v->{
-            String url4 = "http://github.com/syntaxspin";
+            String url4 = "https://github.com/syntaxspin";
             openURL(url4);
         });
         
         binding.trindade.setOnClickListener(v->{
-            String url5 = "http://github.com/trindadedev13";
+            String url5 = "https://github.com/trindadedev13";
             openURL(url5);
         });
         
@@ -76,34 +76,38 @@ public class AboutActivity extends AppCompatActivity {
         newContributor(
             "Yamenher",
             "Developer",
-            "http://github.com/yamenher"
+            "https://github.com/yamenher",
+            true
         );
         
         newContributor(
             "Thiarley Rocha",
             "Developer",
-            "http://github.com/thdev-only"
+            "https://github.com/thdev-only",
+            true
         );
         
         newContributor(
             "Rohit Kushvaha",
             "Developer",
-            "http://github.com/RohitKushvaha01"
+            "https://github.com/RohitKushvaha01",
+            true
         );
         
         newContributor(
             "Jaiel Lima Miranda",
             "Developer",
-            "http://github.com/jetrom17"
+            "https://github.com/jetrom17"
         );
     }
     
-    private void newContributor(String name, String description, String url) {
+    private void newContributor(String name, String description, String url, boolean hasDivider) {
         var c = new ContributorView(this);
         c.setName(name);
         c.setDescription(description);
         c.setImageURL(url + ".png");
         c.setURL(url);
+        c.setHasDivider(hasDivider);
         binding.contributors.addView(c);
     }
     
