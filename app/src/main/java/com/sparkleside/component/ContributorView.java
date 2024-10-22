@@ -1,5 +1,6 @@
 package com.sparkleside.component;
 
+import android.net.Uri;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -10,8 +11,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import com.sparkleside.databinding.LayoutContributorViewBinding; 
-
-import java.net.Uri;
 
 public class ContributorView extends RelativeLayout {
 
