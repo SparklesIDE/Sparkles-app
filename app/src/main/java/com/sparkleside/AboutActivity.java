@@ -68,6 +68,8 @@ public class AboutActivity extends AppCompatActivity {
             String url5 = "http://github.com/trindadedev13";
             openURL(url5);
         });
+        
+        createContributors();
     }
     
     private void createContributors() {
