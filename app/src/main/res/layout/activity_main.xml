@@ -25,7 +25,8 @@
 			android:id="@+id/toolbox"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal">
+			android:orientation="horizontal"
+            android:background="@color/md_theme_surface">
        <LinearLayout
 				android:id="@+id/linear"
 				android:layout_width="match_parent"
