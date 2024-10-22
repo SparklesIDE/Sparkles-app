@@ -7,7 +7,7 @@
     <style name="Widget.Sparkle.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar.Large">
         <item name="collapsedTitleTextAppearance">@style/TextAppearance.Sparkle.CollapsingToolbar.Collapsed</item>
         <item name="expandedTitleTextAppearance">@style/TextAppearance.Sparkle.CollapsingToolbar.Expanded</item>
-        <item name="titleCollapseMode">scale</item>
+        <item name="titleCollapseMode">fade</item>
     </style>
 
     <style name="TextAppearance.Sparkle.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleLarge">

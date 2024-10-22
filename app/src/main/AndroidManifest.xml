@@ -12,17 +12,13 @@
         android:enableOnBackInvokedCallback="true"
         android:localeConfig="@xml/local_config"
         android:theme="@style/Theme.Sparkle"
-        
+        tools:replace="android:appComponentFactory"
     >
         <activity
             android:name="MainActivity"
             android:exported="true"
-            
         >
-        </activity>
-        <activity
-            android:name="SplashActivity"
-            android:exported="true" >
+        
 
             <intent-filter>
                 <action
@@ -46,7 +42,7 @@
             android:exported="true"
             
         />
-        <activity android:name="TermuxActivityCompat" />
+       <!-- <activity android:name="TermuxActivityCompat" />
         <activity
             android:name=".terminal.Terminal"
             android:exported="true"
@@ -57,8 +53,8 @@
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <service
+        </activity>-->
+       <!-- <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"
             android:exported="false"
@@ -71,6 +67,6 @@
             />
 
 
-        </service>
+        </service>-->
     </application>
 </manifest>
