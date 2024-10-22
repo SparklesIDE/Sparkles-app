@@ -16,12 +16,12 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
+             style="@style/Widget.Sparkle.CollapsingToolbar"
              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
                  android:layout_height="?attr/actionBarSize"
                  android:layout_width="match_parent"
-                 app:liftOnScrollColor="?colorSurface"
                  app:title="@string/set_main"
                  app:layout_collapseMode="pin"
                  android:id="@+id/toolbar"/>

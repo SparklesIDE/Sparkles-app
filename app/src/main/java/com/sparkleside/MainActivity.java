@@ -1,6 +1,7 @@
 package com.sparkleside;
 
 import android.graphics.Typeface;
+import android.os.Build;
 import androidx.activity.EdgeToEdge;
 import android.content.res.Configuration;
 import android.content.SharedPreferences;
@@ -40,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
     binding.toolbox.setExpansion(false);
     binding.toolbox.setDuration(200);
     binding.toolbox.setOrientatin(ExpandableLayout.VERTICAL);
+    if (Build.VERSION.SDK_INT >= 26) {
+        binding.term.setTooltipText(getString(R.string.tooltip_terminal));
+        binding.search.setTooltipText(getString(R.string.tooltip_search));
+        binding.file.setTooltipText(getString(R.string.tooltip_new_file));   
+        binding.settings.setTooltipText(getString(R.string.tooltip_settings));
+    }        
     binding.fab.setOnClickListener(
         v -> Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show());
     binding.settings.setOnClickListener(

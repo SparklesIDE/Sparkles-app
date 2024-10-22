@@ -1,12 +1,13 @@
 package com.sparkleside;
 
-import android.R;
+import com.google.android.material.appbar.AppBarLayout;
 import android.content.Intent;
+import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener;
 import androidx.activity.EdgeToEdge;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.sparkleside.databinding.ActivitySettingsBinding;
-//import dev.trindadedev.easyui.components.preferences.withicon.Preference;
+import android.animation.ArgbEvaluator;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -25,9 +26,6 @@ public class SettingsActivity extends AppCompatActivity {
 			onBackPressed();
 			}
 		);
-/*binding.main.setTitle("Test");
-     binding.main.setDescription("Testing this lib");
-     binding.main.setIcon(R.drawable.save_24px);*/
       binding.about.setOnClickListener(v->{
           Intent intent = new Intent(SettingsActivity.this,AboutActivity.class);
             startActivity(intent);
@@ -38,10 +36,20 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(intent);
       }
         );
+        
+      binding.appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                int totalScrollRange = appBarLayout.getTotalScrollRange();
+                float scrollPercentage = Math.abs(verticalOffset) / (float) totalScrollRange;
+                ArgbEvaluator argbEvaluator = new ArgbEvaluator();                
+                int toolbarColor = (int) argbEvaluator.evaluate(scrollPercentage, getColor(R.color.md_theme_surface), getColor(R.color.md_theme_surfaceVariant));                
+                binding.appbar.setBackgroundColor(toolbarColor);
+            }
+        });  
     }
     @Override
     public void onBackPressed() {
-    // Your custom back button logic here
         super.onBackPressed();
 }
 
