@@ -42,6 +42,8 @@ public class ContributorView extends RelativeLayout {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(getURL()));
                 context.startActivity(i);
+            } catch(Exception e) {
+                // nah
             }
         });
     }
