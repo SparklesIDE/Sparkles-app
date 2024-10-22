@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import java.net.URI;
-import com.
+import com.peekandpop.shalskar.peekandpop.PeekAndPop;
 public class AboutActivity extends AppCompatActivity {
     private ActivityAboutBinding binding;
     private Intent intent ;
@@ -26,6 +26,10 @@ public class AboutActivity extends AppCompatActivity {
 			onBackPressed();
 			} 
 		);
+        PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
+                .peekLayout(R.layout.about_preview)
+                .longClickViews(binding.syn)
+                .build();
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/yamenher").into(binding.aboutAvatarYamen);
         Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
