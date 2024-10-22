@@ -19,6 +19,8 @@ with Supporting full languages & Material Design 3</p>
 ## How to Contribute
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
 
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Contributors 
 <a href="https://github.com/SparklesIDE/sparkles-app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SparklesIDE/sparkles-app" />
