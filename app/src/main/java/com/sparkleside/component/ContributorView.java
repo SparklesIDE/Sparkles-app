@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
@@ -74,5 +75,10 @@ public class ContributorView extends RelativeLayout {
     
     public void setHasDivider(boolean hasDivider) {
         this.hasDivider = hasDivider;
+        if (!hasDivider) {
+            binding.divider.setVisibility(View.GONE);
+            return;
+        }
+        binding.divider.setVisibility(View.VISIBLE);
     }
 }
