@@ -37,13 +37,13 @@ public class ContributorView extends RelativeLayout {
     private void init(Context context) {
         this.context = context;
         binding = LayoutContributorViewBinding.inflate(LayoutInflater.from(context), this, true);
-        if(!url.equals("")) {
-            binding.getRoot().setOnClickListener(v -> {
+        binding.getRoot().setOnClickListener(v -> {
+            try {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
+                i.setData(Uri.parse(getURL()));
                 context.startActivity(i);
-            });
-        }
+            }
+        });
     }
 
     public void setImageURL(String url) {
