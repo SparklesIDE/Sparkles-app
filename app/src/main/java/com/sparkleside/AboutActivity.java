@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import java.net.URI;
+import com.
 public class AboutActivity extends AppCompatActivity {
     private ActivityAboutBinding binding;
     private Intent intent ;
