@@ -19,7 +19,7 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/about_avatar_jetrom"
+        android:layout_toRightOf="@id/avatar"
         android:textColor="?colorOnSurface"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -28,8 +28,7 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/about_name2"
-        android:layout_toRightOf="@id/about_avatar_jetrom"
+        android:layout_toRightOf="@id/avatar"
         android:textColor="?colorOnSurfaceVariant"
         android:textSize="16sp" />
 </RelativeLayout>
