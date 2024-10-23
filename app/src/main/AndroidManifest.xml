@@ -3,7 +3,9 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/apk/res/android">
+    
     <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,12 +14,11 @@
         android:supportsRtl="false"
         android:enableOnBackInvokedCallback="true"
         android:localeConfig="@xml/local_config"
-        android:theme="@style/Theme.Sparkle"
-        tools:replace="android:appComponentFactory" >
+        android:theme="@style/Theme.Sparkle">
+        
         <activity
             android:name="MainActivity"
-            android:exported="true"
-        >
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN" />
@@ -25,46 +26,15 @@
                     android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="SettingsActivity"
-            android:exported="true"
-            
-        />
+            android:exported="true" />
         <activity
             android:name="AboutActivity"
-            android:exported="true"
-            
-        />
+            android:exported="true" />
         <activity
             android:name="AppearanceActivity"
-            android:exported="true"
-            
-        />
-       <!-- <activity android:name="TermuxActivityCompat" />
-        <activity
-            android:name=".terminal.Terminal"
-            android:exported="true"
-            android:label="Terminal"
-            android:windowSoftInputMode="adjustResize"
-            
-        >
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>-->
-       <!-- <service
-            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
-            android:enabled="false"
-            android:exported="false"
-            
-        >
-            <meta-data
-                android:name="autoStoreLocales"
-                android:value="true"
-                
-            />
-
-
-        </service>-->
+            android:exported="true" />
     </application>
 </manifest>
