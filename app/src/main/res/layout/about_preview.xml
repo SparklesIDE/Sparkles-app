@@ -22,6 +22,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher"
             android:id="@+id/icon"/>
@@ -32,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:textColor="@color/md_theme_neutral"
         android:text="Developer"
         android:textSize="36sp" />
         
