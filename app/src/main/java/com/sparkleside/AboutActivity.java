@@ -55,11 +55,11 @@ public class AboutActivity extends AppCompatActivity {
             .into(binding.imgSyn);
         Glide
             .with(this)
-            .load("httpss://github.com/hanzodev1375.ong")
+            .load("httpss://github.com/hanzodev1375.png")
             .into(binding.imgHanzo);
         Glide
             .with(this)
-            .load("httpss://github/trindadedev13.png")
+            .load("httpss://github.com/trindadedev13.png")
             .into(binding.imgTrindade);
     }
     
