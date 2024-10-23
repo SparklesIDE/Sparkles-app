@@ -17,6 +17,11 @@ import java.net.URI;
 
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
 
+/*
+* A Screen with info about app
+* @author Aquiles Trindade (trindadedev).
+*/
+
 public class AboutActivity extends AppCompatActivity {
     private ActivityAboutBinding binding;
     private Intent intent ;
@@ -62,17 +67,17 @@ public class AboutActivity extends AppCompatActivity {
             "SyntaxSpin",
             "https://github.com/syntaxspin.png",
             binding.imgSyn
-        )
+        );
         peekAndPop(
             "Hanzo",
             "https://github.com/hanzodev1375.png",
             binding.imgHanzo
-        )
+        );
         peekAndPop(
             "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
             binding.imgTrindade
-        )
+        );
     }
     
     private void configureLinks() {
