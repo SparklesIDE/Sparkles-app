@@ -11,7 +11,7 @@ import android.view.ViewTreeObserver;
 import android.view.WindowInsets;
 import androidx.annotation.Nullable;
 import androidx.core.view.WindowInsetsCompat;
-import com.sparkleside.TermuxActivityCompat;
+import com.sparkleside.ui.activities.TermuxActivityCompat;
 
 public class TermuxActivityRootView extends LinearLayout
     implements ViewTreeObserver.OnGlobalLayoutListener {
