@@ -1,5 +1,6 @@
 package com.sparkleside;
 
+import com.sparkleside.R;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -68,17 +69,20 @@ public class AboutActivity extends AppCompatActivity {
         peekAndPop(
             "SyntaxSpin",
             "https://github.com/syntaxspin.png",
-            binding.imgSyn
+            binding.imgSyn,
+            "Idk what should I say :/"
         );
         peekAndPop(
             "Yamen",
             "https://github.com/YamenHer.png",
-            binding.imgYamen
+            binding.imgYamen,
+            "A Kool Utilities maker"
         );
         peekAndPop(
             "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
-            binding.imgTrindade
+            binding.imgTrindade,
+            "I use Compose btw"
         );
     }
     
@@ -139,19 +143,17 @@ public class AboutActivity extends AppCompatActivity {
         );
     }
     
-    private void peekAndPop(String name, String imageUrl, View v) {
-        View peekLayout = getLayoutInflater().inflate(R.layout.about_preview, null);
-        TextView title = peekLayout.findViewById(R.id.title);
-        ImageView icon = peekLayout.findViewById(R.id.icon);
-        title.setText(name);
-        Glide.with(this)
-            .load(imageUrl)
-            .into(icon);
-        
+    private void peekAndPop(String name, String imageUrl, View v, String phrase) {
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
             .peekLayout(R.layout.about_preview)
             .longClickViews(v)
             .build();
+        ImageView peekChild = peekAndPop.getPeekView().findViewById(R.id.icon);
+        Glide.with(this)
+            .load(imageUrl)
+            .into(peekChild);
+        TextView peekText = peekAndPop.getPeekView().findViewById(R.id.title);
+        peekText.setText(phrase);
     }
     
     private void Team(String name, String description, String url, boolean hasDivider) {

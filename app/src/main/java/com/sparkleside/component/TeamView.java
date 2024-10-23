@@ -26,7 +26,7 @@ public class TeamView extends RelativeLayout {
         init(context);
     }
 
-    public ContributorView(Context context, AttributeSet attrs) {
+    public TeamView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
@@ -38,7 +38,7 @@ public class TeamView extends RelativeLayout {
 
     private void init(Context context) {
         this.context = context;
-        binding = LayoutContributorViewBinding.inflate(LayoutInflater.from(context), this, true);
+        binding = LayoutTeamViewBinding.inflate(LayoutInflater.from(context), this, true);
         binding.getRoot().setOnClickListener(v -> {
             try {
                 Intent i = new Intent(Intent.ACTION_VIEW);
