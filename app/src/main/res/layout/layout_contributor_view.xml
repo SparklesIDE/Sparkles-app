@@ -17,7 +17,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="64dp"
+            android:layout_marginEnd="20dp"
             app:shapeAppearance="@style/Theme.Sparkle.CircleImageView" />
 
         <TextView
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/avatar"
             android:layout_alignParentTop="true"
-            android:textColor="?colorOnSurface"
+            android:textColor="@color/md_theme_neutral"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/name"
             android:layout_toEndOf="@id/avatar"
-            android:textColor="?colorOnSurfaceVariant"
+            android:textColor="@color/md_theme_neutralSecondary"
             android:textSize="16sp" />
     </RelativeLayout>
 
