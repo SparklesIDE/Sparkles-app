@@ -53,6 +53,6 @@
         <item name="fontFamily">@font/afacadfluxregular</item>
         <item name="collapsingToolbarLayoutStyle">?attr/collapsingToolbarLayoutLargeStyle</item>
         <item name="collapsingToolbarLayoutLargeSize">@dimen/collapsing_toolbar_large_size</item>
-        <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Sparkle.CollapsingToolbar</item>
+        <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Sparkles.CollapsingToolbar</item>
     </style>
 </resources>
