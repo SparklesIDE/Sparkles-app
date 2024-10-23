@@ -9,12 +9,13 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.StringRes;
 
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
-import com.sparkleside.ui.components.TeamView;
+import com.sparkleside.ui.components.TeamMemberView;
 
 import java.net.URI;
 
@@ -39,7 +40,7 @@ public class AboutActivity extends AppCompatActivity {
         configureToolbar();
         configureDevelopers();
 		configureLinks();
-		TeamConfig();
+		configureTeamMembers();
     }
     
     private void configureToolbar() {
@@ -69,20 +70,20 @@ public class AboutActivity extends AppCompatActivity {
         peekAndPop(
             "SyntaxSpin",
             "https://github.com/syntaxspin.png",
-            binding.imgSyn,
-            "Idk what should I say :/"
+            "Idk what should I say :/",
+            binding.imgSyn
         );
         peekAndPop(
             "Yamen",
             "https://github.com/YamenHer.png",
-            binding.imgYamen,
-            "A Kool Utilities maker"
+            "A Kool Utilities maker",
+            binding.imgYamen
         );
         peekAndPop(
             "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
-            binding.imgTrindade,
-            "I use Compose btw"
+            "I use Compose btw",
+            binding.imgTrindade
         );
     }
     
@@ -113,37 +114,42 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
     
-    private void TeamConfig() {
-        Team(
+    private void configureTeamMembers() {
+        TeamMember(
             "Hanzo",
-            "Developer",
+            Role.DEVELOPER,
             "https://github.com/HanzoDev1375",
             true
         );
         
-        Team(
+        TeamMember(
             "Thiarley Rocha",
-            "Developer",
+            Role.DEVELOPER,
             "https://github.com/thdev-only",
             true
         );
         
-        Team(
+        TeamMember(
             "Rohit Kushvaha",
-            "Developer",
+            Role.DEVELOPER,
             "https://github.com/RohitKushvaha01",
             true
         );
         
-        Team(
+        TeamMember(
             "Jaiel Lima Miranda",
-            "Developer",
+            Role.TRANSLATOR,
             "https://github.com/jetrom17",
             false
         );
     }
     
-    private void peekAndPop(String name, String imageUrl, View v, String phrase) {
+    private void peekAndPop(
+        String name,
+        String imageUrl,
+        String phrase,
+        View v
+    ) {
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
             .peekLayout(R.layout.layout_about_preview)
             .longClickViews(v)
@@ -156,13 +162,20 @@ public class AboutActivity extends AppCompatActivity {
         peekText.setText(phrase);
     }
     
-    private void Team(String name, String description, String url, boolean hasDivider) {
-        var c = new TeamView(this);
+    private void TeamMember(
+        String name,
+        Role role,
+        String url,
+        boolean hasDivider,
+        Role role
+    ) {
+        var c = new TeamMemberView(this);
         c.setName(name);
-        c.setDescription(description);
+        c.setDescription(Role.getName(this));
         c.setImageURL(url + ".png");
         c.setURL(url);
         c.setHasDivider(hasDivider);
+        c.setRole(role);
         binding.team.addView(c);
     }
     
@@ -170,5 +183,20 @@ public class AboutActivity extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
+    }
+    
+    public enum Role {
+        TRANSLATOR(R.string.about_tag_translator),
+        DEVELOPER(R.string.about_tag_developer);
+        
+        @StringRes private final int stringResId;
+        
+        Role(@StringRes int stringResId) {
+            this.stringResId = stringResId;
+        }
+        
+        public String getName(Context context) {
+            return context.getString(stringResId);
+        }
     }
 }

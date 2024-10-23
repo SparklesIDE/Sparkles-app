@@ -12,33 +12,33 @@ import com.bumptech.glide.Glide;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-import com.sparkleside.databinding.LayoutTeamViewBinding; 
+import com.sparkleside.databinding.LayoutTeamMemberViewBinding; 
 
-public class TeamView extends RelativeLayout {
+public class TeamMemberView extends RelativeLayout {
 
-    private LayoutTeamViewBinding binding;
+    private LayoutTeamMemberViewBinding binding;
     private String url;
     private Context context;
     private boolean hasDivider;
 
-    public TeamView(Context context) {
+    public TeamMemberView(Context context) {
         super(context);
         init(context);
     }
 
-    public TeamView(Context context, AttributeSet attrs) {
+    public TeamMemberView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public TeamView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public TeamMemberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
 
     private void init(Context context) {
         this.context = context;
-        binding = LayoutTeamViewBinding.inflate(LayoutInflater.from(context), this, true);
+        binding = LayoutTeamMemberViewBinding.inflate(LayoutInflater.from(context), this, true);
         binding.getRoot().setOnClickListener(v -> {
             try {
                 Intent i = new Intent(Intent.ACTION_VIEW);
