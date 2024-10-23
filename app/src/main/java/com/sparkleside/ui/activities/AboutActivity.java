@@ -171,7 +171,7 @@ public class AboutActivity extends AppCompatActivity {
     ) {
         var c = new TeamMemberView(this);
         c.setName(name);
-        c.setDescription(Role.getName(this));
+        c.setDescription(role.getName(this));
         c.setImageURL(url + ".png");
         c.setURL(url);
         c.setHasDivider(hasDivider);
