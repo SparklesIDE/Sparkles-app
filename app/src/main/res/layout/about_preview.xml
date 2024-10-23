@@ -14,8 +14,8 @@
      
      <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
         android:id="@+id/maskFrame"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:porterduffxfermode="DST_IN"
         app:mask="@drawable/scallop_mask">
         

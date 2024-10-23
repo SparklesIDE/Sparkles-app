@@ -36,9 +36,9 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         
         configureToolbar();
-        configureSuperContributors();
+        configureDevelopers();
 		configureLinks();
-		configureContributors();
+		TeamView();
     }
     
     private void configureToolbar() {
@@ -51,15 +51,15 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
     
-    private void configureSuperContributors() {
+    private void configureDevelopers() {
         Glide
             .with(this)
             .load("https://github.com/syntaxspin.png")
             .into(binding.imgSyn);
         Glide
             .with(this)
-            .load("https://github.com/hanzodev1375.png")
-            .into(binding.imgHanzo);
+            .load("https://github.com/yamenher.png")
+            .into(binding.imgYamen);
         Glide
             .with(this)
             .load("https://github.com/trindadedev13.png")
@@ -71,9 +71,9 @@ public class AboutActivity extends AppCompatActivity {
             binding.imgSyn
         );
         peekAndPop(
-            "Hanzo",
-            "https://github.com/hanzodev1375.png",
-            binding.imgHanzo
+            "Yamen",
+            "https://github.com/YamenHer.png",
+            binding.imgYamen
         );
         peekAndPop(
             "Aquiles Trindade",
@@ -94,7 +94,7 @@ public class AboutActivity extends AppCompatActivity {
         });
         
         binding.hanzo.setOnClickListener(v->{
-            String url3 = "https://github.com/hanzodev1375";
+            String url3 = "https://github.com/yamenher";
             openURL(url3);
         });
         
@@ -109,29 +109,29 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
     
-    private void configureContributors() {
-        newContributor(
-            "Yamenher",
+    private void TeamView() {
+        Team(
+            "Hanzo",
             "Developer",
-            "https://github.com/yamenher",
+            "https://github.com/HanzoDev1375",
             true
         );
         
-        newContributor(
+        Team(
             "Thiarley Rocha",
             "Developer",
             "https://github.com/thdev-only",
             true
         );
         
-        newContributor(
+        Team(
             "Rohit Kushvaha",
             "Developer",
             "https://github.com/RohitKushvaha01",
             true
         );
         
-        newContributor(
+        Team(
             "Jaiel Lima Miranda",
             "Developer",
             "https://github.com/jetrom17",
@@ -154,14 +154,14 @@ public class AboutActivity extends AppCompatActivity {
             .build();
     }
     
-    private void newContributor(String name, String description, String url, boolean hasDivider) {
-        var c = new ContributorView(this);
+    private void Team(String name, String description, String url, boolean hasDivider) {
+        var c = new TeamView(this);
         c.setName(name);
         c.setDescription(description);
         c.setImageURL(url + ".png");
         c.setURL(url);
         c.setHasDivider(hasDivider);
-        binding.contributors.addView(c);
+        binding.team.addView(c);
     }
     
     private void openURL(String url) {

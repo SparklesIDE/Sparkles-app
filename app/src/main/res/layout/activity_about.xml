@@ -177,7 +177,7 @@
                              android:layout_height="60dp"
                              android:layout_width="60dp"
                              app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"
-                             android:id="@+id/img_hanzo" />
+                             android:id="@+id/img_yamen" />
 
                         <TextView
                              android:layout_height="wrap_content"
@@ -186,7 +186,7 @@
                              android:textSize="12sp"
                              android:textColor="@color/md_theme_neutral"
                              android:id="@+id/textview4"
-                             android:text="Hanzo" />
+                             android:text="YamenHer" />
 
                     </LinearLayout>
 
@@ -279,7 +279,7 @@
                      android:layout_width="match_parent"
                      android:orientation="vertical"
                      style="?attr/materialCardViewFilledStyle"
-                     android:id="@+id/contributors">
+                     android:id="@+id/team">
 
                 </LinearLayout>
 
