@@ -1,9 +1,7 @@
-
 plugins {
     id("com.android.application")
     
 }
-
 android {
     namespace = "com.sparkleside"
     compileSdk = 34
@@ -52,8 +50,6 @@ android {
 }
 
 dependencies {
-
-
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
@@ -62,13 +58,11 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.activity:activity:1.6.0-alpha05")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    implementation("com.blankj:utilcodex:1.31.1")
+    
     implementation(project(":terminalview"))
     implementation(project(":peekandpop"))
-    implementation("com.blankj:utilcodex:1.31.1")
-  //  implementation("com.github.shalskar:PeekAndPop:1.1.0")
-   // implementation("com.github.christophesmet:android_maskable_layout:1.3.2")
-
-   
-    // implementation("com.github.Ruan625Br:FilePickerSphere:1.0.0")
+    implementation(project(":maskable"))
+    
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
 }

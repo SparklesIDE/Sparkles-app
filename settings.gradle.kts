@@ -20,3 +20,4 @@ rootProject.name = "SparklesIDE"
 include(":app")
 include(":terminalview")
 include(":peekandpop")
+include(":maskable")
