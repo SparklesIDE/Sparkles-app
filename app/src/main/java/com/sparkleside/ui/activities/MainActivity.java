@@ -21,7 +21,7 @@ import androidx.core.view.MarginLayoutParamsCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.sparkleside.component.ExpandableLayout;
+import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.databinding.ActivityMainBinding;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 
