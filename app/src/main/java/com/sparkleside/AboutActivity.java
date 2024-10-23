@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.databinding.ActivityAboutBinding;
+import com.sparkleside.databinding.AboutPreviewBinding;
 import com.sparkleside.component.ContributorView;
 
 import java.net.URI;
@@ -31,11 +32,6 @@ public class AboutActivity extends AppCompatActivity {
         configureSuperContributors();
 		configureLinks();
 		configureContributors();
-		
-        PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(R.layout.about_preview)
-            .longClickViews(binding.syn)
-            .build();
     }
     
     private void configureToolbar() {
@@ -61,6 +57,22 @@ public class AboutActivity extends AppCompatActivity {
             .with(this)
             .load("https://github.com/trindadedev13.png")
             .into(binding.imgTrindade);
+            
+        peekAndPop(
+            "SyntaxSpin",
+            "https://github.com/syntaxspin.png",
+            binding.imgSyn
+        )
+        peekAndPop(
+            "Hanzo",
+            "https://github.com/hanzodev1375.png",
+            binding.imgHanzo
+        )
+        peekAndPop(
+            "Aquiles Trindade",
+            "https://github.com/trindadedev13.png",
+            binding.imgTrindade
+        )
     }
     
     private void configureLinks() {
@@ -118,6 +130,19 @@ public class AboutActivity extends AppCompatActivity {
             "https://github.com/jetrom17",
             false
         );
+    }
+    
+    private void peekAndPop(String name, String imageUrl, View v) {
+        var peekBinding = new AboutPreviewBinding.inflate(getLayoutInflater());
+        peekBinding.title.setText(name);
+        Glide
+            .with(this)
+            .load(imageUrl)
+            .into(peekBinding.icon);
+        PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
+            .peekLayout(peekBinding.getRoot())
+            .longClickViews(v)
+            .build();
     }
     
     private void newContributor(String name, String description, String url, boolean hasDivider) {
