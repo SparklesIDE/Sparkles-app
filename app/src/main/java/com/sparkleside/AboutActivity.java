@@ -3,27 +3,12 @@ package com.sparkleside;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ImageView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.bumptech.glide.Glide;
-
 import com.sparkleside.databinding.ActivityAboutBinding;
-import com.sparkleside.component.ContributorView;
-
 import java.net.URI;
-
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
-
-/*
-* A Screen with info about app
-* @author Aquiles Trindade (trindadedev).
-*/
-
 public class AboutActivity extends AppCompatActivity {
     private ActivityAboutBinding binding;
     private Intent intent ;
@@ -34,139 +19,91 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        
-        configureToolbar();
-        configureSuperContributors();
-		configureLinks();
-		configureContributors();
-    }
-    
-    private void configureToolbar() {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        
         binding.toolbar.setNavigationOnClickListener(v -> {
-            super.onBackPressed();
-        });
-    }
-    
-    private void configureSuperContributors() {
-        Glide
-            .with(this)
-            .load("https://github.com/syntaxspin.png")
-            .into(binding.imgSyn);
-        Glide
-            .with(this)
-            .load("https://github.com/hanzodev1375.png")
-            .into(binding.imgHanzo);
-        Glide
-            .with(this)
-            .load("https://github.com/trindadedev13.png")
-            .into(binding.imgTrindade);
-            
-        peekAndPop(
-            "SyntaxSpin",
-            "https://github.com/syntaxspin.png",
-            binding.imgSyn
-        );
-        peekAndPop(
-            "Hanzo",
-            "https://github.com/hanzodev1375.png",
-            binding.imgHanzo
-        );
-        peekAndPop(
-            "Aquiles Trindade",
-            "https://github.com/trindadedev13.png",
-            binding.imgTrindade
-        );
-    }
-    
-    private void configureLinks() {
-        binding.tg.setOnClickListener(v->{
-            String url = "https://www.telegram.me/sparkleside";
-            openURL(url);
-        });
-        
-        binding.github.setOnClickListener(v->{
-            String url2 = "https://github.com/sparkleside/sparkles-app";
-            openURL(url2);
-        });
-        
-        binding.hanzo.setOnClickListener(v->{
-            String url3 = "https://github.com/hanzodev1375";
-            openURL(url3);
-        });
-        
-        binding.syn.setOnClickListener(v->{
-            String url4 = "https://github.com/syntaxspin";
-            openURL(url4);
-        });
-        
-        binding.trindade.setOnClickListener(v->{
-            String url5 = "https://github.com/trindadedev13";
-            openURL(url5);
-        });
-    }
-    
-    private void configureContributors() {
-        newContributor(
-            "Yamenher",
-            "Developer",
-            "https://github.com/yamenher",
-            true
-        );
-        
-        newContributor(
-            "Thiarley Rocha",
-            "Developer",
-            "https://github.com/thdev-only",
-            true
-        );
-        
-        newContributor(
-            "Rohit Kushvaha",
-            "Developer",
-            "https://github.com/RohitKushvaha01",
-            true
-        );
-        
-        newContributor(
-            "Jaiel Lima Miranda",
-            "Developer",
-            "https://github.com/jetrom17",
-            false
-        );
-    }
-    
-    private void peekAndPop(String name, String imageUrl, View v) {
-        View peekLayout = getLayoutInflater().inflate(R.layout.about_preview, null);
-        TextView title = peekLayout.findViewById(R.id.title);
-        ImageView icon = peekLayout.findViewById(R.id.icon);
-        title.setText(name);
-        Glide.with(this)
-            .load(imageUrl)
-            .into(icon);
-        
+			onBackPressed();
+			} 
+		);
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(R.layout.about_preview)
-            .longClickViews(v)
-            .build();
+                .peekLayout(R.layout.about_preview)
+                .longClickViews(binding.syn)
+                .build();
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/yamenher").into(binding.aboutAvatarYamen);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/thdev-only").into(binding.aboutAvatarThiarley);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/RohitKushvaha01").into(binding.aboutAvatarRohit);
+        Glide.with(getApplicationContext()).load("https://avatars.githubusercontent.com/jetrom17").into(binding.aboutAvatarJetrom);
+        binding.tg.setOnClickListener(v->{
+      String url = "http://www.telegram.me/sparkleside";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url));
+      startActivity(i);
+                
+        });
+        binding.github.setOnClickListener(v->{
+      String url2 = "http://github.com/sparkleside/sparkles-app";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url2));
+      startActivity(i);
+                
+        });
+        binding.hanzo.setOnClickListener(v->{
+      String url3 = "http://github.com/hanzodev1375";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url3));
+      startActivity(i);
+                });
+                binding.yamen.setOnClickListener(v->{
+      String url9 = "http://github.com/yamenher";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url9));
+      startActivity(i);
+                
+        });
+        binding.syn.setOnClickListener(v->{
+      String url4 = "http://github.com/syntaxspin";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url4));
+      startActivity(i);
+                
+        });
+        binding.trindade.setOnClickListener(v->{
+      String url5 = "http://github.com/trindadedev13";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url5));
+      startActivity(i);
+                
+        });
+        binding.thiarley.setOnClickListener(v->{
+      String url6 = "http://github.com/thdev-only";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url6));
+      startActivity(i);
+                
+                
+        });
+        binding.rohit.setOnClickListener(v->{
+      String url7 = "http://github.com/RohitKushvaha01";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url7));
+      startActivity(i);
+                
+        });
+        binding.jetrom.setOnClickListener(v->{
+      String url8 = "http://github.com/jetrom17";
+      Intent i = new Intent(Intent.ACTION_VIEW);
+      i.setData(Uri.parse(url8));
+      startActivity(i);
+                
+        });
     }
-    
-    private void newContributor(String name, String description, String url, boolean hasDivider) {
-        var c = new ContributorView(this);
-        c.setName(name);
-        c.setDescription(description);
-        c.setImageURL(url + ".png");
-        c.setURL(url);
-        c.setHasDivider(hasDivider);
-        binding.contributors.addView(c);
-    }
-    
-    private void openURL(String url) {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        startActivity(i);
-    }
+    @Override
+    public void onBackPressed() {
+    // Your custom back button logic here
+        super.onBackPressed();
+}
 }
