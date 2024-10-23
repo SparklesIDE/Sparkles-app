@@ -1,6 +1,7 @@
 package com.sparkleside.ui.activities;
 
 import android.content.Intent;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -166,8 +167,7 @@ public class AboutActivity extends AppCompatActivity {
         String name,
         Role role,
         String url,
-        boolean hasDivider,
-        Role role
+        boolean hasDivider
     ) {
         var c = new TeamMemberView(this);
         c.setName(name);
