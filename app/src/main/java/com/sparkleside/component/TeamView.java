@@ -12,16 +12,16 @@ import com.bumptech.glide.Glide;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-import com.sparkleside.databinding.LayoutContributorViewBinding; 
+import com.sparkleside.databinding.LayoutTeamViewBinding; 
 
-public class ContributorView extends RelativeLayout {
+public class TeamView extends RelativeLayout {
 
-    private LayoutContributorViewBinding binding;
+    private LayoutTeamViewBinding binding;
     private String url;
     private Context context;
     private boolean hasDivider;
 
-    public ContributorView(Context context) {
+    public TeamView(Context context) {
         super(context);
         init(context);
     }
@@ -31,7 +31,7 @@ public class ContributorView extends RelativeLayout {
         init(context);
     }
 
-    public ContributorView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public TeamView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
