@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.databinding.ActivityAboutBinding;
-import com.sparkleside.component.ContributorView;
+import com.sparkleside.component.TeamView;
 
 import java.net.URI;
 
@@ -109,7 +109,7 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
     
-    private void TeamConfih() {
+    private void TeamConfig() {
         Team(
             "Hanzo",
             "Developer",
