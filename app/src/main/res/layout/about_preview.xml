@@ -9,7 +9,8 @@
    <LinearLayout
      android:layout_height="match_parent"
      android:layout_width="match_parent"
-     android:orientation="vertical">
+     android:orientation="vertical"
+     android:gravity="center"
      
      <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
         android:id="@+id/maskFrame"
@@ -30,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="trindadedev"
+        android:text=""
         android:textSize="36sp" />
         
    </LinearLayout>
