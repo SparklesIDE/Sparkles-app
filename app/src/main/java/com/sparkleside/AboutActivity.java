@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -138,16 +140,16 @@ public class AboutActivity extends AppCompatActivity {
     }
     
     private void peekAndPop(String name, String imageUrl, View v) {
-        var peekLayout = getLayoutInflater().inflate(R.layout.about_preview, null);
-        var title = peekLayout.findViewById(R.id.title);
-        var icon = peekLayout.findViewById(R.id.icon);
+        View peekLayout = getLayoutInflater().inflate(R.layout.about_preview, null);
+        TextView title = peekLayout.findViewById(R.id.title);
+        ImageView icon = peekLayout.findViewById(R.id.icon);
         title.setText(name);
         Glide.with(this)
             .load(imageUrl)
             .into(icon);
         
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(peekLayout)
+            .peekLayout(R.layout.about_preview)
             .longClickViews(v)
             .build();
     }
