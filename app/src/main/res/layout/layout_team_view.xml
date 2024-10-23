@@ -18,7 +18,7 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
-            app:shapeAppearance="@style/Theme.Sparkle.CircleImageView" />
+            app:shapeAppearance="@style/Theme.Sparkles.CircleImageView" />
 
         <TextView
             android:id="@+id/name"

@@ -1,21 +1,21 @@
 <resources>
-    <style name="Theme.Sparkle.CircleImageView"> 
+    <style name="Theme.Sparkles.CircleImageView"> 
         <item name="cornerFamily">rounded</item> 
         <item name="cornerSize">50%</item> 
     </style> 
     
-    <style name="Widget.Sparkle.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar.Large">
-        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Sparkle.CollapsingToolbar.Collapsed</item>
-        <item name="expandedTitleTextAppearance">@style/TextAppearance.Sparkle.CollapsingToolbar.Expanded</item>
+    <style name="Widget.Sparkles.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar.Large">
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Sparkles.CollapsingToolbar.Collapsed</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Sparkles.CollapsingToolbar.Expanded</item>
         <item name="titleCollapseMode">fade</item>
     </style>
 
-    <style name="TextAppearance.Sparkle.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleLarge">
+    <style name="TextAppearance.Sparkles.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleLarge">
         <item name="fontFamily">@font/afacadfluxregular</item>
         <item name="android:fontFamily">@font/afacadfluxregular</item>
     </style>
 
-    <style name="TextAppearance.Sparkle.CollapsingToolbar.Expanded" parent="TextAppearance.Material3.HeadlineMedium">
+    <style name="TextAppearance.Sparkles.CollapsingToolbar.Expanded" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="fontFamily">@font/afacadfluxregular</item>
         <item name="android:fontFamily">@font/afacadfluxregular</item>
     </style>

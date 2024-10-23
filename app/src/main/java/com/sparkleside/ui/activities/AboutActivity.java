@@ -1,4 +1,4 @@
-package com.sparkleside;
+package com.sparkleside.ui.activities;
 
 import com.sparkleside.R;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.databinding.ActivityAboutBinding;
-import com.sparkleside.component.TeamView;
+import com.sparkleside.ui.components.TeamView;
 
 import java.net.URI;
 
@@ -145,7 +145,7 @@ public class AboutActivity extends AppCompatActivity {
     
     private void peekAndPop(String name, String imageUrl, View v, String phrase) {
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(R.layout.about_preview)
+            .peekLayout(R.layout.layout_about_preview)
             .longClickViews(v)
             .build();
         ImageView peekChild = peekAndPop.getPeekView().findViewById(R.id.icon);

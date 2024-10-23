@@ -1,4 +1,4 @@
-package com.sparkleside.component;
+package com.sparklesde.ui.components;
 
 import android.net.Uri;
 import android.content.Context;

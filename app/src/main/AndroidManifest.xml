@@ -14,10 +14,10 @@
         android:supportsRtl="false"
         android:enableOnBackInvokedCallback="true"
         android:localeConfig="@xml/local_config"
-        android:theme="@style/Theme.Sparkle">
+        android:theme="@style/Theme.Sparkles">
         
         <activity
-            android:name="MainActivity"
+            android:name="com.sparkleside.ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action
@@ -28,13 +28,13 @@
         </activity>
         
         <activity
-            android:name="SettingsActivity"
+            android:name="com.sparkleside.ui.activities.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name="AboutActivity"
+            android:name="com.sparkleside.ui.activities.AboutActivity"
             android:exported="true" />
         <activity
-            android:name="AppearanceActivity"
+            android:name="com.sparkleside.ui.activities.AppearanceActivity"
             android:exported="true" />
     </application>
 </manifest>

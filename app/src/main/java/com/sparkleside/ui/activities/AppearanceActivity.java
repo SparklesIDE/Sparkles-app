@@ -1,4 +1,4 @@
-package com.sparkleside;
+package com.sparkleside.ui.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

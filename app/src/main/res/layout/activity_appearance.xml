@@ -16,7 +16,7 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
              android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
              android:layout_width="match_parent"
-             style="@style/Widget.Sparkle.CollapsingToolbar"
+             style="@style/Widget.Sparkles.CollapsingToolbar"
              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar

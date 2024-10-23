@@ -176,7 +176,7 @@
                         <com.google.android.material.imageview.ShapeableImageView
                              android:layout_height="60dp"
                              android:layout_width="60dp"
-                             app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"
+                             app:shapeAppearance="@style/Theme.Sparkles.CircleImageView"
                              android:id="@+id/img_yamen" />
 
                         <TextView
@@ -204,7 +204,7 @@
                     <com.google.android.material.imageview.ShapeableImageView
                          android:layout_height="80dp"
                          android:layout_width="80dp"
-                         app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"
+                         app:shapeAppearance="@style/Theme.Sparkles.CircleImageView"
                          android:id="@+id/img_syn" />
 
                     <TextView
@@ -240,7 +240,7 @@
                         <com.google.android.material.imageview.ShapeableImageView
                              android:layout_height="60dp"
                              android:layout_width="60dp"
-                             app:shapeAppearance="@style/Theme.Sparkle.CircleImageView"
+                             app:shapeAppearance="@style/Theme.Sparkles.CircleImageView"
                              android:id="@+id/img_trindade" />
 
                         <TextView

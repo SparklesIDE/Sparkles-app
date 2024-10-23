@@ -1,4 +1,4 @@
-package com.sparkleside;
+package com.sparkleside.ui.activities;
 
 import android.animation.ArgbEvaluator;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.sparkleside;
+package com.sparkleside.ui.activities;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -20,7 +20,7 @@ import com.rk.xededitor.terminal.virtualkeys.VirtualKeyButton;
 import com.rk.xededitor.terminal.virtualkeys.VirtualKeysConstants;
 import com.rk.xededitor.terminal.virtualkeys.VirtualKeysView;
 
-import com.sparkleside.component.TermuxActivityRootView;
+import com.sparkleside.ui.components.TermuxActivityRootView;
 import com.termux.view.TerminalView;
 import com.termux.terminal.TerminalSession;
 import com.termux.terminal.TerminalEmulator;

@@ -1,4 +1,4 @@
-package com.sparkleside
+package com.sparkleside.ui.activities
 
 import android.os.Bundle
 import android.util.Log
