@@ -139,7 +139,7 @@ public class AboutActivity extends AppCompatActivity {
     }
     
     private void peekAndPop(String name, String imageUrl, View v) {
-        AboutPreviewBinding peekBinding = new AboutPreviewBinding.inflate(getLayoutInflater());
+        var peekBinding = AboutPreviewBinding.inflate(getLayoutInflater());
         peekBinding.title.setText(name);
         Glide
             .with(this)
