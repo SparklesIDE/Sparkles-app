@@ -586,8 +586,8 @@ public class PeekAndPop {
          * @param peekLayoutId id of the onPeek layout resource
          * @return
          */
-        public Builder peekLayout(View peekLayout) {
-            this.peekLayoutId = peekLayout.getId();
+        public Builder peekLayout(@LayoutRes int peekLayoutId) {
+            this.peekLayoutId = peekLayoutId;
             return this;
         }
 

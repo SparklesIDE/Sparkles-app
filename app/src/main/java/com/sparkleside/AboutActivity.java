@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.databinding.ActivityAboutBinding;
-import com.sparkleside.databinding.AboutPreviewBinding;
 import com.sparkleside.component.ContributorView;
 
 import java.net.URI;
@@ -139,14 +138,16 @@ public class AboutActivity extends AppCompatActivity {
     }
     
     private void peekAndPop(String name, String imageUrl, View v) {
-        var peekBinding = AboutPreviewBinding.inflate(getLayoutInflater());
-        peekBinding.title.setText(name);
-        Glide
-            .with(this)
+        var peekLayout = getLayoutInflater().inflate(R.layout.about_preview, null);
+        var title = peekLayout.findViewById(R.id.title);
+        var icon = peekLayout.findViewById(R.id.icon);
+        title.setText(name);
+        Glide.with(this)
             .load(imageUrl)
-            .into(peekBinding.icon);
+            .into(icon);
+        
         PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(peekBinding.getRoot())
+            .peekLayout(peekLayout)
             .longClickViews(v)
             .build();
     }
