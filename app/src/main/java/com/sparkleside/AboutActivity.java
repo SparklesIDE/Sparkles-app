@@ -38,7 +38,7 @@ public class AboutActivity extends AppCompatActivity {
         configureToolbar();
         configureDevelopers();
 		configureLinks();
-		TeamView();
+		TeamConfig();
     }
     
     private void configureToolbar() {
@@ -109,7 +109,7 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
     
-    private void TeamView() {
+    private void TeamConfih() {
         Team(
             "Hanzo",
             "Developer",
