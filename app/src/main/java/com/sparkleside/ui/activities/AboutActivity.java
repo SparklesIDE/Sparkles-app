@@ -1,6 +1,5 @@
 package com.sparkleside.ui.activities;
 
-import com.sparkleside.R;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import com.sparkleside.ui.components.TeamView;
 

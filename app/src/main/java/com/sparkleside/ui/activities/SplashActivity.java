@@ -7,6 +7,8 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.sparkleside.R;
+
 public class SplashActivity extends AppCompatActivity {
      @Override
      protected void onCreate(Bundle savedInstanceState) {

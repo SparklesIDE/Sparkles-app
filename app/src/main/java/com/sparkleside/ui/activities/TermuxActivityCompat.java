@@ -11,7 +11,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.view.WindowManager;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.blankj.utilcode.util.ClipboardUtils;
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.blankj.utilcode.util.SizeUtils;
@@ -20,12 +22,15 @@ import com.rk.xededitor.terminal.virtualkeys.VirtualKeyButton;
 import com.rk.xededitor.terminal.virtualkeys.VirtualKeysConstants;
 import com.rk.xededitor.terminal.virtualkeys.VirtualKeysView;
 
+import com.sparkleside.R;
 import com.sparkleside.ui.components.TermuxActivityRootView;
+
 import com.termux.view.TerminalView;
 import com.termux.terminal.TerminalSession;
 import com.termux.terminal.TerminalEmulator;
 import com.termux.terminal.TerminalSessionClient;
 import com.termux.view.TerminalViewClient;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -37,6 +42,7 @@ import android.os.Bundle;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
 import org.json.JSONException;
 
 public class TermuxActivityCompat extends AppCompatActivity implements TerminalViewClient {

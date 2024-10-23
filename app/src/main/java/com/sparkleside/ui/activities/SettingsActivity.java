@@ -8,6 +8,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.appbar.AppBarLayout;
+
+import com.sparkleside.R;
 import com.sparkleside.databinding.ActivitySettingsBinding;
 
 public class SettingsActivity extends AppCompatActivity {

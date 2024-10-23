@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.appbar.AppBarLayout;
+
+import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
 
 public class AppearanceActivity extends AppCompatActivity {

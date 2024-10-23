@@ -7,14 +7,17 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
+
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat.getInsetsController
+
 import com.blankj.utilcode.util.ClipboardUtils
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.PathUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ThreadUtils
+
 import com.teixeira.vcspace.BuildConfig
 import com.teixeira.vcspace.activities.base.BaseActivity
 import com.teixeira.vcspace.databinding.ActivityTerminalBinding
@@ -25,13 +28,18 @@ import com.teixeira.vcspace.ui.virtualkeys.VirtualKeysInfo
 import com.teixeira.vcspace.ui.virtualkeys.VirtualKeysView.IVirtualKeysView
 import com.teixeira.vcspace.utils.Logger
 import com.teixeira.vcspace.utils.TerminalPythonCommands
+
 import com.termux.terminal.TerminalEmulator
 import com.termux.terminal.TerminalSession
 import com.termux.terminal.TerminalSessionClient
 import com.termux.terminal.TextStyle
 import com.termux.view.TerminalView
 import com.termux.view.TerminalViewClient
+
+import com.sparkleside.R;
+
 import java.io.File
+
 import org.json.JSONException
 
 /**
