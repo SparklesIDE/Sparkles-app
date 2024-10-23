@@ -175,7 +175,6 @@ public class AboutActivity extends AppCompatActivity {
         c.setImageURL(url + ".png");
         c.setURL(url);
         c.setHasDivider(hasDivider);
-        c.setRole(role);
         binding.team.addView(c);
     }
     
