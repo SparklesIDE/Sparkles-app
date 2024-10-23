@@ -27,6 +27,18 @@ public class AboutActivity extends AppCompatActivity {
         binding = ActivityAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         
+        configureToolbar();
+        configureSuperContributors();
+		configureLinks();
+		configureContributors();
+		
+        PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
+            .peekLayout(R.layout.about_preview)
+            .longClickViews(binding.syn)
+            .build();
+    }
+    
+    private void configureToolbar() {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -34,16 +46,24 @@ public class AboutActivity extends AppCompatActivity {
         binding.toolbar.setNavigationOnClickListener(v -> {
             super.onBackPressed();
         });
-		
-        PeekAndPop peekAndPop = new PeekAndPop.Builder(this)
-            .peekLayout(R.layout.about_preview)
-            .longClickViews(binding.syn)
-            .build();
-            
-        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/syntaxspin").into(binding.imgSyn);
-        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/hanzodev1375").into(binding.imgHanzo);
-        Glide.with(getApplicationContext()).load("httpss://avatars.githubusercontent.com/trindadedev13").into(binding.imgTrindade);
-        
+    }
+    
+    private void configureSuperContributors() {
+        Glide
+            .with(this)
+            .load("https://github.com/syntaxspin.png")
+            .into(binding.imgSyn);
+        Glide
+            .with(this)
+            .load("httpss://github.com/hanzodev1375.ong")
+            .into(binding.imgHanzo);
+        Glide
+            .with(this)
+            .load("httpss://github/trindadedev13.png")
+            .into(binding.imgTrindade);
+    }
+    
+    private void configureLinks() {
         binding.tg.setOnClickListener(v->{
             String url = "https://www.telegram.me/sparkleside";
             openURL(url);
@@ -68,11 +88,9 @@ public class AboutActivity extends AppCompatActivity {
             String url5 = "https://github.com/trindadedev13";
             openURL(url5);
         });
-        
-        createContributors();
     }
     
-    private void createContributors() {
+    private void configureContributors() {
         newContributor(
             "Yamenher",
             "Developer",
