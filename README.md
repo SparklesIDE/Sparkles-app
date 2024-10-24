@@ -25,3 +25,6 @@ with Supporting full languages & Material Design 3</p>
 <a href="https://github.com/SparklesIDE/sparkles-app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SparklesIDE/sparkles-app" />
 </a>
+
+<div style="text-align: center">
+<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/LicenceGPLv3/licencegplv32.svg" align="center"></div>
