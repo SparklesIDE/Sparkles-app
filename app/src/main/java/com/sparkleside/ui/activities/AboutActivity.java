@@ -128,7 +128,7 @@ public class AboutActivity extends AppCompatActivity {
             "Hanzo",
             Role.DEVELOPER,
             "https://github.com/HanzoDev1375",
-	    "i want dicks😋",
+	    "Ghost",
             true
         );
         
