@@ -147,7 +147,13 @@ public class AboutActivity extends AppCompatActivity {
 	    "Idk",
             true
         );
-        
+        TeamMember(
+	    "Neo Apps",
+	    Role.DEVELOPER,
+	    "https://github.com/neoapps-dev",
+	    "i use arch, btw",
+	    true
+	)
         TeamMember(
             "Jaiel Lima Miranda",
             Role.TRANSLATOR,
