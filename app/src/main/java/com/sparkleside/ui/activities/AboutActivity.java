@@ -175,6 +175,12 @@ public class AboutActivity extends AppCompatActivity {
         c.setImageURL(url + ".png");
         c.setURL(url);
         c.setHasDivider(hasDivider);
+        peekAndPop(
+	    name,
+	    url + ".png",
+	    role.getName(this), // todo: custom phrase 
+	    c.getRoot()
+	);
         binding.team.addView(c);
     }
     
