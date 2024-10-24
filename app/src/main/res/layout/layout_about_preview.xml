@@ -28,28 +28,26 @@
             android:id="@+id/icon"/>
      </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
      
-         <TextView
+     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="8dp"
-		android:paddingTop="8dp"
-		android:paddingRight="8dp"
+        android:paddingTop="8dp" 
+	android:paddingRight="8dp"
         android:textColor="@color/md_theme_neutral"
-        android:text="Developer"
-        android:textSize="36sp"
-         />
+        android:text="Name"
+        android:textSize="36sp" />
      
      <TextView
-        android:id="@+id/title"
+        android:id="@+id/phrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:textColor="@color/md_theme_neutral"
-        android:text="Description"
+        android:text="Phrase"
         android:textSize="19sp"
-        android:gravity="center_vertical"
-         />
+        android:gravity="center_vertical" />
         
    </LinearLayout>
 
