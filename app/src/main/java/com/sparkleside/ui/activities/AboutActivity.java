@@ -71,7 +71,7 @@ public class AboutActivity extends AppCompatActivity {
         peekAndPop(
             "SyntaxSpin",
             "https://github.com/syntaxspin.png",
-            "Idk what should I say :/",
+            "A Material You Lover Android/Web Developer",
             binding.imgSyn
         );
         peekAndPop(
@@ -161,6 +161,8 @@ public class AboutActivity extends AppCompatActivity {
             .into(peekChild);
         TextView peekText = peekAndPop.getPeekView().findViewById(R.id.title);
         peekText.setText(phrase);
+        TextView peekTextn = peekAndPop.getPeekView().findViewById(R.id.name);
+        peekTextn.setText(name);
     }
     
     private void TeamMember(
