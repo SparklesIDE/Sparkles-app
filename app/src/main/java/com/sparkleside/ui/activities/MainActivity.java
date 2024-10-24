@@ -21,6 +21,8 @@ import androidx.core.view.MarginLayoutParamsCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.color.MaterialColors;
+
 import com.sparkleside.R;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.databinding.ActivityMainBinding;
@@ -66,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
 
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         var scheme = binding.editor.getColorScheme();
-
+        var surface = MaterialColors.getColor(binding.editor, com.google.android.material.R.attr.colorSurface);
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             scheme.setColor(EditorColorScheme.WHOLE_BACKGROUND,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.CURRENT_LINE,
-                ContextCompat.getColor(this, R.color.md_theme_surfaceBright));
+                surface);
             scheme.setColor(EditorColorScheme.LINE_NUMBER_PANEL,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.LINE_NUMBER_BACKGROUND,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.KEYWORD, 0xFF42BE6A);
             scheme.setColor(EditorColorScheme.FUNCTION_NAME, 0xFF62DE8A);
             scheme.setColor(EditorColorScheme.TEXT_NORMAL, 0xFFA2D2A9);
