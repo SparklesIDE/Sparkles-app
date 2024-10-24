@@ -143,6 +143,12 @@ public class AboutActivity extends AppCompatActivity {
             "https://github.com/jetrom17",
             false
         );
+        TeamMember(
+            "Alex",
+            Role.TRANSLATOR,
+            "https://github.com/paxsenix0",
+            false
+        );
     }
     
     private void peekAndPop(
