@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.StringRes;
-
+import androidx.core.view.WindowInsetsCompat
+	
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.R;
@@ -21,6 +22,8 @@ import com.sparkleside.ui.components.TeamMemberView;
 import java.net.URI;
 
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
+
+import dev.chrisbanes.insetter.Insetter
 
 /*
 * A Screen with info about app
@@ -40,8 +43,12 @@ public class AboutActivity extends AppCompatActivity {
         
         configureToolbar();
         configureDevelopers();
-		configureLinks();
-		configureTeamMembers();
+        configureLinks();
+	configureTeamMembers();
+	Insetter
+	  .builder()
+	  .padding(WindowInsetsCompat.Type.navigationBars())
+          .applyToView(binding.getRoot());
     }
     
     private void configureToolbar() {
