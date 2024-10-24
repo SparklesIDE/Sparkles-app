@@ -128,6 +128,7 @@ public class AboutActivity extends AppCompatActivity {
             "Hanzo",
             Role.DEVELOPER,
             "https://github.com/HanzoDev1375",
+	    "i want dicks😋",
             true
         );
         
@@ -135,6 +136,7 @@ public class AboutActivity extends AppCompatActivity {
             "Thiarley Rocha",
             Role.DEVELOPER,
             "https://github.com/thdev-only",
+	    "lets play minecraft?",
             true
         );
         
@@ -142,6 +144,7 @@ public class AboutActivity extends AppCompatActivity {
             "Rohit Kushvaha",
             Role.DEVELOPER,
             "https://github.com/RohitKushvaha01",
+	    "Idk",
             true
         );
         
@@ -149,12 +152,14 @@ public class AboutActivity extends AppCompatActivity {
             "Jaiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
+	    "Crazy brazilian",
             true
         );
         TeamMember(
             "Alex",
             Role.TRANSLATOR,
             "https://github.com/paxsenix0",
+	    "PaxSenix bootlegger",
             false
         );
     }
@@ -183,6 +188,7 @@ public class AboutActivity extends AppCompatActivity {
         String name,
         Role role,
         String url,
+	String phrase,
         boolean hasDivider
     ) {
         var c = new TeamMemberView(this);
@@ -194,7 +200,7 @@ public class AboutActivity extends AppCompatActivity {
         peekAndPop(
 	    name,
 	    url + ".png",
-	    role.getName(this), // todo: custom phrase 
+	    phrase,
 	    c.getRoot()
 	);
         binding.team.addView(c);
