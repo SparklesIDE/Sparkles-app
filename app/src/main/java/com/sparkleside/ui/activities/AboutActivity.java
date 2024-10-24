@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.StringRes;
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsCompat;
 	
 import com.bumptech.glide.Glide;
 
@@ -23,7 +23,7 @@ import java.net.URI;
 
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
 
-import dev.chrisbanes.insetter.Insetter
+import dev.chrisbanes.insetter.Insetter;
 
 /*
 * A Screen with info about app
