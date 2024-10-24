@@ -148,7 +148,7 @@ public class AboutActivity extends AppCompatActivity {
             true
         );
         TeamMember(
-	    "Neo Apps",
+	    "NEOAPPS",
 	    Role.DEVELOPER,
 	    "https://github.com/neoapps-dev",
 	    "i use arch, btw",
