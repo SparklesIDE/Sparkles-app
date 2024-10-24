@@ -35,7 +35,8 @@
         android:padding="8dp"
         android:textColor="@color/md_theme_neutral"
         android:text="Developer"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+         />
      
      <TextView
         android:id="@+id/title"
@@ -44,7 +45,8 @@
         android:padding="8dp"
         android:textColor="@color/md_theme_neutral"
         android:text="Description"
-        android:textSize="25sp" />
+        android:textSize="19sp"
+        android:gravity="center" />
         
    </LinearLayout>
 
