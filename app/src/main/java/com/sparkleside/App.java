@@ -8,7 +8,7 @@ public class App extends Application {
     
     @Override
     public void onCreate() {
-        super.onCreate(this);
+        super.onCreate();
         DynamicColors.applyToActivitiesIfAvailable(this);
     }
 }
