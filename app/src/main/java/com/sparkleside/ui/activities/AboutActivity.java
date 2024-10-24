@@ -173,10 +173,10 @@ public class AboutActivity extends AppCompatActivity {
         Glide.with(this)
             .load(imageUrl)
             .into(peekChild);
-        TextView peekText = peekAndPop.getPeekView().findViewById(R.id.title);
-        peekText.setText(phrase);
-        TextView peekTextn = peekAndPop.getPeekView().findViewById(R.id.name);
-        peekTextn.setText(name);
+        TextView peekTextName = peekAndPop.getPeekView().findViewById(R.id.name);
+        peekTextName.setText(name);
+        TextView peekTextPhrase = peekAndPop.getPeekView().findViewById(R.id.phrase);
+        peekTextPhrase.setText(phrase);
     }
     
     private void TeamMember(
