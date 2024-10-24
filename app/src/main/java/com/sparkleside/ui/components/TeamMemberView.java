@@ -39,7 +39,7 @@ public class TeamMemberView extends RelativeLayout {
     private void init(Context context) {
         this.context = context;
         binding = LayoutTeamMemberViewBinding.inflate(LayoutInflater.from(context), this, true);
-        binding.getRoot().setOnClickListener(v -> {
+        getRoot().setOnClickListener(v -> {
             try {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(getURL()));
@@ -48,6 +48,10 @@ public class TeamMemberView extends RelativeLayout {
                 // nah
             }
         });
+    }
+
+    public View getRoot() {
+        return binding.getRoot();
     }
 
     public void setImageURL(String url) {
