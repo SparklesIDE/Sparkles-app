@@ -113,6 +113,7 @@ public class AboutActivity extends AppCompatActivity {
             String url5 = "https://github.com/trindadedev13";
             openURL(url5);
         });
+        
     }
     
     private void configureTeamMembers() {
@@ -141,7 +142,7 @@ public class AboutActivity extends AppCompatActivity {
             "Jaiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
-            false
+            true
         );
         TeamMember(
             "Alex",
