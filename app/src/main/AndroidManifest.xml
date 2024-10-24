@@ -36,5 +36,8 @@
         <activity
             android:name="com.sparkleside.ui.activities.AppearanceActivity"
             android:exported="true" />
+        <activity
+            android:name="com.sparkleside.ui.activities.TermuxActivityCompat"
+            android:exported="true" />
     </application>
 </manifest>
