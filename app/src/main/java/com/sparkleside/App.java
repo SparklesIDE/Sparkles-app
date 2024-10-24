@@ -9,6 +9,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        DynamicColors.applyToActivitiesIfAvailable(this);
+        /*
+         * disabled because syntaxspim is indecisive 😂
+         * DynamicColors.applyToActivitiesIfAvailable(this);
+         */
     }
 }
