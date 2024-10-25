@@ -8,7 +8,8 @@ android:orientation="vertical">
 <LinearLayout
   android:layout_height="wrap_content"
   android:layout_width="match_parent"
-  android:gravity="end">
+  android:gravity="end"
+  android:layout_weight="1">
   <com.google.android.material.button.MaterialButton
                          android:layout_height="wrap_content"
                          android:layout_width="wrap_content"
@@ -18,8 +19,9 @@ android:orientation="vertical">
     <com.google.android.material.navigation.NavigationView
             android:id="@+id/navview"
             android:layout_gravity="start"
-            android:layout_height="wrap_content"
+            android:layout_height="match_content"
             android:layout_width="match_parent"
-            app:menu="@menu/toolbox_menu"/>                      
+            app:menu="@menu/toolbox_menu"
+            android:background="@android:color/transparent"/>                      
   
 </FrameLayout>
