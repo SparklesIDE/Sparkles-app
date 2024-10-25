@@ -129,6 +129,26 @@ public class MainActivity extends BaseActivity {
             binding.editor.redo();
             return true;
         }
+        if (id == R.id.menu_tools) {
+        SideSheetDialog sideSheetDialog = new SideSheetDialog(requireContext());
+        sideSheetDialog.setContentView(R.layout.toolbox_sidesheet);
+        Window window = sideSheetDialog.getWindow();
+        if (window != null) {
+        window.setDimAmount(0.0f);
+        }
+        MaterialButton mb_close = sideSheetDialog.findViewById(R.id.mb_close);
+        if (mb_close != null) {
+        mb_close.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            sideSheetDialog.hide();
+        }
+    });
+}
+
+sideSheetDialog.show();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -138,4 +158,5 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
         this.binding = null;
     }
+    
 }
