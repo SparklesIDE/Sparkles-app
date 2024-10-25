@@ -10,7 +10,6 @@
         android:id="@+id/preference_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/edit_24px"
         android:layout_centerVertical="true"
         android:layout_marginEnd="64px"
         android:tint="?colorPrimary" />
