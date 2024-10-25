@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
             binding.settings.setTooltipText(getString(R.string.tooltip_settings));
         }
 
-        binding.fab.setOnClickListener(v -> 
-            Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show();
+        binding.fab.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show();
         });
         
-        binding.term.setOnClickListener(v ->
-            Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show();
+        binding.term.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show();
         });
 
         binding.settings.setOnClickListener(v -> {
@@ -66,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.editor.setTypefaceText(
-            Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf");
-        });
+        binding.editor.setTypefaceText(Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf"));
 
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         var scheme = binding.editor.getColorScheme();
