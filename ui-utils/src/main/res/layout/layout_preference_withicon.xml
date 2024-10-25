@@ -1,48 +1,34 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/preference"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:paddingHorizontal="24dp"
-    android:paddingVertical="20dp"
-    android:clickable="true"
-    android:background="?android:attr/selectableItemBackground">
+    android:paddingVertical="16dp"
+    android:background="@drawable/drawable_settings_item_background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/preference_icon"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="64px"
+        android:tint="?colorPrimary" />
 
-        <ImageView
-            android:id="@+id/preference_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/preference_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/preference_icon"
+        android:textSize="18sp"
+        android:textColor="?colorOnSurface"
+        android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/preference_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:paddingTop="0dp"
-                android:paddingBottom="4dp"
-                android:paddingStart="0dp"
-                android:textColor="?colorOnSurface"
-                android:paddingEnd="0dp"/>
-
-            <TextView
-                android:id="@+id/preference_description"
-                android:layout_width="wrap_content"
-                android:textSize="12sp"
-                android:textColor="?colorOnSurfaceVariant"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/preference_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_name"
+        android:layout_toRightOf="@id/preference_icon"
+        android:textSize="16sp"
+        android:textColor="?colorOnSurfaceVariant" />
+</RelativeLayout>
