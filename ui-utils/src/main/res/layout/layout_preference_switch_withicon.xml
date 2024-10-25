@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
         android:clickable="false"
         android:focusable="false" />
 </RelativeLayout>
