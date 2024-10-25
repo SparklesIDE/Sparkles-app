@@ -8,21 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.sparkleside.R;
+import com.sparkleside.preferences.Preferences;
 
 public class SplashActivity extends AppCompatActivity {
-     @Override
-     protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = getSharedPreferences("com.sparkleside.app_prefs", MODE_PRIVATE);
-        
-        if (sp.contains("theme")) {
-            switch (sp.getString("theme", "")) {
-                case "dark" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                case "light" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                case "auto" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-            }
-        }
-        
+        AppCompatDelegate.setDefaultNightMode(Preferences.Theme.getThemeMode(this));
+
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
