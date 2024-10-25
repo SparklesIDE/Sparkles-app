@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("stringfog")
 }
 android {
     namespace = "com.sparkleside"
@@ -80,4 +81,6 @@ dependencies {
     implementation(project(":ui-utils"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+
+    classpath("com.github.megatronking.stringfog:stringfog-plugin:2.0.1")
 }
