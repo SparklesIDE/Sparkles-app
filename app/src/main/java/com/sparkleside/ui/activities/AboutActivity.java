@@ -9,13 +9,13 @@ import android.widget.TextView;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.StringRes;
 	
 import com.bumptech.glide.Glide;
 
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
+import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.TeamMemberView;
 
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
@@ -28,13 +28,12 @@ import dev.trindadedev.ui_utils.UI;
 * @author Aquiles Trindade (trindadedev).
 */
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends BaseActivity {
     private ActivityAboutBinding binding;
     private Intent intent ;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         binding = ActivityAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

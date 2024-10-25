@@ -11,7 +11,6 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.content.res.Configuration;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -20,18 +19,18 @@ import com.google.android.material.color.MaterialColors;
 
 import com.sparkleside.R;
 import com.sparkleside.ui.components.ExpandableLayout;
+import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivityMainBinding;
 
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ActivityMainBinding binding;
     private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

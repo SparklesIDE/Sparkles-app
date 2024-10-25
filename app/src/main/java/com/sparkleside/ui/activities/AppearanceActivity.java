@@ -3,14 +3,14 @@ package com.sparkleside.ui.activities;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
+import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.preferences.Preferences;
 
-public class AppearanceActivity extends AppCompatActivity {
+public class AppearanceActivity extends BaseActivity {
 
     private ActivityAppearanceBinding binding;
 
@@ -28,8 +28,6 @@ public class AppearanceActivity extends AppCompatActivity {
             case AppCompatDelegate.MODE_NIGHT_UNSPECIFIED -> binding.linear5.check(R.id.materialbutton3);
             case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM -> binding.linear5.check(R.id.materialbutton3);
         }
-
-        EdgeToEdge.enable(this);
 
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
