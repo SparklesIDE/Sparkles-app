@@ -22,6 +22,7 @@ import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.google.android.material.sidesheet.SideSheetDialog;import android.view.Window;
+import com.google.android.material.button.MaterialButton;
 
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 
