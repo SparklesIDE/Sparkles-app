@@ -21,6 +21,7 @@ import com.sparkleside.R;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivityMainBinding;
+import com.google.android.material.sidesheet.SideSheetDialog;import android.view.Window
 
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 
@@ -136,17 +137,7 @@ public class MainActivity extends BaseActivity {
         if (window != null) {
         window.setDimAmount(0.0f);
         }
-        MaterialButton mb_close = sideSheetDialog.findViewById(R.id.mb_close);
-        if (mb_close != null) {
-        mb_close.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            sideSheetDialog.hide();
-        }
-    });
-}
-
-sideSheetDialog.show();
+        sideSheetDialog.show();
             return true;
         }
 
