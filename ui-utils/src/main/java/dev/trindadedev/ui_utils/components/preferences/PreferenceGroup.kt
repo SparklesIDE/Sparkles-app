@@ -1,4 +1,4 @@
-package dev.trindadedev.easyui.components.preferences
+package dev.trindadedev.ui_utils.preferences
 
 /*
  *  This file is part of Robok © 2024.
@@ -21,53 +21,49 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.PopupMenu
 import android.widget.TextView
 
-import dev.trindadedev.easyui.components.R
+import dev.trindadedev.ui_utils.R
 
-class PreferencePopup @JvmOverloads constructor(
+class PreferenceGroup @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    public val preferenceTitle: TextView
-    public val preferenceDescription: TextView
-    public val preference: View
-    val popupMenu: PopupMenu = PopupMenu(context, this)
+    public val preferenceGroupTitle: TextView
+    public val preferenceGroupContent: LinearLayout
+    public val preferenceGroup: View
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.layout_preference, this, true)
+        LayoutInflater.from(context).inflate(R.layout.layout_preference_group, this, true)
 
-        preferenceTitle = findViewById(R.id.preference_title)
-        preferenceDescription = findViewById(R.id.preference_description)
-        preference = findViewById(R.id.preference)
+        preferenceGroupTitle = findViewById(R.id.preference_group_title)
+        preferenceGroupContent = findViewById(R.id.preference_group_content)
+        preferenceGroup = findViewById(R.id.preference_group)
 
         context.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.PreferencePopup,
+            R.styleable.PreferenceGroup,
             0, 0
         ).apply {
             try {
-                val title = getString(R.styleable.PreferencePopup_preferencePopupTitle) ?: ""
-                val description = getString(R.styleable.PreferencePopup_preferencePopupDescription) ?: ""
-                preferenceTitle.text = title
-                preferenceDescription.text = description
+                val title = getString(R.styleable.PreferenceGroup_preferenceGroupTitle) ?: ""
+                preferenceGroupTitle.text = title
             } finally {
                 recycle()
             }
         }
-
-        preference.setOnClickListener { popupMenu.show() }
+        layoutParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 
-    fun addPopupMenuItem(itemTitle: String) {
-        popupMenu.menu.add(itemTitle)
+    fun addPreference(view: View) {
+        preferenceGroupContent.addView(view)
     }
 
-    fun setMenuListener(listener: PopupMenu.OnMenuItemClickListener) {
-        popupMenu.setOnMenuItemClickListener(listener)
+    override fun setOnClickListener(listener: OnClickListener?) {
+        preferenceGroup.setOnClickListener(listener)
     }
 }

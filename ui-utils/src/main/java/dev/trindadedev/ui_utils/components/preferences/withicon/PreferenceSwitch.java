@@ -1,4 +1,4 @@
-package dev.trindadedev.easyui.components.preferences.withicon;
+package dev.trindadedev.ui_utils.preferences.withicon;
 
 /*
  *  This file is part of Robok © 2024.
@@ -31,7 +31,7 @@ import androidx.annotation.DrawableRes;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 
-import dev.trindadedev.easyui.components.R;
+import dev.trindadedev.ui_utils.R;
 
 public class PreferenceSwitch extends RelativeLayout implements View.OnClickListener {
 

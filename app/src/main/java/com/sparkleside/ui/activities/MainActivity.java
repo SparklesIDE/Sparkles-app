@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
             scheme.setColor(EditorColorScheme.OPERATOR, 0xFFDDE5DB);
         } else {
             scheme.setColor(EditorColorScheme.WHOLE_BACKGROUND,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.CURRENT_LINE,
-                ContextCompat.getColor(this, R.color.md_theme_surfaceDim));
+                surface);
             scheme.setColor(EditorColorScheme.LINE_NUMBER_PANEL,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.LINE_NUMBER_BACKGROUND,
-                ContextCompat.getColor(this, R.color.md_theme_surface));
+                surface);
             scheme.setColor(EditorColorScheme.KEYWORD, 0xFF42BE6A);
             scheme.setColor(EditorColorScheme.FUNCTION_NAME, 0xFF62DE8A);
             scheme.setColor(EditorColorScheme.TEXT_NORMAL, 0xFF629269);

@@ -1,4 +1,4 @@
-package dev.trindadedev.easyui.components.dialogs;
+package dev.trindadedev.ui_utils.dialogs;
 
 /*
  *  This file is part of Robok © 2024.
@@ -28,7 +28,7 @@ import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
 
-import dev.trindadedev.easyui.components.R;
+import dev.trindadedev.ui_utils.R;
 
 public class PermissionDialog extends Dialog {
 

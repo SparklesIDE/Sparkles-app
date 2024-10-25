@@ -1,4 +1,4 @@
-package dev.trindadedev.easyui.components.preferences;
+package dev.trindadedev.ui_utils.preferences;
 
 /*
  *  This file is part of Robok © 2024.
@@ -26,7 +26,7 @@ import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import dev.trindadedev.easyui.components.R;
+import dev.trindadedev.ui_utils.R;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 

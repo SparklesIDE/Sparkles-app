@@ -21,12 +21,4 @@
         <attr name="preferenceSwitchDefaultValue" format="boolean" />
         <attr name="preferenceSwitchIcon" format="reference" />
     </declare-styleable>
-    
-    <declare-styleable name="TInput">
-        <attr name="text" format="string" />
-        <attr name="hint" format="string" />
-        <attr name="placeholderText" format="string" />
-        <attr name="startIconDrawable" format="reference" />
-    </declare-styleable>
-    
 </resources>

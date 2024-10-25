@@ -59,11 +59,11 @@ dependencies {
     implementation("androidx.activity:activity:1.6.0-alpha05")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation("com.blankj:utilcodex:1.31.1")
-    implementation("dev.chrisbanes.insetter:insetter:0.6.1")
     
     implementation(project(":terminalview"))
     implementation(project(":peekandpop"))
     implementation(project(":maskable"))
+    implementation(project(":ui-utils"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
 }

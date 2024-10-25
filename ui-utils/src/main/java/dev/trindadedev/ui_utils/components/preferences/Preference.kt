@@ -1,4 +1,4 @@
-package dev.trindadedev.easyui.components.preferences.withicon
+package dev.trindadedev.ui_utils.preferences
 
 /*
  *  This file is part of Robok © 2024.
@@ -22,13 +22,11 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.ImageView
 
-import dev.trindadedev.easyui.components.R
+import dev.trindadedev.ui_utils.R
 
-class PreferencePopup @JvmOverloads constructor(
+class Preference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -36,49 +34,40 @@ class PreferencePopup @JvmOverloads constructor(
 
     public val preferenceTitle: TextView
     public val preferenceDescription: TextView
-    public val preferenceIcon: ImageView
     public val preference: View
-    val popupMenu: PopupMenu = PopupMenu(context, this)
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.layout_preference_withicon, this, true)
+        LayoutInflater.from(context).inflate(R.layout.layout_preference, this, true)
 
         preferenceTitle = findViewById(R.id.preference_title)
         preferenceDescription = findViewById(R.id.preference_description)
-        preferenceIcon = findViewById(R.id.preference_icon)
         preference = findViewById(R.id.preference)
 
         context.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.PreferencePopup,
+            R.styleable.Preference,
             0, 0
         ).apply {
             try {
-                val title = getString(R.styleable.PreferencePopup_preferencePopupTitle) ?: ""
-                val description = getString(R.styleable.PreferencePopup_preferencePopupDescription) ?: ""
-                val iconResId = getResourceId(R.styleable.PreferencePopup_preferencePopupIcon, 0)
-                
+                val title = getString(R.styleable.Preference_preferenceTitle) ?: ""
+                val description = getString(R.styleable.Preference_preferenceDescription) ?: ""
                 preferenceTitle.text = title
                 preferenceDescription.text = description
-                
-                if (iconResId != 0) {
-                    preferenceIcon.setImageResource(iconResId)
-                } else {
-                    preferenceIcon.visibility = View.GONE
-                }
             } finally {
                 recycle()
             }
         }
-
-        preference.setOnClickListener { popupMenu.show() }
     }
 
-    fun addPopupMenuItem(itemTitle: String) {
-        popupMenu.menu.add(itemTitle)
+    fun setPreferenceClickListener(listenerClick: View.OnClickListener) {
+        preference.setOnClickListener(listenerClick)
     }
-
-    fun setMenuListener(listener: PopupMenu.OnMenuItemClickListener) {
-        popupMenu.setOnMenuItemClickListener(listener)
+    
+    fun setTitle(value: String) {
+         preferenceTitle.text = value
+    }
+    
+    fun setDescription(value: String) {
+         preferenceDescription.text = value
     }
 }
