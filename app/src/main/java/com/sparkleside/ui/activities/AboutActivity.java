@@ -97,28 +97,23 @@ public class AboutActivity extends AppCompatActivity {
     
     private void configureLinks() {
         binding.tg.setOnClickListener(v->{
-            String url = "https://www.telegram.me/sparkleside";
-            openURL(url);
+            openURL("https://www.telegram.me/sparkleside");
         });
         
         binding.github.setOnClickListener(v->{
-            String url2 = "https://github.com/sparkleside/sparkles-app";
-            openURL(url2);
+            openURL("https://github.com/sparkleside/sparkles-app");
         });
         
         binding.hanzo.setOnClickListener(v->{
-            String url3 = "https://github.com/yamenher";
-            openURL(url3);
+            openURL("https://github.com/yamenher");
         });
         
         binding.syn.setOnClickListener(v->{
-            String url4 = "https://github.com/syntaxspin";
-            openURL(url4);
+            openURL("https://github.com/syntaxspin");
         });
         
         binding.trindade.setOnClickListener(v->{
-            String url5 = "https://github.com/trindadedev13";
-            openURL(url5);
+            openURL("https://github.com/trindadedev13");
         });
         
     }
@@ -128,7 +123,7 @@ public class AboutActivity extends AppCompatActivity {
             "Hanzo",
             Role.DEVELOPER,
             "https://github.com/HanzoDev1375",
-	    "Ghost",
+            "Ghost",
             true
         );
         
@@ -136,7 +131,7 @@ public class AboutActivity extends AppCompatActivity {
             "Thiarley Rocha",
             Role.DEVELOPER,
             "https://github.com/thdev-only",
-	    "lets play minecraft?",
+            "lets play minecraft?",
             true
         );
         
@@ -144,28 +139,28 @@ public class AboutActivity extends AppCompatActivity {
             "Rohit Kushvaha",
             Role.DEVELOPER,
             "https://github.com/RohitKushvaha01",
-	    "Idk",
+            "Idk",
             true
         );
         TeamMember(
-	    "NEOAPPS",
-	    Role.DEVELOPER,
-	    "https://github.com/neoapps-dev",
-	    "i use arch, btw",
-	    true
-	);
+	        "NEOAPPS",
+	        Role.DEVELOPER,
+	        "https://github.com/neoapps-dev",
+	        "i use arch, btw",
+	        true
+	    );
         TeamMember(
             "Jaiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
-	    "Happy is the man that finds wisdom, and the man that gets understanding. \n \n Proverbs 3:13",
+	        "Happy is the man that finds wisdom, and the man that gets understanding. \n \n Proverbs 3:13",
             true
         );
         TeamMember(
             "Alex",
             Role.TRANSLATOR,
             "https://github.com/paxsenix0",
-	    "PaxSenix bootlegger",
+	        "PaxSenix bootlegger",
             false
         );
     }
