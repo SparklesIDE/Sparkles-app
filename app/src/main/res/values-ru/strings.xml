@@ -25,6 +25,6 @@
     <string name="yamenher_phrase">Создатель крутых утилит</string>
     <string name="trindadedev_phrase">Я использую Jetpack Compose, btw</string>
     <string name="monet_title">Использовать динамические цвета в Sparkles</string>
-    <string name="monet_desc">Использовать цветовую па��итру вашего устройства вместо зеленого цвета Sparkles</string>
+    <string name="monet_desc">Использовать цветовую палитру вашего устройства вместо зеленого цвета Sparkles</string>
     <string name="need_restart">Перезапуск необходим</string>
 </resources>
