@@ -9,12 +9,12 @@ android:orientation="vertical">
   android:layout_height="wrap_content"
   android:layout_width="match_parent"
   android:gravity="end"
-  android:padding="8dp"
   android:layout_weight="1">
   <com.google.android.material.button.MaterialButton
                          android:layout_height="wrap_content"
                          android:layout_width="wrap_content"
                          android:textSize="18sp"
+                         android:margin="16dp"
                          android:id="@+id/materialbutton"
                          android:text="Close" /> </LinearLayout>
     <com.google.android.material.navigation.NavigationView
