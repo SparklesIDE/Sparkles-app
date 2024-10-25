@@ -72,19 +72,19 @@ public class AboutActivity extends BaseActivity {
         peekAndPop(
             "SyntaxSpin",
             "https://github.com/syntaxspin.png",
-            "A Material You Lover Android/Web Developer",
+            getString(R.string.syntaxspin_phrase),
             binding.imgSyn
         );
         peekAndPop(
             "Yamen",
             "https://github.com/YamenHer.png",
-            "A Kool Utilities maker",
+            getString(R.string.yamenher_phrase),
             binding.imgYamen
         );
         peekAndPop(
             "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
-            "I use Jetpack Compose, btw",
+            getString(R.string.trindadedev_phrase),
             binding.imgTrindade
         );
     }

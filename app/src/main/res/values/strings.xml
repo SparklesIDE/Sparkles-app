@@ -21,4 +21,7 @@
     <string name="tooltip_terminal">Open terminal</string>
     <string name="tooltip_new_file">New File</string>
     <string name="tooltip_search">Search in code</string>
+    <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string> 
+    <string name="yamenher_phrase">A Kool Utilities maker</string>
+    <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
 </resources>
