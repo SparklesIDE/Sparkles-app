@@ -24,4 +24,7 @@
     <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string> 
     <string name="yamenher_phrase">A Kool Utilities maker</string>
     <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
+    <string name="monet_title">Use Dynamic Colors in Sparkles</string>
+    <string name="monet_desc">Use your device color pallet instead Sparkles Green</string>
+    <string name="need_restart">Need Restart</string>
 </resources>

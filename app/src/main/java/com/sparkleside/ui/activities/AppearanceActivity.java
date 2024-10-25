@@ -2,6 +2,7 @@ package com.sparkleside.ui.activities;
 
 import android.os.Bundle;
 
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -9,6 +10,7 @@ import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.preferences.Preferences;
+import dev.trindadedev.ui_utils.preferences.withicon.PreferenceSwitch;
 
 public class AppearanceActivity extends BaseActivity {
 
@@ -45,5 +47,21 @@ public class AppearanceActivity extends BaseActivity {
         binding.materialbutton3.setOnClickListener(v -> {
             Preferences.Theme.setThemeMode(this, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         });
+        
+        binding.linear1.addView(getMonetPreference());
     }
+    
+    private PreferenceSwitch getMonetPreference() {
+        PreferenceSwitch pref = new PreferenceSwitch(this);
+        pref.setIcon(R.drawable.ic_pallete);
+        pref.setTitle(getString(R.string.monet_title));
+        pref.setDescription(getString(R.string.monet_desc));
+        pref.setValue(Preferences.Theme.isMonetEnable(this));
+        pref.setSwitchChangedListener((c, isChecked) -> {
+            Preferences.Theme.setMonetEnable(this, isChecked);
+                Toast.makeText(this, getString(R.string.need_restart), 4000).show();
+        });
+        return pref;
+    }
+    
 }
