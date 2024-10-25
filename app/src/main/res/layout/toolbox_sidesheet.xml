@@ -14,7 +14,7 @@ android:orientation="vertical">
                          android:layout_height="wrap_content"
                          android:layout_width="wrap_content"
                          android:textSize="18sp"
-                         android:margin="16dp"
+                         android:layout_margin="16dp"
                          android:id="@+id/materialbutton"
                          android:text="Close" /> </LinearLayout>
     <com.google.android.material.navigation.NavigationView
