@@ -90,7 +90,7 @@ public class AboutActivity extends AppCompatActivity {
         peekAndPop(
             "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
-            "I use Compose btw",
+            "I use Jetpack Compose, btw",
             binding.imgTrindade
         );
     }
