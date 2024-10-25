@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparkles IDE</string>
+    <string name="com_word_settings">Paramètres</string>
+    <string name="set_main">Paramètres de l&#39;Application</string>
+    <string name="set_main_desc">Quelques paramètres de présentation de Sparkles</string>
+    <string name="common_word_allow">Autoriser</string>
+    <string name="common_word_deny">Refuser</string>
+    <string name="set_editor">Éditeur de Code</string>
+    <string name="set_editor_desc">Modifier le style de l&#39;Éditeur</string>
+    <string name="set_terminal">Terminal</string>
+    <string name="set_terminal_desc">Personnaliser le Terminal</string>
+    <string name="set_lib">Logiciels Tiers</string>
+    <string name="set_lib_desc">Bibliothèques et Logiciels utilisés dans Sparkles</string>
+    <string name="com_word_about">À propos</string>
+    <string name="set_about_desc">À propos de Sparkles IDE</string>
+    <string name="about_team">Équipe</string>
+    <string name="about_tag_translator">Traducteur</string>
+    <string name="about_tag_developer">Développeur</string>
+    <string name="tooltip_settings">Paramètres</string>
+    <string name="tooltip_terminal">Ouvrir le terminal</string>
+    <string name="tooltip_new_file">Nouveau Fichier</string>
+    <string name="tooltip_search">Rechercher dans le code</string>
+    <string name="syntaxspin_phrase">Un développeur Android/Web passionné par Material You</string>
+    <string name="yamenher_phrase">Un créateur d&#39;utilitaires kool</string>
+    <string name="trindadedev_phrase">Je utilise Jetpack Compose, btw</string>
+    <string name="monet_title">Utiliser des couleurs dynamiques dans Sparkles</string>
+    <string name="monet_desc">Utiliser la palette de couleurs de votre appareil à la place du vert de Sparkles</string>
+    <string name="need_restart">Redémarrage nécessaire</string>
+</resources>
