@@ -41,49 +41,8 @@
              android:layout_height="match_parent"
              android:layout_width="match_parent"
              android:padding="20dp"
-             android:orientation="vertical">
-
-            <dev.trindadedev.ui_utils.preferences.withicon.Preference
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:preferenceIcon="@drawable/android_24px"
-                 app:preferenceDescription="@string/set_main_desc"
-                 app:preferenceTitle="@string/set_main"
-                 android:id="@+id/main" />
-
-            <dev.trindadedev.ui_utils.preferences.withicon.Preference
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:preferenceIcon="@drawable/edit_24px"
-                 app:preferenceDescription="@string/set_editor_desc"
-                 app:preferenceTitle="@string/set_editor"
-                 android:id="@+id/editor" />
-
-            <dev.trindadedev.ui_utils.preferences.withicon.Preference
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:preferenceIcon="@drawable/terminal_24px"
-                 app:preferenceDescription="@string/set_terminal_desc"
-                 app:preferenceTitle="@string/set_terminal"
-                 android:id="@+id/terminal" />
-
-            <dev.trindadedev.ui_utils.preferences.withicon.Preference
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:preferenceIcon="@drawable/book_24px"
-                 app:preferenceDescription="@string/set_lib_desc"
-                 app:preferenceTitle="@string/set_lib"
-                 android:id="@+id/lib" />
-
-            <dev.trindadedev.ui_utils.preferences.withicon.Preference
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 app:preferenceIcon="@drawable/info_24px"
-                 app:preferenceDescription="@string/set_about_desc"
-                 app:preferenceTitle="@string/com_word_about"
-                 android:id="@+id/about" />
-
-        </LinearLayout>
+             android:id="@+id/content"
+             android:orientation="vertical" />
 
     </androidx.core.widget.NestedScrollView>
 

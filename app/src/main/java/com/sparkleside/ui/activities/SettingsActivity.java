@@ -3,10 +3,14 @@ package com.sparkleside.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.View;
 import androidx.activity.EdgeToEdge;
 
+import com.sparkleside.R;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivitySettingsBinding;
+
+import dev.trindadedev.ui_utils.preferences.withicon.Preference;
 
 public class SettingsActivity extends BaseActivity {
 
@@ -23,15 +27,27 @@ public class SettingsActivity extends BaseActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         binding.toolbar.setNavigationOnClickListener(v -> super.onBackPressed());
+        
+        createPreferences();
+    }
+    
+    private void createPreferences() {
+            binding.content.addView(createPreference(R.string.set_main, R.string.set_main_desc, R.drawable.android_24px));
+            binding.content.addView(createPreference(R.string.set_editor, R.string.set_editor_desc, R.drawable.edit_24px));
+            binding.content.addView(createPreference(R.string.set_terminal,R.string.set_terminal_desc,R.drawable.terminal_24px));
+            binding.content.addView(createPreference(R.string.set_lib, R.string.set_lib_desc, R.drawable.book_24px));
+            binding.content.addView(createPreference(R.string.com_word_about,R.string.set_about_desc,R.drawable.info_24px));
+    }
+    
+    private Preference createPreference(int titleResId, int descriptionResId, int iconResId) {
+            Preference preference = new Preference(this);
 
-        binding.about.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
-            startActivity(intent);
-        });
+            preference.setTitle(getString(titleResId));
+            preference.setDescription(getString(descriptionResId));
+            preference.setIcon(iconResId);
 
-        binding.main.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
-            startActivity(intent);
-        });
+            preference.setOnClickListener(v -> {});
+
+            return preference;
     }
 }
