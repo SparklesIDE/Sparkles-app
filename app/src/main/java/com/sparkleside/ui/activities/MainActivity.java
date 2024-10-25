@@ -137,6 +137,12 @@ public class MainActivity extends BaseActivity {
         if (window != null) {
         window.setDimAmount(0.0f);
         }
+        MaterialButton materialbutton = sideSheetDialog.findViewById(R.id.materialbutton);
+        if (mb_close != null) {
+        materialbutton.setOnClickListener(v-> {
+            sideSheetDialog.hide();
+        );}
+        }
         sideSheetDialog.show();
             return true;
         }
