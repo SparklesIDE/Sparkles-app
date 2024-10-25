@@ -18,7 +18,7 @@ android {
         vectorDrawables { 
             useSupportLibrary = true
         }
-        resConfigs("fr", "it")
+        resConfigs("ar-rTN", "es-rES", "in-rID", "night", "pt-rBR", "pt-rPT", "zh-rCN")
     }
     
     compileOptions {
