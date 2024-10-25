@@ -10,12 +10,12 @@ with Supporting full languages & Material Design 3</p>
 </div>
 
 ## Features &amp; Todo
-- [x] Materialzing the app (make it with latest material 3 design)
-- [x] Good Code Editor Customizations
+- [ ] Good Code Editor Customizations
 - [ ] Python Support
 - [ ] Java & Kotlin Support
 - [ ] Web support ( HTML JavaScript CSS)
-- [ ] Good Terminal from Termux
+- [ ] Terminal Activity
+
 ## How to Contribute
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
 
