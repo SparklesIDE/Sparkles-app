@@ -22,8 +22,8 @@ with Supporting full languages & Material Design 3</p>
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contributors 
-<a href="https://github.com/SparklesIDE/sparkles-app/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SparklesIDE/sparkles-app" />
+<a href="https://github.com/SparklesIDE/Sparkles-App/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SparklesIDE/Sparkles-App" />
 </a>
 
 <div style="text-align: center">
