@@ -131,7 +131,7 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         if (id == R.id.menu_tools) {
-        SideSheetDialog sideSheetDialog = new SideSheetDialog(requireContext());
+        SideSheetDialog sideSheetDialog = new SideSheetDialog(this);
         sideSheetDialog.setContentView(R.layout.toolbox_sidesheet);
         Window window = sideSheetDialog.getWindow();
         if (window != null) {
