@@ -17,7 +17,6 @@ dependencyResolutionManagement {
 rootProject.name = "Sparkles-App"
 
 include(":app")
-include(":terminalview")
 include(":peekandpop")
 include(":maskable")
 include(":ui-utils")

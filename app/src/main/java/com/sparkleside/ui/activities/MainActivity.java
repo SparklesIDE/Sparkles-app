@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
             return WindowInsetsCompat.CONSUMED;
         });
 
-        binding.term.setOnClickListener(it -> 
-            startActivity(new Intent(getApplicationContext(), TermuxActivityCompat.class))
+        binding.term.setOnClickListener(v ->
+            Toast.makeText(this, "TODO", 4000).show();
         );
     }
 
