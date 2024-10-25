@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparkles IDE</string>
+    <string name="com_word_settings">Настройки</string>
+    <string name="set_main">Настройки приложения</string>
+    <string name="set_main_desc">Некоторые настройки отображения Sparkles</string>
+    <string name="common_word_allow">Разрешить</string>
+    <string name="common_word_deny">Запретить</string>
+    <string name="set_editor">Редактор кода</string>
+    <string name="set_editor_desc">Изменить стиль редактора</string>
+    <string name="set_terminal">Терминал</string>
+    <string name="set_terminal_desc">Настроить терминал</string>
+    <string name="set_lib">Программы сторонних разработчиков</string>
+    <string name="set_lib_desc">Библиотеки и программы, используемые в Sparkles</string>
+    <string name="com_word_about">О программе</string>
+    <string name="set_about_desc">О Sparkles IDE</string>
+    <string name="about_team">Команда</string>
+    <string name="about_tag_translator">Переводчик</string>
+    <string name="about_tag_developer">Разработчик</string>
+    <string name="tooltip_settings">Настройки</string>
+    <string name="tooltip_terminal">Открыть терминал</string>
+    <string name="tooltip_new_file">Создать новый файл</string>
+    <string name="tooltip_search">Поиск в коде</string>
+    <string name="syntaxspin_phrase">Разработчик Android/Web, любящий Material You</string>
+    <string name="yamenher_phrase">Создатель крутых утилит</string>
+    <string name="trindadedev_phrase">Я использую Jetpack Compose, btw</string>
+    <string name="monet_title">Использовать динамические цвета в Sparkles</string>
+    <string name="monet_desc">Использовать цвета вашего устройства вместо зеленого цвета Sparkles</string>
+    <string name="need_restart">Требуется перезагрузка</string>
+</resources>
