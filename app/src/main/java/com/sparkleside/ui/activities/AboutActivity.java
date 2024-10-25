@@ -158,7 +158,8 @@ public class AboutActivity extends AppCompatActivity {
             "Jaiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
-	    "Crazy brazilian",
+	    "Happy is the man that finds wisdom, and the man that gets understanding. \n \n
+        Proverbs 3:13",
             true
         );
         TeamMember(
