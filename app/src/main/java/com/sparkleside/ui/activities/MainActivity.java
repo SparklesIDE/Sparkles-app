@@ -54,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         binding.fab.setOnClickListener(v -> 
-            Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show()
-        );
+            Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show();
+        });
+        
+        binding.term.setOnClickListener(v ->
+            Toast.makeText(MainActivity.this, "ComingSoon", Toast.LENGTH_SHORT).show();
+        });
 
         binding.settings.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
@@ -63,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.editor.setTypefaceText(
-            Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf")
-        );
+            Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf");
+        });
 
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         var scheme = binding.editor.getColorScheme();
@@ -104,10 +108,6 @@ public class MainActivity extends AppCompatActivity {
             v.setLayoutParams(mlp);
             return WindowInsetsCompat.CONSUMED;
         });
-
-        binding.term.setOnClickListener(v ->
-            Toast.makeText(this, "TODO", 4000).show();
-        );
     }
 
     @Override
