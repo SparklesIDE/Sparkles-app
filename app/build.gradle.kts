@@ -26,13 +26,6 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-
     buildFeatures {
         viewBinding = true
     }
@@ -51,6 +44,14 @@ android {
             storePassword = "testkey"
             keyAlias = "testkey"
             keyPassword = "testkey"
+        }
+    }
+    
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
