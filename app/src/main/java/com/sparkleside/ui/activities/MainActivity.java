@@ -141,7 +141,7 @@ public class MainActivity extends BaseActivity {
         if (mb_close != null) {
         materialbutton.setOnClickListener(v-> {
             sideSheetDialog.hide();
-        );}
+        });
         }
         sideSheetDialog.show();
             return true;
