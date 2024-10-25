@@ -6,15 +6,12 @@ android {
     namespace = "com.sparkleside"
     compileSdk = 34
     
-    
     defaultConfig {
         applicationId = "com.sparkleside"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        
-        
       
         vectorDrawables { 
             useSupportLibrary = true
@@ -36,10 +33,17 @@ android {
 
     buildFeatures {
         viewBinding = true
-        
     }
-
+    
     signingConfigs {
+        create("release") {
+            // temporary keystore
+            // todo: sign in actions with secrets
+            storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
+            storePassword = "release_temp"
+            keyAlias = "release_temp"
+            keyPassword = "release_temp"
+        }
         getByName("debug") {
             storeFile = file(layout.buildDirectory.dir("../testkey.keystore"))
             storePassword = "testkey"

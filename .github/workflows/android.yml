@@ -27,8 +27,8 @@ jobs:
           chat_id: -1002355760766
           topic_id: 11
           
-  build_debug_apk:
-    name: Build App Debug APK
+  build_release_apk:
+    name: Build App Release APK
     runs-on: ubuntu-latest
 
     steps:
@@ -49,19 +49,19 @@ jobs:
         uses: gradle/actions/wrapper-validation@v4
 
       - name: Build with Gradle
-        id: gradle_build_debug
-        run: ./gradlew assembleDebug 
+        id: gradle_build_release
+        run: ./gradlew assembleRelease 
 
-      - name: Upload debug apk
+      - name: Upload release apk
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: app-release
+          path: app/build/outputs/apk/release/app-release.apk
           
-  send_debug_apk:
-    name: Send Debug APK
+  send_release_apk:
+    name: Send Release APK
     runs-on: ubuntu-latest
-    needs: build_debug_apk
+    needs: build_release_apk
     
     steps:
       - name: Check out repository
@@ -69,10 +69,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           
-      - name: Download debug apk
+      - name: Download release apk
         uses: actions/download-artifact@v4
         with:
-          name: app-debug
+          name: app-release
           
       - name: List repo contents
         run: ls
@@ -85,15 +85,15 @@ jobs:
           
       - name: Rename file 
         run: |
-          mv app-debug.apk sparkles-app-debug.apk
+          mv app-release.apk sparkles-app-release.apk
           ls 
 
-      - name: Send APK to Debug Channel Telegram with Topic ID
+      - name: Send APK to Release Channel Telegram with Topic ID
         if: success()
         continue-on-error: true
         run: |
           curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument" \
             -F chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
             -F message_thread_id="11" \
-            -F document=@"sparkles-app-debug.apk" \
+            -F document=@"sparkles-app-release.apk" \
             -F caption="${{ github.event.head_commit.message }} by ${{ github.actor }}"
