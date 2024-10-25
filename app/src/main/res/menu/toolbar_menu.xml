@@ -14,11 +14,6 @@
     android:icon="@drawable/redo_24px"
     android:title="Redo"/>
      <item
-    android:id="@+id/menu_open"
-    app:showAsAction="always"
-    android:icon="@drawable/folder_24px"
-    android:title="Open"/>
-     <item
     android:id="@+id/menu_tools"
     app:showAsAction="always"
     android:icon="@drawable/construction_24px"
