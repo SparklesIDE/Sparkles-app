@@ -22,7 +22,6 @@ import com.peekandpop.shalskar.peekandpop.PeekAndPop;
 
 import dev.trindadedev.ui_utils.UI;
 
-import java.net.URI;
 
 /*
 * A Screen with info about app

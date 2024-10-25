@@ -32,6 +32,7 @@ public class Preferences {
         }
 
         public static void setThemeMode(Context ctx, int themeMode) {
+            AppCompatDelegate.setDefaultNightMode(themeMode);
             var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
             var spEditor = sp.edit();
             spEditor.putInt(THEME_MODE_KEY, themeMode);
