@@ -1,27 +1,27 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
+// app/build.gradle.kts
 plugins {
     id("com.android.application")
-    id("kotlin-android")
-    id("stringfog")
+    id("org.jetbrains.kotlin.android")
+    id("com.github.megatronking.stringfog") version "2.0.1"
 }
+
 android {
     namespace = "com.sparkleside"
     compileSdk = 34
-    
+
     defaultConfig {
         applicationId = "com.sparkleside"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-      
-        vectorDrawables { 
+
+        vectorDrawables {
             useSupportLibrary = true
         }
         resConfigs("ar-rTN", "es-rES", "in-rID", "night", "pt-rBR", "pt-rPT", "zh-rCN")
     }
-    
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -30,13 +30,11 @@ android {
 
     buildFeatures {
         viewBinding = true
-        buildConfig= true
+        buildConfig = true
     }
-    
+
     signingConfigs {
         create("release") {
-            // temporary keystore
-            // todo: sign in actions with secrets
             storeFile = file(layout.buildDirectory.dir("../release_key.jks"))
             storePassword = "release_temp"
             keyAlias = "release_temp"
@@ -49,7 +47,7 @@ android {
             keyPassword = "testkey"
         }
     }
-    
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -57,6 +55,13 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
     }
+}
+
+// Configuração do StringFog
+stringfog {
+    implementation("com.github.megatronking.stringfog:stringfog-lib:2.0.1")
+    mode = "base64" // type
+    key = "spark2048" // key
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
@@ -75,12 +80,10 @@ dependencies {
     implementation("androidx.activity:activity:1.6.0-alpha05")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation("com.blankj:utilcodex:1.31.1")
-    
+
     implementation(project(":peekandpop"))
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
-    
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
 
-    classpath("com.github.megatronking.stringfog:stringfog-plugin:2.0.1")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
 }
