@@ -17,4 +17,14 @@
     <string name="about_team">Equipa</string>
     <string name="about_tag_translator">Tradutor</string>
     <string name="about_tag_developer">Desenvolvedor</string>
+    <string name="tooltip_settings">Definições</string>
+    <string name="tooltip_terminal">Abrir terminal</string>
+    <string name="tooltip_new_file">Novo ficheiro</string>
+    <string name="tooltip_search">Pesquisar no código</string>
+    <string name="syntaxspin_phrase">Um material que adora, Android/Web developer</string>
+    <string name="yamenher_phrase">Um criador de Kool Utilities</string>
+    <string name="trindadedev_phrase">Eu uso o Jetpack Compose, já agora</string>
+    <string name="monet_title">Utilizar cores dinâmicas nos brilhos</string>
+    <string name="monet_desc">Utilize a paleta de cores do seu dispositivo em vez do Sparkles Green</string>
+    <string name="need_restart">Necessita de reiniciar</string>
 </resources>
