@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sparkles IDE</string>
-    <string name="com_word_settings">Paramètres</string>
-    <string name="set_main">Paramètres de l’application</string> 
-    <string name="set_main_desc">Certains des paramètres d’apparence de Sparkles</string> 
+    <string name="com_word_settings">Parametres</string>
+    <string name="set_main">Parametres de l´application</string> 
+    <string name="set_main_desc">Certains des parametres d´apparence de Sparkles</string> 
     <string name="common_word_allow">Autoriser</string>
     <string name="common_word_deny">Refuser</string>
-    <string name="set_editor">Éditeur de code</string>
-    <string name="set_editor_desc">Modifier le style de l’éditeur</string> 
+    <string name="set_editor">Editeur de code</string>
+    <string name="set_editor_desc">Modifier le style de l´editeur</string> 
     <string name="set_terminal">Terminal</string>
     <string name="set_terminal_desc">Styliser le terminal</string>
     <string name="set_lib">Logiciels tiers</string>
-    <string name="set_lib_desc">Bibliothèques et logiciels utilisés dans Sparkles</string>
-    <string name="com_word_about">À propos</string>
-    <string name="set_about_desc">À propos de Sparkles IDE</string>
-    <string name="about_team">Équipe</string>
+    <string name="set_lib_desc">Bibliotheques et logiciels utilises dans Sparkles</string>
+    <string name="com_word_about">A propos</string>
+    <string name="set_about_desc">A propos de Sparkles IDE</string>
+    <string name="about_team">Equipe</string>
     <string name="about_tag_translator">Traducteur</string>
-    <string name="about_tag_developer">Développeur</string>
-    <string name="tooltip_settings">Paramètres</string>
+    <string name="about_tag_developer">Developpeur</string>
+    <string name="tooltip_settings">Parametres</string>
     <string name="tooltip_terminal">Ouvrir le terminal</string>
     <string name="tooltip_new_file">Nouveau fichier</string>
     <string name="tooltip_search">Rechercher dans le code</string>
-    <string name="syntaxspin_phrase">Un développeur Android/Web amoureux de Material You</string>
-    <string name="yamenher_phrase">Un créateur d'utilitaires Kool</string>
-    <string name="trindadedev_phrase">J'utilise Jetpack Compose, d'ailleurs</string>
+    <string name="syntaxspin_phrase">Un developpeur Android/Web amoureux de Material You</string>
+    <string name="yamenher_phrase">Un createur d´utilitaires Kool</string>
+    <string name="trindadedev_phrase">J´utilise Jetpack Compose, d´ailleurs</string>
     <string name="monet_title">Utiliser des couleurs dynamiques dans Sparkles</string>
-    <string name="monet_desc">Utilisez plutôt la palette de couleurs de votre appareil Sparkles Green</string>
-    <string name="need_restart">Besoin d'un redémarrage</string>
+    <string name="monet_desc">Utilisez plutot la palette de couleurs de votre appareil Sparkles Green</string>
+    <string name="need_restart">Besoin d´un redemarrage</string>
 </resources>
