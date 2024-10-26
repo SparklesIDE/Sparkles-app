@@ -17,4 +17,14 @@
     <string name="about_team">Équipe</string>
     <string name="about_tag_translator">Traducteur</string>
     <string name="about_tag_developer">Développeur</string>
+    <string name="tooltip_settings">Paramètres</string>
+    <string name="tooltip_terminal">Ouvrir le terminal</string>
+    <string name="tooltip_new_file">Nouveau fichier</string>
+    <string name="tooltip_search">Rechercher dans le code</string>
+    <string name="syntaxspin_phrase">Un développeur Android/Web amoureux de Material You</string>
+    <string name="yamenher_phrase">Un créateur d'utilitaires Kool</string>
+    <string name="trindadedev_phrase">J'utilise Jetpack Compose, d'ailleurs</string>
+    <string name="monet_title">Utiliser des couleurs dynamiques dans Sparkles</string>
+    <string name="monet_desc">Utilisez plutôt la palette de couleurs de votre appareil Sparkles Green</string>
+    <string name="need_restart">Besoin d'un redémarrage</string>
 </resources>

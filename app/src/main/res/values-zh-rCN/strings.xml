@@ -17,4 +17,14 @@
     <string name="about_team">团队</string>
     <string name="about_tag_translator">翻译者</string>
     <string name="about_tag_developer">开发者</string>
+    <string name="tooltip_settings">设置</string>
+    <string name="tooltip_terminal">打开终端</string>
+    <string name="tooltip_new_file">新文件</string>
+    <string name="tooltip_search">在代码中搜索</string>
+    <string name="syntaxspin_phrase">Material You Love Android/Web 开发人员</string>
+    <string name="yamenher_phrase">Kool Utilities 制造商</string>
+    <string name="trindadedev_phrase">顺便说一句，我使用 Jetpack Compose</string>
+    <string name="monet_title">在 Sparkles 中使用动态颜色</string>
+    <string name="monet_desc">改用设备调色板 Sparkles Green</string>
+    <string name="need_restart">需要重启</string>
 </resources>
