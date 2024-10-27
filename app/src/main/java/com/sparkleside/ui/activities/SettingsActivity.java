@@ -32,7 +32,7 @@ public class SettingsActivity extends BaseActivity {
             Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
             binding.about.setTransitionName("xy");
             android.app.ActivityOptions optionsCompat = android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.about, "xy");
-            startActivity(intent , optionsCompat.toBundle();
+            startActivity(intent , optionsCompat.toBundle());
         });
 
         binding.main.setOnClickListener(v -> {
