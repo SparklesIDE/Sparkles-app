@@ -8,15 +8,14 @@ android:orientation="vertical">
 <LinearLayout
   android:layout_height="80dp"
   android:layout_width="match_parent"
-  android:gravity="end"
-  android:layout_weight="1">
-  <com.google.android.material.button.MaterialButton
-                         android:layout_height="70dp"
-                         android:layout_width="wrap_content"
-                         android:textSize="18sp"
-                         android:layout_margin="16dp"
-                         android:id="@+id/materialbutton"
-                         android:text="Close" /> </LinearLayout>
+  android:gravity="end">
+  <Button
+    android:id="@+id/materialbutton"
+    style="?attr/materialIconButtonStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:icon="@drawable/circle_24px"
+    app:iconTint="?attr/colorOnSurfaceVariant" /> </LinearLayout>
     <com.google.android.material.navigation.NavigationView
             android:id="@+id/navview"
             android:layout_gravity="start"
