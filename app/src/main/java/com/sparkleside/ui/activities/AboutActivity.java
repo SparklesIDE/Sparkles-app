@@ -42,7 +42,7 @@ public class AboutActivity extends BaseActivity {
         binding.coordinator.setTransitionName("xy");
         setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
         getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(300));
-        getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(250));
+       // getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(250));
         configureToolbar();
         configureDevelopers();
         configureLinks();
