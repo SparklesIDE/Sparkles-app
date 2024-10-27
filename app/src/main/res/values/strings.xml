@@ -13,7 +13,7 @@
     <string name="set_lib">Third Party Software</string>
     <string name="set_lib_desc">Libraries And Softwares used in Sparkles</string>
     <string name="com_word_about">About</string>
-    <string name="set_about_desc">About Sparkles IDE </string>
+    <string name="set_about_desc">About Sparkles</string>
     <string name="about_team">Team</string>
     <string name="about_tag_translator">Translator</string>
     <string name="about_tag_developer">Developer</string>
@@ -24,7 +24,7 @@
     <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string> 
     <string name="yamenher_phrase">A Kool Utilities maker</string>
     <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
-    <string name="monet_title">Use Dynamic Colors in Sparkles</string>
-    <string name="monet_desc">Use your device color pallet instead Sparkles Green</string>
+    <string name="monet_title">Use Dynamic Colors</string>
+    <string name="monet_desc">Use your device color palette instead Green</string>
     <string name="need_restart">Need Restart</string>
 </resources>
