@@ -28,7 +28,7 @@ public class Preferences {
 
         public static boolean isMonetEnable(Context ctx) {
             var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
-            return sp.getBoolean(THEME_MONET_KEY, false);
+            return sp.getBoolean(THEME_MONET_KEY, true);
         }
 
         public static void setThemeMode(Context ctx, int themeMode) {
