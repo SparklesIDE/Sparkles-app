@@ -17,7 +17,8 @@ import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.TeamMemberView;
-
+import com.google.android.material.transition.platform.MaterialContainerTransform; 
+import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 import com.peekandpop.shalskar.peekandpop.PeekAndPop;
 
 import dev.trindadedev.ui_utils.UI;
@@ -26,6 +27,7 @@ import dev.trindadedev.ui_utils.UI;
 /*
 * A Screen with info about app
 * @author Aquiles Trindade (trindadedev).
+* @author SyntaxSpin (SyntaxSpin)
 */
 
 public class AboutActivity extends BaseActivity {
@@ -37,7 +39,10 @@ public class AboutActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        
+        binding.coordinator.setTransitionName("xy");
+        setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+        getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(300));
+        getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(250));
         configureToolbar();
         configureDevelopers();
         configureLinks();

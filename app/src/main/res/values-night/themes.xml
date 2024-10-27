@@ -53,6 +53,7 @@
         <item name="collapsingToolbarLayoutStyle">?attr/collapsingToolbarLayoutLargeStyle</item>
         <item name="collapsingToolbarLayoutLargeSize">@dimen/collapsing_toolbar_large_size</item>
         <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Sparkles.CollapsingToolbar</item>
+    <item name="android:windowActivityTransitions">true</item>
     </style>
     
     <style name="Base.Theme.Sparkles" parent="Theme.Sparkles.Dark" />
