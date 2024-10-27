@@ -135,7 +135,7 @@
                                  android:layout_height="wrap_content"
                                  android:layout_width="wrap_content"
                                  android:textSize="12sp"
-                                 android:textColor="?colorSurface"
+                                 android:textColor="?colorOnSurface"
                                  android:id="@+id/textview3"
                                  android:text="Telegram" />
 
