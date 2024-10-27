@@ -35,7 +35,8 @@ public class SettingsActivity extends BaseActivity {
             startActivity(intent);
         });
         binding.lib.setOnClickListener(v -> {
-            LibsBuilder().start(this);
+           LibsBuilder libe = new LibsBuilder();
+            libe.start(this);
         });
     }
 }
