@@ -16,8 +16,8 @@ public class SettingsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementsUseOverlay(true);
+        setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+        getWindow().setSharedElementsUseOverlay(false);
         super.onCreate(savedInstanceState);
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -37,7 +37,9 @@ public class SettingsActivity extends BaseActivity {
 
         binding.main.setOnClickListener(v -> {
             Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
-            startActivity(intent);
+            binding.main.setTransitionName("xz");
+            android.app.ActivityOptions optionsCompat = android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.main, "xz");
+            startActivity(intent , optionsCompat.toBundle());
         });
         binding.lib.setOnClickListener(v -> {
            LibsBuilder libe = new LibsBuilder();

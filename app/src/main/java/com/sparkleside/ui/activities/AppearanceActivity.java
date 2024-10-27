@@ -11,6 +11,9 @@ import com.sparkleside.databinding.ActivityAppearanceBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.preferences.Preferences;
 import dev.trindadedev.ui_utils.preferences.withicon.PreferenceSwitch;
+import com.google.android.material.transition.platform.MaterialContainerTransform; 
+import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+
 
 public class AppearanceActivity extends BaseActivity {
 
@@ -21,6 +24,10 @@ public class AppearanceActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAppearanceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.coordinator.setTransitionName("xz");
+        setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+        getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(100));
+        getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(95));
 
         int theme = AppCompatDelegate.getDefaultNightMode();
 
