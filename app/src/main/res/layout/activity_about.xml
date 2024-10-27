@@ -55,7 +55,7 @@
                      android:layout_width="wrap_content"
                      android:padding="8dp"
                      android:textSize="25sp"
-                     android:textColor="@color/md_theme_neutral"
+                     android:textColor="?colorOnSurface"
                      android:id="@+id/textview1"
                      android:text="@string/app_name"
                      android:textStyle="bold" />
@@ -98,7 +98,7 @@
                                  android:layout_height="wrap_content"
                                  android:layout_width="wrap_content"
                                  android:textSize="12sp"
-                                 android:textColor="@color/md_theme_neutral"
+                                 android:textColor="?colorOnSurface"
                                  android:id="@+id/textview2"
                                  android:text="Github" />
 
@@ -135,7 +135,7 @@
                                  android:layout_height="wrap_content"
                                  android:layout_width="wrap_content"
                                  android:textSize="12sp"
-                                 android:textColor="@color/md_theme_neutral"
+                                 android:textColor="?colorSurface"
                                  android:id="@+id/textview3"
                                  android:text="Telegram" />
 
@@ -185,7 +185,7 @@
                              android:layout_width="wrap_content"
                              android:padding="8dp"
                              android:textSize="12sp"
-                             android:textColor="@color/md_theme_neutral"
+                             android:textColor="?colorOnSurface"
                              android:id="@+id/textview4"
                              android:text="YamenHer" />
 
@@ -213,7 +213,7 @@
                          android:layout_width="wrap_content"
                          android:padding="8dp"
                          android:textSize="16sp"
-                         android:textColor="@color/md_theme_neutral"
+                         android:textColor="?colorOnSurface"
                          android:id="@+id/textview5"
                          android:text="SyntaxSpin" />
 
@@ -248,11 +248,10 @@
                              android:layout_height="wrap_content"
                              android:layout_width="wrap_content"
                              android:padding="8dp"
-                             android:textColorHint="@color/md_theme_neutral"
                              android:textSize="12sp"
                              android:id="@+id/textview6"
                              android:text="Aquiles"
-                             android:textColor="@color/md_theme_neutral" />
+                             android:textColor="?colorOnSurface" />
 
                     </LinearLayout>
 

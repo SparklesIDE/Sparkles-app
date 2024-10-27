@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="8dp"
         android:paddingTop="8dp" 
-	android:paddingRight="8dp"
-        android:textColor="@color/md_theme_neutral"
+	    android:paddingRight="8dp"
+        android:textColor="?colorOnSurface"
         android:text="Name"
         android:textSize="36sp" />
      
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:textColor="@color/md_theme_neutral"
+        android:textColor="?colorOnSurfaceVariant"
         android:text="Phrase"
         android:textSize="19sp"
         android:gravity="center_vertical" />
