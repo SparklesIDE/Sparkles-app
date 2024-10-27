@@ -9,9 +9,9 @@ public class SparklesScheme {
   private EditorColorScheme scheme;
   private CodeEditor editor;
 
-  public SparklesScheme(CodeEditor editor, EditorColorScheme scheme) {
-    this.scheme = scheme;
+  public SparklesScheme(CodeEditor editor) {
     this.editor = editor;
+    scheme = editor.getColorScheme();
     var surface = MaterialColors.getColor(editor, com.google.android.material.R.attr.colorSurface);
     var onSurface = MaterialColors.getColor(editor, com.google.android.material.R.attr.colorOnSurface);
     var primary = MaterialColors.getColor(editor, com.google.android.material.R.attr.colorPrimary);
