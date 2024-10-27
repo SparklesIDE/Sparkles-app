@@ -15,7 +15,7 @@ android:orientation="vertical">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"    
-    app:icon="@drawable/circle_24px"
+    app:icon="@drawable/close_24px"
     app:iconTint="?attr/colorOnSurfaceVariant" /> </LinearLayout>
     <com.google.android.material.navigation.NavigationView
             android:id="@+id/navview"

@@ -4,13 +4,13 @@
     tools:showIn="navview">
        <group android:checkableBehavior="none">
         <item
-            android:icon="@drawable/circle_24px"
+            android:icon="@drawable/code_blocks_24px"
             android:id="@+id/nav_string"
             android:title="String Editor"
             app:contentDescription="stringeditor" />
 
         <item
-            android:icon="@drawable/circle_24px"
+            android:icon="@drawable/material_24px"
             android:id="@+id/nav_icons"
             android:title="Material Icons"
             app:contentDescription="MaterialIcons" />
