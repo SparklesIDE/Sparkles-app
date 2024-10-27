@@ -16,8 +16,8 @@ public class SettingsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementsUseOverlay(false);
+        //setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+        getWindow().setSharedElementsUseOverlay(true);
         super.onCreate(savedInstanceState);
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

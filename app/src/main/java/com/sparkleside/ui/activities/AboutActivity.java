@@ -41,7 +41,7 @@ public class AboutActivity extends BaseActivity {
         setContentView(binding.getRoot());
         binding.coordinator.setTransitionName("xy");
         setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-       // getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(300));
+        getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(300));
         getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(250));
         configureToolbar();
         configureDevelopers();
