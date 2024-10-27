@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
-
+import com.mikepenz.aboutlibraries.LibsBuilder;
+import com.mikepenz.aboutlibraries.ui.LibsActivity;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivitySettingsBinding;
 
@@ -32,6 +33,9 @@ public class SettingsActivity extends BaseActivity {
         binding.main.setOnClickListener(v -> {
             Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
             startActivity(intent);
+        });
+        binding.lib.setOnClickListener(v -> {
+            LibsBuilder().start(this);
         });
     }
 }

@@ -75,7 +75,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation("com.blankj:utilcodex:1.31.1")
     implementation("nl.dionsegijn:konfetti-xml:2.0.4")
-    
+    implementation("com.mikepenz:aboutlibraries:11.2.3")
     implementation(project(":peekandpop"))
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
