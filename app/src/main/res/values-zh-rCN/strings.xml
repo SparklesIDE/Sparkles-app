@@ -2,18 +2,18 @@
 <resources>
     <string name="app_name">Sparkles IDE</string>
     <string name="com_word_settings">设置</string>
-    <string name="set_main">应用程序设置</string>
-    <string name="set_main_desc">一些Sparkles外观设置</string>
+    <string name="set_main">应用设置</string>
+    <string name="set_main_desc">Sparkles 的外观设置</string>
     <string name="common_word_allow">允许</string>
     <string name="common_word_deny">拒绝</string>
     <string name="set_editor">代码编辑器</string>
-    <string name="set_editor_desc">修改编辑器的样式</string>
+    <string name="set_editor_desc">修改编辑器样式</string>
     <string name="set_terminal">终端</string>
-    <string name="set_terminal_desc">终端样式</string>
+    <string name="set_terminal_desc">美化终端</string>
     <string name="set_lib">第三方软件</string>
-    <string name="set_lib_desc">在Sparkles中使用的库和软件</string>
+    <string name="set_lib_desc">在 Sparkles 中使用的库和软件</string>
     <string name="com_word_about">关于</string>
-    <string name="set_about_desc">关于Sparkles IDE</string>
+    <string name="set_about_desc">关于 Sparkles</string>
     <string name="about_team">团队</string>
     <string name="about_tag_translator">翻译者</string>
     <string name="about_tag_developer">开发者</string>
@@ -21,10 +21,19 @@
     <string name="tooltip_terminal">打开终端</string>
     <string name="tooltip_new_file">新文件</string>
     <string name="tooltip_search">在代码中搜索</string>
-    <string name="syntaxspin_phrase">Material You Love Android/Web 开发人员</string>
-    <string name="yamenher_phrase">Kool Utilities 制造商</string>
-    <string name="trindadedev_phrase">顺便说一句，我使用 Jetpack Compose</string>
-    <string name="monet_title">在 Sparkles 中使用动态颜色</string>
-    <string name="monet_desc">改用设备调色板 Sparkles Green</string>
+    <string name="monet_title">使用动态颜色</string>
+    <string name="monet_desc">使用设备的调色板而不是绿色</string>
     <string name="need_restart">需要重启</string>
+
+    <!--TEAM BIO-->
+
+    <string name="syntaxspin_phrase">一个 Material You 爱好者的 Android/Web 开发者</string> 
+    <string name="yamenher_phrase">一个酷炫工具的制造者</string>
+    <string name="trindadedev_phrase">我使用 Jetpack Compose，顺便说一下</string>
+    <string name="hanzo_phrase">幽灵</string>
+    <string name="thiarley_rocha_phrase">我们来玩 Minecraft 吧？</string>
+    <string name="rohit_kushvaha_phrase">我不知道</string>
+    <string name="neoapps_phrase">我使用 Arch，顺便说一下</string>
+    <string name="jaiel_lima_phrase">找到智慧的人是快乐的，获得理解的人也是如此。\n\n 箴言 3:13</string>
+    <string name="alex_phrase">PaxSenix 走私者</string>
 </resources>

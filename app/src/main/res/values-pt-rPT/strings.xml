@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sparkles IDE</string>
-    <string name="com_word_settings">Configurações</string>
-    <string name="set_main">Configurações da Aplicação</string>
-    <string name="set_main_desc">Algumas das configurações de aparência do Sparkles</string>
+    <string name="com_word_settings">Definições</string>
+    <string name="set_main">Definições da Aplicação</string>
+    <string name="set_main_desc">Algumas das definições de Aparência do Sparkles</string>
     <string name="common_word_allow">Permitir</string>
     <string name="common_word_deny">Negar</string>
     <string name="set_editor">Editor de Código</string>
@@ -13,18 +13,27 @@
     <string name="set_lib">Software de Terceiros</string>
     <string name="set_lib_desc">Bibliotecas e Softwares utilizados no Sparkles</string>
     <string name="com_word_about">Sobre</string>
-    <string name="set_about_desc">Sobre o Sparkles IDE</string>
+    <string name="set_about_desc">Sobre o Sparkles</string>
     <string name="about_team">Equipa</string>
     <string name="about_tag_translator">Tradutor</string>
     <string name="about_tag_developer">Desenvolvedor</string>
     <string name="tooltip_settings">Definições</string>
     <string name="tooltip_terminal">Abrir terminal</string>
-    <string name="tooltip_new_file">Novo ficheiro</string>
+    <string name="tooltip_new_file">Novo Ficheiro</string>
     <string name="tooltip_search">Pesquisar no código</string>
-    <string name="syntaxspin_phrase">Um material que adora, Android/Web developer</string>
-    <string name="yamenher_phrase">Um criador de Kool Utilities</string>
-    <string name="trindadedev_phrase">Eu uso o Jetpack Compose, já agora</string>
-    <string name="monet_title">Utilizar cores dinâmicas nos brilhos</string>
-    <string name="monet_desc">Utilize a paleta de cores do seu dispositivo em vez do Sparkles Green</string>
-    <string name="need_restart">Necessita de reiniciar</string>
+    <string name="monet_title">Usar Cores Dinâmicas</string>
+    <string name="monet_desc">Use a palete de cores do seu dispositivo em vez de Verde</string>
+    <string name="need_restart">Necessita de Reinício</string>
+
+    <!--TEAM BIO-->
+
+    <string name="syntaxspin_phrase">Um amante de Material You, desenvolvedor Android/Web</string> 
+    <string name="yamenher_phrase">Um criador de utilitários fixe</string>
+    <string name="trindadedev_phrase">Eu uso Jetpack Compose, a propósito</string>
+    <string name="hanzo_phrase">Fantasma</string>
+    <string name="thiarley_rocha_phrase">Vamos jogar Minecraft?</string>
+    <string name="rohit_kushvaha_phrase">Não sei</string>
+    <string name="neoapps_phrase">Eu uso Arch, a propósito</string>
+    <string name="jaiel_lima_phrase">Feliz é o homem que encontra sabedoria, e o homem que adquire entendimento. \n\n Provérbios 3:13</string>
+    <string name="alex_phrase">Contrabandista PaxSenix</string>
 </resources>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Be careful with characters. It may not work during compilation. Remove the accents. Where there are apostrophes, invert the apostrophe. See the model below. -->
+    
     <string name="app_name">Sparkles IDE</string>
     <string name="com_word_settings">Parametres</string>
     <string name="set_main">Parametres de l´application</string> 
