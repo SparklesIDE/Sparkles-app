@@ -87,7 +87,7 @@ public class AboutActivity extends BaseActivity {
             binding.imgYamen
         );
         peekAndPop(
-            "Aquiles Trindade",
+            "Aquiles Trindade | 🇧🇷",
             "https://github.com/trindadedev13.png",
             getString(R.string.trindadedev_phrase),
             binding.imgTrindade
@@ -122,47 +122,50 @@ public class AboutActivity extends BaseActivity {
             "Hanzo",
             Role.DEVELOPER,
             "https://github.com/HanzoDev1375",
-            "Ghost",
+            getString(R.string.hanzo_phrase),
             true
         );
-        
+    
         TeamMember(
             "Thiarley Rocha",
             Role.DEVELOPER,
             "https://github.com/thdev-only",
-            "lets play minecraft?",
+            getString(R.string.thiarley_rocha_phrase),
             true
         );
-        
+    
         TeamMember(
             "Rohit Kushvaha",
             Role.DEVELOPER,
             "https://github.com/RohitKushvaha01",
-            "Idk",
+            getString(R.string.rohit_kushvaha_phrase),
             true
         );
+    
         TeamMember(
-	        "NEOAPPS",
-	        Role.DEVELOPER,
-	        "https://github.com/neoapps-dev",
-	        "i use arch, btw",
-	        true
-	    );
+            "NEOAPPS",
+            Role.DEVELOPER,
+            "https://github.com/neoapps-dev",
+            getString(R.string.neoapps_phrase),
+            true
+        );
+    
         TeamMember(
-            "Jaiel Lima Miranda",
+            "Jaiel Lima Miranda | 🇧🇷",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
-	        "Happy is the man that finds wisdom, and the man that gets understanding. \n \n Proverbs 3:13",
+            getString(R.string.jaiel_lima_phrase),
             true
         );
+    
         TeamMember(
             "Alex",
             Role.TRANSLATOR,
             "https://github.com/paxsenix0",
-	        "PaxSenix bootlegger",
+            getString(R.string.alex_phrase),
             false
         );
-    }
+    }    
     
     private void peekAndPop(
         String name,

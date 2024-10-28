@@ -21,10 +21,18 @@
     <string name="tooltip_terminal">Abrir terminal</string>
     <string name="tooltip_new_file">Novo arquivo</string>
     <string name="tooltip_search">Pesquisar no código</string>
-    <string name="syntaxspin_phrase">Um Amante de  Material You e Desenvolvedor Android/Web</string>
-    <string name="yamenher_phrase">Um criador de coisas legais e úteis</string>
-    <string name="trindadedev_phrase">Eu uso o Jetpack Compose, a propósito</string>
     <string name="monet_title">Usar cores dinâmicas</string>
     <string name="monet_desc">Usar a paleta de cores do seu dispositivo em vez de verde</string>
     <string name="need_restart">Precisa reiniciar</string>
+
+    <!--TEAM BIO-->
+    <string name="syntaxspin_phrase">Um Amante de Material You e Desenvolvedor Android/Web</string> 
+    <string name="yamenher_phrase">Um criador de coisas legais e úteis</string>
+    <string name="trindadedev_phrase">Eu uso o Jetpack Compose, a propósito</string>
+    <string name="hanzo_phrase">Ghost</string>
+    <string name="thiarley_rocha_phrase">Vamos jogar Minecraft?</string>
+    <string name="rohit_kushvaha_phrase">Sei lá</string>
+    <string name="neoapps_phrase">Eu uso Arch, a propósito</string>
+    <string name="jaiel_lima_phrase">Feliz é o homem que encontra sabedoria e o homem que adquire entendimento. \n\n Provérbios 3:13</string>
+    <string name="alex_phrase">PaxSenix bootlegger</string>
 </resources>
