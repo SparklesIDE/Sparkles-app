@@ -149,7 +149,7 @@ public class AboutActivity extends BaseActivity {
 	        true
 	    );
         TeamMember(
-            "Jaiel Lima Miranda",
+            "Jeiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
 	        "Happy is the man that finds wisdom, and the man that gets understanding. \n \n Proverbs 3:13",
