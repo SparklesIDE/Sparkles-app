@@ -47,7 +47,7 @@
         android:textColor="?colorOnSurfaceVariant"
         android:text="Phrase"
         android:textSize="19sp"
-        android:gravity="center_vertical" />
+        android:gravity="center" />
         
    </LinearLayout>
 
