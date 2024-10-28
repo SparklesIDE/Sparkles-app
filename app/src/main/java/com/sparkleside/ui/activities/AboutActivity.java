@@ -87,7 +87,7 @@ public class AboutActivity extends BaseActivity {
             binding.imgYamen
         );
         peekAndPop(
-            "Aquiles Trindade | 🇧🇷",
+            "Aquiles Trindade",
             "https://github.com/trindadedev13.png",
             getString(R.string.trindadedev_phrase),
             binding.imgTrindade
@@ -151,7 +151,7 @@ public class AboutActivity extends BaseActivity {
         );
     
         TeamMember(
-            "Jaiel Lima Miranda | 🇧🇷",
+            "Jaiel Lima Miranda",
             Role.TRANSLATOR,
             "https://github.com/jetrom17",
             getString(R.string.jaiel_lima_phrase),
