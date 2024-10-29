@@ -21,10 +21,19 @@
     <string name="tooltip_terminal">Open terminal</string>
     <string name="tooltip_new_file">New File</string>
     <string name="tooltip_search">Search in code</string>
-    <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string> 
-    <string name="yamenher_phrase">A Kool Utilities maker</string>
-    <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
     <string name="monet_title">Use Dynamic Colors</string>
     <string name="monet_desc">Use your device color palette instead Green</string>
     <string name="need_restart">Need Restart</string>
+
+    <!--TEAM BIO-->
+
+    <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string> 
+    <string name="yamenher_phrase">A Kool Utilities maker</string>
+    <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
+    <string name="hanzo_phrase">Ghost</string>
+    <string name="thiarley_rocha_phrase">lets play minecraft?</string>
+    <string name="rohit_kushvaha_phrase">Idk</string>
+    <string name="neoapps_phrase">i use arch, btw</string>
+    <string name="jaiel_lima_phrase">Happy is the man that finds wisdom, and the man that gets understanding. \n\n Proverbs 3:13</string>
+    <string name="alex_phrase">PaxSenix bootlegger</string>
 </resources>
