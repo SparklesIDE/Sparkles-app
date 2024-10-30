@@ -11,7 +11,7 @@ android {
     
     defaultConfig {
         applicationId = "com.sparkleside"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -82,4 +82,8 @@ dependencies {
     implementation(project(":ui-utils"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    
+    //termux
+    implementation("com.github.termux.termux-app:terminal-view:0.118.1")
+    implementation("com.github.termux.termux-app:terminal-emulator:0.118.1")
 }
