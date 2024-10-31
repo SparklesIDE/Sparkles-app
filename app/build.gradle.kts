@@ -82,7 +82,7 @@ dependencies {
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
     
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.0.9")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     
     //termux
     implementation("com.github.termux.termux-app:terminal-view:0.118.1")
