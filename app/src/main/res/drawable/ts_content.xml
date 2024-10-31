@@ -27,7 +27,7 @@
             android:name="path_4"
             android:pathData="M 16.76 46 L 50.24 46 C 55.07 46 59 49.81 59 54.5 L 59 54.5 C 59 59.19 55.07 63 50.24 63 L 16.76 63 C 11.93 63 8 59.19 8 54.5 L 8 54.5 C 8 49.81 11.93 46 16.76 46 Z"
             android:fillColor="?colorPrimaryContainer"
-            android:strokeColor="?colorPrimaryContainer"/>
+            android:strokeColor="?colorOnSurface"/>
         <path
             android:name="path_6"
             android:pathData="M 22.5 143.837 L 191.5 143.837 C 195.09 143.837 198 146.747 198 150.337 L 198 150.337 C 198 153.927 195.09 156.837 191.5 156.837 L 22.5 156.837 C 18.91 156.837 16 153.927 16 150.337 L 16 150.337 C 16 146.747 18.91 143.837 22.5 143.837 Z"
