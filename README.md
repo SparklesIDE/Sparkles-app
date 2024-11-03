@@ -13,7 +13,7 @@ with Supporting full languages & Material Design 3</p>
 - [ ] Python Support
 - [ ] Java & Kotlin Support
 - [ ] Web support ( HTML JavaScript CSS)
-- [ ] Terminal Activity
+- [x] Terminal Activity
 
 ## How to Contribute
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
