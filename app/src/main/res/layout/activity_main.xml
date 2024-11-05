@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sparkleside.ui.components.SwipeRevealLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-    android:id="@+id/coordinator">
-    <com.sparkleside.ui.components.SwipeRevealLayout
     android:id="@+id/swipe_reveal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,6 +19,12 @@
       app:cardCornerRadius="68dp"
       app:cardElevation="0dp"
       app:strokeWidth="0dp">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:id="@+id/coordinator">
+    
 	<com.google.android.material.appbar.AppBarLayout
 		android:id="@+id/appbar"
 		android:layout_width="match_parent"
@@ -119,8 +121,6 @@
 				android:textSize="14sp" />
 		</LinearLayout>
 	</LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-    </com.sparkleside.ui.components.SwipeRevealLayout>
      <com.google.android.material.button.MaterialButton
         android:id="@+id/fab"
         android:layout_width="72dp"
@@ -142,3 +142,5 @@
         android:padding="24dp"/>
         
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</com.google.android.material.card.MaterialCardView>
+</com.sparkleside.ui.components.SwipeRevealLayout>
