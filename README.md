@@ -1,5 +1,4 @@
 <div align="center">
-  <br>
   <img src="bannersp.png" style="width: 45rem; height: auto;"/>
   <p>Sparkles IDE is an All-in-one Integrated Development Environment 
 with Supporting full languages & Material Design 3</p>
@@ -14,7 +13,7 @@ with Supporting full languages & Material Design 3</p>
 - [ ] Python Support
 - [ ] Java & Kotlin Support
 - [ ] Web support ( HTML JavaScript CSS)
-- [ ] Terminal Activity
+- [x] Terminal Activity
 
 ## How to Contribute
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
