@@ -10,7 +10,7 @@
     android:id="@+id/swipe_reveal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:dragHandle="@id/editor_toolbar">
+    app:dragHandle="@id/toolbar">
     <LinearLayout
     android:layout_height="match_parent"
     android:layout_width="200dp"
