@@ -92,4 +92,4 @@ jobs:
         if: success()
         continue-on-error: true
         run: |
-          curl -d "Novo APK de Release: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${{ github.run_id }}\nMensagem do Commit: ${{ steps.get_commit_msg.outputs.message }}" https://ntfy.sh/sparkles
+          curl -d "New Release APK: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${{ github.run_id }} Commit Message: ${{ steps.get_commit_msg.outputs.message }}" https://ntfy.sh/sparkles
