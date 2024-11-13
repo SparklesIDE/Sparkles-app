@@ -1,0 +1,16 @@
+name: Notificar Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar Notificação para ntfy.sh
+        run: |
+          curl -d $'New commit: ${{ github.sha }}\nURL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}' \
+          -H "Title: New Commit in Repository" \
+          https://ntfy.sh/sparkles
