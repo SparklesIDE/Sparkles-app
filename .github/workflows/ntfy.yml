@@ -1,0 +1,15 @@
+name: Notify Action Run
+
+on:
+  workflow_run:
+    workflows: ["android.yml"]  # Adjust the workflow name if different
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Notification to ntfy.sh
+        run: |
+          curl -d "New Action Run: https://github.com/Jetrom17/Sparkles-app/actions/runs/${{ github.run_id }}" https://ntfy.sh/sparkles
