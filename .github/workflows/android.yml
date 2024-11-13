@@ -19,7 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: notify telegram
+      - name: Notify Telegram
         uses: EverythingSuckz/github-telegram-notify@main
         continue-on-error: true
         with:
@@ -88,12 +88,8 @@ jobs:
           mv app-release.apk sparkles-app-release.apk
           ls 
 
-      - name: Send APK to Release Channel Telegram with Topic ID
+      - name: Send APK to ntfy.sh
         if: success()
         continue-on-error: true
         run: |
-          curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument" \
-            -F chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-            -F message_thread_id="11" \
-            -F document=@"sparkles-app-release.apk" \
-            -F caption="${{ github.event.head_commit.message }} by ${{ github.actor }}"
+          curl -d "Novo APK de Release: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${{ github.run_id }}\nMensagem do Commit: ${{ steps.get_commit_msg.outputs.message }}" https://ntfy.sh/sparkles
