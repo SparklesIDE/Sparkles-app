@@ -17,7 +17,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       app:cardBackgroundColor="?attr/colorSurface"
-      app:cardCornerRadius="68dp"
+      app:cardCornerRadius="@dimen/editor_container_corners"
       app:cardElevation="0dp"
       app:strokeWidth="0dp">
 <androidx.coordinatorlayout.widget.CoordinatorLayout

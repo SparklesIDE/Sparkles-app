@@ -63,7 +63,7 @@ public class AboutActivity extends BaseActivity {
     private void configureDevelopers() {
         Glide
             .with(this)
-            .load("https://github.com/syntaxspin.png")
+            .load("https://github.com/syntaxspins.png")
             .into(binding.imgSyn);
         Glide
             .with(this)
@@ -76,7 +76,7 @@ public class AboutActivity extends BaseActivity {
             
         peekAndPop(
             "SyntaxSpin",
-            "https://github.com/syntaxspin.png",
+            "https://github.com/syntaxspins.png",
             getString(R.string.syntaxspin_phrase),
             binding.imgSyn
         );
@@ -108,7 +108,7 @@ public class AboutActivity extends BaseActivity {
         });
         
         binding.syn.setOnClickListener(v->{
-            openURL("https://github.com/syntaxspin");
+            openURL("https://github.com/syntaxspins");
         });
         
         binding.trindade.setOnClickListener(v->{
