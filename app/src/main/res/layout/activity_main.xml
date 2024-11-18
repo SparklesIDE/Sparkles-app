@@ -6,7 +6,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipe_reveal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:dragHandle="@id/toolbar">
+    app:dragHandle="@id/toolbar"
+    android:background="?@attr/colorSurfaceVariant">
     <LinearLayout
     android:layout_height="200dp"
     android:layout_width="match_parent"

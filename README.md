@@ -14,6 +14,9 @@ with Supporting full languages & Material Design 3</p>
 - [ ] Java & Kotlin Support
 - [ ] Web support ( HTML JavaScript CSS)
 - [x] Terminal Activity
+- [ ] File Tree
+- [ ] Great UI
+- [x] Editor Sparkles Special Theme 
 
 ## How to Contribute
 <p>If you want to contribute with us just make sure that you are Respected the rule by creating an branch to work on it </p>
