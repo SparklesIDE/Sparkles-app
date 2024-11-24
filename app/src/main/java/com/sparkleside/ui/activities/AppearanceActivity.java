@@ -1,13 +1,13 @@
-package com.sparkleside.ui.fragments;
+package com.sparkleside.ui.activities;
 
 import android.os.Bundle;
 
 import android.widget.Toast;
-//import androidx.activity.EdgeToEdge;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.sparkleside.R;
-import com.sparkleside.databinding.FragmentAppearanceBinding;
+import com.sparkleside.databinding.ActivityAppearanceBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.preferences.Preferences;
 import dev.trindadedev.ui_utils.preferences.withicon.PreferenceSwitch;
@@ -15,20 +15,20 @@ import com.google.android.material.transition.platform.MaterialContainerTransfor
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
 
-public class AppearanceActivity extends Fragment {
+public class AppearanceActivity extends BaseActivity {
 
-    private FragmentAppearanceBinding binding;
+    private ActivityAppearanceBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAppearanceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        /*binding.coordinator.setTransitionName("xz");
+        binding.coordinator.setTransitionName("xz");
         setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
         getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(400));
         getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(350));
-*/
+
         int theme = AppCompatDelegate.getDefaultNightMode();
 
         switch (theme) {

@@ -1,4 +1,4 @@
-package com.sparkleside.ui.fragments;
+package com.sparkleside.ui.activities;
 
 import android.content.Intent;
 import android.content.Context;
@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-//import androidx.activity.EdgeToEdge;
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.StringRes;
 	
 import com.bumptech.glide.Glide;
 
 import com.google.android.material.transition.MaterialSharedAxis;
 import com.sparkleside.R;
-import com.sparkleside.databinding.FragmentAboutBinding;
+import com.sparkleside.databinding.ActivityAboutBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.TeamMemberView;
 import com.google.android.material.transition.platform.MaterialContainerTransform; 
@@ -31,15 +31,15 @@ import dev.trindadedev.ui_utils.UI;
 * @author SyntaxSpin (SyntaxSpin)
 */
 
-public class AboutFragmentActivity extends Fragment {
-    private FragmentAboutBinding binding;
+public class AboutActivity extends BaseActivity {
+    private ActivityAboutBinding binding;
     private Intent intent ;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         
-        binding = FragmentAboutBinding.inflate(getLayoutInflater());        
-        /*getWindow().setAllowEnterTransitionOverlap(true);
+        binding = ActivityAboutBinding.inflate(getLayoutInflater());        
+        getWindow().setAllowEnterTransitionOverlap(true);
         MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
         enterTransition.addTarget(R.id.coordinator);
         enterTransition.setDuration(300L);
@@ -48,7 +48,7 @@ public class AboutFragmentActivity extends Fragment {
         returnTransition.setDuration(300L);
         returnTransition.addTarget(R.id.coordinator);
         getWindow().setReturnTransition(returnTransition);
-     */ super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
         configureToolbar();
         configureDevelopers();
