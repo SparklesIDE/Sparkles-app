@@ -19,27 +19,19 @@ public class SettingsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
         getWindow().setSharedElementsUseOverlay(false);
-        MaterialSharedAxis exit = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-        exit.addTarget(R.id.coordinator);
+            MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, true);
+		    exitTransition.addTarget(R.id.coordinator);
+		    getWindow().setExitTransition(exitTransition);
+		
+		    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, false);
+		    reenterTransition.addTarget(R.id.coordinator);
+		    getWindow().setReenterTransition(reenterTransition);
 
-        // Set the exit transition for the window
-        getWindow().setExitTransition(exit);
-
-        // TODO: Add reenter transition for backwards direction (Activity B -> Activity A)
-        // Consider using TransitionSet for chaining transitions
-        Transition reenter = null; // Replace with your desired reenter transition logic
-
-        // Optionally, chain exit and reenter transitions for a smoother animation
-        if (reenter != null) {
-            TransitionSet transitionSet = new TransitionSet();
-            transitionSet.addTransition(exit);
-            transitionSet.addTransition(reenter);
-            getWindow().setReenterTransition(transitionSet);
-        }
         super.onCreate(savedInstanceState);
-        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
