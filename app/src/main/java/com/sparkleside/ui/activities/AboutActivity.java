@@ -13,6 +13,7 @@ import androidx.annotation.StringRes;
 	
 import com.bumptech.glide.Glide;
 
+import com.google.android.material.transition.MaterialSharedAxis;
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import com.sparkleside.ui.base.BaseActivity;
@@ -37,12 +38,12 @@ public class AboutActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MaterialSharedAxis enter = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+        enter.addTarget(R.id.coordinator);
+        getWindow().setEnterTransition(enter);
+        getWindow().setAllowEnterTransitionOverlap(true);
         binding = ActivityAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.coordinator.setTransitionName("xy");
-        setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(800));
-        getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(750));
         configureToolbar();
         configureDevelopers();
         configureLinks();
