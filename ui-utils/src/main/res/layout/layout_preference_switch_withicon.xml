@@ -1,10 +1,16 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    style="?attr/materialCardViewFilledStyle" >
+
+<RelativeLayout 
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="24dp"
-    android:paddingVertical="16dp"
-    android:background="@drawable/drawable_settings_item_background">
+    android:paddingVertical="16dp" >
 
     <ImageView
         android:id="@+id/preference_icon"
@@ -44,3 +50,4 @@
         android:clickable="false"
         android:focusable="false" />
 </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
