@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAppearanceBinding;
 import com.sparkleside.ui.base.BaseActivity;
@@ -21,14 +22,18 @@ public class AppearanceActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         binding = ActivityAppearanceBinding.inflate(getLayoutInflater());
+        getWindow().setAllowEnterTransitionOverlap(true);
+        MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+        enterTransition.addTarget(R.id.coordinator);
+        enterTransition.setDuration(800L);
+        getWindow().setEnterTransition(enterTransition);
+        MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
+        returnTransition.setDuration(800L);
+        returnTransition.addTarget(R.id.coordinator);
+        getWindow().setReturnTransition(returnTransition);
+        super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-        binding.coordinator.setTransitionName("xz");
-        setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementEnterTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(400));
-        getWindow().setSharedElementReturnTransition(new MaterialContainerTransform().addTarget(R.id.coordinator).setDuration(350));
-
         int theme = AppCompatDelegate.getDefaultNightMode();
 
         switch (theme) {

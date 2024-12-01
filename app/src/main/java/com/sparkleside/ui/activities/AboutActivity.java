@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
@@ -39,22 +41,13 @@ public class AboutActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         
         binding = ActivityAboutBinding.inflate(getLayoutInflater());        
-       /* getWindow().setAllowEnterTransitionOverlap(true);
+       getWindow().setAllowEnterTransitionOverlap(true);
         MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
         enterTransition.addTarget(R.id.coordinator);
-        enterTransition.setDuration(300L);
+        enterTransition.setDuration(800L);
         getWindow().setEnterTransition(enterTransition);
         MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
-        returnTransition.setDuration(300L);
-        returnTransition.addTarget(R.id.coordinator);
-        getWindow().setReturnTransition(returnTransition);*/
-        getWindow().setAllowEnterTransitionOverlap(true);
-        MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-        enterTransition.addTarget(R.id.coordinator);
-        enterTransition.setDuration(300L);
-        getWindow().setEnterTransition(enterTransition);
-        MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
-        returnTransition.setDuration(300L);
+        returnTransition.setDuration(800L);
         returnTransition.addTarget(R.id.coordinator);
         getWindow().setReturnTransition(returnTransition);
         super.onCreate(savedInstanceState);

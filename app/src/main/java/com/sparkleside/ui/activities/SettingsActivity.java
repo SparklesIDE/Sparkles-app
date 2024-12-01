@@ -6,11 +6,12 @@ import android.app.ActivityOptions;
 import android.transition.Transition;
 import android.transition.TransitionSet;
 import androidx.activity.EdgeToEdge;
-import com.google.android.material.transition.MaterialSharedAxis;
+import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.aboutlibraries.ui.LibsActivity;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivitySettingsBinding;
+import com.sparkleside.R;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
 public class SettingsActivity extends BaseActivity {
@@ -20,16 +21,22 @@ public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
-        setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementsUseOverlay(false);
-            /*MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, true);
+        getWindow().setAllowEnterTransitionOverlap(true);
+        MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+        enterTransition.addTarget(R.id.coordinator);
+        enterTransition.setDuration(800L);
+        getWindow().setEnterTransition(enterTransition);
+        MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
+        returnTransition.setDuration(800L);
+        returnTransition.addTarget(R.id.coordinator);
+        getWindow().setReturnTransition(returnTransition);
+        
+        MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
 		    exitTransition.addTarget(R.id.coordinator);
 		    getWindow().setExitTransition(exitTransition);
-		
-		    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, false);
+		    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
 		    reenterTransition.addTarget(R.id.coordinator);
 		    getWindow().setReenterTransition(reenterTransition);
-*/
         super.onCreate(savedInstanceState);
         
         setContentView(binding.getRoot());
