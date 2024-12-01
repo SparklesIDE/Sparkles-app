@@ -3,9 +3,9 @@
   <p>Sparkles IDE is an All-in-one Integrated Development Environment 
 with Supporting full languages & Material Design 3</p>
   <br>
-  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg">
-  <img src="https://m3-markdown-badges.vercel.app/stars/4/2/sparkleside/sparkles-app">
-  <img src="https://m3-markdown-badges.vercel.app/issues/4/2/sparkleside/sparkles-app">
+
+  <img src="https://m3-markdown-badges.vercel.app/stars/12/2/sparkleside/sparkles-app">
+ <img src="https://m3-markdown-badges.vercel.app/issues/12/2/sparkleside/sparkles-app">
 </div>
 
 ## Features &amp; Todo
