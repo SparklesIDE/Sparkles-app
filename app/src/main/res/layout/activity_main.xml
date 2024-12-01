@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sparkleside.ui.components.SwipeRevealLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swipe_reveal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:dragHandle="@id/toolbar"
-    android:background="?@attr/colorSurfaceVariant">
-    <LinearLayout
-    android:layout_height="200dp"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="?@attr/colorSurfaceVariant"></LinearLayout>
-    <com.google.android.material.card.MaterialCardView
-      android:id="@+id/content_card"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      app:cardBackgroundColor="?attr/colorSurface"
-      app:cardCornerRadius="@dimen/editor_container_corners"
-      app:cardElevation="0dp"
-      app:strokeWidth="0dp">
-<androidx.coordinatorlayout.widget.CoordinatorLayout
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
     android:id="@+id/coordinator">
@@ -34,7 +15,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 	  <com.google.android.material.appbar.MaterialToolbar  
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize" />
+			android:layout_height="?attr/actionBarSize"
+            app:title="Sparkles" />
 	</com.google.android.material.appbar.AppBarLayout>
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -143,5 +125,3 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:padding="24dp"/>
         
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</com.google.android.material.card.MaterialCardView>
-</com.sparkleside.ui.components.SwipeRevealLayout>

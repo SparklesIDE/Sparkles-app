@@ -39,7 +39,7 @@ public class AboutActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         
         binding = ActivityAboutBinding.inflate(getLayoutInflater());        
-        getWindow().setAllowEnterTransitionOverlap(true);
+       /* getWindow().setAllowEnterTransitionOverlap(true);
         MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
         enterTransition.addTarget(R.id.coordinator);
         enterTransition.setDuration(300L);
@@ -47,7 +47,7 @@ public class AboutActivity extends BaseActivity {
         MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
         returnTransition.setDuration(300L);
         returnTransition.addTarget(R.id.coordinator);
-        getWindow().setReturnTransition(returnTransition);
+        getWindow().setReturnTransition(returnTransition);*/
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
         configureToolbar();

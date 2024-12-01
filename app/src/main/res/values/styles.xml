@@ -11,12 +11,12 @@
     </style>
 
     <style name="TextAppearance.Sparkles.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleLarge">
-        <item name="fontFamily">@font/afacadfluxregular</item>
-        <item name="android:fontFamily">@font/afacadfluxregular</item>
+        <item name="fontFamily">@font/clashdm</item>
+        <item name="android:fontFamily">@font/clashdm</item>
     </style>
 
     <style name="TextAppearance.Sparkles.CollapsingToolbar.Expanded" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="fontFamily">@font/afacadfluxregular</item>
-        <item name="android:fontFamily">@font/afacadfluxregular</item>
+        <item name="fontFamily">@font/clashdsb</item>
+        <item name="android:fontFamily">@font/clashdsb</item>
     </style>
 </resources>

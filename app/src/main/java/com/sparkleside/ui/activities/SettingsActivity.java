@@ -22,14 +22,14 @@ public class SettingsActivity extends BaseActivity {
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
         getWindow().setSharedElementsUseOverlay(false);
-            MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, true);
+            /*MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, true);
 		    exitTransition.addTarget(R.id.coordinator);
 		    getWindow().setExitTransition(exitTransition);
 		
 		    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, false);
 		    reenterTransition.addTarget(R.id.coordinator);
 		    getWindow().setReenterTransition(reenterTransition);
-
+*/
         super.onCreate(savedInstanceState);
         
         setContentView(binding.getRoot());
