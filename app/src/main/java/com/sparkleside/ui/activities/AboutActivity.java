@@ -13,7 +13,7 @@ import androidx.annotation.StringRes;
 	
 import com.bumptech.glide.Glide;
 
-import com.google.android.material.transition.MaterialSharedAxis;
+import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityAboutBinding;
 import com.sparkleside.ui.base.BaseActivity;
