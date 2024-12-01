@@ -15,9 +15,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"    
-            app:icon="@drawable/close_24px"
+            app:icon="@drawable/menu_open_24px"
             app:iconTint="?attr/colorOnSurfaceVariant" /> 
     </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    app:menu="@menu/side_btm"
+    android:background="@android:color/transparent"
+    app:labelVisibilityMode="unlabeled"/>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navview"
         android:layout_gravity="start"

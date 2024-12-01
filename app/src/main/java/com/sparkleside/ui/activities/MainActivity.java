@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity {
 
       Window window = sideSheetDialog.getWindow();
       if (window != null) {
-        window.setDimAmount(0.0f);
+        window.setDimAmount(0.4f);
       }
 
       MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
@@ -103,7 +103,7 @@ public class MainActivity extends BaseActivity {
     ViewCompat.setOnApplyWindowInsetsListener(binding.fab, (v, windowInsets) -> {
       Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
       MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
-      mlp.bottomMargin = insets.bottom;
+      mlp.bottomMargin = insets.bottom+72 ;
       v.setLayoutParams(mlp);
       return WindowInsetsCompat.CONSUMED;
     });
