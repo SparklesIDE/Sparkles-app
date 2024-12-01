@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_nav_graph"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.sparkleside.ui.fragments.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_settings_nav_graph"
+            app:destination="@id/settings_nav_graph"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/enter_transition"
+            app:exitAnim="@anim/exit_transition"
+            app:popEnterAnim="@anim/pop_enter_transition"
+            app:popExitAnim="@anim/pop_exit_transition" />
+        <action
+            android:id="@+id/action_settingsFragment_to_appearanceFragment"
+            app:destination="@id/appearanceFragment"
+            app:enterAnim="@anim/enter_transition"
+            app:exitAnim="@anim/exit_transition"
+            app:popEnterAnim="@anim/pop_enter_transition"
+            app:popExitAnim="@anim/pop_exit_transition" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.sparkleside.ui.fragments.AboutFragment"
+        android:label="About">
+        <action
+            android:id="@+id/action_aboutFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/enter_transition"
+            app:exitAnim="@anim/exit_transition"
+            app:popEnterAnim="@anim/pop_enter_transition"
+            app:popExitAnim="@anim/pop_exit_transition" />
+    </fragment>
+    <fragment
+        android:id="@+id/appearanceFragment"
+        android:name="com.sparkleside.ui.fragments.AppearanceFragment"
+        android:label="Appearance">
+        <action
+            android:id="@+id/action_appearanceFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/enter_transition"
+            app:exitAnim="@anim/exit_transition"
+            app:popEnterAnim="@anim/pop_enter_transition"
+            app:popExitAnim="@anim/pop_exit_transition" />
+    </fragment>
+</navigation>

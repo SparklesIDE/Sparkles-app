@@ -1,61 +1,60 @@
 package com.sparkleside.ui.activities;
 
-import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.app.ActivityOptions;
-import android.transition.Transition;
-import android.transition.TransitionSet;
-import androidx.activity.EdgeToEdge;
-import com.google.android.material.transition.MaterialSharedAxis;
-import com.mikepenz.aboutlibraries.LibsBuilder;
-import com.mikepenz.aboutlibraries.ui.LibsActivity;
-import com.sparkleside.ui.base.BaseActivity;
+import android.window.OnBackInvokedDispatcher;
+
+import androidx.activity.OnBackPressedCallback;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.blankj.utilcode.util.ToastUtils;
+import com.sparkleside.R;
 import com.sparkleside.databinding.ActivitySettingsBinding;
-import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+import com.sparkleside.ui.base.BaseActivity;
 
 public class SettingsActivity extends BaseActivity {
 
     private ActivitySettingsBinding binding;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
-        setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
-        getWindow().setSharedElementsUseOverlay(false);
-            /*MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, true);
-		    exitTransition.addTarget(R.id.coordinator);
-		    getWindow().setExitTransition(exitTransition);
-		
-		    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.Y, false);
-		    reenterTransition.addTarget(R.id.coordinator);
-		    getWindow().setReenterTransition(reenterTransition);
-*/
         super.onCreate(savedInstanceState);
-        
+        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
+        assert getSupportActionBar() != null;
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        binding.toolbar.setNavigationOnClickListener(v -> super.onBackPressed());
+        binding.toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
 
-        binding.about.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
-            binding.about.setTransitionName("xy");
-            android.app.ActivityOptions optionsCompat = android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.about, "xy");
-            startActivity(intent , optionsCompat.toBundle());
+        var fragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container_view);
+        assert fragment != null;
+
+        navController = fragment.getNavController();
+        navController.addOnDestinationChangedListener((navController, navDestination, bundle) -> {
+            binding.collapsingtoolbar.setTitle(navDestination.getLabel());
         });
 
-        binding.main.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
-            binding.main.setTransitionName("xz");
-            android.app.ActivityOptions optionsCompat = android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.main, "xz");
-            startActivity(intent , optionsCompat.toBundle());
-        });
-        binding.lib.setOnClickListener(v -> {
-           LibsBuilder libe = new LibsBuilder();
-            libe.start(this);
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT, () -> {
+                if (!navController.popBackStack()) {
+                    finishAfterTransition();
+                }
+            });
+        }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        return navController.navigateUp();
+    }
+
+    public void navigate(int id) {
+        navController.navigate(id);
     }
 }

@@ -7,10 +7,8 @@ import androidx.core.view.WindowInsetsCompat;
 import dev.chrisbanes.insetter.Insetter;
 
 public class UI {
-
     public static void handleInsetts(View rootView) {
-        Insetter
-            .builder()
+        Insetter.builder()
             .padding(WindowInsetsCompat.Type.navigationBars())
             .applyToView(rootView);
     }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
-    <locale android:name = "en-US" />          <!-- English -->
-    <locale android:name = "ar-TN" />             <!-- Arabic (Tunisia) --> 
-    <locale android:name = "pt-BR" />          <!-- Portuguese (Portugal) --> 
-    <locale android:name = "es-ES"/>           <!-- Spanish (Spain)-->
-    <locale android:name = "fr-TN"/>           <!-- french (Tunisia)-->
-    <locale android:name = "zh-CN"/>           <!-- Mandarian (China)-->
-     <locale android:name = "in-ID"/>           <!-- Indonesian (Indonesia)-->
-
+    <locale android:name="en-US" />          <!-- English -->
+    <locale android:name="ar-TN" />             <!-- Arabic (Tunisia) -->
+    <locale android:name="pt-BR" />          <!-- Portuguese (Portugal) -->
+    <locale android:name="es-ES" />           <!-- Spanish (Spain)-->
+    <locale android:name="fr-TN" />           <!-- french (Tunisia)-->
+    <locale android:name="zh-CN" />           <!-- Mandarian (China)-->
+    <locale android:name="in-ID" />           <!-- Indonesian (Indonesia)-->
 </locale-config>

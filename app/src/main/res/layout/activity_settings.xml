@@ -1,244 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
-     android:layout_height="match_parent"
-     android:layout_width="match_parent"
-     android:id="@+id/coordinator">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-         android:layout_height="wrap_content"
-         android:layout_width="match_parent"
-         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
-         android:fitsSystemWindows="true"
-         android:id="@+id/appbar">
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
-             android:layout_width="match_parent"
-             android:id="@+id/collapsingtoolbar"
-             app:contentScrim="@android:color/transparent"
-             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            android:id="@+id/collapsingtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
-                 android:layout_height="?attr/actionBarSize"
-                 android:layout_width="match_parent"
-                 app:title="@string/com_word_settings"
-                 app:layout_collapseMode="pin"
-                 android:id="@+id/toolbar"/>
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:title="@string/com_word_settings" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-         android:layout_height="match_parent"
-         android:layout_width="match_parent"
-         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-         android:id="@+id/nested_scroll_view">
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
-             android:layout_height="match_parent"
-             android:layout_width="match_parent"
-             android:padding="20dp"
-             android:orientation="vertical">
-
-            <RelativeLayout
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:background="@drawable/drawable_settings_item_background"
-                 android:paddingVertical="16dp"
-                 android:paddingHorizontal="24dp"
-                 android:id="@+id/main">
-
-                <ImageView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:src="@drawable/android_24px"
-                     android:layout_centerVertical="true"
-                     android:layout_marginRight="64px"
-                     android:tint="?colorPrimary"
-                     android:id="@+id/preference_icon" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_toRightOf="@id/preference_icon"
-                     android:textSize="18sp"
-                     android:textColor="?colorOnSurface"
-                     android:id="@+id/preference_name"
-                     android:text="@string/set_main"
-                     android:textStyle="bold" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_below="@id/preference_name"
-                     android:layout_toRightOf="@id/preference_icon"
-                     android:textSize="16sp"
-                     android:textColor="?colorOnSurfaceVariant"
-                     android:id="@+id/preference_description"
-                     android:text="@string/set_main_desc" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:background="@drawable/drawable_settings_item_background"
-                 android:paddingVertical="16dp"
-                 android:paddingHorizontal="24dp"
-                 android:id="@+id/editor">
-
-                <ImageView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:src="@drawable/edit_24px"
-                     android:layout_centerVertical="true"
-                     android:layout_marginRight="64px"
-                     android:tint="?colorPrimary"
-                     android:id="@+id/preference_icon2" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_toRightOf="@id/preference_icon2"
-                     android:textSize="18sp"
-                     android:textColor="?colorOnSurface"
-                     android:id="@+id/preference_name2"
-                     android:text="@string/set_editor"
-                     android:textStyle="bold" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_below="@id/preference_name2"
-                     android:layout_toRightOf="@id/preference_icon2"
-                     android:textSize="16sp"
-                     android:textColor="?colorOnSurfaceVariant"
-                     android:id="@+id/preference_description2"
-                     android:text="@string/set_editor_desc" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:background="@drawable/drawable_settings_item_background"
-                 android:paddingVertical="16dp"
-                 android:paddingHorizontal="24dp"
-                 android:id="@+id/terminal">
-
-                <ImageView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:src="@drawable/terminal_24px"
-                     android:layout_centerVertical="true"
-                     android:layout_marginRight="64px"
-                     android:tint="?colorPrimary"
-                     android:id="@+id/preference_icon3" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_toRightOf="@id/preference_icon3"
-                     android:textSize="18sp"
-                     android:textColor="?colorOnSurface"
-                     android:id="@+id/preference_name3"
-                     android:text="@string/set_terminal"
-                     android:textStyle="bold" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_below="@id/preference_name3"
-                     android:layout_toRightOf="@id/preference_icon3"
-                     android:textSize="16sp"
-                     android:textColor="?colorOnSurfaceVariant"
-                     android:id="@+id/preference_description3"
-                     android:text="@string/set_terminal_desc" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:background="@drawable/drawable_settings_item_background"
-                 android:paddingVertical="16dp"
-                 android:paddingHorizontal="24dp"
-                 android:id="@+id/lib">
-
-                <ImageView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:src="@drawable/book_24px"
-                     android:layout_centerVertical="true"
-                     android:layout_marginRight="64px"
-                     android:tint="?colorPrimary"
-                     android:id="@+id/preference_icon4" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_toRightOf="@id/preference_icon4"
-                     android:textSize="18sp"
-                     android:textColor="?colorOnSurface"
-                     android:id="@+id/preference_name4"
-                     android:text="@string/set_lib"
-                     android:textStyle="bold" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_below="@id/preference_name4"
-                     android:layout_toRightOf="@id/preference_icon4"
-                     android:textSize="16sp"
-                     android:textColor="?colorOnSurfaceVariant"
-                     android:id="@+id/preference_description4"
-                     android:text="@string/set_lib_desc" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:background="@drawable/drawable_settings_item_background"
-                 android:paddingVertical="16dp"
-                 android:paddingHorizontal="24dp"
-                 android:id="@+id/about">
-
-                <ImageView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:src="@drawable/info_24px"
-                     android:layout_centerVertical="true"
-                     android:layout_marginRight="64px"
-                     android:tint="?colorPrimary"
-                     android:id="@+id/preference_icon5" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_toRightOf="@id/preference_icon5"
-                     android:textSize="18sp"
-                     android:textColor="?colorOnSurface"
-                     android:id="@+id/preference_name5"
-                     android:text="@string/com_word_about"
-                     android:textStyle="bold" />
-
-                <TextView
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_below="@id/preference_name5"
-                     android:layout_toRightOf="@id/preference_icon5"
-                     android:textSize="16sp"
-                     android:textColor="?colorOnSurfaceVariant"
-                     android:id="@+id/preference_description5"
-                     android:text="@string/set_about_desc" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/settings_nav_graph" />
 
     </androidx.core.widget.NestedScrollView>
 

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorSurface">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:padding="40dp">
+
+            <LinearLayout
+                android:id="@+id/linear10"
+                android:layout_width="wrap_content"
+                android:layout_height="420dp"
+                android:background="@drawable/bg_shape_round"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
+
+                <LinearLayout
+                    android:id="@+id/linear4"
+                    android:layout_width="160dp"
+                    android:layout_height="290dp"
+                    android:background="@drawable/ts_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/linear6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:id="@+id/linear7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/ts_status"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/ts_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="System"
+                    android:textColor="?colorSurface"
+                    android:textSize="28dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/linear5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialbutton1"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Light"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialbutton2"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Dark"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialbutton3"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Auto"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
