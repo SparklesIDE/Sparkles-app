@@ -13,11 +13,11 @@
     app:showAsAction="always"
     android:icon="@drawable/redo_24px"
     android:title="Redo"/>
-     <item
+    <!-- <item
     android:id="@+id/menu_tools"
     app:showAsAction="always"
     android:icon="@drawable/construction_24px"
-    android:title="Toolbox"/>
+    android:title="Toolbox"/>-->
     <item
     android:id="@+id/menu_save"
     app:showAsAction="always"
