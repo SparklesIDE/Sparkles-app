@@ -128,12 +128,20 @@ public class AboutActivity extends BaseActivity {
     
     private void configureTeamMembers() {
         TeamMember(
-            "Hanzo",
+            "Vivek",
             Role.DEVELOPER,
-            "https://github.com/HanzoDev1375",
-            getString(R.string.hanzo_phrase),
+            "https://github.com/itsvks19",
+            getString(R.string.vivek_phrase),
             true
         );
+        TeamMember(
+            "Rohit Kushvaha",
+            Role.DEVELOPER,
+            "https://github.com/RohitKushvaha01",
+            getString(R.string.rohit_kushvaha_phrase),
+            true
+        );
+    
     
         TeamMember(
             "Thiarley Rocha",
@@ -144,18 +152,24 @@ public class AboutActivity extends BaseActivity {
         );
     
         TeamMember(
-            "Rohit Kushvaha",
-            Role.DEVELOPER,
-            "https://github.com/RohitKushvaha01",
-            getString(R.string.rohit_kushvaha_phrase),
-            true
-        );
-    
-        TeamMember(
             "NEOAPPS",
             Role.DEVELOPER,
             "https://github.com/neoapps-dev",
             getString(R.string.neoapps_phrase),
+            true
+        );
+        TeamMember(
+            "ArtSphere",
+            Role.DEVELOPER,
+            "https://github.com/ArtSphereOfficial",
+            getString(R.string.art_phrase),
+            true
+        );
+        TeamMember(
+            "Hanzo",
+            Role.DEVELOPER,
+            "https://github.com/HanzoDev1375",
+            getString(R.string.hanzo_phrase),
             true
         );
     
