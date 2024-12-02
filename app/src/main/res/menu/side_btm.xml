@@ -12,7 +12,7 @@
 	        android:title="Git" /> 
 	 
 	    <item 
-	        android:id="@+id/toolbox" 
+	        android:id="@+id/toolboxm" 
 	        android:icon="@drawable/construction_24px" 
 	        android:title="Toolbox" /> 
 

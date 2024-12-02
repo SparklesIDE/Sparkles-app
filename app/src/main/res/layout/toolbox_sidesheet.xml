@@ -23,12 +23,41 @@
     android:layout_width="match_parent"
     app:menu="@menu/side_btm"
     android:background="@android:color/transparent"
+    android:id="@+id/navside"
     app:labelVisibilityMode="unlabeled"/>
+    <LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/container">
+     <LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/FileTreeCon">
+    <!--Where the file tree goes-->
+    <TextView
+  android:layout_height="wrap_content" 
+  android:layout_width="wrap_content"
+  android:text="This FileTree Goes here" />
+     </LinearLayout>
+     <LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/GitCon">
+    <!--Where the Git goes-->
+     <TextView
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content"
+     android:text="This Git Goes here" />
+     </LinearLayout>
+
+    
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navview"
         android:layout_gravity="start"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:menu="@menu/toolbox_menu"
-        android:background="@android:color/transparent"/>                      
+        android:background="@android:color/transparent"/> 
+     </LinearLayout>                    
 </LinearLayout>

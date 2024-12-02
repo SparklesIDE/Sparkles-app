@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.content.res.Configuration;
@@ -19,7 +21,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.sidesheet.SideSheetDialog;
 import com.google.android.material.button.MaterialButton;
 
@@ -62,6 +66,46 @@ public class MainActivity extends BaseActivity {
       }
 
       MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
+      BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
+      LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
+      LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
+      NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
+      LinearLayout container = sideSheetDialog.findViewById(R.id.container);
+
+      gitcon.setVisibility(View.GONE);
+      navview.setVisibility(View.GONE);
+      filetreecon.setVisibility(View.VISIBLE);
+      
+   bottomNav.setOnNavigationItemSelectedListener( item -> { 
+             
+            switch (item.getItemId()) { 
+  
+                case R.id.file: 
+                    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    gitcon.setVisibility(View.GONE);
+                    navview.setVisibility(View.GONE);
+                    filetreecon.setVisibility(View.VISIBLE);
+                    break; 
+                case R.id.git: 
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    filetreecon.setVisibility(View.GONE);
+                    navview.setVisibility(View.GONE);
+                    gitcon.setVisibility(View.VISIBLE);
+                    break; 
+                    case R.id.toolboxm: 
+                    
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    filetreecon.setVisibility(View.GONE);
+                    gitcon.setVisibility(View.GONE);
+                    navview.setVisibility(View.VISIBLE);
+                
+                    break; 
+                
+            } 
+            return true; 
+         } ); 
+      
       if (materialButton != null) {
         materialButton.setOnClickListener(v -> sideSheetDialog.hide());
       }
