@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -70,13 +71,13 @@ public class MainActivity extends BaseActivity {
       LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
       LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
       NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
-      LinearLayout container = sideSheetDialog.findViewById(R.id.container);
+      FrameLayout container = sideSheetDialog.findViewById(R.id.container);
 
       gitcon.setVisibility(View.GONE);
       navview.setVisibility(View.GONE);
       filetreecon.setVisibility(View.VISIBLE);
       
-   bottomNav.setOnNavigationItemSelectedListener( item -> { 
+  /* bottomNav.setOnNavigationItemSelectedListener( item -> { 
              
             switch (item.getItemId()) { 
   
@@ -104,7 +105,27 @@ public class MainActivity extends BaseActivity {
                 
             } 
             return true; 
-         } ); 
+         } ); */
+    bottomNav.setOnNavigationItemSelectedListener(item -> {
+    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+    TransitionManager.beginDelayedTransition(container, sharedAxis);
+    
+    if (item.getItemId() == R.id.file) {
+        gitcon.setVisibility(View.GONE);
+        navview.setVisibility(View.GONE);
+        filetreecon.setVisibility(View.VISIBLE);
+    } else if (item.getItemId() == R.id.git) {
+        filetreecon.setVisibility(View.GONE);
+        navview.setVisibility(View.GONE);
+        gitcon.setVisibility(View.VISIBLE);
+    } else if (item.getItemId() == R.id.toolboxm) {
+        filetreecon.setVisibility(View.GONE);
+        gitcon.setVisibility(View.GONE);
+        navview.setVisibility(View.VISIBLE);
+    }
+
+    return true;
+});
       
       if (materialButton != null) {
         materialButton.setOnClickListener(v -> sideSheetDialog.hide());
