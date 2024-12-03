@@ -1,4 +1,4 @@
-package org.robok.engine.feature.compiler.java;
+package org.robok.engine.feature.compiler.java
 
 /*
  *  This file is part of Robok © 2024.
