@@ -65,7 +65,7 @@ public final class JavaCompiler {
   public final void run(final File outputDir) {
     var executor = new BinaryExecutor();
     var className = "Main";
-    executor.setCommands(List.of("java", "-cp", outputDir.getAbsolutePath(), className));
+    executor.setCommands(List.of("java", className));
     var runResult = executor.execute();
     newLog("Result:\n" + runResult);
   }
