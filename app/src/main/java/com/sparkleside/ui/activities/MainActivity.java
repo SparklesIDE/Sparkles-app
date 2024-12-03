@@ -185,7 +185,7 @@ public class MainActivity extends BaseActivity {
 
     new MaterialAlertDialogBuilder(this)
         .setTitle(getString(R.string.common_word_result))
-        .setMessage(a.toString())
+        .setMessage(logs.toString())
         .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
         .setNeutralButton(getString(R.string.common_word_copy), (d, w) -> copyText(a.toString()))
         .show();
