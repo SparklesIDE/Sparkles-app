@@ -28,4 +28,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 dependencies {
   implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
+  implementation("com.android.tools:r8:8.3.37")
 }

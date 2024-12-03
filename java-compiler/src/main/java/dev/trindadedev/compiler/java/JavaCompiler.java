@@ -1,6 +1,7 @@
 package dev.trindadedev.compiler.java;
 
 import android.content.Context;
+import com.android.tools.r8.D8;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -8,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.jdt.internal.compiler.batch.Main;
+import dalvik.system.DexClassLoader;
 
 public final class JavaCompiler {
 
@@ -58,7 +60,7 @@ public final class JavaCompiler {
       newLog("failed to compile:\n" + errorWriter);
       return;
     }
-
+   
     newLog("compiled with successful:\n" + outputWriter);
     
     try {
@@ -66,6 +68,18 @@ public final class JavaCompiler {
       var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
+      
+      try {
+        var d8Args = new ArrayList<String>();
+        d8Args.add("--output");
+        d8Args.add(outputDir.getAbsolutePath());
+        d8Args.add("--lib");
+        d8Args.add(getAndroidJarFile().getAbsolutePath());
+        d8Args.add(outputDir.getAbsolutePath() + "/classes.jar";);
+        D8.main(d8Args.toArray(new String[0]));
+      } catch (Exception e) {
+        newLog(e.toString());
+      }
     } catch (IOException e) {
       newLog(e.toString());
     }
@@ -73,11 +87,20 @@ public final class JavaCompiler {
   }
 
   public final void run(final File outputDir) {
-    var executor = new BinaryExecutor();
-    var className = "Main";
-    executor.setCommands(List.of("java", "--jar", outputDir.getAbsolutePath() + "/classes.jar"));
-    var runResult = executor.execute();
-    newLog("Result:\n" + runResult);
+    var className = "Main"
+    var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
+    
+    var dexLoader =
+      new DexClassLoader(
+        outputDir.getAbsolutePath() + "/classes.dex",
+        optimizedDir,
+        null,
+        context.getClassLoader()
+      );
+    
+    Class<?> calledClass = dexLoader.loadClass(className);
+    var method = calledClass.getDeclaredMethod("main", String[].class);
+    String[] param = {};
   }
 
   public final void newLog(final String log) {
