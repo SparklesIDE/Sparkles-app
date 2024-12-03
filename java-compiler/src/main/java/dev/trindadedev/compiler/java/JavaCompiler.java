@@ -63,7 +63,7 @@ public final class JavaCompiler {
     
     try {
       var inputPath = outputDir.getAbsolutePath();
-      var outputPath = outputDir.getAbsolutePath() + "classes.jar";
+      var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
     } catch (IOException e) {
@@ -75,7 +75,7 @@ public final class JavaCompiler {
   public final void run(final File outputDir) {
     var executor = new BinaryExecutor();
     var className = "Main";
-    executor.setCommands(List.of("java", "--jar", outputDir.getAbsolutePath() + "classes.jar"));
+    executor.setCommands(List.of("java", "--jar", outputDir.getAbsolutePath() + "/classes.jar"));
     var runResult = executor.execute();
     newLog("Result:\n" + runResult);
   }
