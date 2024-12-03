@@ -38,6 +38,9 @@ import com.zyron.filetree.widget.FileTreeView;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 
 public class MainActivity extends BaseActivity {
 
@@ -210,9 +213,16 @@ public class MainActivity extends BaseActivity {
         .setTitle(getString(R.string.common_word_result))
         .setMessage(a.toString())
         .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
+        .setNeutralButton(getString(R.string.common_word_copy), (d, w) -> copyText(a.toString()))
         .show();
   }
-
+  
+  private void copyText(final String a) {
+    var clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+    var clip = ClipData.newPlainText("Result", a);
+    clipboard.setPrimaryClip(clip);
+  }
+  
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.toolbar_menu, menu);

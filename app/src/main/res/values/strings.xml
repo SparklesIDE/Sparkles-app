@@ -42,4 +42,5 @@
 
   <string name="common_word_result">Result</string>
   <string name="common_word_ok">Ok</string>
+  <string name="common_word_copy">Copy</string>
 </resources>
