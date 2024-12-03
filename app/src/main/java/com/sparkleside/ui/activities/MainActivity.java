@@ -45,7 +45,7 @@ public class MainActivity extends BaseActivity {
 
   private ActivityMainBinding binding;
   private FileTreeIconProvider fileIconProvider;
- // privat FileOperationExecutor fileoperate;
+  private FileOperationExecutor fileoperate;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
