@@ -48,95 +48,95 @@ public final class JavaCompiler {
    * @param compileItem a Item with Info to compile
    */
   public final void compile(final CompileItem compileItem) {
-    var executor = new BinaryExecutor();
-    logs.clear();
-    if (!compileItem.getJavaFile().exists()
-        || !compileItem.getJavaFile().getName().endsWith(".java")) {
-      newLog("Invalid file: " + compileItem.getJavaFile().getAbsolutePath());
-      return;
-    }
+  var executor = new BinaryExecutor();
+  logs.clear();
+  if (!compileItem.getJavaFile().exists()
+      || !compileItem.getJavaFile().getName().endsWith(".java")) {
+    newLog("Invalid file: " + compileItem.getJavaFile().getAbsolutePath());
+    return;
+  }
 
-    var errorWriter = new StringWriter();
-    var errWriter = new PrintWriter(errorWriter);
+  var errorWriter = new StringWriter();
+  var errWriter = new PrintWriter(errorWriter);
 
-    var outputWriter = new StringWriter();
-    var outWriter = new PrintWriter(outputWriter);
+  var outputWriter = new StringWriter();
+  var outWriter = new PrintWriter(outputWriter);
 
-    var outputDir = new File(compileItem.getOutputDir(), "classes/bin/");
-    if (!outputDir.exists() && !outputDir.mkdirs()) {
-      newLog("failed create output directory: " + outputDir.getAbsolutePath());
-      return;
-    }
+  var outputDir = new File(compileItem.getOutputDir(), "classes/bin/");
+  if (!outputDir.exists() && !outputDir.mkdirs()) {
+    newLog("failed create output directory: " + outputDir.getAbsolutePath());
+    return;
+  }
 
-    var args = new ArrayList<String>();
-    args.add("-1.8");
-    args.add("-proc:none");
-    args.add("-nowarn");
-    args.add("-d");
-    args.add(outputDir.getAbsolutePath());
-    args.add("-sourcepath");
-    args.add(" ");
-    args.add(compileItem.getJavaFile().getAbsolutePath());
-    args.add("-cp");
-    args.add(getLibs());
+  var args = new ArrayList<String>();
+  args.add("-1.8");
+  args.add("-proc:none");
+  args.add("-nowarn");
+  args.add("-d");
+  args.add(outputDir.getAbsolutePath());
+  args.add("-sourcepath");
+  args.add(" ");
+  args.add(compileItem.getJavaFile().getAbsolutePath());
+  args.add("-cp");
+  args.add(getLibs());
 
-    var compiler = new Main(outWriter, errWriter, false, null, null);
-    var success = compiler.compile(args.toArray(new String[0]));
+  var compiler = new Main(outWriter, errWriter, false, null, null);
+  var success = compiler.compile(args.toArray(new String[0]));
 
-    if (!success) {
-      newLog("failed to compile:\n" + errorWriter);
-      return;
-    }
+  if (!success) {
+    newLog("failed to compile:\n" + errorWriter);
+    return;
+  }
 
-    newLog("compiled with successful:\n" + outputWriter);
+  newLog("compiled with successful:\n" + outputWriter);
+
+  try {
+    var inputPath = outputDir.getAbsolutePath();
+    var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
+    var jarPackager = new JarCreator(inputPath, outputPath);
+    jarPackager.create();
 
     try {
-      var inputPath = outputDir.getAbsolutePath();
-      var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
-      var jarPackager = new JarCreator(inputPath, outputPath);
-      jarPackager.create();
-
-      try {
-        var d8Args = new ArrayList<String>();
-        d8Args.add("--output");
-        d8Args.add(outputDir.getAbsolutePath());
-        d8Args.add("--lib");
-        d8Args.add(getAndroidJarFile().getAbsolutePath());
-        d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
-        D8.main(d8Args.toArray(new String[0]));
-        run(outputDir);
-      } catch (CompilationFailedException e) {
-        newLog(e.toString());
-      }
-    } catch (IOException e) {
+      var d8Args = new ArrayList<String>();
+      d8Args.add("--output");
+      d8Args.add(outputDir.getAbsolutePath());
+      d8Args.add("--lib");
+      d8Args.add(getAndroidJarFile().getAbsolutePath());
+      d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
+      D8.main(d8Args.toArray(new String[0]));
+      run(outputDir);
+    } catch (CompilationFailedException e) {
       newLog(e.toString());
     }
+  } catch (IOException e) {
+    newLog(e.toString());
   }
+}
 
   /*
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
    */
   public final void run(final File outputDir) {
-    try {
-      var className = "Main";
-      var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
+  try {
+    var className = "Main";
+    var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
 
-      var dexLoader =
-          new DexClassLoader(
-              outputDir.getAbsolutePath() + "/classes.dex",
-              optimizedDir,
-              null,
-              context.getClassLoader());
+    var dexLoader =
+        new DexClassLoader(
+            outputDir.getAbsolutePath() + "/classes.dex",
+            optimizedDir,
+            null,
+            context.getClassLoader());
 
-      Class<?> calledClass = dexLoader.loadClass(className);
-      var method = calledClass.getDeclaredMethod("main", String[].class);
-      String[] param = {};
-      var result = method.invoke(null, new Object[] {param});
-    } catch (InvocationTargetException e) {
-      newLog(e.toString());
-    }
+    Class<?> calledClass = dexLoader.loadClass(className);
+    var method = calledClass.getDeclaredMethod("main", String[].class);
+    String[] param = {};
+    var result = method.invoke(null, new Object[] {param});
+  } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+    newLog(e.toString());
   }
+}
 
   public final void newLog(final String log) {
     logs.add(log);
