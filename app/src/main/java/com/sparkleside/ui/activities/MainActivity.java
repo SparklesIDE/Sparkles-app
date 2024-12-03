@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity {
       NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
       FrameLayout container = sideSheetDialog.findViewById(R.id.container);
       FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
-     // fileIconProvider = FileTreeIconProvider();
+      fileIconProvider = FileTreeIconProvider();
       fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider, this);
 
       gitcon.setVisibility(View.GONE);
