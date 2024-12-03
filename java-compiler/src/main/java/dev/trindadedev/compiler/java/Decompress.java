@@ -1,4 +1,4 @@
-package com.sparkleside.utils;
+package dev.trindadedev.compiler.java;
 
 /*
  *  This file is part of Robok © 2024.

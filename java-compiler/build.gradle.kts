@@ -25,3 +25,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     jvmTarget = JvmTarget.JVM_17
   }
 }
+
+dependencies {
+  implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
+}
