@@ -75,7 +75,7 @@ public final class JavaCompiler {
         d8Args.add(outputDir.getAbsolutePath());
         d8Args.add("--lib");
         d8Args.add(getAndroidJarFile().getAbsolutePath());
-        d8Args.add(outputDir.getAbsolutePath() + "/classes.jar";);
+        d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
         D8.main(d8Args.toArray(new String[0]));
       } catch (Exception e) {
         newLog(e.toString());
