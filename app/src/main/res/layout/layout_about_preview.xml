@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-   xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinator"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/coordinator"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
 
-   <LinearLayout
-     android:layout_height="match_parent"
-     android:layout_width="match_parent"
-     android:orientation="vertical"
-     android:gravity="center">
-     
-     <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
-        android:id="@+id/maskFrame"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:porterduffxfermode="DST_IN"
-        app:mask="@drawable/scallop_mask">
-        
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            android:id="@+id/icon"/>
-     </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
-     
-     <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp" 
-	    android:paddingRight="8dp"
-        android:textColor="?colorOnSurface"
-        android:text="Name"
-        android:textSize="36sp" />
-     
-     <TextView
-        android:id="@+id/phrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:textColor="?colorOnSurfaceVariant"
-        android:text="Phrase"
-        android:textSize="19sp"
-        android:gravity="center" />
-        
-   </LinearLayout>
+  <LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
+      android:id="@+id/maskFrame"
+      android:layout_width="300dp"
+      android:layout_height="300dp"
+      app:porterduffxfermode="DST_IN"
+      app:mask="@drawable/scallop_mask">
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/icon" />
+    </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
+
+    <TextView
+      android:id="@+id/name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingLeft="8dp"
+      android:paddingTop="8dp"
+      android:paddingRight="8dp"
+      android:textColor="?colorOnSurface"
+      android:text="Name"
+      android:textSize="36sp" />
+
+    <TextView
+      android:id="@+id/phrase"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:textColor="?colorOnSurfaceVariant"
+      android:text="Phrase"
+      android:textSize="19sp"
+      android:gravity="center" />
+
+  </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

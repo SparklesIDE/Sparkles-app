@@ -1,5 +1,7 @@
 <resources>
   <declare-styleable name="SwipeRevealLayout">
-    <attr name="dragHandle" format="reference" />
+    <attr
+      name="dragHandle"
+      format="reference" />
   </declare-styleable>
 </resources>

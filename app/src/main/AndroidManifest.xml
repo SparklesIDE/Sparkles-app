@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission
+    android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    tools:ignore="ScopedStorage" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
+  <application
+    android:name="com.sparkleside.App"
+    android:allowBackup="true"
+    android:enableOnBackInvokedCallback="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:localeConfig="@xml/local_config"
+    android:roundIcon="@mipmap/ic_launcher"
+    android:supportsRtl="false"
+    android:theme="@style/Theme.Sparkles">
 
-    <application
-        android:name="com.sparkleside.App"
-        android:allowBackup="true"
-        android:enableOnBackInvokedCallback="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:localeConfig="@xml/local_config"
-        android:roundIcon="@mipmap/ic_launcher"
-        android:supportsRtl="false"
-        android:theme="@style/Theme.Sparkles">
+    <activity
+      android:name="com.sparkleside.ui.activities.MainActivity"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name=".ui.activities.TerminalActivity"
+      android:exported="true"
+      android:windowSoftInputMode="adjustResize"
+      android:enableOnBackInvokedCallback="false" />
 
-        <activity
-            android:name="com.sparkleside.ui.activities.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.activities.TerminalActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" 
-            android:enableOnBackInvokedCallback="false"/>
-
-        <activity
-            android:name="com.sparkleside.ui.activities.SettingsActivity"
-            android:exported="true"
-            android:enableOnBackInvokedCallback="false" />
-        <activity
-            android:name="com.sparkleside.ui.activities.AboutActivity"
-            android:exported="true" 
-            android:enableOnBackInvokedCallback="false"/>
-        <activity
-            android:name="com.sparkleside.ui.activities.AppearanceActivity"
-            android:exported="true"
-            android:enableOnBackInvokedCallback="false" />
-    </application>
+    <activity
+      android:name="com.sparkleside.ui.activities.SettingsActivity"
+      android:exported="true"
+      android:enableOnBackInvokedCallback="false" />
+    <activity
+      android:name="com.sparkleside.ui.activities.AboutActivity"
+      android:exported="true"
+      android:enableOnBackInvokedCallback="false" />
+    <activity
+      android:name="com.sparkleside.ui.activities.AppearanceActivity"
+      android:exported="true"
+      android:enableOnBackInvokedCallback="false" />
+  </application>
 </manifest>

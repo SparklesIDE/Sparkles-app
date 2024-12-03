@@ -3,6 +3,7 @@ package com.sparkleside.ui.activities;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Environment;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.TransitionManager;
@@ -29,17 +30,22 @@ import com.google.android.material.sidesheet.SideSheetDialog;
 import com.google.android.material.button.MaterialButton;
 
 import com.google.android.material.transition.platform.MaterialSharedAxis;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sparkleside.R;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.ui.editor.schemes.SparklesScheme;
 import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
-//fileTree
 import com.zyron.filetree.widget.FileTreeView;
 import com.zyron.filetree.provider.FileTreeIconProvider;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
 import java.io.File;
+import com.sparkleside.compiler.java.JavaCompiler;
+import com.sparkleside.compiler.java.JavaCompiler.CompileItem;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends BaseActivity {
 
@@ -154,13 +160,8 @@ public class MainActivity extends BaseActivity {
       binding.settings.setTooltipText(getString(R.string.tooltip_settings));
     }
 
-    binding.fab.setOnClickListener(v -> 
-      Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show()
-    );
-
-    binding.term.setOnClickListener(v -> 
-      startActivity(new Intent(this, TerminalActivity.class))
-    );
+    binding.fab.setOnClickListener(v -> compileJavaCode());
+    binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
 
     binding.settings.setOnClickListener(v -> {
       Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
@@ -181,6 +182,39 @@ public class MainActivity extends BaseActivity {
       v.setLayoutParams(mlp);
       return WindowInsetsCompat.CONSUMED;
     });
+  }
+  
+  private void compileJavaCode() {
+    var path = "SparklesIDE/temp/";
+    var javaFile = new File(Environment.getExternalStorageDirectory(), path + "temp.java");
+    var parentDir = javaFile.getParentFile();
+    if (parentDir != null && !parentDir.exists()) {
+      parentDir.mkdirs();
+    }
+    var javaCode = binding.editor.getText().toString();
+    
+    try (FileOutputStream fos = new FileOutputStream(javaFile)) {
+      fos.write(javaCode.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
+    var outputDir = new File(Environment.getExternalStorageDirectory(), path);
+    JavaCompiler.compile(new CompileItem(
+      javaFile,
+      outputDir
+    ));
+    
+    var a = new StringBuilder();
+    for (var log : JavaCompiler.getLogs()) {
+      a.append(log);
+    }
+    
+    new MaterialAlertDialogBuilder(this)
+      .setTitle(getString(R.string.common_word_result))
+      .setMessage(a.toString())
+      .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
+      .show();
   }
 
   @Override
