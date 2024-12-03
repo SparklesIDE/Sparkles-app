@@ -47,6 +47,8 @@ public class MainActivity extends BaseActivity {
   private ActivityMainBinding binding;
   private FileTreeIconProvider fileIconProvider;
   private FileOperationExecutor fileoperate;
+  private SideSheetDialog sideSheetDialog;
+  private ToolboxSidesheetBinding sheetBinding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class MainActivity extends BaseActivity {
     exitTransition.addTarget(R.id.coordinator);
     getWindow().setExitTransition(exitTransition);
 
-    MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
+    var reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
     reenterTransition.addTarget(R.id.coordinator);
     getWindow().setReenterTransition(reenterTransition);
 
@@ -66,60 +68,12 @@ public class MainActivity extends BaseActivity {
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
 
     binding.toolbar.setNavigationOnClickListener(view -> {
-      SideSheetDialog sideSheetDialog = new SideSheetDialog(MainActivity.this);
-      sideSheetDialog.setContentView(R.layout.toolbox_sidesheet); // Set content first
-      sideSheetDialog.setSheetEdge(Gravity.START); // Then set the sheet edge
-
-      Window window = sideSheetDialog.getWindow();
-      if (window != null) {
-        window.setDimAmount(0.4f);
-      }
-
-      MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
-      BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
-      LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
-      LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
-      NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
-      FrameLayout container = sideSheetDialog.findViewById(R.id.container);
-      FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
-      fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
-
-      gitcon.setVisibility(View.GONE);
-      navview.setVisibility(View.GONE);
-      filetreecon.setVisibility(View.VISIBLE);
-      
-      bottomNav.setOnNavigationItemSelectedListener(item -> {
-        var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-        TransitionManager.beginDelayedTransition(container, sharedAxis);
-    
-        if (item.getItemId() == R.id.file) {
-          gitcon.setVisibility(View.GONE);
-          navview.setVisibility(View.GONE);
-          filetreecon.setVisibility(View.VISIBLE);
-        } else if (item.getItemId() == R.id.git) {
-          filetreecon.setVisibility(View.GONE);
-          navview.setVisibility(View.GONE);
-          gitcon.setVisibility(View.VISIBLE);
-         } else if (item.getItemId() == R.id.toolboxm) {
-          filetreecon.setVisibility(View.GONE);
-          gitcon.setVisibility(View.GONE);
-          navview.setVisibility(View.VISIBLE);
-        }
-
-        return true;
-      });
-      
-      if (materialButton != null) {
-        materialButton.setOnClickListener(v -> sideSheetDialog.hide());
-      }
-
-      sideSheetDialog.show();
+      getSideSheet().show();
     });
 
-
-    binding.toolbox.setExpansion(true);
-    binding.toolbox.setDuration(200);
-    binding.toolbox.setOrientatin(ExpandableLayout.VERTICAL);
+    binding.options.setExpansion(true);
+    binding.options.setDuration(200);
+    binding.options.setOrientatin(ExpandableLayout.VERTICAL);
 
     if (Build.VERSION.SDK_INT >= 26) {
       binding.term.setTooltipText(getString(R.string.tooltip_terminal));
@@ -141,9 +95,8 @@ public class MainActivity extends BaseActivity {
     binding.editor.setTypefaceText(
         Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf"));
 
-    int currentNightMode =
-        getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-    SparklesScheme scheme = new SparklesScheme(binding.editor);
+    var currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+    var scheme = new SparklesScheme(binding.editor);
     scheme.apply();
 
     ViewCompat.setOnApplyWindowInsetsListener(
@@ -155,6 +108,48 @@ public class MainActivity extends BaseActivity {
           v.setLayoutParams(mlp);
           return WindowInsetsCompat.CONSUMED;
         });
+  }
+  
+  private final SideSheetDialog getSideSheet() {
+    sideSheetDialog = new SideSheetDialog(MainActivity.this);
+    sheetBinding = ToolboxSidesheetBinding.inflate(getLayoutInflater());
+    
+    sideSheetDialog.setContentView(sheetBinding.getRoot());
+    sideSheetDialog.setSheetEdge(Gravity.START);
+
+    var window = sideSheetDialog.getWindow();
+    if (window != null) {
+      window.setDimAmount(0.4f);
+    }
+
+    sheetBinding.fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
+    gitcon.setVisibility(View.GONE);
+    navView.setVisibility(View.GONE);
+    filetreecon.setVisibility(View.VISIBLE);
+      
+    sheetBinding.bottomNav.setOnNavigationItemSelectedListener(item -> {
+      var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+      TransitionManager.beginDelayedTransition(sheetBinding.container, sharedAxis);
+    
+      if (item.getItemId() == R.id.option_file_tree) {
+        sheetBinding.contentGit.setVisibility(View.GONE);
+        sheetBinding.contentToolbox.setVisibility(View.GONE);
+        sheetBinding.contentFileTree.setVisibility(View.VISIBLE);
+      } else if (item.getItemId() == R.id.option_git) {
+        sheetBinding.contentGit.setVisibility(View.VISIBLE);
+        sheetBinding.contentToolbox.setVisibility(View.GONE);
+        sheetBinding.contentFileTree.setVisibility(View.GONE);
+      } else if (item.getItemId() == R.id.option_toolbox) {
+        sheetBinding.contentGit.setVisibility(View.GONE);
+        sheetBinding.contentToolbox.setVisibility(View.VISIBLE);
+        sheetBinding.contentFileTree.setVisibility(View.GONE);
+      }
+      return true;
+    });
+      
+    sheetBinding.hide.setOnClickListener(v -> sideSheetDialog.hide());
+    
+    return sideSheetDialog;
   }
 
   private void compileJavaCode() {
@@ -208,10 +203,10 @@ public class MainActivity extends BaseActivity {
     int id = item.getItemId();
 
     if (id == R.id.menu_more) {
-      if (!binding.toolbox.isExpanded()) {
-        binding.toolbox.expand();
+      if (!binding.options.isExpanded()) {
+        binding.options.expand();
       } else {
-        binding.toolbox.collapse();
+        binding.options.collapse();
       }
       return true;
     }

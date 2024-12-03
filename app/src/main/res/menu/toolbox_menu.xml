@@ -1,19 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navview">
-       <group android:checkableBehavior="none">
-        <item
-            android:icon="@drawable/code_blocks_24px"
-            android:id="@+id/nav_string"
-            android:title="String Editor"
-            app:contentDescription="stringeditor" />
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:showIn="navview">
+  <group android:checkableBehavior="none">
+    <item
+      android:icon="@drawable/code_blocks_24px"
+      android:id="@+id/nav_string"
+      android:title="String Editor"
+      app:contentDescription="stringeditor" />
 
-        <item
-            android:icon="@drawable/material_24px"
-            android:id="@+id/nav_icons"
-            android:title="Material Icons"
-            app:contentDescription="MaterialIcons" />
-    </group>
+    <item
+      android:icon="@drawable/material_24px"
+      android:id="@+id/nav_icons"
+      android:title="Material Icons"
+      app:contentDescription="MaterialIcons" />
+  </group>
 
 </menu>

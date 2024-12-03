@@ -1,76 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_height="match_parent"
+  android:layout_width="match_parent"
+  android:orientation="vertical">
+  <LinearLayout
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="vertical">
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:gravity="end"
-        android:orientation="horizontal">
-    <TextView 
-         android:layout_height="match_parent"   
-         android:layout_width="match_parent" 
-         android:text="Sparkles IDE"
-         android:textSize="18sp"
-         android:gravity="left|center_vertical"
-         android:layout_gravity="start"
-         android:layout_weight="1"
-         android:paddingLeft="16dp"
-         />
-        <Button
-            android:id="@+id/materialbutton"
-            style="?attr/materialIconButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"    
-            app:icon="@drawable/menu_open_24px"
-            app:iconTint="?attr/colorOnSurfaceVariant" /> 
-    </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:gravity="end"
+    android:orientation="horizontal">
+    <TextView
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:text="@string/app_name"
+      android:textSize="18sp"
+      android:gravity="left|center_vertical"
+      android:layout_gravity="start"
+      android:layout_weight="1"
+      android:paddingLeft="16dp" />
+    <Button
+      android:id="@+id/hide"
+      style="?attr/materialIconButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      app:icon="@drawable/menu_open_24px"
+      app:iconTint="?attr/colorOnSurfaceVariant" />
+  </LinearLayout>
+  <com.google.android.material.bottomnavigation.BottomNavigationView
     android:layout_height="60dp"
     android:layout_width="match_parent"
-    app:menu="@menu/side_btm"
+    app:menu="@menu/sheet_options_menu"
     android:background="@android:color/transparent"
-    android:id="@+id/navside"
-    app:labelVisibilityMode="unlabeled"/>
-    <FrameLayout
+    android:id="@+id/options"
+    app:labelVisibilityMode="unlabeled" />
+  <FrameLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:id="@+id/container">
-     <LinearLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:id="@+id/FileTreeCon">
-    <!--Where the file tree goes-->
-  <com.zyron.filetree.widget.FileTreeView
+    <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:id="@+id/content_file_tree">
+      <!--Where the file tree goes-->
+      <com.zyron.filetree.widget.FileTreeView
         android:id="@+id/file_tree_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-     </LinearLayout>
-     <LinearLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:id="@+id/GitCon">
-    <!--Where the Git goes-->
-     <TextView
-     android:layout_height="wrap_content" 
-     android:layout_width="wrap_content"
-     android:text="The Git Client is Coming Soon!" />
-     </LinearLayout>
-
-    
-    <com.google.android.material.navigation.NavigationView
+    </LinearLayout>
+    <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:id="@+id/content_git">
+      <!--Where the Git goes-->
+      <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="The Git Client is Coming Soon!" />
+    </LinearLayout>
+    <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:id="@+id/content_toolbox">
+      <com.google.android.material.navigation.NavigationView
         android:id="@+id/navview"
         android:layout_gravity="start"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:menu="@menu/toolbox_menu"
-        android:background="@android:color/transparent"/> 
-     </FrameLayout>                    
+        android:background="@android:color/transparent" />
+    </LinearLayout>
+  </FrameLayout>
 </LinearLayout>

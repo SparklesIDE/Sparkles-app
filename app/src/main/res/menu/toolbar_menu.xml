@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    
-    <item
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
     android:id="@+id/menu_undo"
     app:showAsAction="always"
     android:icon="@drawable/undo_24px"
-    android:title="Undo"/>
-    <item
+    android:title="Undo" />
+  <item
     android:id="@+id/menu_redo"
     app:showAsAction="always"
     android:icon="@drawable/redo_24px"
-    android:title="Redo"/>
-    <!-- <item
-    android:id="@+id/menu_tools"
-    app:showAsAction="always"
-    android:icon="@drawable/construction_24px"
-    android:title="Toolbox"/>-->
-    <item
+    android:title="Redo" />
+  <item
     android:id="@+id/menu_save"
     app:showAsAction="always"
     android:icon="@drawable/save_24px"
-    android:title="Save"/>
-    <item
-        android:id="@+id/menu_more"
-        android:icon="@drawable/circle_24px"
-        android:title="More"
-        app:showAsAction="always" />
-        
+    android:title="Save" />
+  <item
+    android:id="@+id/menu_more"
+    android:icon="@drawable/circle_24px"
+    android:title="More"
+    app:showAsAction="always" />
 </menu>

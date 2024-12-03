@@ -23,7 +23,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <com.sparkleside.ui.components.ExpandableLayout
-      android:id="@+id/toolbox"
+      android:id="@+id/options"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
