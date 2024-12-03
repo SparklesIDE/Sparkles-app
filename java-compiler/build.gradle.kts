@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.trindadedev.compiler.java"
+  namespace = "org.robok.engine.feature.compiler.java"
   compileSdk = 34
     
   defaultConfig {

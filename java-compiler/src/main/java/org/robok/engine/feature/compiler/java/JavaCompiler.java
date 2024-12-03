@@ -1,4 +1,21 @@
-package dev.trindadedev.compiler.java;
+package org.robok.engine.feature.compiler.java;
+
+/*
+ *  This file is part of Robok © 2024.
+ *
+ *  Robok is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Robok is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *   along with Robok.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import android.content.Context;
 import com.android.tools.r8.D8;
@@ -13,6 +30,10 @@ import java.lang.NoSuchMethodException;
 import org.eclipse.jdt.internal.compiler.batch.Main;
 import dalvik.system.DexClassLoader;
 
+/*
+ * Class that compiles a java code, based on an File Java
+ * @author Aquiles Trindade (trindadedev13).
+ */
 public final class JavaCompiler {
 
   private final Context context;
@@ -21,7 +42,11 @@ public final class JavaCompiler {
   public JavaCompiler(Context context) {
     this.context = context;
   }
-
+  
+  /*
+   * Compile the code using ECJ.
+   * @param compileItem a Item with Info to compile
+   */
   public final void compile(final CompileItem compileItem) {
     var executor = new BinaryExecutor();
     logs.clear();
@@ -87,7 +112,11 @@ public final class JavaCompiler {
     }
     run(outputDir);
   }
-
+  
+  /*
+   * Run the compiled code with R8 & DexClassLoader
+   * @param outputDir The path where classes.jar is located
+   */
   public final void run(final File outputDir) {
     try {
       var className = "Main";
@@ -108,7 +137,7 @@ public final class JavaCompiler {
     
     }
   }
-
+  
   public final void newLog(final String log) {
     logs.add(log);
   }
@@ -116,7 +145,7 @@ public final class JavaCompiler {
   public final List<String> getLogs() {
     return logs;
   }
-
+  
   public final String getJavaVersion() {
     var executor = new BinaryExecutor();
     executor.setCommands(List.of("java", "--version"));
