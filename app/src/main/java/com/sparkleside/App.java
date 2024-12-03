@@ -1,6 +1,7 @@
 package com.sparkleside;
 
 import android.app.Application;
+import android.content.Context;
 import androidx.appcompat.app.AppCompatDelegate;
 import com.google.android.material.color.DynamicColors;
 import com.sparkleside.preferences.Preferences;
