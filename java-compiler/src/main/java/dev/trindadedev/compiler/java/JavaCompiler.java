@@ -59,13 +59,22 @@ public final class JavaCompiler {
     }
 
     newLog("compiled with successful:\n" + outputWriter);
+    
+    try {
+      var inputPath = outputDir.getAbsolutePath();
+      var outputPath = outputDir.getAbsolutePath(); + "classes.jar";
+      var jarPackager = new JarPackager(inputPath, outputPath);
+      jarPackager.create();
+    } catch (IOException e) {
+      newLog(e.toString());
+    }
     run(outputDir);
   }
 
   public final void run(final File outputDir) {
     var executor = new BinaryExecutor();
     var className = "Main";
-    executor.setCommands(List.of("java", className));
+    executor.setCommands(List.of("java", "--jar", outputDir.getAbsolutePath() + "classes.jar"));
     var runResult = executor.execute();
     newLog("Result:\n" + runResult);
   }
