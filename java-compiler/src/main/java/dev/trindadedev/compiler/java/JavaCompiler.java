@@ -8,6 +8,8 @@ import java.io.StringWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.ClassNotFoundException;
+import java.lang.NoSuchMethodException;
 import org.eclipse.jdt.internal.compiler.batch.Main;
 import dalvik.system.DexClassLoader;
 
@@ -87,20 +89,24 @@ public final class JavaCompiler {
   }
 
   public final void run(final File outputDir) {
-    var className = "Main";
-    var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
+    try {
+      var className = "Main";
+      var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
     
-    var dexLoader =
-      new DexClassLoader(
-        outputDir.getAbsolutePath() + "/classes.dex",
-        optimizedDir,
-        null,
-        context.getClassLoader()
-      );
+      var dexLoader =
+        new DexClassLoader(
+          outputDir.getAbsolutePath() + "/classes.dex",
+          optimizedDir,
+          null,
+          context.getClassLoader()
+        );
     
-    Class<?> calledClass = dexLoader.loadClass(className);
-    var method = calledClass.getDeclaredMethod("main", String[].class);
-    String[] param = {};
+      Class<?> calledClass = dexLoader.loadClass(className);
+      var method = calledClass.getDeclaredMethod("main", String[].class);
+      String[] param = {};
+    } catch(ClassNotFoundException | NoSuchMethodException ex) {
+    
+    }
   }
 
   public final void newLog(final String log) {
