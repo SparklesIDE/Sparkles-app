@@ -16,10 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.PopupWindow;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,39 +69,52 @@ public final class VirtualKeysView extends GridLayout {
 
   /** Defines the default value for {@link #mButtonTextColor}. */
   public static final int DEFAULT_BUTTON_TEXT_COLOR = 0xFFFFFFFF;
+
   /** Defines the default value for {@link #mButtonActiveTextColor}. */
   public static final int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = 0xFFf44336;
+
   /** Defines the default value for {@link #mButtonBackgroundColor}. */
   public static final int DEFAULT_BUTTON_BACKGROUND_COLOR = 0x00000000;
+
   /** Defines the default value for {@link #mButtonActiveBackgroundColor}. */
   public static final int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;
+
   /** Defines the minimum allowed duration in milliseconds for {@link #mLongPressTimeout}. */
   public static final int MIN_LONG_PRESS_DURATION = 200;
+
   /** Defines the maximum allowed duration in milliseconds for {@link #mLongPressTimeout}. */
   public static final int MAX_LONG_PRESS_DURATION = 3000;
+
   /** Defines the fallback duration in milliseconds for {@link #mLongPressTimeout}. */
   public static final int FALLBACK_LONG_PRESS_DURATION = 400;
+
   /** Defines the minimum allowed duration in milliseconds for {@link #mLongPressRepeatDelay}. */
   public static final int MIN_LONG_PRESS__REPEAT_DELAY = 5;
+
   /** Defines the maximum allowed duration in milliseconds for {@link #mLongPressRepeatDelay}. */
   public static final int MAX_LONG_PRESS__REPEAT_DELAY = 2000;
+
   /** Defines the default duration in milliseconds for {@link #mLongPressRepeatDelay}. */
   public static final int DEFAULT_LONG_PRESS_REPEAT_DELAY = 80;
+
   /**
    * The implementation of the {@link IVirtualKeysView} that acts as a client for the {@link
    * VirtualKeysView}.
    */
   private IVirtualKeysView mVirtualKeysViewClient;
+
   /**
    * The map for the {@link SpecialButton} and their {@link SpecialButtonState}. Defaults to the one
    * returned by {@link #getDefaultSpecialButtons(VirtualKeysView)}.
    */
   private Map<SpecialButton, SpecialButtonState> mSpecialButtons;
+
   /**
    * The keys for the {@link SpecialButton} added to {@link #mSpecialButtons}. This is automatically
    * set when the call to {@link #setSpecialButtons(Map)} is made.
    */
   private Set<String> mSpecialButtonsKeys;
+
   /**
    * The list of keys for which auto repeat of key should be triggered if its extra keys button is
    * long pressed. This is done by calling {@link IVirtualKeysView#onVirtualKeyButtonClick(View,
@@ -112,25 +123,31 @@ public final class VirtualKeysView extends GridLayout {
    * VirtualKeysConstants#PRIMARY_REPETITIVE_KEYS}.
    */
   private List<String> mRepetitiveKeys;
+
   /** The text color for the extra keys button. Defaults to {@link #DEFAULT_BUTTON_TEXT_COLOR}. */
   private int mButtonTextColor;
+
   /**
    * The text color for the extra keys button when its active. Defaults to {@link
    * #DEFAULT_BUTTON_ACTIVE_TEXT_COLOR}.
    */
   private int mButtonActiveTextColor;
+
   /**
    * The background color for the extra keys button. Defaults to {@link
    * #DEFAULT_BUTTON_BACKGROUND_COLOR}.
    */
   private int mButtonBackgroundColor;
+
   /**
    * The background color for the extra keys button when its active. Defaults to {@link
    * #DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR}.
    */
   private int mButtonActiveBackgroundColor;
+
   /** Defines whether text for the extra keys button should be all capitalized automatically. */
   private boolean mButtonTextAllCaps = true;
+
   /**
    * Defines the duration in milliseconds before a press turns into a long press. The default
    * duration used is the one returned by a call to {@link ViewConfiguration#getLongPressTimeout()}
@@ -139,6 +156,7 @@ public final class VirtualKeysView extends GridLayout {
    * #MAX_LONG_PRESS_DURATION}, otherwise {@link #FALLBACK_LONG_PRESS_DURATION} is used.
    */
   private int mLongPressTimeout;
+
   /**
    * Defines the duration in milliseconds for the delay between trigger of each repeat of {@link
    * #mRepetitiveKeys}. The default value is defined by {@link #DEFAULT_LONG_PRESS_REPEAT_DELAY}.
@@ -146,6 +164,7 @@ public final class VirtualKeysView extends GridLayout {
    * #MAX_LONG_PRESS__REPEAT_DELAY}, otherwise {@link #DEFAULT_LONG_PRESS_REPEAT_DELAY} is used.
    */
   private int mLongPressRepeatDelay;
+
   /**
    * The popup window shown if {@link VirtualKeyButton#getPopup()} returns a {@code non-null} value
    * and a swipe up action is done on an extra key.

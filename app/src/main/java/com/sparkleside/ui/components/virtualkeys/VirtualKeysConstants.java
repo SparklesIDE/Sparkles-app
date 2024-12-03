@@ -1,7 +1,6 @@
 package com.sparkleside.ui.components.virtualkeys;
 
 import android.view.KeyEvent;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -49,12 +48,14 @@ public class VirtualKeysConstants {
           put("APOSTROPHE", "'");
         }
       };
+
   /**
    * Defines the repetitive keys that can be passed to {@link
    * VirtualKeysView#setRepetitiveKeys(List)}.
    */
   public static List<String> PRIMARY_REPETITIVE_KEYS =
       Arrays.asList("UP", "DOWN", "LEFT", "RIGHT", "BKSP", "DEL");
+
   /** Defines the {@link KeyEvent} for common keys. */
   public static Map<String, Integer> PRIMARY_KEY_CODES_FOR_STRINGS =
       new HashMap<String, Integer>() {

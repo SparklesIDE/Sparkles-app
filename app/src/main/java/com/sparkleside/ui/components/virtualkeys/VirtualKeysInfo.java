@@ -2,9 +2,7 @@ package com.sparkleside.ui.components.virtualkeys;
 
 import android.view.View;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,14 +32,14 @@ import org.json.JSONObject;
  *
  * <p>Examples: {@code # Empty: []
  *
- * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
+ * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
  * Single row: [[ESC, TAB, CTRL, ALT, {key: '-', popup: '|'}, DOWN, UP]]
  *
- * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
+ * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
  * 2 row: [['ESC','/',{key: '-', popup: '|'},'HOME','UP','END','PGUP'],
  * ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
  *
- * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
+ * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>#
  * Advance: [[ {key: ESC, popup: {macro: "CTRL f d", display: "tmux exit"}}, {key: CTRL, popup:
  * {macro: "CTRL f BKSP", display: "tmux ←"}}, {key: ALT, popup: {macro: "CTRL f TAB", display:
  * "tmux →"}}, {key: TAB, popup: {macro: "ALT a", display: A-a}}, {key: LEFT, popup: HOME}, {key:
@@ -49,7 +47,7 @@ import org.json.JSONObject;
  * A-j, popup: {macro: "ALT g", display: A-g}}, {key: KEYBOARD, popup: {macro: "CTRL d", display:
  * exit}} ]]
  *
- * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>}
+ * <p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p><p>}
  *
  * <p>Aliases are also allowed for the keys that you can pass as {@code extraKeyAliasMap}. Check
  * {@link VirtualKeysConstants#CONTROL_CHARS_ALIASES}.
@@ -57,11 +55,10 @@ import org.json.JSONObject;
  * <p>Its up to the {@link VirtualKeysView.IVirtualKeysView} client on how to handle individual key
  * values of an {@link VirtualKeyButton}. They are sent as is via {@link
  * VirtualKeysView.IVirtualKeysView#onVirtualKeyButtonClick(View, VirtualKeyButton, Button)}. The
- * {TerminalVirtualKeys} which is an implementation of the
- * interface, checks if the key is one of {@link VirtualKeysConstants#PRIMARY_KEY_CODES_FOR_STRINGS}
- * and generates a {@link android.view.KeyEvent} for it, and if its not, then converts the key to
- * code points by calling {@link CharSequence#codePoints()} and passes them to the terminal as
- * literal strings.
+ * {TerminalVirtualKeys} which is an implementation of the interface, checks if the key is one of
+ * {@link VirtualKeysConstants#PRIMARY_KEY_CODES_FOR_STRINGS} and generates a {@link
+ * android.view.KeyEvent} for it, and if its not, then converts the key to code points by calling
+ * {@link CharSequence#codePoints()} and passes them to the terminal as literal strings.
  *
  * <p>Examples: {@code "ENTER" will trigger the ENTER keycode "LEFT" will trigger the LEFT keycode
  * and be displayed as "←" "→" will input a "→" character "−" will input a "−" character "-_-" will

@@ -1,7 +1,6 @@
 package com.sparkleside.ui.components.virtualkeys;
 
 import android.widget.Button;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +9,10 @@ public class SpecialButtonState {
 
   /** If special button has been created for the {@link VirtualKeysView}. */
   boolean isCreated = false;
+
   /** If special button is active. */
   boolean isActive = false;
+
   /**
    * If special button is locked due to long hold on it and should not be deactivated if its state
    * is read.
