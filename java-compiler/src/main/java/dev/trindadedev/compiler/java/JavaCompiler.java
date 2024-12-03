@@ -87,7 +87,7 @@ public final class JavaCompiler {
   }
 
   public final void run(final File outputDir) {
-    var className = "Main"
+    var className = "Main";
     var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
     
     var dexLoader =
