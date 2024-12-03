@@ -88,55 +88,26 @@ public class MainActivity extends BaseActivity {
       navview.setVisibility(View.GONE);
       filetreecon.setVisibility(View.VISIBLE);
       
-  /* bottomNav.setOnNavigationItemSelectedListener( item -> { 
-             
-            switch (item.getItemId()) { 
-  
-                case R.id.file: 
-                    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    gitcon.setVisibility(View.GONE);
-                    navview.setVisibility(View.GONE);
-                    filetreecon.setVisibility(View.VISIBLE);
-                    break; 
-                case R.id.git: 
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    filetreecon.setVisibility(View.GONE);
-                    navview.setVisibility(View.GONE);
-                    gitcon.setVisibility(View.VISIBLE);
-                    break; 
-                    case R.id.toolboxm: 
-                    
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    filetreecon.setVisibility(View.GONE);
-                    gitcon.setVisibility(View.GONE);
-                    navview.setVisibility(View.VISIBLE);
-                
-                    break; 
-                
-            } 
-            return true; 
-         } ); */
-    bottomNav.setOnNavigationItemSelectedListener(item -> {
-    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-    TransitionManager.beginDelayedTransition(container, sharedAxis);
+      bottomNav.setOnNavigationItemSelectedListener(item -> {
+        var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+        TransitionManager.beginDelayedTransition(container, sharedAxis);
     
-    if (item.getItemId() == R.id.file) {
-        gitcon.setVisibility(View.GONE);
-        navview.setVisibility(View.GONE);
-        filetreecon.setVisibility(View.VISIBLE);
-    } else if (item.getItemId() == R.id.git) {
-        filetreecon.setVisibility(View.GONE);
-        navview.setVisibility(View.GONE);
-        gitcon.setVisibility(View.VISIBLE);
-    } else if (item.getItemId() == R.id.toolboxm) {
-        filetreecon.setVisibility(View.GONE);
-        gitcon.setVisibility(View.GONE);
-        navview.setVisibility(View.VISIBLE);
-    }
+        if (item.getItemId() == R.id.file) {
+          gitcon.setVisibility(View.GONE);
+          navview.setVisibility(View.GONE);
+          filetreecon.setVisibility(View.VISIBLE);
+        } else if (item.getItemId() == R.id.git) {
+          filetreecon.setVisibility(View.GONE);
+          navview.setVisibility(View.GONE);
+          gitcon.setVisibility(View.VISIBLE);
+         } else if (item.getItemId() == R.id.toolboxm) {
+          filetreecon.setVisibility(View.GONE);
+          gitcon.setVisibility(View.GONE);
+          navview.setVisibility(View.VISIBLE);
+        }
 
-    return true;
-});
+        return true;
+      });
       
       if (materialButton != null) {
         materialButton.setOnClickListener(v -> sideSheetDialog.hide());
@@ -208,6 +179,7 @@ public class MainActivity extends BaseActivity {
     for (var log : JavaCompiler.getLogs()) {
       a.append(log);
     }
+    a.append(JavaCompiler.getJavaVersion());
 
     new MaterialAlertDialogBuilder(this)
         .setTitle(getString(R.string.common_word_result))

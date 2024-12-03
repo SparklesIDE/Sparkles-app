@@ -12,9 +12,9 @@ import org.eclipse.jdt.internal.compiler.batch.Main;
 public final class JavaCompiler {
 
   private static final List<String> logs = new ArrayList<>();
-  private static final BinaryExecutor executor = new BinaryExecutor();
-
+  
   public static void compile(CompileItem compileItem) {
+    var executor = new BinaryExecutor();
     logs.clear();
     if (!compileItem.getJavaFile().exists()
         || !compileItem.getJavaFile().getName().endsWith(".java")) {
@@ -58,7 +58,8 @@ public final class JavaCompiler {
     run(outputDir);
   }
 
-  private static void run(File outputDir) {
+  public static void final run(final File outputDir) {
+    var executor = new BinaryExecutor();
     var className = "Main";
     executor.setCommands(List.of("java", "-cp", outputDir.getAbsolutePath(), className));
     var runResult = executor.execute();
@@ -71,6 +72,12 @@ public final class JavaCompiler {
 
   public static final List<String> getLogs() {
     return logs;
+  }
+  
+  public static final String getJavaVersion() {
+    var executor = new BinaryExecutor();
+    executor.setCommands(List.of("java", "--version"));
+    return executor.execute();
   }
 
   private static final String getLibs() {
@@ -85,23 +92,19 @@ public final class JavaCompiler {
     var ctx = App.getContext();
     var androidJar = new File(ctx.getFilesDir() + "/temp/android.jar");
 
-    if (androidJar.exists()) {
-      return androidJar;
-    }
+    if (androidJar.exists()) return androidJar;
 
     Decompress.unzipFromAssets(
         ctx, "android.jar.zip", androidJar.getParentFile().getAbsolutePath());
 
     return androidJar;
   }
-
+  
   private static final File getLambdaFactoryFile() {
     var ctx = App.getContext();
     var lambdaFactory = new File(ctx.getFilesDir() + "/temp/core-lambda-stubs.jar");
 
-    if (lambdaFactory.exists()) {
-      return lambdaFactory;
-    }
+    if (lambdaFactory.exists()) return lambdaFactory;
 
     Decompress.unzipFromAssets(
         ctx, "core-lambda-stubs.zip", lambdaFactory.getParentFile().getAbsolutePath());
