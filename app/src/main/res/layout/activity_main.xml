@@ -1,128 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-    android:id="@+id/coordinator">
-    
-	<com.google.android.material.appbar.AppBarLayout
-		android:id="@+id/appbar"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-	  <com.google.android.material.appbar.MaterialToolbar  
-			android:id="@+id/toolbar"
-			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize"
-            app:title="Sparkles" />
-	</com.google.android.material.appbar.AppBarLayout>
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_behavior="@string/appbar_scrolling_view_behavior">
-		<com.sparkleside.ui.components.ExpandableLayout
-			android:id="@+id/toolbox"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-            android:background="?colorSurface">
-       <LinearLayout
-				android:id="@+id/linear"
-				android:layout_width="match_parent"
-				android:layout_height="?attr/actionBarSize"
-				android:orientation="horizontal"
-                android:gravity="center"
-                android:background="?colorSurface">
-                <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"    
-                android:gravity="center">
-                    
-				<Button
-					android:id="@+id/file"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/draft_24px"/></LinearLayout>
-			 <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"    
-        
-                android:gravity="center">
-            	<Button
-					android:id="@+id/term"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/terminal_24px"/></LinearLayout>
-			 <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"    
-        
-                android:gravity="center">
-            	<Button
-					android:id="@+id/search"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-                    android:contentDescription="Clear"
-					style="?attr/materialIconButtonStyle"
-                    app:icon="@drawable/search_24px"/></LinearLayout>
-			 <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"    
-        
-                android:gravity="center">
-                	<Button
-					android:id="@+id/settings"
-                    style="?attr/materialIconButtonStyle"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-                    android:contentDescription="Settings"
-					app:icon="@drawable/settings_24px"/></LinearLayout>
-			</LinearLayout>
-		</com.sparkleside.ui.components.ExpandableLayout>
-        <com.google.android.material.divider.MaterialDivider
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/coordinator">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.MaterialToolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:title="Sparkles" />
+  </com.google.android.material.appbar.AppBarLayout>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <com.sparkleside.ui.components.ExpandableLayout
+      android:id="@+id/toolbox"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="?colorSurface">
+      <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="2dp"/>
-		<LinearLayout
-			android:id="@+id/editor_container"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:orientation="horizontal">
-			<io.github.rosemoe.sora.widget.CodeEditor
-				android:id="@+id/editor"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:padding="8dp"
-				android:background="@android:color/transparent"
-				android:textSize="14sp" />
-		</LinearLayout>
-	</LinearLayout>
-     <com.google.android.material.button.MaterialButton
-        android:id="@+id/fab"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="24dp"
-        app:icon="@drawable/ic_fab_play"
-        android:background="@drawable/compilerr"
-        app:backgroundTint="?colorPrimary"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconSize="24dp"
-        app:iconTint="?colorSurface"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        android:padding="24dp"/>
-        
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="?colorSurface">
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:gravity="center">
+
+          <Button
+            android:id="@+id/file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?attr/materialIconButtonStyle"
+            app:icon="@drawable/draft_24px" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:gravity="center">
+          <Button
+            android:id="@+id/term"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?attr/materialIconButtonStyle"
+            app:icon="@drawable/terminal_24px" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:gravity="center">
+          <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Clear"
+            style="?attr/materialIconButtonStyle"
+            app:icon="@drawable/search_24px" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:gravity="center">
+          <Button
+            android:id="@+id/settings"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Settings"
+            app:icon="@drawable/settings_24px" />
+        </LinearLayout>
+      </LinearLayout>
+    </com.sparkleside.ui.components.ExpandableLayout>
+    <com.google.android.material.divider.MaterialDivider
+      android:layout_width="match_parent"
+      android:layout_height="2dp" />
+    <LinearLayout
+      android:id="@+id/editor_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+      <io.github.rosemoe.sora.widget.CodeEditor
+        android:id="@+id/editor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:background="@android:color/transparent"
+        android:textSize="14sp" />
+    </LinearLayout>
+  </LinearLayout>
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/fab"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="16dp"
+    android:layout_marginBottom="24dp"
+    app:icon="@drawable/ic_fab_play"
+    android:background="@drawable/compilerr"
+    app:backgroundTint="?colorPrimary"
+    app:iconGravity="textStart"
+    app:iconPadding="0dp"
+    app:iconSize="24dp"
+    app:iconTint="?colorSurface"
+    android:insetLeft="0dp"
+    android:insetTop="0dp"
+    android:insetRight="0dp"
+    android:insetBottom="0dp"
+    android:padding="24dp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
