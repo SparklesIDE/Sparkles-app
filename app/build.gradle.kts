@@ -82,6 +82,7 @@ dependencies {
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
     implementation(project(":filetree"))
+    implementation(project(":java-compiler"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     

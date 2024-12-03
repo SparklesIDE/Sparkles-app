@@ -1,4 +1,4 @@
-package com.sparkleside.compiler.java;
+package dev.trindadedev.compiler.java;
 
 import java.io.PrintWriter
 import java.io.StringWriter

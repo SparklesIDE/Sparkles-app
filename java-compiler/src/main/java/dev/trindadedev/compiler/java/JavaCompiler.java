@@ -1,7 +1,5 @@
-package com.sparkleside.compiler.java;
+package dev.trindadedev.compiler.java;
 
-import com.sparkleside.App;
-import com.sparkleside.utils.Decompress;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -11,9 +9,14 @@ import org.eclipse.jdt.internal.compiler.batch.Main;
 
 public final class JavaCompiler {
 
-  private static final List<String> logs = new ArrayList<>();
+  private final Context context;
+  private final List<String> logs = new ArrayList<>();
   
-  public static void compile(CompileItem compileItem) {
+  public JavaCompiler(Context context) {
+    this.context = context;
+  }
+  
+  public final void compile(final CompileItem compileItem) {
     var executor = new BinaryExecutor();
     logs.clear();
     if (!compileItem.getJavaFile().exists()
@@ -58,7 +61,7 @@ public final class JavaCompiler {
     run(outputDir);
   }
 
-  public static final void run(final File outputDir) {
+  public final void run(final File outputDir) {
     var executor = new BinaryExecutor();
     var className = "Main";
     executor.setCommands(List.of("java", "-cp", outputDir.getAbsolutePath(), className));
@@ -66,21 +69,21 @@ public final class JavaCompiler {
     newLog("Result:\n" + runResult);
   }
 
-  public static final void newLog(final String log) {
+  public final void newLog(final String log) {
     logs.add(log);
   }
 
-  public static final List<String> getLogs() {
+  public final List<String> getLogs() {
     return logs;
   }
   
-  public static final String getJavaVersion() {
+  public final String getJavaVersion() {
     var executor = new BinaryExecutor();
     executor.setCommands(List.of("java", "--version"));
     return executor.execute();
   }
 
-  private static final String getLibs() {
+  private final String getLibs() {
     var libs = new StringBuilder();
     libs.append(getAndroidJarFile().getAbsolutePath());
     libs.append(":");
@@ -88,26 +91,24 @@ public final class JavaCompiler {
     return libs.toString();
   }
 
-  private static final File getAndroidJarFile() {
-    var ctx = App.getContext();
-    var androidJar = new File(ctx.getFilesDir() + "/temp/android.jar");
+  private final File getAndroidJarFile() {
+    var androidJar = new File(context.getFilesDir() + "/temp/android.jar");
 
     if (androidJar.exists()) return androidJar;
 
     Decompress.unzipFromAssets(
-        ctx, "android.jar.zip", androidJar.getParentFile().getAbsolutePath());
+        context, "android.jar.zip", androidJar.getParentFile().getAbsolutePath());
 
     return androidJar;
   }
   
-  private static final File getLambdaFactoryFile() {
-    var ctx = App.getContext();
-    var lambdaFactory = new File(ctx.getFilesDir() + "/temp/core-lambda-stubs.jar");
+  private final File getLambdaFactoryFile() {
+    var lambdaFactory = new File(context.getFilesDir() + "/temp/core-lambda-stubs.jar");
 
     if (lambdaFactory.exists()) return lambdaFactory;
 
     Decompress.unzipFromAssets(
-        ctx, "core-lambda-stubs.zip", lambdaFactory.getParentFile().getAbsolutePath());
+        context, "core-lambda-stubs.zip", lambdaFactory.getParentFile().getAbsolutePath());
 
     return lambdaFactory;
   }
@@ -121,11 +122,11 @@ public final class JavaCompiler {
       this.outputDir = outputDir;
     }
 
-    public File getJavaFile() {
+    public final File getJavaFile() {
       return javaFile;
     }
 
-    public File getOutputDir() {
+    public final File getOutputDir() {
       return outputDir;
     }
   }

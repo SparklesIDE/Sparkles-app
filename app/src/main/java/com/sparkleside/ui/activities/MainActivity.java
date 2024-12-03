@@ -26,8 +26,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.sidesheet.SideSheetDialog;
 import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
-import com.sparkleside.compiler.java.JavaCompiler;
-import com.sparkleside.compiler.java.JavaCompiler.CompileItem;
+import dev.trindadedev.compiler.java.JavaCompiler;
+import dev.trindadedev.compiler.java.JavaCompiler.CompileItem;
 import com.sparkleside.databinding.ActivityMainBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.ExpandableLayout;
@@ -158,13 +158,17 @@ public class MainActivity extends BaseActivity {
   }
 
   private void compileJavaCode() {
+    var compiler = new JavaCompiler(this);
     var path = "SparklesIDE/temp/";
     var javaFile = new File(Environment.getExternalStorageDirectory(), path + "Main.java");
+    var javaCode = binding.editor.getText().toString();
     var parentDir = javaFile.getParentFile();
+    var outputDir = new File(Environment.getExternalStorageDirectory(), path);
+    var logs = new StringBuilder();
+    
     if (parentDir != null && !parentDir.exists()) {
       parentDir.mkdirs();
     }
-    var javaCode = binding.editor.getText().toString();
 
     try (FileOutputStream fos = new FileOutputStream(javaFile)) {
       fos.write(javaCode.getBytes());
@@ -172,14 +176,12 @@ public class MainActivity extends BaseActivity {
       e.printStackTrace();
     }
 
-    var outputDir = new File(Environment.getExternalStorageDirectory(), path);
-    JavaCompiler.compile(new CompileItem(javaFile, outputDir));
+    compiler.compile(new CompileItem(javaFile, outputDir));
 
-    var a = new StringBuilder();
-    for (var log : JavaCompiler.getLogs()) {
-      a.append(log);
+    for (var log : compiler.getLogs()) {
+      logs.append(log);
     }
-    a.append(JavaCompiler.getJavaVersion());
+    logs.append(compiler.getJavaVersion());
 
     new MaterialAlertDialogBuilder(this)
         .setTitle(getString(R.string.common_word_result))
