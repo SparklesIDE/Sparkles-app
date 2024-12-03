@@ -81,6 +81,7 @@ dependencies {
     implementation(project(":peekandpop"))
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
+    implementation(project(":filetree"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     
