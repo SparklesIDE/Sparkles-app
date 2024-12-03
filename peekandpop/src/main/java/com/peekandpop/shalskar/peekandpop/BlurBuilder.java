@@ -15,45 +15,45 @@ import android.renderscript.ScriptIntrinsicBlur;
 import android.view.View;
 
 public class BlurBuilder {
-    private static final float BITMAP_SCALE = 0.2f;
-    private static final float BLUR_RADIUS = 6.0f;
+  private static final float BITMAP_SCALE = 0.2f;
+  private static final float BLUR_RADIUS = 6.0f;
 
-    public static Bitmap blur(View v) {
-        return blur(v.getContext(), getScreenshot(v));
-    }
+  public static Bitmap blur(View v) {
+    return blur(v.getContext(), getScreenshot(v));
+  }
 
-    public static Bitmap blur(Context ctx, Bitmap image) {
-        int width = Math.round(image.getWidth() * BITMAP_SCALE);
-        int height = Math.round(image.getHeight() * BITMAP_SCALE);
+  public static Bitmap blur(Context ctx, Bitmap image) {
+    int width = Math.round(image.getWidth() * BITMAP_SCALE);
+    int height = Math.round(image.getHeight() * BITMAP_SCALE);
 
-        Bitmap inputBitmap = Bitmap.createScaledBitmap(image, width, height, false);
-        Bitmap outputBitmap = Bitmap.createBitmap(inputBitmap);
+    Bitmap inputBitmap = Bitmap.createScaledBitmap(image, width, height, false);
+    Bitmap outputBitmap = Bitmap.createBitmap(inputBitmap);
 
-        RenderScript rs = RenderScript.create(ctx);
-        ScriptIntrinsicBlur theIntrinsic = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-        Allocation tmpIn = Allocation.createFromBitmap(rs, inputBitmap);
-        Allocation tmpOut = Allocation.createFromBitmap(rs, outputBitmap);
-        theIntrinsic.setRadius(BLUR_RADIUS);
-        theIntrinsic.setInput(tmpIn);
-        theIntrinsic.forEach(tmpOut);
-        tmpOut.copyTo(outputBitmap);
+    RenderScript rs = RenderScript.create(ctx);
+    ScriptIntrinsicBlur theIntrinsic = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+    Allocation tmpIn = Allocation.createFromBitmap(rs, inputBitmap);
+    Allocation tmpOut = Allocation.createFromBitmap(rs, outputBitmap);
+    theIntrinsic.setRadius(BLUR_RADIUS);
+    theIntrinsic.setInput(tmpIn);
+    theIntrinsic.forEach(tmpOut);
+    tmpOut.copyTo(outputBitmap);
 
-        return darkenBitmap(outputBitmap);
-    }
+    return darkenBitmap(outputBitmap);
+  }
 
-    private static Bitmap getScreenshot(View v) {
-        Bitmap b = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(b);
-        v.draw(c);
-        return b;
-    }
+  private static Bitmap getScreenshot(View v) {
+    Bitmap b = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
+    Canvas c = new Canvas(b);
+    v.draw(c);
+    return b;
+  }
 
-    private static Bitmap darkenBitmap(Bitmap bitmap) {
-        Canvas canvas = new Canvas(bitmap);
-        Paint paint = new Paint(Color.BLACK);
-        ColorFilter filter = new LightingColorFilter(0xAAAAAA, 0x000000);
-        paint.setColorFilter(filter);
-        canvas.drawBitmap(bitmap, new Matrix(), paint);
-        return bitmap;
-    }
+  private static Bitmap darkenBitmap(Bitmap bitmap) {
+    Canvas canvas = new Canvas(bitmap);
+    Paint paint = new Paint(Color.BLACK);
+    ColorFilter filter = new LightingColorFilter(0xAAAAAA, 0x000000);
+    paint.setColorFilter(filter);
+    canvas.drawBitmap(bitmap, new Matrix(), paint);
+    return bitmap;
+  }
 }

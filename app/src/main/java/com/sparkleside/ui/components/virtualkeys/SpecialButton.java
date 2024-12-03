@@ -1,7 +1,6 @@
 package com.sparkleside.ui.components.virtualkeys;
 
 import androidx.annotation.NonNull;
-
 import java.util.HashMap;
 
 /** The {@link Class} that implements special buttons for {@link VirtualKeysView}. */
@@ -12,6 +11,7 @@ public class SpecialButton {
   public static final SpecialButton ALT = new SpecialButton("ALT");
   public static final SpecialButton SHIFT = new SpecialButton("SHIFT");
   public static final SpecialButton FN = new SpecialButton("FN");
+
   /** The special button key. */
   private final String key;
 
