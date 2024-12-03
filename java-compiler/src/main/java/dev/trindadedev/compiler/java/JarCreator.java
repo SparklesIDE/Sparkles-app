@@ -17,7 +17,7 @@ public class JarCreator {
 
   private static Attributes getDefaultAttributes() {
     var attrs = new Attributes();
-    attrs.put(new Attributes.Name("built by "), "Sparkles IDE");
+    attrs.put(new Attributes.Name("Created-By"), "Sparkles IDE");
     return attrs;
   }
 
