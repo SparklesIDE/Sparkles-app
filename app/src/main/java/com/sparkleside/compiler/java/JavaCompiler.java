@@ -58,7 +58,7 @@ public final class JavaCompiler {
     run(outputDir);
   }
 
-  public static void final run(final File outputDir) {
+  public static final void run(final File outputDir) {
     var executor = new BinaryExecutor();
     var className = "Main";
     executor.setCommands(List.of("java", "-cp", outputDir.getAbsolutePath(), className));
