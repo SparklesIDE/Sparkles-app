@@ -12,11 +12,11 @@ public final class JavaCompiler {
 
   private final Context context;
   private final List<String> logs = new ArrayList<>();
-  
+
   public JavaCompiler(Context context) {
     this.context = context;
   }
-  
+
   public final void compile(final CompileItem compileItem) {
     var executor = new BinaryExecutor();
     logs.clear();
@@ -77,7 +77,7 @@ public final class JavaCompiler {
   public final List<String> getLogs() {
     return logs;
   }
-  
+
   public final String getJavaVersion() {
     var executor = new BinaryExecutor();
     executor.setCommands(List.of("java", "--version"));
@@ -102,7 +102,7 @@ public final class JavaCompiler {
 
     return androidJar;
   }
-  
+
   private final File getLambdaFactoryFile() {
     var lambdaFactory = new File(context.getFilesDir() + "/temp/core-lambda-stubs.jar");
 
