@@ -187,7 +187,7 @@ public class MainActivity extends BaseActivity {
         .setTitle(getString(R.string.common_word_result))
         .setMessage(logs.toString())
         .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
-        .setNeutralButton(getString(R.string.common_word_copy), (d, w) -> copyText(a.toString()))
+        .setNeutralButton(getString(R.string.common_word_copy), (d, w) -> copyText(logs.toString()))
         .show();
   }
   
