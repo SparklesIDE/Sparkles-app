@@ -16,7 +16,8 @@ public final class JavaCompiler {
 
   public static void compile(CompileItem compileItem) {
     logs.clear();
-    if (!compileItem.getJavaFile().exists() || !compileItem.getJavaFile().getName().endsWith(".java")) {
+    if (!compileItem.getJavaFile().exists()
+        || !compileItem.getJavaFile().getName().endsWith(".java")) {
       newLog("Invalid file: " + compileItem.getJavaFile().getAbsolutePath());
       return;
     }
@@ -44,7 +45,7 @@ public final class JavaCompiler {
     args.add(compileItem.getJavaFile().getAbsolutePath());
     args.add("-cp");
     args.add(getLibs());
-    
+
     var compiler = new Main(outWriter, errWriter, false, null, null);
     var success = compiler.compile(args.toArray(new String[0]));
 
@@ -58,7 +59,7 @@ public final class JavaCompiler {
   }
 
   private static void run(File outputDir) {
-    var className = "Main"; 
+    var className = "Main";
     executor.setCommands(List.of("java", "-cp", outputDir.getAbsolutePath(), className));
     var runResult = executor.execute();
     newLog("Result:\n" + runResult);
@@ -71,7 +72,7 @@ public final class JavaCompiler {
   public static final List<String> getLogs() {
     return logs;
   }
-  
+
   private static final String getLibs() {
     var libs = new StringBuilder();
     libs.append(getAndroidJarFile().getAbsolutePath());
@@ -79,7 +80,7 @@ public final class JavaCompiler {
     libs.append(getLambdaFactoryFile().getAbsolutePath());
     return libs.toString();
   }
-  
+
   private static final File getAndroidJarFile() {
     var ctx = App.getContext();
     var androidJar = new File(ctx.getFilesDir() + "/temp/android.jar");
@@ -89,14 +90,11 @@ public final class JavaCompiler {
     }
 
     Decompress.unzipFromAssets(
-      ctx,
-      "android.jar.zip",
-      androidJar.getParentFile().getAbsolutePath()
-    );
+        ctx, "android.jar.zip", androidJar.getParentFile().getAbsolutePath());
 
     return androidJar;
   }
-  
+
   private static final File getLambdaFactoryFile() {
     var ctx = App.getContext();
     var lambdaFactory = new File(ctx.getFilesDir() + "/temp/core-lambda-stubs.jar");
@@ -106,10 +104,7 @@ public final class JavaCompiler {
     }
 
     Decompress.unzipFromAssets(
-      ctx, 
-      "core-lambda-stubs.zip", 
-      lambdaFactory.getParentFile().getAbsolutePath()
-    );
+        ctx, "core-lambda-stubs.zip", lambdaFactory.getParentFile().getAbsolutePath());
 
     return lambdaFactory;
   }

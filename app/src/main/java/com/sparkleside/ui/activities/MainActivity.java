@@ -2,47 +2,39 @@ package com.sparkleside.ui.activities;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
-import android.os.Environment;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-import android.view.ViewGroup.MarginLayoutParams;
-import android.content.res.Configuration;
-import android.view.Window;
-
-import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.color.MaterialColors;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.sidesheet.SideSheetDialog;
-import com.google.android.material.button.MaterialButton;
-
 import com.google.android.material.transition.platform.MaterialSharedAxis;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sparkleside.R;
-import com.sparkleside.ui.components.ExpandableLayout;
-import com.sparkleside.ui.base.BaseActivity;
-import com.sparkleside.databinding.ActivityMainBinding;
-import com.sparkleside.ui.editor.schemes.SparklesScheme;
-import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
-import com.zyron.filetree.widget.FileTreeView;
-import com.zyron.filetree.provider.FileTreeIconProvider;
-import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
-import java.io.File;
 import com.sparkleside.compiler.java.JavaCompiler;
 import com.sparkleside.compiler.java.JavaCompiler.CompileItem;
+import com.sparkleside.databinding.ActivityMainBinding;
+import com.sparkleside.ui.base.BaseActivity;
+import com.sparkleside.ui.components.ExpandableLayout;
+import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
+import com.sparkleside.ui.editor.schemes.SparklesScheme;
+import com.zyron.filetree.provider.FileTreeIconProvider;
+import com.zyron.filetree.widget.FileTreeView;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -52,6 +44,7 @@ public class MainActivity extends BaseActivity {
   private ActivityMainBinding binding;
   private FileTreeIconProvider fileIconProvider;
   private FileOperationExecutor fileoperate;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
@@ -68,85 +61,87 @@ public class MainActivity extends BaseActivity {
     setSupportActionBar(binding.toolbar);
 
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
-    binding.toolbar.setNavigationOnClickListener(view -> {
-      SideSheetDialog sideSheetDialog = new SideSheetDialog(MainActivity.this);
-      sideSheetDialog.setContentView(R.layout.toolbox_sidesheet); // Set content first
-      sideSheetDialog.setSheetEdge(Gravity.START); // Then set the sheet edge
+    binding.toolbar.setNavigationOnClickListener(
+        view -> {
+          SideSheetDialog sideSheetDialog = new SideSheetDialog(MainActivity.this);
+          sideSheetDialog.setContentView(R.layout.toolbox_sidesheet); // Set content first
+          sideSheetDialog.setSheetEdge(Gravity.START); // Then set the sheet edge
 
-      Window window = sideSheetDialog.getWindow();
-      if (window != null) {
-        window.setDimAmount(0.4f);
-      }
+          Window window = sideSheetDialog.getWindow();
+          if (window != null) {
+            window.setDimAmount(0.4f);
+          }
 
-      MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
-      BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
-      LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
-      LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
-      NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
-      FrameLayout container = sideSheetDialog.findViewById(R.id.container);
-      FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
-      fileTree.initializeFileTree("/storage/emulated/0", fileoperate , null);
+          MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
+          BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
+          LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
+          LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
+          NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
+          FrameLayout container = sideSheetDialog.findViewById(R.id.container);
+          FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
+          fileTree.initializeFileTree("/storage/emulated/0", fileoperate, null);
 
-      gitcon.setVisibility(View.GONE);
-      navview.setVisibility(View.GONE);
-      filetreecon.setVisibility(View.VISIBLE);
-      
-  /* bottomNav.setOnNavigationItemSelectedListener( item -> { 
-             
-            switch (item.getItemId()) { 
-  
-                case R.id.file: 
-                    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    gitcon.setVisibility(View.GONE);
-                    navview.setVisibility(View.GONE);
-                    filetreecon.setVisibility(View.VISIBLE);
-                    break; 
-                case R.id.git: 
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    filetreecon.setVisibility(View.GONE);
-                    navview.setVisibility(View.GONE);
-                    gitcon.setVisibility(View.VISIBLE);
-                    break; 
-                    case R.id.toolboxm: 
-                    
-                    TransitionManager.beginDelayedTransition(container, sharedAxis);
-                    filetreecon.setVisibility(View.GONE);
-                    gitcon.setVisibility(View.GONE);
-                    navview.setVisibility(View.VISIBLE);
-                
-                    break; 
-                
-            } 
-            return true; 
-         } ); */
-    bottomNav.setOnNavigationItemSelectedListener(item -> {
-    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-    TransitionManager.beginDelayedTransition(container, sharedAxis);
-    
-    if (item.getItemId() == R.id.file) {
-        gitcon.setVisibility(View.GONE);
-        navview.setVisibility(View.GONE);
-        filetreecon.setVisibility(View.VISIBLE);
-    } else if (item.getItemId() == R.id.git) {
-        filetreecon.setVisibility(View.GONE);
-        navview.setVisibility(View.GONE);
-        gitcon.setVisibility(View.VISIBLE);
-    } else if (item.getItemId() == R.id.toolboxm) {
-        filetreecon.setVisibility(View.GONE);
-        gitcon.setVisibility(View.GONE);
-        navview.setVisibility(View.VISIBLE);
-    }
+          gitcon.setVisibility(View.GONE);
+          navview.setVisibility(View.GONE);
+          filetreecon.setVisibility(View.VISIBLE);
 
-    return true;
-});
-      
-      if (materialButton != null) {
-        materialButton.setOnClickListener(v -> sideSheetDialog.hide());
-      }
+          /* bottomNav.setOnNavigationItemSelectedListener( item -> {
 
-      sideSheetDialog.show();
-    });
+             switch (item.getItemId()) {
+
+                 case R.id.file:
+                     var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+                     TransitionManager.beginDelayedTransition(container, sharedAxis);
+                     gitcon.setVisibility(View.GONE);
+                     navview.setVisibility(View.GONE);
+                     filetreecon.setVisibility(View.VISIBLE);
+                     break;
+                 case R.id.git:
+                     TransitionManager.beginDelayedTransition(container, sharedAxis);
+                     filetreecon.setVisibility(View.GONE);
+                     navview.setVisibility(View.GONE);
+                     gitcon.setVisibility(View.VISIBLE);
+                     break;
+                     case R.id.toolboxm:
+
+                     TransitionManager.beginDelayedTransition(container, sharedAxis);
+                     filetreecon.setVisibility(View.GONE);
+                     gitcon.setVisibility(View.GONE);
+                     navview.setVisibility(View.VISIBLE);
+
+                     break;
+
+             }
+             return true;
+          } ); */
+          bottomNav.setOnNavigationItemSelectedListener(
+              item -> {
+                var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+                TransitionManager.beginDelayedTransition(container, sharedAxis);
+
+                if (item.getItemId() == R.id.file) {
+                  gitcon.setVisibility(View.GONE);
+                  navview.setVisibility(View.GONE);
+                  filetreecon.setVisibility(View.VISIBLE);
+                } else if (item.getItemId() == R.id.git) {
+                  filetreecon.setVisibility(View.GONE);
+                  navview.setVisibility(View.GONE);
+                  gitcon.setVisibility(View.VISIBLE);
+                } else if (item.getItemId() == R.id.toolboxm) {
+                  filetreecon.setVisibility(View.GONE);
+                  gitcon.setVisibility(View.GONE);
+                  navview.setVisibility(View.VISIBLE);
+                }
+
+                return true;
+              });
+
+          if (materialButton != null) {
+            materialButton.setOnClickListener(v -> sideSheetDialog.hide());
+          }
+
+          sideSheetDialog.show();
+        });
 
     binding.toolbox.setExpansion(true);
     binding.toolbox.setDuration(200);
@@ -162,27 +157,32 @@ public class MainActivity extends BaseActivity {
     binding.fab.setOnClickListener(v -> compileJavaCode());
     binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
 
-    binding.settings.setOnClickListener(v -> {
-      Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-      ActivityOptions optionsCompat = ActivityOptions.makeSceneTransitionAnimation(this);
-      startActivity(intent, optionsCompat.toBundle());
-    });
+    binding.settings.setOnClickListener(
+        v -> {
+          Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+          ActivityOptions optionsCompat = ActivityOptions.makeSceneTransitionAnimation(this);
+          startActivity(intent, optionsCompat.toBundle());
+        });
 
-    binding.editor.setTypefaceText(Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf"));
+    binding.editor.setTypefaceText(
+        Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf"));
 
-    int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+    int currentNightMode =
+        getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
     SparklesScheme scheme = new SparklesScheme(binding.editor);
     scheme.apply();
 
-    ViewCompat.setOnApplyWindowInsetsListener(binding.fab, (v, windowInsets) -> {
-      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-      MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
-      mlp.bottomMargin = insets.bottom+72 ;
-      v.setLayoutParams(mlp);
-      return WindowInsetsCompat.CONSUMED;
-    });
+    ViewCompat.setOnApplyWindowInsetsListener(
+        binding.fab,
+        (v, windowInsets) -> {
+          Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+          MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
+          mlp.bottomMargin = insets.bottom + 72;
+          v.setLayoutParams(mlp);
+          return WindowInsetsCompat.CONSUMED;
+        });
   }
-  
+
   private void compileJavaCode() {
     var path = "SparklesIDE/temp/";
     var javaFile = new File(Environment.getExternalStorageDirectory(), path + "temp.java");
@@ -191,29 +191,26 @@ public class MainActivity extends BaseActivity {
       parentDir.mkdirs();
     }
     var javaCode = binding.editor.getText().toString();
-    
+
     try (FileOutputStream fos = new FileOutputStream(javaFile)) {
       fos.write(javaCode.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
+
     var outputDir = new File(Environment.getExternalStorageDirectory(), path);
-    JavaCompiler.compile(new CompileItem(
-      javaFile,
-      outputDir
-    ));
-    
+    JavaCompiler.compile(new CompileItem(javaFile, outputDir));
+
     var a = new StringBuilder();
     for (var log : JavaCompiler.getLogs()) {
       a.append(log);
     }
-    
+
     new MaterialAlertDialogBuilder(this)
-      .setTitle(getString(R.string.common_word_result))
-      .setMessage(a.toString())
-      .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
-      .show();
+        .setTitle(getString(R.string.common_word_result))
+        .setMessage(a.toString())
+        .setPositiveButton(getString(R.string.common_word_ok), (d, w) -> d.dismiss())
+        .show();
   }
 
   @Override

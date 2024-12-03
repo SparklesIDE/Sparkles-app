@@ -8,6 +8,7 @@ import com.sparkleside.preferences.Preferences;
 
 public class App extends Application {
   private static Context context;
+
   @Override
   public void onCreate() {
     super.onCreate();
@@ -15,7 +16,7 @@ public class App extends Application {
     if (Preferences.Theme.isMonetEnable(this)) DynamicColors.applyToActivitiesIfAvailable(this);
     AppCompatDelegate.setDefaultNightMode(Preferences.Theme.getThemeMode(this));
   }
-  
+
   public static Context getContext() {
     return context;
   }
