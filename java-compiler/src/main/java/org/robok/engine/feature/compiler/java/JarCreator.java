@@ -61,10 +61,8 @@ public class JarCreator {
       throw new IllegalArgumentException("Input path must be a valid directory.");
     }
 
-    try (
-      var fileOutputStream = new FileOutputStream(new File(output));
-      var jarOutputStream = new JarOutputStream(fileOutputStream, createManifest(attributes))
-    ) {
+    try (var fileOutputStream = new FileOutputStream(new File(output));
+        var jarOutputStream = new JarOutputStream(fileOutputStream, createManifest(attributes))) {
       for (var file : classesFile.listFiles()) {
         addFileToJar(classesFile.getPath(), file, jarOutputStream);
       }
@@ -80,7 +78,8 @@ public class JarCreator {
     return manifest;
   }
 
-  private void addFileToJar(final String parentPath, final File source, final JarOutputStream target) throws IOException {
+  private void addFileToJar(
+      final String parentPath, final File source, final JarOutputStream target) throws IOException {
     var name = source.getPath().substring(parentPath.length() + 1).replace("\\", "/");
     if (source.isDirectory()) {
       handleDirectory(name, source, target, parentPath);
@@ -89,7 +88,8 @@ public class JarCreator {
     }
   }
 
-  private void handleDirectory(String name, File source, JarOutputStream target, String parentPath) throws IOException {
+  private void handleDirectory(String name, File source, JarOutputStream target, String parentPath)
+      throws IOException {
     if (!name.isEmpty() && !name.endsWith("/")) {
       name += "/";
     }

@@ -30,11 +30,11 @@ import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
 import com.sparkleside.ui.editor.schemes.SparklesScheme;
 import com.zyron.filetree.provider.FileTreeIconProvider;
-import org.robok.engine.feature.compiler.java.JavaCompiler;
-import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import org.robok.engine.feature.compiler.java.JavaCompiler;
+import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
 
 public class MainActivity extends BaseActivity {
 
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity {
     for (var log : compiler.getLogs()) {
       logs.append(log);
     }
-    
+
     new MaterialAlertDialogBuilder(this)
         .setTitle(getString(R.string.common_word_result))
         .setMessage(logs.toString())

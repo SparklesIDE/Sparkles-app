@@ -19,16 +19,14 @@ package org.robok.engine.feature.compiler.java;
 
 import android.content.Context;
 import com.android.tools.r8.D8;
+import dalvik.system.DexClassLoader;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.ClassNotFoundException;
-import java.lang.NoSuchMethodException;
 import org.eclipse.jdt.internal.compiler.batch.Main;
-import dalvik.system.DexClassLoader;
 
 /*
  * Class that compiles a java code, based on an File Java
@@ -42,7 +40,7 @@ public final class JavaCompiler {
   public JavaCompiler(Context context) {
     this.context = context;
   }
-  
+
   /*
    * Compile the code using ECJ.
    * @param compileItem a Item with Info to compile
@@ -87,15 +85,15 @@ public final class JavaCompiler {
       newLog("failed to compile:\n" + errorWriter);
       return;
     }
-   
+
     newLog("compiled with successful:\n" + outputWriter);
-    
+
     try {
       var inputPath = outputDir.getAbsolutePath();
       var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
-      
+
       try {
         var d8Args = new ArrayList<String>();
         d8Args.add("--output");
@@ -112,7 +110,7 @@ public final class JavaCompiler {
     }
     run(outputDir);
   }
-  
+
   /*
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
@@ -121,23 +119,22 @@ public final class JavaCompiler {
     try {
       var className = "Main";
       var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
-    
+
       var dexLoader =
-        new DexClassLoader(
-          outputDir.getAbsolutePath() + "/classes.dex",
-          optimizedDir,
-          null,
-          context.getClassLoader()
-        );
-    
+          new DexClassLoader(
+              outputDir.getAbsolutePath() + "/classes.dex",
+              optimizedDir,
+              null,
+              context.getClassLoader());
+
       Class<?> calledClass = dexLoader.loadClass(className);
       var method = calledClass.getDeclaredMethod("main", String[].class);
       String[] param = {};
-    } catch(ClassNotFoundException | NoSuchMethodException ex) {
-    
+    } catch (ClassNotFoundException | NoSuchMethodException ex) {
+
     }
   }
-  
+
   public final void newLog(final String log) {
     logs.add(log);
   }
@@ -145,7 +142,7 @@ public final class JavaCompiler {
   public final List<String> getLogs() {
     return logs;
   }
-  
+
   public final String getJavaVersion() {
     var executor = new BinaryExecutor();
     executor.setCommands(List.of("java", "--version"));
