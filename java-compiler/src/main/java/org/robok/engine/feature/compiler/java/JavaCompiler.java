@@ -19,6 +19,7 @@ package org.robok.engine.feature.compiler.java;
 
 import android.content.Context;
 import com.android.tools.r8.D8;
+import com.android.tools.r8.CompilationFailedException;
 import dalvik.system.DexClassLoader;
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +27,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.jdt.internal.compiler.batch.Main;
 
 /*
@@ -102,13 +104,13 @@ public final class JavaCompiler {
         d8Args.add(getAndroidJarFile().getAbsolutePath());
         d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
         D8.main(d8Args.toArray(new String[0]));
-      } catch (Exception e) {
+        run(outputDir);
+      } catch (CompilationFailedException e) {
         newLog(e.toString());
       }
     } catch (IOException e) {
       newLog(e.toString());
     }
-    run(outputDir);
   }
 
   /*
@@ -130,8 +132,9 @@ public final class JavaCompiler {
       Class<?> calledClass = dexLoader.loadClass(className);
       var method = calledClass.getDeclaredMethod("main", String[].class);
       String[] param = {};
-    } catch (ClassNotFoundException | NoSuchMethodException ex) {
-
+      var result = method.invoke(null, new Object[] {param});
+    } catch (InvocationTargetException e) {
+      newLog(e.toString());
     }
   }
 
