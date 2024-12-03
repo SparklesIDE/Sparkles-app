@@ -185,7 +185,7 @@ public class MainActivity extends BaseActivity {
 
   private void compileJavaCode() {
     var path = "SparklesIDE/temp/";
-    var javaFile = new File(Environment.getExternalStorageDirectory(), path + "temp.java");
+    var javaFile = new File(Environment.getExternalStorageDirectory(), path + "Main.java");
     var parentDir = javaFile.getParentFile();
     if (parentDir != null && !parentDir.exists()) {
       parentDir.mkdirs();
