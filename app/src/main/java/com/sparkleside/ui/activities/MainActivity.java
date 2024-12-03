@@ -61,87 +61,87 @@ public class MainActivity extends BaseActivity {
     setSupportActionBar(binding.toolbar);
 
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
-    binding.toolbar.setNavigationOnClickListener(
-        view -> {
-          SideSheetDialog sideSheetDialog = new SideSheetDialog(MainActivity.this);
-          sideSheetDialog.setContentView(R.layout.toolbox_sidesheet); // Set content first
-          sideSheetDialog.setSheetEdge(Gravity.START); // Then set the sheet edge
 
-          Window window = sideSheetDialog.getWindow();
-          if (window != null) {
-            window.setDimAmount(0.4f);
-          }
+    binding.toolbar.setNavigationOnClickListener(view -> {
+      SideSheetDialog sideSheetDialog = new SideSheetDialog(MainActivity.this);
+      sideSheetDialog.setContentView(R.layout.toolbox_sidesheet); // Set content first
+      sideSheetDialog.setSheetEdge(Gravity.START); // Then set the sheet edge
 
-          MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
-          BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
-          LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
-          LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
-          NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
-          FrameLayout container = sideSheetDialog.findViewById(R.id.container);
-          FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
-          fileTree.initializeFileTree("/storage/emulated/0", fileoperate, null);
+      Window window = sideSheetDialog.getWindow();
+      if (window != null) {
+        window.setDimAmount(0.4f);
+      }
 
-          gitcon.setVisibility(View.GONE);
-          navview.setVisibility(View.GONE);
-          filetreecon.setVisibility(View.VISIBLE);
+      MaterialButton materialButton = sideSheetDialog.findViewById(R.id.materialbutton);
+      BottomNavigationView bottomNav = sideSheetDialog.findViewById(R.id.navside);
+      LinearLayout filetreecon = sideSheetDialog.findViewById(R.id.FileTreeCon);
+      LinearLayout gitcon = sideSheetDialog.findViewById(R.id.GitCon);
+      NavigationView navview = sideSheetDialog.findViewById(R.id.navview);
+      FrameLayout container = sideSheetDialog.findViewById(R.id.container);
+      FileTreeView fileTree = sideSheetDialog.findViewById(R.id.file_tree_view);
+      fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
 
-          /* bottomNav.setOnNavigationItemSelectedListener( item -> {
+      gitcon.setVisibility(View.GONE);
+      navview.setVisibility(View.GONE);
+      filetreecon.setVisibility(View.VISIBLE);
+      
+  /* bottomNav.setOnNavigationItemSelectedListener( item -> { 
+             
+            switch (item.getItemId()) { 
+  
+                case R.id.file: 
+                    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    gitcon.setVisibility(View.GONE);
+                    navview.setVisibility(View.GONE);
+                    filetreecon.setVisibility(View.VISIBLE);
+                    break; 
+                case R.id.git: 
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    filetreecon.setVisibility(View.GONE);
+                    navview.setVisibility(View.GONE);
+                    gitcon.setVisibility(View.VISIBLE);
+                    break; 
+                    case R.id.toolboxm: 
+                    
+                    TransitionManager.beginDelayedTransition(container, sharedAxis);
+                    filetreecon.setVisibility(View.GONE);
+                    gitcon.setVisibility(View.GONE);
+                    navview.setVisibility(View.VISIBLE);
+                
+                    break; 
+                
+            } 
+            return true; 
+         } ); */
+    bottomNav.setOnNavigationItemSelectedListener(item -> {
+    var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+    TransitionManager.beginDelayedTransition(container, sharedAxis);
+    
+    if (item.getItemId() == R.id.file) {
+        gitcon.setVisibility(View.GONE);
+        navview.setVisibility(View.GONE);
+        filetreecon.setVisibility(View.VISIBLE);
+    } else if (item.getItemId() == R.id.git) {
+        filetreecon.setVisibility(View.GONE);
+        navview.setVisibility(View.GONE);
+        gitcon.setVisibility(View.VISIBLE);
+    } else if (item.getItemId() == R.id.toolboxm) {
+        filetreecon.setVisibility(View.GONE);
+        gitcon.setVisibility(View.GONE);
+        navview.setVisibility(View.VISIBLE);
+    }
 
-             switch (item.getItemId()) {
+    return true;
+});
+      
+      if (materialButton != null) {
+        materialButton.setOnClickListener(v -> sideSheetDialog.hide());
+      }
 
-                 case R.id.file:
-                     var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-                     TransitionManager.beginDelayedTransition(container, sharedAxis);
-                     gitcon.setVisibility(View.GONE);
-                     navview.setVisibility(View.GONE);
-                     filetreecon.setVisibility(View.VISIBLE);
-                     break;
-                 case R.id.git:
-                     TransitionManager.beginDelayedTransition(container, sharedAxis);
-                     filetreecon.setVisibility(View.GONE);
-                     navview.setVisibility(View.GONE);
-                     gitcon.setVisibility(View.VISIBLE);
-                     break;
-                     case R.id.toolboxm:
+      sideSheetDialog.show();
+    });
 
-                     TransitionManager.beginDelayedTransition(container, sharedAxis);
-                     filetreecon.setVisibility(View.GONE);
-                     gitcon.setVisibility(View.GONE);
-                     navview.setVisibility(View.VISIBLE);
-
-                     break;
-
-             }
-             return true;
-          } ); */
-          bottomNav.setOnNavigationItemSelectedListener(
-              item -> {
-                var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-                TransitionManager.beginDelayedTransition(container, sharedAxis);
-
-                if (item.getItemId() == R.id.file) {
-                  gitcon.setVisibility(View.GONE);
-                  navview.setVisibility(View.GONE);
-                  filetreecon.setVisibility(View.VISIBLE);
-                } else if (item.getItemId() == R.id.git) {
-                  filetreecon.setVisibility(View.GONE);
-                  navview.setVisibility(View.GONE);
-                  gitcon.setVisibility(View.VISIBLE);
-                } else if (item.getItemId() == R.id.toolboxm) {
-                  filetreecon.setVisibility(View.GONE);
-                  gitcon.setVisibility(View.GONE);
-                  navview.setVisibility(View.VISIBLE);
-                }
-
-                return true;
-              });
-
-          if (materialButton != null) {
-            materialButton.setOnClickListener(v -> sideSheetDialog.hide());
-          }
-
-          sideSheetDialog.show();
-        });
 
     binding.toolbox.setExpansion(true);
     binding.toolbox.setDuration(200);

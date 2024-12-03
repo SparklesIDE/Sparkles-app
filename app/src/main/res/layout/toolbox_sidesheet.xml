@@ -8,18 +8,29 @@
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:gravity="end">
+        android:gravity="end"
+        android:orientation="horizontal">
+    <TextView 
+         android:layout_height="match_parent"   
+         android:layout_width="match_parent" 
+         android:text="Sparkles IDE"
+         android:textSize="18sp"
+         android:gravity="left|center_vertical"
+         android:layout_gravity="start"
+         android:layout_weight="1"
+         android:paddingLeft="16dp"
+         />
         <Button
             android:id="@+id/materialbutton"
             style="?attr/materialIconButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"    
+            android:layout_margin="8dp"    
             app:icon="@drawable/menu_open_24px"
             app:iconTint="?attr/colorOnSurfaceVariant" /> 
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-    android:layout_height="wrap_content"
+    android:layout_height="60dp"
     android:layout_width="match_parent"
     app:menu="@menu/side_btm"
     android:background="@android:color/transparent"
@@ -50,7 +61,7 @@
      <TextView
      android:layout_height="wrap_content" 
      android:layout_width="wrap_content"
-     android:text="This Git Goes here" />
+     android:text="The Git Client is Coming Soon!" />
      </LinearLayout>
 
     
