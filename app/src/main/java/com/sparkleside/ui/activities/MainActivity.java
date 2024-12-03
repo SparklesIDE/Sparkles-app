@@ -29,6 +29,7 @@ import com.sparkleside.R;
 import dev.trindadedev.compiler.java.JavaCompiler;
 import dev.trindadedev.compiler.java.JavaCompiler.CompileItem;
 import com.sparkleside.databinding.ActivityMainBinding;
+import com.sparkleside.databinding.ToolboxSidesheetBinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
@@ -123,9 +124,10 @@ public class MainActivity extends BaseActivity {
     }
 
     sheetBinding.fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
-    gitcon.setVisibility(View.GONE);
-    navView.setVisibility(View.GONE);
-    filetreecon.setVisibility(View.VISIBLE);
+    
+    sheetBinding.contentGit.setVisibility(View.GONE);
+    sheetBinding.contentToolbox.setVisibility(View.GONE);
+    sheetBinding.contentFileTree.setVisibility(View.VISIBLE);
       
     sheetBinding.bottomNav.setOnNavigationItemSelectedListener(item -> {
       var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
