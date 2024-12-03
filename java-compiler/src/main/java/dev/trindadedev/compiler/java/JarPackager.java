@@ -1,4 +1,4 @@
-package dev.trindadedev.compiler.java
+package dev.trindadedev.compiler.java;
 
 import java.io.BufferedInputStream;
 import java.io.File;

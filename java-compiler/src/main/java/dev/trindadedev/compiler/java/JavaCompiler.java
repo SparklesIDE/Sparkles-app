@@ -62,7 +62,7 @@ public final class JavaCompiler {
     
     try {
       var inputPath = outputDir.getAbsolutePath();
-      var outputPath = outputDir.getAbsolutePath(); + "classes.jar";
+      var outputPath = outputDir.getAbsolutePath() + "classes.jar";
       var jarPackager = new JarPackager(inputPath, outputPath);
       jarPackager.create();
     } catch (IOException e) {
