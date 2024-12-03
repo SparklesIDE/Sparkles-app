@@ -123,13 +123,13 @@ public class MainActivity extends BaseActivity {
       window.setDimAmount(0.4f);
     }
 
-    sheetBinding.fileTree.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
+    sheetBinding.fileTreeView.initializeFileTree("/storage/emulated/0", fileoperate , fileIconProvider);
     
     sheetBinding.contentGit.setVisibility(View.GONE);
     sheetBinding.contentToolbox.setVisibility(View.GONE);
     sheetBinding.contentFileTree.setVisibility(View.VISIBLE);
       
-    sheetBinding.bottomNav.setOnNavigationItemSelectedListener(item -> {
+    sheetBinding.options.setOnNavigationItemSelectedListener(item -> {
       var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
       TransitionManager.beginDelayedTransition(sheetBinding.container, sharedAxis);
     
