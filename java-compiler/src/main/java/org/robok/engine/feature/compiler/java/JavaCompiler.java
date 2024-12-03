@@ -105,7 +105,7 @@ public final class JavaCompiler {
         d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
         D8.main(d8Args.toArray(new String[0]));
         run(outputDir);
-      } catch (CompilationFailedException e) {
+      } catch (Exception e) {
         newLog(e.toString());
       }
     } catch (IOException e) {
