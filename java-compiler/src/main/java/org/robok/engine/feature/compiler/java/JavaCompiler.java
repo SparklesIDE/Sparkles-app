@@ -105,9 +105,10 @@ public final class JavaCompiler {
         d8Args.add(getAndroidJarFile().getAbsolutePath());
         d8Args.add("--output");
         d8Args.add(outputDir.getAbsolutePath());
-        var classes = getClassFiles(new File(outputDir.getAbsolutePath() + "/classes/"));
+        var classes = getClassFiles(new File(outputDir.getAbsolutePath()));
         for (var file : classes) {
           d8Args.add(file.getAbsolutePath());
+          newLog(
         }
         D8.main(d8Args.toArray(new String[0]));
         run(outputDir);
