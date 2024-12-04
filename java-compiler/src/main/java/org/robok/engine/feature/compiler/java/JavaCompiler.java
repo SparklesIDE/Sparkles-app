@@ -25,6 +25,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -149,8 +151,25 @@ public final class JavaCompiler {
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
    */
-  public final void run(final File outputDir) {
+  public final void run(final File outputDir) { 
     try {
+      var resultStr = new StringBuilder();
+      var outputStream =
+        new OutputStream() {
+          @Override
+          public void write(int v) {
+            resultStr.append(String.valueOf((char) v));
+          }
+          
+          @Override
+          public String toString() {
+            return resultStr.toString();
+          }
+        };
+        
+      System.setOut(new PrintStream(outputStream));
+      System.setErr(new PrintStream(outputStream));
+      
       var className = "Main";
       var optimizedDir = context.getDir("odex", Context.MODE_PRIVATE).getAbsolutePath();
 
@@ -165,7 +184,7 @@ public final class JavaCompiler {
       var method = calledClass.getDeclaredMethod("main", String[].class);
       String[] param = {};
       var result = method.invoke(null, new Object[] {param});
-      newLog(result);
+      newLog(resultStr);
     } catch (ClassNotFoundException
         | NoSuchMethodException
         | IllegalAccessException
