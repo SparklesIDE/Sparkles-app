@@ -20,6 +20,8 @@ package org.robok.engine.feature.compiler.java;
 import android.content.Context;
 import com.android.tools.r8.CompilationFailedException;
 import com.android.tools.r8.D8;
+import com.android.tools.r8.D8Command;
+import java.nio.file.Paths; 
 import dalvik.system.DexClassLoader;
 import java.io.File;
 import java.io.IOException;
@@ -95,31 +97,51 @@ public final class JavaCompiler {
       var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
-
-      try {
-        var d8Args = new ArrayList<String>();
-        d8Args.add("--release");
-        d8Args.add("--min-api");
-        d8Args.add("21");
-        d8Args.add("--lib");
-        d8Args.add(getAndroidJarFile().getAbsolutePath());
-        d8Args.add("--output");
-        d8Args.add(outputDir.getAbsolutePath());
-        var classes = getClassFiles(new File(outputDir.getAbsolutePath()));
-        for (var file : classes) {
-          d8Args.add(file.getAbsolutePath());
-          newLog(file.getAbsolutePath());
-        }
-        D8.main(d8Args.toArray(new String[0]));
-        run(outputDir);
-      } catch (Exception e) {
-        newLog(e.toString());
-      }
+      runD8(outputDir);
     } catch (IOException e) {
       newLog(e.toString());
     }
   }
+ 
+  private final void runOldD8(final File outputDir) {
+    try {
+      var d8Args = new ArrayList<String>();
+      d8Args.add("--release");
+      d8Args.add("--min-api");
+      d8Args.add("21");
+      d8Args.add("--lib");
+      d8Args.add(getAndroidJarFile().getAbsolutePath());
+      d8Args.add("--output");
+      d8Args.add(outputDir.getAbsolutePath());
+      var classes = getClassFiles(new File(outputDir.getAbsolutePath()));
+      for (var file : classes) {
+        if (file.getName().endsWith(".class")) {
+          d8Args.add(file.getAbsolutePath());
+        }
+      }
+        
+      D8.main(d8Args.toArray(new String[0]));
+      run(outputDir);
+    } catch (Exception e) {
+      newLog(e.toString());
+    }
+  }
   
+  private final void runD8(final File outputDir) {
+    try {
+      var command = D8Command.builder()
+        .addProgramFiles(Paths.get(outputDihr.getAbsolutePath() + "/classes.jar"))
+        .setOutputPath(Paths.get(outputDir.getAbsolutePath()))
+        .build();      
+      var output = D8.run(command);
+      
+      newLog("D8 Compilation successful!");      
+      run(outputDir);
+    } catch (IOException e) {
+      newLog("Error during D8 compilation: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
   /*
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
