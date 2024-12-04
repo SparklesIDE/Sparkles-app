@@ -96,7 +96,7 @@ public final class JavaCompiler {
       var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
-      runD8(outputDir);
+      runOldD8(outputDir);
     } catch (IOException e) {
       newLog(e.toString());
     }
@@ -126,6 +126,7 @@ public final class JavaCompiler {
     }
   }
 
+  /*
   private final void runD8(final File outputDir) {
     try {
       var command =
@@ -142,6 +143,7 @@ public final class JavaCompiler {
       e.printStackTrace();
     }
   }
+  */
 
   /*
    * Run the compiled code with R8 & DexClassLoader
