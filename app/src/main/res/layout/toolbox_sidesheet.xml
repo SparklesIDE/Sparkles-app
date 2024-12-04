@@ -43,12 +43,18 @@
       android:layout_height="match_parent"
       android:layout_width="match_parent"
       android:gravity="center"
+      android:padding="12dp"
       android:id="@+id/content_file_tree">
       <!--Where the file tree goes-->
+      <HorizontalScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
       <com.zyron.filetree.widget.FileTreeView
         android:id="@+id/file_tree_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+        </HorizontalScrollView>
     </LinearLayout>
     <LinearLayout
       android:layout_height="match_parent"
