@@ -165,6 +165,7 @@ public final class JavaCompiler {
       var method = calledClass.getDeclaredMethod("main", String[].class);
       String[] param = {};
       var result = method.invoke(null, new Object[] {param});
+      newLog(result);
     } catch (ClassNotFoundException
         | NoSuchMethodException
         | IllegalAccessException
