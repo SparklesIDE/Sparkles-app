@@ -98,13 +98,13 @@ public final class JavaCompiler {
       var outputPath = outputDir.getAbsolutePath() + "/classes.jar";
       var jarPackager = new JarCreator(inputPath, outputPath);
       jarPackager.create();
-      runOldD8(outputDir);
+      runD8(outputDir);
     } catch (IOException e) {
       newLog(e.toString());
     }
   }
 
-  private final void runOldD8(final File outputDir) {
+  private final void runD8(final File outputDir) {
     try {
       var d8Args = new ArrayList<String>();
       d8Args.add("--release");
@@ -126,27 +126,7 @@ public final class JavaCompiler {
     } catch (Exception e) {
       newLog(e.toString());
     }
-  }
-
-  /*
-  private final void runD8(final File outputDir) {
-    try {
-      var command =
-          D8Command.builder()
-              .addProgramFiles(Paths.get(outputDir.getAbsolutePath() + "/classes.jar"))
-              .setOutputPath(Paths.get(outputDir.getAbsolutePath()))
-              .build();
-      var output = D8.run(command);
-
-      newLog("D8 Compilation successful!");
-      run(outputDir);
-    } catch (IOException e) {
-      newLog("Error during D8 compilation: " + e.getMessage());
-      e.printStackTrace();
-    }
-  }
-  */
-
+  }  
   /*
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
