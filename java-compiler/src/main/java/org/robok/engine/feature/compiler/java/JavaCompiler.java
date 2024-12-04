@@ -108,7 +108,7 @@ public final class JavaCompiler {
         var classes = getClassFiles(new File(outputDir.getAbsolutePath()));
         for (var file : classes) {
           d8Args.add(file.getAbsolutePath());
-          newLog(
+          newLog(file.getAbsolutePath());
         }
         D8.main(d8Args.toArray(new String[0]));
         run(outputDir);
