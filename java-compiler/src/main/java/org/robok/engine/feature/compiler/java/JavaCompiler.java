@@ -130,7 +130,7 @@ public final class JavaCompiler {
     try {
       var command =
           D8Command.builder()
-              .addProgramFiles(Paths.get(outputDihr.getAbsolutePath() + "/classes.jar"))
+              .addProgramFiles(Paths.get(outputDir.getAbsolutePath() + "/classes.jar"))
               .setOutputPath(Paths.get(outputDir.getAbsolutePath()))
               .build();
       var output = D8.run(command);
