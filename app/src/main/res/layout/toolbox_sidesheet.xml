@@ -54,7 +54,14 @@
       android:layout_height="match_parent"
       android:layout_width="match_parent"
       android:gravity="center"
-      android:id="@+id/content_git">
+      android:id="@+id/content_git" 
+      android:orientation="vertical">
+      <ImageView
+      android:layout_height="200dp"
+      android:layout_width="200dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/constr"
+      />
       <!--Where the Git goes-->
       <TextView
         android:layout_height="wrap_content"
