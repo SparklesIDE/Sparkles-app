@@ -62,7 +62,7 @@ public final class JavaCompiler {
     var outputWriter = new StringWriter();
     var outWriter = new PrintWriter(outputWriter);
 
-    var outputDir = new File(compileItem.getOutputDir(), "classes/bin/");
+    var outputDir = new File(compileItem.getOutputDir(), "classes/");
     if (!outputDir.exists() && !outputDir.mkdirs()) {
       newLog("failed create output directory: " + outputDir.getAbsolutePath());
       return;
@@ -98,11 +98,17 @@ public final class JavaCompiler {
 
       try {
         var d8Args = new ArrayList<String>();
-        d8Args.add("--output");
-        d8Args.add(outputDir.getAbsolutePath());
+        d8Args.add("--release");
+        d8Args.add("--min-api");
+        d8Args.add("21");
         d8Args.add("--lib");
         d8Args.add(getAndroidJarFile().getAbsolutePath());
-        d8Args.add(outputDir.getAbsolutePath() + "/classes.jar");
+        d8Args.add("--output");
+        d8Args.add(outputDir.getAbsolutePath());
+        var classes = getClassFiles(new File(outputDir.getAbsolutePath() + "/classes/"));
+        for (var file : classes) {
+          d8Args.add(file.getAbsolutePath());
+        }
         D8.main(d8Args.toArray(new String[0]));
         run(outputDir);
       } catch (Exception e) {
@@ -112,7 +118,7 @@ public final class JavaCompiler {
       newLog(e.toString());
     }
   }
-
+  
   /*
    * Run the compiled code with R8 & DexClassLoader
    * @param outputDir The path where classes.jar is located
@@ -139,6 +145,24 @@ public final class JavaCompiler {
         | InvocationTargetException e) {
       newLog(e.toString());
     }
+  }
+  
+  private final List<File> getClassFiles(final File dir) {
+    var files = new ArrayList<File>();
+    File[] fileArr = dir.listFiles();
+    if (fileArr == null) {
+      return files;
+    }
+
+    for (var file : fileArr) {
+      if (file.isDirectory()) {
+        files.addAll(getClassFiles(file));
+      } else {
+        files.add(file);
+      }
+    }
+
+    return files;
   }
 
   public final void newLog(final String log) {
