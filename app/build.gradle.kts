@@ -32,7 +32,9 @@ android {
         viewBinding = true
         buildConfig= true
     }
-    
+    File f = context.getNativeLibsDir()
+    File py = File(f,"python.so")
+    String pyPath = py.absolutePath
     signingConfigs {
         create("release") {
             // temporary keystore

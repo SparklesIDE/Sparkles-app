@@ -20,10 +20,10 @@ public class AppearanceActivity extends BaseActivity {
     getWindow().setAllowEnterTransitionOverlap(true);
     MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
     enterTransition.addTarget(R.id.coordinator);
-    enterTransition.setDuration(800L);
+    enterTransition.setDuration(200L);
     getWindow().setEnterTransition(enterTransition);
     MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
-    returnTransition.setDuration(800L);
+    returnTransition.setDuration(200L);
     returnTransition.addTarget(R.id.coordinator);
     getWindow().setReturnTransition(returnTransition);
     super.onCreate(savedInstanceState);
