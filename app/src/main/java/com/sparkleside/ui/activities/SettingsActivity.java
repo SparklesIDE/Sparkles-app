@@ -44,18 +44,16 @@ public class SettingsActivity extends BaseActivity {
     binding.about.setOnClickListener(
         v -> {
           Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
-          binding.about.setTransitionName("xy");
           android.app.ActivityOptions optionsCompat =
-              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.about, "xy");
+              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.about);
           startActivity(intent, optionsCompat.toBundle());
         });
 
     binding.main.setOnClickListener(
         v -> {
           Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
-          binding.main.setTransitionName("xz");
           android.app.ActivityOptions optionsCompat =
-              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.main, "xz");
+              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.main);
           startActivity(intent, optionsCompat.toBundle());
         });
     binding.lib.setOnClickListener(
