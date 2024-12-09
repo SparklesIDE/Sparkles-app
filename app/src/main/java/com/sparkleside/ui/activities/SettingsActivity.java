@@ -45,7 +45,7 @@ public class SettingsActivity extends BaseActivity {
         v -> {
           Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
           android.app.ActivityOptions optionsCompat =
-              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.about,"");
+              android.app.ActivityOptions.makeSceneTransitionAnimation(SettingsActivity.this);
           startActivity(intent, optionsCompat.toBundle());
         });
 
@@ -53,7 +53,7 @@ public class SettingsActivity extends BaseActivity {
         v -> {
           Intent intent = new Intent(SettingsActivity.this, AppearanceActivity.class);
           android.app.ActivityOptions optionsCompat =
-              android.app.ActivityOptions.makeSceneTransitionAnimation(this, binding.main,"");
+              android.app.ActivityOptions.makeSceneTransitionAnimation(SettingsActivity.this);
           startActivity(intent, optionsCompat.toBundle());
         });
     binding.lib.setOnClickListener(
