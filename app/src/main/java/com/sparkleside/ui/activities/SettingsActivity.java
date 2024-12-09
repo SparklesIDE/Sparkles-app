@@ -15,7 +15,7 @@ public class SettingsActivity extends BaseActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
-    getWindow().setAllowEnterTransitionOverlap(true);
+    getWindow().setAllowEnterTransitionOverlap(false);
     MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
     enterTransition.addTarget(R.id.coordinator);
     enterTransition.setDuration(200L);
