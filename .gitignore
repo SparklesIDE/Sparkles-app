@@ -3,6 +3,7 @@
 /.androidide
 
 
+
 *log
 .idea/
 .gradle/
