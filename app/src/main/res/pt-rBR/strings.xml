@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Sparkles IDE</string>
+  <string name="com_word_settings">Settings</string>
+  <string name="set_main">Application Settings</string>
+  <string name="set_main_desc">Some of Sparkles Apperance settings</string>
+  <string name="common_word_allow">Allow</string>
+  <string name="common_word_deny">Deny</string>
+  <string name="set_editor">Code Editor</string>
+  <string name="set_editor_desc">Modify the Style of The Editor</string>
+  <string name="set_terminal">Terminal</string>
+  <string name="set_terminal_desc">Styling the Terminal</string>
+  <string name="set_lib">Third Party Software</string>
+  <string name="set_lib_desc">Libraries And Softwares used in Sparkles</string>
+  <string name="com_word_about">About</string>
+  <string name="set_about_desc">About Sparkles</string>
+  <string name="about_team">Team</string>
+  <string name="about_tag_translator">Translator</string>
+  <string name="about_tag_developer">Developer</string>
+  <string name="tooltip_settings">Settings</string>
+  <string name="tooltip_terminal">Open terminal</string>
+  <string name="tooltip_new_file">New File</string>
+  <string name="tooltip_search">Search in code</string>
+  <string name="monet_title">Use Dynamic Colors</string>
+  <string name="monet_desc">Use your device color palette instead black and white</string>
+  <string name="need_restart">Need Restart</string>
+  <!--TEAM BIO-->
+  <string name="syntaxspin_phrase">A Material You Lover Android/Web Developer</string>
+  <string name="yamenher_phrase">A Kool Utilities maker</string>
+  <string name="trindadedev_phrase">I use Jetpack Compose, btw</string>
+  <string name="hanzo_phrase">Ghost</string>
+  <string name="thiarley_rocha_phrase">lets play minecraft?</string>
+  <string name="rohit_kushvaha_phrase">Idk</string>
+  <string name="neoapps_phrase">i use arch, btw</string>
+  <string name="jaiel_lima_phrase">Happy is the man that finds wisdom, and the man that gets understanding. \n\n Proverbs 3:13</string>
+  <string name="alex_phrase">PaxSenix bootlegger</string>
+  <string name="vivek_phrase">Some people hurt you and act like you hurt them</string>
+  <string name="art_phrase">Turning codes into life changing stories✨️</string>
+  <string name="common_word_result">Result</string>
+  <string name="common_word_ok">Ok</string>
+  <string name="common_word_copy">Copy</string>
+</resources>
