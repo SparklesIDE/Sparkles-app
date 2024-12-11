@@ -11,11 +11,11 @@ with Supporting full languages & Material Design 3</p>
 ## Features &amp; Todo
 - [ ] Good Code Editor Customizations
 - [ ] Python Support
-- [ ] Java & Kotlin Support
+- [x] Java & ~~kotlin~~ Support
 - [ ] Web support ( HTML JavaScript CSS)
 - [x] Terminal Activity
-- [ ] File Tree
-- [ ] Great UI
+- [x] File Tree
+- [x] Great UI
 - [x] Editor Sparkles Special Theme 
 
 ## How to Contribute
