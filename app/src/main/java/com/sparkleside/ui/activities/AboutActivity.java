@@ -161,7 +161,13 @@ public class AboutActivity extends BaseActivity {
         Role.TRANSLATOR,
         "https://github.com/paxsenix0",
         getString(R.string.alex_phrase),
-        false);
+        true);
+    TeamMember(
+        "Fahim Abdullah",
+        Role.TRANSLATOR,
+        "https://github.com/nexavo999",
+        getString(R.string.nex_phrase),
+        false);      
   }
 
   private void peekAndPop(String name, String imageUrl, String phrase, View v) {

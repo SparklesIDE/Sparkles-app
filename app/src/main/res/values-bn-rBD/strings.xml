@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">স্পারকেলস আইডিই</string>
+  <string name="com_word_settings">সেটিংস</string>
+  <string name="set_main">অ্যাপলিকেশন সেটিংস</string>
+  <string name="set_main_desc">স্পারকেলসের কিছু উপস্থিতি সেটিংস</string>
+  <string name="common_word_allow">অনুমতি দিন</string>
+  <string name="common_word_deny">বাতিল করুন</string>
+  <string name="set_editor">কোড এডিটর</string>
+  <string name="set_editor_desc">এডিটরের ধরন পরিবর্তন করুন</string>
+  <string name="set_terminal">টার্মিনাল</string>
+  <string name="set_terminal_desc">টার্মিনাল স্টাইল করা</string>
+  <string name="set_lib">থার্ড পার্টি সফটওয়্যার</string>
+  <string name="set_lib_desc">স্পারকেলসে ব্যবহৃত লাইব্রেরি ও সফটওয়্যার সমূহ</string>
+  <string name="com_word_about">সম্পর্কে</string>
+  <string name="set_about_desc">স্পারকেলস সম্পর্কে</string>
+  <string name="about_team">টীম</string>
+  <string name="about_tag_translator">অনুবাদক</string>
+  <string name="about_tag_developer">ডেভেলপার</string>
+  <string name="tooltip_settings">সেটিংস</string>
+  <string name="tooltip_terminal">টার্মিনাল খুলুন</string>
+  <string name="tooltip_new_file">নতুন ফাইল</string>
+  <string name="tooltip_search">কোডে খুঁজুন</string>
+  <string name="monet_title">ডাইনামিক রং ব্যবহার করুন</string>
+  <string name="monet_desc">কালো এবং সাদা এর পরিবর্তে আপনার ডিভাইসের রং প্যালেট ব্যবহার করুন</string>
+  <string name="need_restart">রিস্টার্ট প্রয়োজন</string>
+
+  <!--TEAM BIO-->
+
+  <string name="syntaxspin_phrase">একজন মেটেরিয়াল ইউ প্রেমিক অ্যান্ড্রয়েড/ওয়েব ডেভেলপার</string>
+  <string name="yamenher_phrase">একজন কুল ইউটিলিটি প্রস্তুতকারক</string>
+  <string name="trindadedev_phrase">যাইহোক, আমি জেটপ্যাক কম্পোজ ব্যবহার করি</string>
+  <string name="hanzo_phrase">ভূত</string>
+  <string name="thiarley_rocha_phrase">চলুন মাইনক্রাফ্ট খেলি?</string>
+  <string name="rohit_kushvaha_phrase">আমি জানি না</string>
+  <string name="neoapps_phrase">যাইহোক, আমি আর্ক ব্যবহার করি</string>
+  <string name="jaiel_lima_phrase"ধন্য সেই ব্যক্তি যে জ্ঞান খুঁজে পায়, এবং সেই ব্যক্তি যে উপলব্ধি করে৷ \n\n প্রবাদ 3:13</string>
+  <string name="alex_phrase">প্যাক্সসেনিক্স বুটলেগার</string>
+  <string name="vivek_phrase">কিছু লোক আপনাকে আঘাত করে এবং আপনি তাদের আঘাত করেছেন এমন আচরণ করে</string>
+  <string name="art_phrase">কোডগুলোকে জীবন বদলের গল্পে পরিণত করছি✨️</string>
+
+
+  <string name="common_word_result">ফলাফল</string>
+  <string name="common_word_ok">ঠিক আছে</string>
+  <string name="common_word_copy">কপি করুন</string>
+</resources>
