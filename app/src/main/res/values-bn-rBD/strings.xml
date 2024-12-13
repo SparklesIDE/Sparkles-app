@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">স্পারকেলস আইডিই</string>
+  <string name="app_name">Sparkles IDE</string>
   <string name="com_word_settings">সেটিংস</string>
   <string name="set_main">অ্যাপলিকেশন সেটিংস</string>
   <string name="set_main_desc">স্পারকেলসের কিছু উপস্থিতি সেটিংস</string>
@@ -34,7 +34,7 @@
   <string name="thiarley_rocha_phrase">চলুন মাইনক্রাফ্ট খেলি?</string>
   <string name="rohit_kushvaha_phrase">আমি জানি না</string>
   <string name="neoapps_phrase">যাইহোক, আমি আর্ক ব্যবহার করি</string>
-  <string name="jaiel_lima_phrase"ধন্য সেই ব্যক্তি যে জ্ঞান খুঁজে পায়, এবং সেই ব্যক্তি যে উপলব্ধি করে৷ \n\n প্রবাদ 3:13</string>
+  <string name="jaiel_lima_phrase">ধন্য সেই ব্যক্তি যে জ্ঞান খুঁজে পায়, এবং সেই ব্যক্তি যে উপলব্ধি করে৷ \n\n প্রবাদ 3:13</string>
   <string name="alex_phrase">প্যাক্সসেনিক্স বুটলেগার</string>
   <string name="vivek_phrase">কিছু লোক আপনাকে আঘাত করে এবং আপনি তাদের আঘাত করেছেন এমন আচরণ করে</string>
   <string name="art_phrase">কোডগুলোকে জীবন বদলের গল্পে পরিণত করছি✨️</string>
