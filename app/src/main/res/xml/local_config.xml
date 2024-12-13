@@ -7,6 +7,6 @@
     <locale android:name = "fr-TN"/>           <!-- french (Tunisia)-->
     <locale android:name = "zh-CN"/>           <!-- Mandarian (China)-->
      <locale android:name = "in-ID"/>           <!-- Indonesian (Indonesia)-->
-     <locale android:name = "bn-BD"/>           <!-- Bengali (Bangladesh)-->
+     <locale android:name = "bn"/>           <!-- Bengali (Bangladesh)-->
 
 </locale-config>
