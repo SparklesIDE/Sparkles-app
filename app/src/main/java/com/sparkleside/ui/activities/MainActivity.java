@@ -117,7 +117,7 @@ public class MainActivity extends BaseActivity {
     getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
     int height = displayMetrics.heightPixels;
     int width = displayMetrics.widthPixels; 
-    sideSheetDialog.setMaxWidth(width);
+    //sideSheetDialog.setMaxWidth(width);
     var window = sideSheetDialog.getWindow();
     if (window != null) {
       window.setDimAmount(0.4f);
