@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.transition.TransitionManager;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -112,7 +113,11 @@ public class MainActivity extends BaseActivity {
 
     sideSheetDialog.setContentView(sheetBinding.getRoot());
     sideSheetDialog.setSheetEdge(Gravity.START);
-
+    DisplayMetrics displayMetrics = new DisplayMetrics();
+    getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+    int height = displayMetrics.heightPixels;
+    int width = displayMetrics.widthPixels; 
+    sideSheetDialog.setMaxWidth(width);
     var window = sideSheetDialog.getWindow();
     if (window != null) {
       window.setDimAmount(0.4f);
