@@ -18,7 +18,7 @@
     <item android:id="@android:id/mask" android:top="1.5dp" android:bottom="1.5dp">
         <shape>
             <solid android:color="?attr/colorControlActivated" />
-            <corners android:radius="4dp" />
+            <corners android:radius="50dp" />
         </shape>
     </item>
     <item android:id="@+id/state">
