@@ -55,8 +55,8 @@
     <style name="Theme.Sparkles" parent="Base.Theme.Sparkles">
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:fontFamily">@font/sparkles</item>
-        <item name="fontFamily">@font/sparkles</item>
+        <item name="android:fontFamily">@font/cygre</item>
+        <item name="fontFamily">@font/cygre</item>
         <item name="collapsingToolbarLayoutStyle">?attr/collapsingToolbarLayoutLargeStyle</item>
         <item name="collapsingToolbarLayoutLargeSize">@dimen/collapsing_toolbar_large_size</item>
         <item name="collapsingToolbarLayoutLargeStyle">@style/Widget.Sparkles.CollapsingToolbar</item>
