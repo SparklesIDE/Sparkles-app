@@ -22,7 +22,7 @@
     android:paddingHorizontal="16dp"
     android:paddingVertical="4dp"
     android:elevation="16dp"
-android:gravity="centerVertical">
+android:gravity="center_vertical">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/chevronIconView"
