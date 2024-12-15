@@ -1,4 +1,5 @@
 <resources>
     <dimen name="collapsing_toolbar_large_size">132dp</dimen>
       <dimen name="editor_container_corners">28dp</dimen>
+      <dimen name="m3_side_sheet_width">400dp</dimen>
 </resources>
