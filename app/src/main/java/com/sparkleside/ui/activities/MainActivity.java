@@ -59,13 +59,10 @@ public class MainActivity extends BaseActivity {
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     setSupportActionBar(binding.toolbar);
-
+    
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
-
-    binding.toolbar.setNavigationOnClickListener(
-        view -> {
-          getSideSheet().show();
-        });
+    var sheet = getSideSheet();
+    binding.toolbar.setNavigationOnClickListener(v -> sheet.show());
 
     binding.options.setExpansion(true);
     binding.options.setDuration(200);
