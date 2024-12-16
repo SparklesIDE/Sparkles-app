@@ -21,8 +21,8 @@
     android:orientation="horizontal"
     android:paddingHorizontal="16dp"
     android:paddingVertical="4dp"
-	android:margin_left="28dp"
-	android:margin_right="28dp"
+	android:layout_marginLeft="28dp"
+	android:layout_marginRight="28dp"
     android:elevation="16dp"
     android:gravity="center_vertical">
 
