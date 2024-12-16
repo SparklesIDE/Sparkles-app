@@ -21,6 +21,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.sidesheet.SideSheetBehavior;
 import com.google.android.material.sidesheet.SideSheetDialog;
 import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
@@ -107,7 +108,10 @@ public class MainActivity extends BaseActivity {
   private final SideSheetDialog getSideSheet() {
     sideSheetDialog = new SideSheetDialog(MainActivity.this);
     sheetBinding = ToolboxSidesheetBinding.inflate(getLayoutInflater());
+    // Assuming you're using a library like Material Components for Android (MDC)
 
+   SideSheetBehavior sideSheetBehavior = SideSheetBehavior.from(sideSheetDialog);
+    sideSheetBehavior.setDragCallback(null);
     sideSheetDialog.setContentView(sheetBinding.getRoot());
     sideSheetDialog.setSheetEdge(Gravity.START);
     DisplayMetrics displayMetrics = new DisplayMetrics();
