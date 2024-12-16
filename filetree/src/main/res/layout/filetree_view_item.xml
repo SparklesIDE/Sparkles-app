@@ -17,7 +17,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="55dp"
     android:orientation="horizontal"
     android:paddingHorizontal="16dp"
     android:paddingVertical="4dp"
@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/fileIconView"
-        android:layout_width="30dp"
-        android:layout_height="30dp" 
+        android:layout_width="20dp"
+        android:layout_height="20dp" 
         android:padding="32dp"
         android:scaleType="fitCenter"   />
 
@@ -42,6 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/colorSurfaceInverse"
-        android:textSize="14dp"/>
+        android:textSize="17dp"/>
 
 </LinearLayout>
