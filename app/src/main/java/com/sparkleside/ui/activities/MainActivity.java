@@ -108,8 +108,6 @@ public class MainActivity extends BaseActivity {
   private final SideSheetDialog getSideSheet() {
     sideSheetDialog = new SideSheetDialog(MainActivity.this);
     sheetBinding = ToolboxSidesheetBinding.inflate(getLayoutInflater());
-    // Assuming you're using a library like Material Components for Android (MDC)
-
    SideSheetBehavior sideSheetBehavior = SideSheetBehavior.from(sideSheetDialog);
     sideSheetBehavior.setDragCallback(null);
     sideSheetDialog.setContentView(sheetBinding.getRoot());

@@ -78,7 +78,7 @@ dependencies {
     implementation("com.blankj:utilcodex:1.31.1")
     implementation("nl.dionsegijn:konfetti-xml:2.0.4")
     implementation("com.mikepenz:aboutlibraries:11.2.3")
-	implementation("com.github.tompadz:MaterialPopupMenu:1.0.2") 
+//	implementation("com.github.tompadz:MaterialPopupMenu:1.0.2") 
 	implementation(project(":peekandpop"))
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
