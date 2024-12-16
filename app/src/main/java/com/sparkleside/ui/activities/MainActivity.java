@@ -108,9 +108,8 @@ public class MainActivity extends BaseActivity {
   private final SideSheetDialog getSideSheet() {
     sideSheetDialog = new SideSheetDialog(MainActivity.this);
     sheetBinding = ToolboxSidesheetBinding.inflate(getLayoutInflater());
-   SideSheetBehavior sideSheetBehavior = SideSheetBehavior(sideSheetDialog);
-  //  sideSheetBehavior.setDragCallback(null);
-  sideSheetBehavior.isDraggable(false);
+    SideSheetBehavior<View> sideSheetBehavior = SideSheetBehavior.from(sheetBinding.getRoot());
+    sideSheetBehavior.setDraggable(false);
     sideSheetDialog.setContentView(sheetBinding.getRoot());
     sideSheetDialog.setSheetEdge(Gravity.START);
     DisplayMetrics displayMetrics = new DisplayMetrics();
