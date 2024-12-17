@@ -11,9 +11,11 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.transition.TransitionManager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -69,6 +71,31 @@ public class MainActivity extends BaseActivity {
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     setSupportActionBar(binding.toolbar);
+    
+    /*Permission Controller by Rakhmonov Bobur*/
+     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) { 
+     if (!Environment.isExternalStorageManager()) { 
+     MaterialAlertDialogBuilder perm = new MaterialAlertDialogBuilder(this);
+     LayoutInflater permview= getLayoutInflater();
+     View perview = (View) permview.inflate(R.layout.dialogpermission, null);
+     perm.setView(perview);
+     final TextView positive = (TextView)
+     perview.findViewById(R.id.button1);
+     final TextView negative = (TextView)
+     perview.findViewById(R.id.button3);
+     positive.setOnClickListener(v -> {
+     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+   intent.setData(Uri.parse("package:" + getPackageName()));
+   startActivity(intent);
+     });
+     perm.setCancelable(true);
+     perm.create().show();           
+     
+     
+  
+     } 
+      }
+    
     int statusBarHeight = getResources().getDimensionPixelSize(
     getResources().getIdentifier("status_bar_height", "dimen", "android"));
     int navigationBarHeight = getResources().getDimensionPixelSize(
