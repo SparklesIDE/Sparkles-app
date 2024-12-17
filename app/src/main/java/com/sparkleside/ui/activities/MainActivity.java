@@ -257,5 +257,13 @@ public class MainActivity extends BaseActivity {
     super.onDestroy();
     this.binding = null;
   }
+   @Override
+	public void onBackPressed() {
+		if (binding.drawer.isDrawerOpen(GravityCompat.START)) {
+			binding.drawer.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+		}
+	}
  
 }
