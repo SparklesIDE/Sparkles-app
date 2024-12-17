@@ -77,7 +77,7 @@ public class MainActivity extends BaseActivity {
     if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
     marginLayoutParams.topMargin = statusBarHeight ; // Set top margin in pixels
-    marginLayoutParams.bottomMargin = navigationBarHeight ; // Set bottom margin in pixels
+   // marginLayoutParams.bottomMargin = navigationBarHeight ; // Set bottom margin in pixels
     binding.navigationView.setLayoutParams(marginLayoutParams);
 }
     

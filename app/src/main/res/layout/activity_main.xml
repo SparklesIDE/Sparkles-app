@@ -9,15 +9,14 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:id="@+id/coordinator"
-  android:fitsSystemWindows="true">
+  android:id="@+id/coordinator">
  
 
   <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fitsSystemWindows="false">
+    android:fitsSystemWindows="true">
     <com.google.android.material.appbar.MaterialToolbar
       android:id="@+id/toolbar"
       android:layout_width="match_parent"
@@ -138,8 +137,7 @@
     android:id="@+id/navigation_view"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:fitsSystemWindows="true">
+    android:layout_gravity="start">
     
     <LinearLayout
       android:id="@+id/content_drawer"
@@ -187,19 +185,20 @@
     android:id="@+id/container">
     <HorizontalScrollView
        android:layout_height="match_parent"
-       android:layout_width="match_parent"
-       android:nestedScrollingEnabled="true">
-    <LinearLayout
+       android:layout_width="wrap_content"
+       android:fillViewport="false">
+    <androidx.core.widget.NestedScrollView
       android:layout_height="match_parent"
       android:layout_width="match_parent"
       android:gravity="center"
-      android:id="@+id/content_file_tree">
+      android:id="@+id/content_file_tree"
+      android:fillViewport="false">
       <!--Where the file tree goes-->
       <com.zyron.filetree.widget.FileTreeView
         android:id="@+id/file_tree_view"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" />
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
     </HorizontalScrollView>
     <LinearLayout
       android:layout_height="match_parent"
