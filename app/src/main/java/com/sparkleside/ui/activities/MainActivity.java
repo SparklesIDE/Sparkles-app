@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -68,6 +69,19 @@ public class MainActivity extends BaseActivity {
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     setSupportActionBar(binding.toolbar);
+    int statusBarHeight = getResources().getDimensionPixelSize(
+    getResources().getIdentifier("status_bar_height", "dimen", "android"));
+    int navigationBarHeight = getResources().getDimensionPixelSize(
+    getResources().getIdentifier("navigation_bar_height", "dimen", "android"));
+     ViewGroup.LayoutParams layoutParams = binding.navigationView.getLayoutParams();
+    if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+    marginLayoutParams.topMargin = statusBarHeight ; // Set top margin in pixels
+    marginLayoutParams.bottomMargin = navigationBarHeight ; // Set bottom margin in pixels
+    binding.navigationView.setLayoutParams(marginLayoutParams);
+}
+    
+        
    
         binding.drawer.setScrimColor(Color.TRANSPARENT);
     binding.drawer.setDrawerElevation(0f);
