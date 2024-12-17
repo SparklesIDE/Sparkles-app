@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,16 +18,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.MarginLayoutParams;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+import android.view.WindowManager;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.graphics.Insets;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.sidesheet.SideSheetBehavior;
 import com.google.android.material.sidesheet.SideSheetDialog;
 import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityMainBinding;
-import com.sparkleside.databinding.ToolboxSidesheetBinding;
+//import com.sparkleside.databinding.ToolboxSidebinding;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
@@ -44,7 +52,7 @@ public class MainActivity extends BaseActivity {
   private FileTreeIconProvider fileIconProvider;
   private FileOperationExecutor fileoperate;
   private SideSheetDialog sideSheetDialog;
-  private ToolboxSidesheetBinding sheetBinding;
+  //private ToolboxSidebinding binding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +68,63 @@ public class MainActivity extends BaseActivity {
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     setSupportActionBar(binding.toolbar);
+   
+        binding.drawer.setScrimColor(Color.TRANSPARENT);
+    binding.drawer.setDrawerElevation(0f);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawer, R.string.app_name, R.string.app_name) { 
+        @Override public void onDrawerSlide(View drawerView, float slideOffset) {
+             super.onDrawerSlide(drawerView, slideOffset);
+                 float slideX = drawerView.getWidth() * slideOffset; binding.coordinator.setTranslationX(slideX); 
+            }
+             }; 
+    binding.drawer.addDrawerListener(toggle);    
+    binding.drawer.setFitsSystemWindows(false);
+    
+    binding.fileTreeView.initializeFileTree(
+        "/storage/emulated/0", fileoperate, fileIconProvider);
+
+    binding.contentGit.setVisibility(View.GONE);
+    binding.contentToolbox.setVisibility(View.GONE);
+    binding.contentFileTree.setVisibility(View.VISIBLE);
+
+    binding.btmOptions.setOnNavigationItemSelectedListener(
+        item -> {
+          var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+          TransitionManager.beginDelayedTransition(binding.container, sharedAxis);
+
+          if (item.getItemId() == R.id.option_file_tree) {
+            binding.contentGit.setVisibility(View.GONE);
+            binding.contentToolbox.setVisibility(View.GONE);
+            binding.contentFileTree.setVisibility(View.VISIBLE);
+          } else if (item.getItemId() == R.id.option_git) {
+            binding.contentGit.setVisibility(View.VISIBLE);
+            binding.contentToolbox.setVisibility(View.GONE);
+            binding.contentFileTree.setVisibility(View.GONE);
+          } else if (item.getItemId() == R.id.option_toolbox) {
+            binding.contentGit.setVisibility(View.GONE);
+            binding.contentToolbox.setVisibility(View.VISIBLE);
+            binding.contentFileTree.setVisibility(View.GONE);
+          }
+          return true;
+        });
+
+    binding.hide.setOnClickListener(v -> {
+    if (binding.drawer.isDrawerOpen(GravityCompat.START)) {
+      binding.drawer.closeDrawer(GravityCompat.START);
+    }
+    });
+    binding.drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
-    var sheet = getSideSheet();
-    binding.toolbar.setNavigationOnClickListener(v -> sheet.show());
+  //  var sheet = getSideSheet();
+    binding.toolbar.setNavigationOnClickListener(v -> /*sheet.show()*/{
+    if (binding.drawer.isDrawerOpen(GravityCompat.START)) {
+        binding.drawer.closeDrawer(GravityCompat.START);
+      } else {
+        binding.drawer.openDrawer(GravityCompat.START);
+      }
+    
+        });
 
     binding.options.setExpansion(true);
     binding.options.setDuration(200);
@@ -104,56 +165,9 @@ public class MainActivity extends BaseActivity {
           return WindowInsetsCompat.CONSUMED;
         });
   }
+    
 
-  private final SideSheetDialog getSideSheet() {
-    sideSheetDialog = new SideSheetDialog(MainActivity.this);
-    sheetBinding = ToolboxSidesheetBinding.inflate(getLayoutInflater());
-    SideSheetBehavior<View> sideSheetBehavior = SideSheetBehavior.from(sheetBinding.getRoot());
-    sideSheetBehavior.setDraggable(false);
-    sideSheetDialog.setContentView(sheetBinding.getRoot());
-    sideSheetDialog.setSheetEdge(Gravity.START);
-    DisplayMetrics displayMetrics = new DisplayMetrics();
-    getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-    int height = displayMetrics.heightPixels;
-    int width = displayMetrics.widthPixels; 
-    //sideSheetDialog.setMaxWidth(width);
-    var window = sideSheetDialog.getWindow();
-    if (window != null) {
-      window.setDimAmount(0.4f);
-    }
-
-    sheetBinding.fileTreeView.initializeFileTree(
-        "/storage/emulated/0", fileoperate, fileIconProvider);
-
-    sheetBinding.contentGit.setVisibility(View.GONE);
-    sheetBinding.contentToolbox.setVisibility(View.GONE);
-    sheetBinding.contentFileTree.setVisibility(View.VISIBLE);
-
-    sheetBinding.options.setOnNavigationItemSelectedListener(
-        item -> {
-          var sharedAxis = new MaterialSharedAxis(MaterialSharedAxis.X, true);
-          TransitionManager.beginDelayedTransition(sheetBinding.container, sharedAxis);
-
-          if (item.getItemId() == R.id.option_file_tree) {
-            sheetBinding.contentGit.setVisibility(View.GONE);
-            sheetBinding.contentToolbox.setVisibility(View.GONE);
-            sheetBinding.contentFileTree.setVisibility(View.VISIBLE);
-          } else if (item.getItemId() == R.id.option_git) {
-            sheetBinding.contentGit.setVisibility(View.VISIBLE);
-            sheetBinding.contentToolbox.setVisibility(View.GONE);
-            sheetBinding.contentFileTree.setVisibility(View.GONE);
-          } else if (item.getItemId() == R.id.option_toolbox) {
-            sheetBinding.contentGit.setVisibility(View.GONE);
-            sheetBinding.contentToolbox.setVisibility(View.VISIBLE);
-            sheetBinding.contentFileTree.setVisibility(View.GONE);
-          }
-          return true;
-        });
-
-    sheetBinding.hide.setOnClickListener(v -> sideSheetDialog.hide());
-
-    return sideSheetDialog;
-  }
+  
 
   private void compileJavaCode() {
     var compiler = new JavaCompiler(this);
@@ -229,4 +243,5 @@ public class MainActivity extends BaseActivity {
     super.onDestroy();
     this.binding = null;
   }
+ 
 }
