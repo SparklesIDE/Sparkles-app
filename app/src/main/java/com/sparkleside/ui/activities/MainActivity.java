@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -24,6 +25,7 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.widget.TextView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
@@ -80,15 +82,16 @@ public class MainActivity extends BaseActivity {
      View perview = (View) permview.inflate(R.layout.dialogpermission, null);
      perm.setView(perview);
      final TextView positive = (TextView)
-     perview.findViewById(R.id.button1);
+     perview.findViewById(android.R.id.button1);
      final TextView negative = (TextView)
-     perview.findViewById(R.id.button3);
+     perview.findViewById(android.R.id.button3);
      positive.setOnClickListener(v -> {
      Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
    intent.setData(Uri.parse("package:" + getPackageName()));
    startActivity(intent);
      });
-     perm.setCancelable(true);
+     negative.setOnClickListener(v ->{ finishAffinity();});
+     perm.setCancelable(false);
      perm.create().show();           
      
      

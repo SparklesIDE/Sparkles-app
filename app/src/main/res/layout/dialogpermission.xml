@@ -27,7 +27,7 @@
         android:paddingBottom="24dp"
         android:textColor="?android:textColorPrimary"
         android:textSize="20sp"
-        tools:text="Grant the all file access Permission  to Make Sparkles IDE works Correctly " />
+        android:text="Grant the all file access Permission to Make Sparkles IDE works Correctly " />
 
     <TextView
         android:id="@android:id/button1"

@@ -21,7 +21,7 @@
     </style>
     
     <!--this code was imported from Rikka Apps' shizuku-->
-    <style name="GrantPermissions" parent="@style/AppTheme">
+    <style name="GrantPermissions" parent="@style/Theme.Sparkles">
         <item name="android:colorBackground">?colorBackgroundFloating</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
 
