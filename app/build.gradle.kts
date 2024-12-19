@@ -84,10 +84,11 @@ dependencies {
     implementation(project(":ui-utils"))
     implementation(project(":filetree"))
     implementation(project(":java-compiler"))
+	implementation(project(":java-compiler"))
     
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     
-    //termux
-    implementation("com.github.termux.termux-app:terminal-view:0.118.1")
-    implementation("com.github.termux.termux-app:terminal-emulator:0.118.1")
+    //termux old
+   implementation("com.github.termux.termux-app:terminal-view:0.118.1")
+   implementation("com.github.termux.termux-app:terminal-emulator:0.118.1")
 }

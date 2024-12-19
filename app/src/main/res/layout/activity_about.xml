@@ -183,7 +183,7 @@
               android:layout_height="wrap_content"
               android:layout_width="wrap_content"
               android:padding="8dp"
-              android:textSize="11sp"
+              android:textSize="14sp"
               android:textColor="?colorOnSurface"
               android:id="@+id/textview4"
               android:text="YamenHer" />
@@ -211,7 +211,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:padding="8dp"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textColor="?colorOnSurface"
             android:id="@+id/textview5"
             android:text="SyntaxSpin"
@@ -248,7 +248,7 @@
               android:layout_height="wrap_content"
               android:layout_width="wrap_content"
               android:padding="8dp"
-              android:textSize="11sp"
+              android:textSize="14sp"
               android:id="@+id/textview6"
               android:text="Aquiles"
               android:textColor="?colorOnSurface" />
