@@ -25,12 +25,12 @@ public class SettingsActivity extends BaseActivity {
     returnTransition.addTarget(R.id.coordinator);
     getWindow().setReturnTransition(returnTransition);
 
-    MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
+   /* MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
     exitTransition.addTarget(R.id.coordinator);
     getWindow().setExitTransition(exitTransition);
     MaterialSharedAxis reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
     reenterTransition.addTarget(R.id.coordinator);
-    getWindow().setReenterTransition(reenterTransition);
+    getWindow().setReenterTransition(reenterTransition);*/
     super.onCreate(savedInstanceState);
 
     setContentView(binding.getRoot());
