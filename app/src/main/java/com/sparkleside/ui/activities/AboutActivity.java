@@ -34,10 +34,10 @@ public class AboutActivity extends BaseActivity {
     getWindow().setAllowEnterTransitionOverlap(false);
     MaterialSharedAxis enterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
     enterTransition.addTarget(R.id.coordinator);
-    enterTransition.setDuration(200L);
+    enterTransition.setDuration(400L);
     getWindow().setEnterTransition(enterTransition);
     MaterialSharedAxis returnTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
-    returnTransition.setDuration(200L);
+    returnTransition.setDuration(400L);
     returnTransition.addTarget(R.id.coordinator);
     getWindow().setReturnTransition(returnTransition);
     super.onCreate(savedInstanceState);
@@ -151,7 +151,7 @@ public class AboutActivity extends BaseActivity {
 
     TeamMember(
         "Jeiel Lima Miranda",
-        Role.TRANSLATOR,
+        Role.DEVELOPER,
         "https://github.com/jetrom17",
         getString(R.string.jaiel_lima_phrase),
         true);

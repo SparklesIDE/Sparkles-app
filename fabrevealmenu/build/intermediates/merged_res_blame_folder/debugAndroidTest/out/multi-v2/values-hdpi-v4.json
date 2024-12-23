@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hlab.fabrevealmenu.test.fabrevealmenu-mergeDebugAndroidTestResources-22:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/data/user/0/com.itsaky.androidide/files/home/.gradle/caches/transforms-3/ea7a1566e056944e1865a51ce6517513/transformed/appcompat-1.4.2/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

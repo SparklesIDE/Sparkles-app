@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hlab.fabrevealmenu.test.fabrevealmenu-mergeDebugAndroidTestResources-22:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/data/user/0/com.itsaky.androidide/files/home/.gradle/caches/transforms-3/ea7a1566e056944e1865a51ce6517513/transformed/appcompat-1.4.2/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}
