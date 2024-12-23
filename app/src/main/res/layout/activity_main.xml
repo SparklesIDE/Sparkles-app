@@ -111,25 +111,98 @@
         android:textSize="14sp" />
     </LinearLayout>
   </LinearLayout>
-  <com.google.android.material.button.MaterialButton
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/fab"
-    android:layout_width="72dp"
-    android:layout_height="72dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_gravity="bottom|end"
     android:layout_margin="16dp"
+    android:padding="16dp"
     android:layout_marginBottom="24dp"
-    app:icon="@drawable/ic_fab_play"
-    android:background="@drawable/compilerr"
-    app:backgroundTint="?colorPrimary"
-    app:iconGravity="textStart"
-    app:iconPadding="0dp"
-    app:iconSize="24dp"
-    app:iconTint="?colorSurface"
-    android:insetLeft="0dp"
-    android:insetTop="0dp"
-    android:insetRight="0dp"
-    android:insetBottom="0dp"
-    android:padding="24dp" />
+    android:src="@drawable/ic_fab_play"/>
+    <!--Compiler Selector-->
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/compilers_card"
+  android:layout_width="220dp"
+  android:layout_height="wrap_content"
+  android:layout_margin="16dp"
+  android:layout_marginBottom="24dp"
+  android:layout_gravity="bottom|end"
+  android:padding="16dp"
+  android:visibility="gone">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:drawablePadding="16dp"
+      android:drawableStart="@drawable/local_cafe_24px"
+      android:text="Java"
+      android:layout_weight="1"
+      android:textAppearance="?attr/textAppearanceSubtitle1" 
+      android:id="@+id/java"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:background="?colorSurface"
+      android:drawablePadding="16dp"
+      android:drawableStart="@drawable/python"
+      android:text="Python"
+      android:id="@+id/python"
+      android:layout_weight="1"
+      android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:background="?colorSurface"
+      android:drawablePadding="16dp"
+      android:drawableStart="@drawable/globe_24px"
+      android:text="HTML"
+      android:id="@+id/html"
+      android:layout_weight="1"
+      android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:background="?colorSurface"
+      android:drawablePadding="16dp"
+      android:drawableStart="@drawable/markdown_24px"
+      android:text="MarkDown"
+      android:id="@+id/markdown"
+      android:layout_weight="1"
+      android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="bottom"
+      android:padding="16dp"
+      android:background="?colorSecondaryContainer"
+      android:drawablePadding="16dp"
+      android:drawableStart="@drawable/close_24px"
+      app:drawableTint="?colorOnSecondaryContainer"
+      android:text="Close"
+      android:layout_weight="1"
+      android:id="@+id/close"
+      android:gravity="center_vertical"
+      android:textColor="?colorOnSecondaryContainer"
+      android:textAppearance="?attr/textAppearanceButton" />
+  </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
   

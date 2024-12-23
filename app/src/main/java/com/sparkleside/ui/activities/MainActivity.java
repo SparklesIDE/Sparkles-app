@@ -50,6 +50,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import org.robok.engine.feature.compiler.java.JavaCompiler;
 import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
+import com.google.android.material.transition.platform.MaterialContainerTransform;
 
 public class MainActivity extends BaseActivity {
 
@@ -57,14 +58,13 @@ public class MainActivity extends BaseActivity {
   private FileTreeIconProvider fileIconProvider;
   private FileOperationExecutor fileoperate;
   private SideSheetDialog sideSheetDialog;
-  //private ToolboxSidebinding binding;
+    
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     MaterialSharedAxis exitTransition = new MaterialSharedAxis(MaterialSharedAxis.X, true);
     exitTransition.addTarget(R.id.coordinator);
     getWindow().setExitTransition(exitTransition);
-
     var reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
     reenterTransition.addTarget(R.id.coordinator);
     getWindow().setReenterTransition(reenterTransition);
@@ -160,8 +160,7 @@ public class MainActivity extends BaseActivity {
     binding.drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     
     binding.toolbar.setNavigationIcon(R.drawable.menu_24px);
-  //  var sheet = getSideSheet();
-    binding.toolbar.setNavigationOnClickListener(v -> /*sheet.show()*/{
+    binding.toolbar.setNavigationOnClickListener(v -> {
     if (binding.drawer.isDrawerOpen(GravityCompat.START)) {
         binding.drawer.closeDrawer(GravityCompat.START);
       } else {
@@ -181,7 +180,7 @@ public class MainActivity extends BaseActivity {
       binding.settings.setTooltipText(getString(R.string.tooltip_settings));
     }
 
-    binding.fab.setOnClickListener(v -> compileJavaCode());
+    binding.fab.setOnClickListener(v -> fabCompiler());
     binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
 
     binding.settings.setOnClickListener(
@@ -206,6 +205,15 @@ public class MainActivity extends BaseActivity {
           MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
           mlp.bottomMargin = insets.bottom + 72;
           v.setLayoutParams(mlp);
+          return WindowInsetsCompat.CONSUMED;
+        });
+        ViewCompat.setOnApplyWindowInsetsListener(
+        binding.compilersCard,
+        (v, windowInsets) -> {
+          Insets insetss = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+          MarginLayoutParams mlp2 = (MarginLayoutParams) v.getLayoutParams();
+          mlp2.bottomMargin = insetss.bottom + 72;
+          v.setLayoutParams(mlp2);
           return WindowInsetsCompat.CONSUMED;
         });
   }
@@ -295,5 +303,34 @@ public class MainActivity extends BaseActivity {
 			super.onBackPressed();
 		}
 	}
- 
+   
+    public void fabCompiler(){
+    MaterialContainerTransform transition = buildContainerTransform(true);
+    transition.setStartView(binding.fab);
+    transition.setEndView(binding.compilersCard);
+    transition.addTarget(binding.compilersCard);
+    // Trigger the container transform transition.
+    TransitionManager.beginDelayedTransition(binding.coordinator, transition);
+    binding.fab.setVisibility(View.INVISIBLE);
+    binding.compilersCard.setVisibility(View.VISIBLE);
+    //Listeners
+    binding.close.setOnClickListener(v->{
+    MaterialContainerTransform transition2 = buildContainerTransform(false);
+    transition2.setStartView(binding.compilersCard);
+    transition2.setEndView(binding.fab);
+    transition2.addTarget(binding.fab);    
+    TransitionManager.beginDelayedTransition(binding.coordinator, transition2);
+    binding.fab.setVisibility(View.VISIBLE);
+    binding.compilersCard.setVisibility(View.INVISIBLE);
+    });
+    binding.java.setOnClickListener(v-> compileJavaCode());
+    } 
+    
+     private MaterialContainerTransform buildContainerTransform(boolean entering) {
+     MaterialContainerTransform transform = new MaterialContainerTransform(MainActivity.this, entering);
+     transform.setScrimColor(Color.TRANSPARENT);
+     transform.setDrawingViewId(binding.coordinator.getId());
+      return transform;
+     }
+  
 }
