@@ -51,6 +51,7 @@ import java.io.IOException;
 import org.robok.engine.feature.compiler.java.JavaCompiler;
 import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
 import com.google.android.material.transition.platform.MaterialContainerTransform;
+import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
 public class MainActivity extends BaseActivity {
 
@@ -68,7 +69,8 @@ public class MainActivity extends BaseActivity {
     var reenterTransition = new MaterialSharedAxis(MaterialSharedAxis.X, false);
     reenterTransition.addTarget(R.id.coordinator);
     getWindow().setReenterTransition(reenterTransition);
-
+    setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+    getWindow().setSharedElementsUseOverlay(false);
     super.onCreate(savedInstanceState);
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
@@ -324,6 +326,14 @@ public class MainActivity extends BaseActivity {
     binding.compilersCard.setVisibility(View.INVISIBLE);
     });
     binding.java.setOnClickListener(v-> compileJavaCode());
+    binding.markdown.setOnClickListener(v->
+        {
+            Intent intent = new Intent(MainActivity.this, MarkdownActivity.class);
+            intent.putExtra("mark",binding.editor.getText().toString());
+          android.app.ActivityOptions optionsCompat =
+          android.app.ActivityOptions.makeSceneTransitionAnimation(MainActivity.this , binding.markdown , "mark");
+          startActivity(intent, optionsCompat.toBundle());
+        });
     } 
     
      private MaterialContainerTransform buildContainerTransform(boolean entering) {

@@ -78,13 +78,15 @@ dependencies {
     implementation("com.blankj:utilcodex:1.31.1")
     implementation("nl.dionsegijn:konfetti-xml:2.0.4")
     implementation("com.mikepenz:aboutlibraries:11.2.3")
-//	implementation("com.github.tompadz:MaterialPopupMenu:1.0.2") 
 	implementation(project(":peekandpop"))
     implementation(project(":maskable"))
     implementation(project(":ui-utils"))
     implementation(project(":filetree"))
     implementation(project(":java-compiler"))
 	implementation(project(":java-compiler"))
+    implementation("io.noties.markwon:core:4.6.2")
+    implementation("io.noties.markwon:html:4.6.2")
+    implementation("io.noties.markwon:image:4.6.2")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     
     //termux 
