@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
+import android.widget.Toast;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
@@ -45,9 +46,11 @@ import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
 import com.sparkleside.ui.editor.schemes.SparklesScheme;
 import com.zyron.filetree.provider.FileTreeIconProvider;
+import io.github.rosemoe.sora.widget.EditorSearcher;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.robok.engine.feature.compiler.java.JavaCompiler;
 import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
 import com.google.android.material.transition.platform.MaterialContainerTransform;
@@ -59,6 +62,7 @@ public class MainActivity extends BaseActivity {
   private FileTreeIconProvider fileIconProvider;
   private FileOperationExecutor fileoperate;
   private SideSheetDialog sideSheetDialog;
+  private AtomicInteger currentIndex = new AtomicInteger(-1);
     
 
   @Override
@@ -227,6 +231,11 @@ public class MainActivity extends BaseActivity {
           v.setLayoutParams(mlp2);
           return WindowInsetsCompat.CONSUMED;
         });
+        
+    binding.materialbutton2.setOnClickListener( v -> { 
+        binding.editor.getSearcher().search(binding.edittext1.getText().toString(),new EditorSearcher.SearchOptions(false, true));
+        binding.editor.getSearcher().gotoNext();                                            
+    });
   }
     
 
@@ -351,5 +360,7 @@ public class MainActivity extends BaseActivity {
      transform.setDrawingViewId(binding.coordinator.getId());
       return transform;
      }
-  
+
+    private int currentSearchIndex = 0;  
 }
+  
