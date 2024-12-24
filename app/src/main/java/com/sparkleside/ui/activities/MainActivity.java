@@ -174,6 +174,9 @@ public class MainActivity extends BaseActivity {
     binding.options.setExpansion(true);
     binding.options.setDuration(200);
     binding.options.setOrientatin(ExpandableLayout.VERTICAL);
+    binding.searchl.setExpansion(false);
+    binding.searchl.setDuration(200);
+    binding.searchl.setOrientatin(ExpandableLayout.VERTICAL);    
 
     if (Build.VERSION.SDK_INT >= 26) {
       binding.term.setTooltipText(getString(R.string.tooltip_terminal));
@@ -184,7 +187,13 @@ public class MainActivity extends BaseActivity {
 
     binding.fab.setOnClickListener(v -> fabCompiler());
     binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
-
+    binding.search.setOnClickListener(v->{
+        if (!binding.searchl.isExpanded()) {
+        binding.searchl.expand();
+      } else {
+        binding.searchl.collapse();
+      }
+        });
     binding.settings.setOnClickListener(
         v -> {
           Intent intent = new Intent(MainActivity.this, SettingsActivity.class);

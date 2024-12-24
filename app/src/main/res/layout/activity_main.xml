@@ -94,6 +94,98 @@
         </LinearLayout>
       </LinearLayout>
     </com.sparkleside.ui.components.ExpandableLayout>
+    <com.sparkleside.ui.components.ExpandableLayout
+      android:id="@+id/searchl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="?colorSurface">
+      <LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="260dp"
+		android:padding="8dp"
+		android:orientation="horizontal">
+		<com.google.android.material.card.MaterialCardView
+			android:id="@+id/cardview1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:cardCornerRadius="20dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="?colorSurface">
+			<LinearLayout
+				android:id="@+id/linear2"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:padding="8dp"
+				android:orientation="vertical">
+				<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/textinputlayout1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/edittext1"
+						android:layout_width="match_parent"
+						android:layout_height="60dp"
+                        android:singleLine="true"
+						android:hint="Search"
+                        android:focusable="true" />
+				</com.google.android.material.textfield.TextInputLayout>
+				<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/textinputlayout2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="9dp">
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/edittext2"
+						android:layout_width="match_parent"
+						android:layout_height="60dp"
+                        android:singleLine="true"
+						android:hint="Replace" />
+				</com.google.android.material.textfield.TextInputLayout>
+				<LinearLayout
+					android:id="@+id/linear3"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="8dp"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<com.google.android.material.button.MaterialButton
+						android:id="@+id/materialbutton4"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="Replace All"
+						android:textSize="12sp"
+                        style="@style/Widget.Material3.Button.TextButton"/>
+						<com.google.android.material.button.MaterialButton
+						android:id="@+id/materialbutton3"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="Replace"
+						android:textSize="12sp"
+                        style="@style/Widget.Material3.Button.TextButton"/>
+						<com.google.android.material.button.MaterialButton
+						android:id="@+id/materialbutton2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:icon="@drawable/keyboard_arrow_down_24px"
+                        style="?attr/materialIconButtonStyle"/>
+						<com.google.android.material.button.MaterialButton
+						android:id="@+id/materialbutton1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:icon="@drawable/keyboard_arrow_up_24px"
+                        style="?attr/materialIconButtonStyle"/>
+						</LinearLayout>
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+        
+	</LinearLayout>
+    </com.sparkleside.ui.components.ExpandableLayout>
     <com.google.android.material.divider.MaterialDivider
       android:layout_width="match_parent"
       android:layout_height="2dp" />
