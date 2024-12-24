@@ -44,4 +44,59 @@ public class Preferences {
       spEditor.apply();
     }
   }
+    
+  public static class Editor {
+    private static final String EDITOR_WORD_WRAP_KEY = "EDITOR_WORD_WRAP";
+    private static final String EDITOR_SHOW_FIRST_LINE = "EDITOR_SHOW_FIRST_LINE";     
+    private static final String EDITOR_USE_OVERSCROLL = "EDITOR_USE_OVERSCROLL";
+    private static final String EDITOR_SHOW_TOOLBAR = "EDITOR_SHOW_TOOLBAR";             
+      
+    public static void setWordWrapEnable(Context ctx, boolean isWordWrapEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(EDITOR_WORD_WRAP_KEY, isWordWrapEnable);
+      spEditor.apply();
+    }
+        
+    public static boolean isWordWrapEnabled(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(EDITOR_WORD_WRAP_KEY, false);
+    }
+    
+    public static void setShowFirstLineEnable(Context ctx, boolean isWordWrapEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(EDITOR_SHOW_FIRST_LINE, isWordWrapEnable);
+      spEditor.apply();
+    }
+        
+    public static boolean isShowFirstLineEnable(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(EDITOR_SHOW_FIRST_LINE, false);
+    }
+        
+    public static void setUseOverscrollEnable(Context ctx, boolean isWordWrapEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(EDITOR_USE_OVERSCROLL, isWordWrapEnable);
+      spEditor.apply();
+    }
+        
+    public static boolean isUseOverscrollEnabled(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(EDITOR_USE_OVERSCROLL, false);
+    }
+        
+    public static void setShowToolbarEnable(Context ctx, boolean isWordWrapEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(EDITOR_SHOW_TOOLBAR, isWordWrapEnable);
+      spEditor.apply();
+    }
+        
+    public static boolean isShowToolbarEnabled(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(EDITOR_SHOW_TOOLBAR, false);
+    }    
+  }  
 }
