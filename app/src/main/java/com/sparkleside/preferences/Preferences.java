@@ -46,6 +46,7 @@ public class Preferences {
   }
     
   public static class Editor {
+    private static final String THEME_PREFERENCE = BuildConfig.APPLICATION_ID + ".editor_prefs";   
     private static final String EDITOR_WORD_WRAP_KEY = "EDITOR_WORD_WRAP";
     private static final String EDITOR_SHOW_FIRST_LINE = "EDITOR_SHOW_FIRST_LINE";     
     private static final String EDITOR_USE_OVERSCROLL = "EDITOR_USE_OVERSCROLL";
