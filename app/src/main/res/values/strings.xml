@@ -52,8 +52,8 @@
   <string name="editor_theme_desc">Choose Sora Editor Theme</string>
   <string name="editor_wordwrap">WordWrap</string>
   <string name="editor_wordwrap_desc">Enable WordWrap of Sora</string>
-  <string name="editor_fl">Show First Line</string>
-  <string name="editor_fl_desc">Show or hide the first line</string>
+  <string name="editor_fl">Show First Line Number</string>
+  <string name="editor_fl_desc">Show or hide the first line Number</string>
   <string name="editor_overscroll">OverScroll</string>
   <string name="editor_overscroll_desc">Enable OverScroll of Sora</string>
   <string name="editor_ln">Show Line Numbers</string>

@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -41,6 +42,7 @@ import com.google.android.material.transition.platform.MaterialSharedAxis;
 import com.sparkleside.R;
 import com.sparkleside.databinding.ActivityMainBinding;
 //import com.sparkleside.databinding.ToolboxSidebinding;
+import com.sparkleside.preferences.Preferences;
 import com.sparkleside.ui.base.BaseActivity;
 import com.sparkleside.ui.components.ExpandableLayout;
 import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
@@ -175,7 +177,7 @@ public class MainActivity extends BaseActivity {
     
         });
 
-    binding.options.setExpansion(true);
+    binding.options.setExpansion(Preferences.Editor.isShowToolbarEnabled(this));
     binding.options.setDuration(200);
     binding.options.setOrientatin(ExpandableLayout.VERTICAL);
     binding.searchl.setExpansion(false);
@@ -188,7 +190,7 @@ public class MainActivity extends BaseActivity {
       binding.file.setTooltipText(getString(R.string.tooltip_new_file));
       binding.settings.setTooltipText(getString(R.string.tooltip_settings));
     }
-
+    EditorConfigs();
     binding.fab.setOnClickListener(v -> fabCompiler());
     binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
     binding.search.setOnClickListener(v->{
@@ -323,7 +325,7 @@ public class MainActivity extends BaseActivity {
 			super.onBackPressed();
 		}
 	}
-   
+    
     public void fabCompiler(){
     MaterialContainerTransform transition = buildContainerTransform(true);
     transition.setStartView(binding.fab);
@@ -359,6 +361,11 @@ public class MainActivity extends BaseActivity {
      transform.setScrimColor(Color.TRANSPARENT);
      transform.setDrawingViewId(binding.coordinator.getId());
       return transform;
+     }
+     public void EditorConfigs(){
+         binding.editor.setWordwrap(Preferences.Editor.isWordWrapEnabled(this));
+         binding.editor.setLineNumberEnabled(Preferences.Editor.isShowLineEnable(this));
+         binding.editor.setFirstLineNumberAlwaysVisible(Preferences.Editor.isShowFirstLineEnable(this));
      }
 
     private int currentSearchIndex = 0;  

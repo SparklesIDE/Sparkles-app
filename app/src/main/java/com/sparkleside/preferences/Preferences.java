@@ -49,6 +49,7 @@ public class Preferences {
     private static final String THEME_PREFERENCE = BuildConfig.APPLICATION_ID + ".editor_prefs";   
     private static final String EDITOR_WORD_WRAP_KEY = "EDITOR_WORD_WRAP";
     private static final String EDITOR_SHOW_FIRST_LINE = "EDITOR_SHOW_FIRST_LINE";     
+    private static final String EDITOR_SHOW_LINE = "EDITOR_SHOW_LINE";
     private static final String EDITOR_USE_OVERSCROLL = "EDITOR_USE_OVERSCROLL";
     private static final String EDITOR_SHOW_TOOLBAR = "EDITOR_SHOW_TOOLBAR";             
       
@@ -70,11 +71,22 @@ public class Preferences {
       spEditor.putBoolean(EDITOR_SHOW_FIRST_LINE, isWordWrapEnable);
       spEditor.apply();
     }
+    public static void setShowLineEnable(Context ctx, boolean isWordWrapEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(EDITOR_SHOW_LINE, isWordWrapEnable);
+      spEditor.apply();
+    }    
         
     public static boolean isShowFirstLineEnable(Context ctx) {
       var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
       return sp.getBoolean(EDITOR_SHOW_FIRST_LINE, false);
     }
+    public static boolean isShowLineEnable(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(EDITOR_SHOW_LINE, false);
+    }    
+        
         
     public static void setUseOverscrollEnable(Context ctx, boolean isWordWrapEnable) {
       var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);

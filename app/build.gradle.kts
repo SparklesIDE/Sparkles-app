@@ -88,7 +88,7 @@ dependencies {
     implementation("io.noties.markwon:html:4.6.2")
     implementation("io.noties.markwon:image:4.6.2")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
-    
+     
     //termux 
    implementation("com.github.termux.termux-app:terminal-view:0.118.1")
    implementation("com.github.termux.termux-app:terminal-emulator:0.118.1")
