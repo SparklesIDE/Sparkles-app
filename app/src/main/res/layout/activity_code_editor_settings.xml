@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="?colorSurface"
+     android:id="@+id/coordinator">
+
+    <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+         android:fitsSystemWindows="true"
+         android:id="@+id/appbar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+             android:layout_width="match_parent"
+             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+             style="@style/Widget.Sparkles.CollapsingToolbar">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                 android:layout_height="?attr/actionBarSize"
+                 android:layout_width="match_parent"
+                 app:title="@string/set_editor"
+                 app:layout_collapseMode="pin"
+                 android:id="@+id/toolbar" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         android:id="@+id/nested_scroll_view">
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:padding="20dp"
+             android:orientation="vertical"
+             android:id="@+id/linear1">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal|center_vertical"
+                 android:padding="0dp"
+                 android:orientation="horizontal"
+                 android:id="@+id/linear">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:layout_margin="0dp"
+                     android:orientation="vertical"
+                     android:layout_weight="1"
+                     android:id="@+id/linear3">
+
+                    <com.google.android.material.card.MaterialCardView
+                         android:layout_height="match_parent"
+                         android:layout_width="match_parent"
+                         app:contentPadding="8dp"
+                         app:cardCornerRadius="30dp"
+                         style="?attr/materialCardViewFilledStyle"
+                         app:cardBackgroundColor="?colorSurfaceContainer"
+                         android:id="@+id/cardview1">
+
+                        <LinearLayout
+                             android:layout_height="match_parent"
+                             android:layout_width="match_parent"
+                             android:orientation="vertical">
+
+                            <TextView
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="match_parent"
+                                 android:padding="8dp"
+                                 android:textSize="14sp"
+                                 android:id="@+id/textview2"
+                                 android:gravity="center"
+                                 android:text="@string/editor_theme_title" />
+
+                            <com.google.android.material.button.MaterialButtonToggleGroup
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="match_parent"
+                                 android:gravity="center_horizontal|center_vertical"
+                                 app:singleSelection="true"
+                                 android:padding="8dp"
+                                 android:orientation="vertical"
+                                 app:selectionRequired="true"
+                                 android:id="@+id/linear5">
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:checked="true"
+                                     android:id="@+id/materialbutton1"
+                                     android:text="Sparkles Irodori" />
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:id="@+id/materialbutton2"
+                                     android:text="Darcula" />
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:id="@+id/materialbutton3"
+                                     android:text="Eclipse" />
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:id="@+id/materialbutton4"
+                                     android:text="Github" />
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:id="@+id/materialbutton5"
+                                     android:text="NPXX" />
+
+                                <com.google.android.material.button.MaterialButton
+                                     android:layout_height="wrap_content"
+                                     android:layout_width="match_parent"
+                                     android:gravity="center_horizontal|center_vertical"
+                                     android:textSize="14sp"
+                                     style="@style/Widget.Material3.Button.OutlinedButton"
+                                     android:id="@+id/materialbutton6"
+                                     android:text="VS2019" />
+
+                            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:gravity="center_horizontal|center_vertical"
+                     android:layout_marginLeft="16dp"
+                     android:orientation="vertical"
+                     android:layout_weight="1"
+                     android:id="@+id/linear2">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                         android:layout_height="match_parent"
+                         android:layout_width="match_parent"
+                         android:src="@drawable/ic_pallete"
+                         app:shapeAppearance="@style/ShapeImageView"
+                         android:padding="8dp"
+                         android:id="@+id/img1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:textSize="18sp"
+                 android:textColor="?colorPrimary"
+                 android:textStyle="bold"
+                 android:layout_marginTop="12dp"
+                 android:text="@string/editor_title" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

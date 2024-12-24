@@ -19,6 +19,7 @@ package dev.trindadedev.ui_utils.preferences.withicon;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,7 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
   public TextView preferenceDescription;
   public MaterialSwitch preferenceSwitch;
   public ImageView preferenceIcon;
+  public RelativeLayout root;
 
   public PreferenceSwitch(Context context) {
     super(context);
@@ -60,7 +62,7 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
     preferenceDescription = findViewById(R.id.preference_description);
     preferenceSwitch = findViewById(R.id.preference_switch);
     preferenceIcon = findViewById(R.id.preference_icon);
-
+    root = findViewById(R.id.root);
     setOnClickListener(this);
 
     if (attrs != null) {
@@ -73,11 +75,12 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
         boolean defaultValue =
             a.getBoolean(R.styleable.PreferenceSwitch_preferenceSwitchDefaultValue, false);
         int iconResId = a.getResourceId(R.styleable.PreferenceSwitch_preferenceSwitchIcon, 0);
-
+        String item = a.getString(R.styleable.PreferenceSwitch_preferenceSwitchBg);
         setTitle(title != null ? title : "");
         setDescription(description != null ? description : "");
         setValue(defaultValue);
         setIcon(iconResId);
+        setBackgroundPosition(item);
       } finally {
         a.recycle();
       }
@@ -119,4 +122,23 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
       CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
     preferenceSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
   }
+  public void setBackgroundPosition(String item){
+      int backgroundResource;
+      if (item == "1") {
+            backgroundResource = R.drawable.shape_alone;
+        } else if (item == "0") {
+            backgroundResource = R.drawable.shape_top;
+        } else if (item == "3" ) {
+            backgroundResource = R.drawable.shape_bottom;
+        } else if (item == "2") {
+            backgroundResource = R.drawable.shape_middle;
+        }
+        else{
+            backgroundResource = Color.TRANSPARENT;
+        }
+
+        root.setBackgroundResource(backgroundResource);
+    }
+    
+  
 }

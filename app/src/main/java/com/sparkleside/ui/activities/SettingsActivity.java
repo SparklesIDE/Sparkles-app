@@ -56,6 +56,13 @@ public class SettingsActivity extends BaseActivity {
               android.app.ActivityOptions.makeSceneTransitionAnimation(SettingsActivity.this);
           startActivity(intent, optionsCompat.toBundle());
         });
+    binding.editor.setOnClickListener(
+        v -> {
+          Intent intent = new Intent(SettingsActivity.this, CodeEditorSettingsActivity.class);
+          android.app.ActivityOptions optionsCompat =
+          android.app.ActivityOptions.makeSceneTransitionAnimation(SettingsActivity.this);
+          startActivity(intent, optionsCompat.toBundle());
+        });    
     binding.lib.setOnClickListener(
         v -> {
           LibsBuilder libe = new LibsBuilder();

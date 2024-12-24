@@ -3,6 +3,10 @@
         <item name="cornerFamily">rounded</item> 
         <item name="cornerSize">50%</item> 
     </style> 
+    <style name="ShapeImageView"> 
+        <item name="cornerFamily">rounded</item> 
+        <item name="cornerSize">30%</item> 
+    </style> 
     
     <style name="Widget.Sparkles.CollapsingToolbar" parent="Widget.Material3.CollapsingToolbar.Large">
         <item name="collapsedTitleTextAppearance">@style/TextAppearance.Sparkles.CollapsingToolbar.Collapsed</item>

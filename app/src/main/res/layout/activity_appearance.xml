@@ -1,173 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_height="match_parent"
-  android:layout_width="match_parent"
-  android:id="@+id/coordinator"
-  android:background="?colorSurface">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="?colorSurface"
+     android:id="@+id/coordinator">
 
-  <com.google.android.material.appbar.AppBarLayout
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
-    android:fitsSystemWindows="true"
-    android:id="@+id/appbar">
+    <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+         android:fitsSystemWindows="true"
+         android:id="@+id/appbar">
 
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-      android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
-      android:layout_width="match_parent"
-      style="@style/Widget.Sparkles.CollapsingToolbar"
-      app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+             android:layout_width="match_parent"
+             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+             style="@style/Widget.Sparkles.CollapsingToolbar">
 
-      <com.google.android.material.appbar.MaterialToolbar
-        android:layout_height="?attr/actionBarSize"
-        android:layout_width="match_parent"
-        app:title="@string/set_main"
-        app:layout_collapseMode="pin"
-        android:id="@+id/toolbar" />
+            <com.google.android.material.appbar.MaterialToolbar
+                 android:layout_height="?attr/actionBarSize"
+                 android:layout_width="match_parent"
+                 app:title="@string/set_main"
+                 app:layout_collapseMode="pin"
+                 android:id="@+id/toolbar" />
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-  </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-  <androidx.core.widget.NestedScrollView
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-    android:id="@+id/nested_scroll_view">
-
-    <LinearLayout
-      android:layout_height="match_parent"
-      android:layout_width="match_parent"
-      android:padding="20dp"
-      android:orientation="vertical"
-      android:id="@+id/linear1">
-
-      <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:gravity="center_horizontal|center_vertical"
-        android:padding="40dp"
-        android:orientation="horizontal"
-        android:id="@+id/linear2">
+    <androidx.core.widget.NestedScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         android:id="@+id/nested_scroll_view">
 
         <LinearLayout
-          android:layout_height="420dp"
-          android:layout_width="wrap_content"
-          android:gravity="center_horizontal|center_vertical"
-          android:background="@drawable/bg_shape_round"
-          android:orientation="vertical"
-          android:paddingBottom="14dp"
-          android:paddingHorizontal="14dp"
-          android:paddingTop="14dp"
-          android:id="@+id/linear10">
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:padding="20dp"
+             android:orientation="vertical"
+             android:id="@+id/linear1">
 
-          <LinearLayout
-            android:layout_height="290dp"
-            android:layout_width="160dp"
-            android:background="@drawable/ts_bg"
-            android:orientation="vertical"
-            android:id="@+id/linear4">
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:paddingEnd="0dp"
+                 android:gravity="left"
+                 android:padding="0dp"
+                 android:orientation="horizontal"
+                 android:paddingStart="0dp"
+                 android:id="@+id/linear2">
 
-            <RelativeLayout
-              android:layout_height="match_parent"
-              android:layout_width="match_parent"
-              android:padding="8dp"
-              android:orientation="vertical"
-              android:id="@+id/linear6">
+                <LinearLayout
+                     android:layout_height="390dp"
+                     android:layout_width="wrap_content"
+                     android:orientation="vertical"
+                     android:paddingStart="4dp"
+                     android:paddingEnd="4dp"
+                     android:gravity="center_horizontal"
+                     android:background="@drawable/bg_shape_round"
+                     android:layout_margin="14dp"
+                     android:paddingVertical="14dp"
+                     android:paddingBottom="14dp"
+                     android:paddingHorizontal="14dp"
+                     android:paddingTop="14dp"
+                     android:id="@+id/linear10">
 
-              <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:background="@drawable/ts_status"
-                android:padding="8dp"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:id="@+id/linear7">
+                    <LinearLayout
+                         android:layout_height="290dp"
+                         android:layout_width="160dp"
+                         android:background="@drawable/ts_bg"
+                         android:orientation="vertical"
+                         android:id="@+id/linear4">
 
-              </LinearLayout>
+                        <RelativeLayout
+                             android:layout_height="match_parent"
+                             android:layout_width="match_parent"
+                             android:padding="8dp"
+                             android:orientation="vertical"
+                             android:id="@+id/linear6">
 
-              <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:background="@drawable/ts_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:id="@+id/linear8">
+                            <LinearLayout
+                                 android:layout_height="match_parent"
+                                 android:layout_width="match_parent"
+                                 android:background="@drawable/ts_status"
+                                 android:padding="8dp"
+                                 android:orientation="horizontal"
+                                 android:layout_weight="1"
+                                 android:id="@+id/linear7">
 
-              </LinearLayout>
+                            </LinearLayout>
 
-            </RelativeLayout>
+                            <LinearLayout
+                                 android:layout_height="match_parent"
+                                 android:layout_width="match_parent"
+                                 android:background="@drawable/ts_content"
+                                 android:padding="8dp"
+                                 android:orientation="horizontal"
+                                 android:layout_weight="1"
+                                 android:id="@+id/linear8">
 
-          </LinearLayout>
+                            </LinearLayout>
 
-          <TextView
-            android:id="@+id/textview1"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textSize="28dp"
-            android:layout_marginTop="14dp"
-            android:textColor="?colorSurface"
-            android:text="System" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="28dp"
+                         android:textColor="?colorSurface"
+                         android:layout_marginTop="14dp"
+                         android:id="@+id/textview1"
+                         android:text="System" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:gravity="center_horizontal"
+                     android:padding="8dp"
+                     android:orientation="vertical"
+                     android:layout_marginTop="0dp"
+                     android:id="@+id/linear3">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:padding="9dp"
+                         android:textSize="14sp"
+                         android:text="@string/apper_uimode" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center_horizontal|center_vertical"
+                         app:singleSelection="true"
+                         android:padding="8dp"
+                         android:orientation="vertical"
+                         app:selectionRequired="true"
+                         android:id="@+id/linear5">
+
+                        <com.google.android.material.button.MaterialButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:gravity="center_horizontal|center_vertical"
+                             android:textSize="18sp"
+                             style="@style/Widget.Material3.Button.OutlinedButton"
+                             android:checked="true"
+                             android:id="@+id/materialbutton1"
+                             android:text="Light" />
+
+                        <com.google.android.material.button.MaterialButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:gravity="center_horizontal|center_vertical"
+                             android:textSize="18sp"
+                             style="@style/Widget.Material3.Button.OutlinedButton"
+                             android:id="@+id/materialbutton2"
+                             android:text="Dark" />
+
+                        <com.google.android.material.button.MaterialButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:gravity="center_horizontal|center_vertical"
+                             android:textSize="18sp"
+                             style="@style/Widget.Material3.Button.OutlinedButton"
+                             android:id="@+id/materialbutton3"
+                             android:text="Auto" />
+
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-      </LinearLayout>
-
-      <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:gravity="center_horizontal|center_vertical"
-        android:padding="8dp"
-        android:layout_marginTop="0dp"
-        android:orientation="horizontal"
-        android:id="@+id/linear3">
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
-          android:layout_height="wrap_content"
-          android:layout_width="match_parent"
-          android:gravity="center_horizontal|center_vertical"
-          app:singleSelection="true"
-          app:selectionRequired="true"
-          android:padding="8dp"
-          android:orientation="horizontal"
-          android:id="@+id/linear5">
-
-          <com.google.android.material.button.MaterialButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:textSize="18sp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:checked="true"
-            android:id="@+id/materialbutton1"
-            android:text="Light" />
-
-          <com.google.android.material.button.MaterialButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:textSize="18sp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:id="@+id/materialbutton2"
-            android:text="Dark" />
-
-          <com.google.android.material.button.MaterialButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:textSize="18sp"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:id="@+id/materialbutton3"
-            android:text="Auto" />
-
-        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-      </LinearLayout>
-
-    </LinearLayout>
-
-  </androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

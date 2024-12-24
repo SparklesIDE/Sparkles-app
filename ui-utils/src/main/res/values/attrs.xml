@@ -20,5 +20,6 @@
         <attr name="preferenceSwitchDescription" format="string" />
         <attr name="preferenceSwitchDefaultValue" format="boolean" />
         <attr name="preferenceSwitchIcon" format="reference" />
+        <attr name="preferenceSwitchBg" format="string"/>
     </declare-styleable>
 </resources>

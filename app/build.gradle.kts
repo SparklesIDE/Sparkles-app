@@ -85,7 +85,6 @@ dependencies {
     implementation(project(":filetree"))
     implementation(project(":java-compiler"))
 	implementation(project(":java-compiler"))
-    implementation(project(":fabrevealmenu"))
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
     
     //termux 
