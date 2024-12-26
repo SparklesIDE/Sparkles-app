@@ -6,7 +6,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:paddingHorizontal="24dp"
     android:paddingVertical="16dp"
-    android:layout_marginTop="8dp" >
+    android:layout_marginTop="4dp" >
 
     <ImageView
         android:id="@+id/preference_icon"

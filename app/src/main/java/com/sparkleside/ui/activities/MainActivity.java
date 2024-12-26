@@ -49,6 +49,11 @@ import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
 import com.sparkleside.ui.editor.schemes.SparklesScheme;
 import com.zyron.filetree.provider.FileTreeIconProvider;
 import io.github.rosemoe.sora.widget.EditorSearcher;
+import io.github.rosemoe.sora.widget.schemes.SchemeDarcula;
+import io.github.rosemoe.sora.widget.schemes.SchemeEclipse;
+import io.github.rosemoe.sora.widget.schemes.SchemeGitHub;
+import io.github.rosemoe.sora.widget.schemes.SchemeNotepadXX;
+import io.github.rosemoe.sora.widget.schemes.SchemeVS2019;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -190,7 +195,10 @@ public class MainActivity extends BaseActivity {
       binding.file.setTooltipText(getString(R.string.tooltip_new_file));
       binding.settings.setTooltipText(getString(R.string.tooltip_settings));
     }
+    
     EditorConfigs();
+    themeSora();
+    
     binding.fab.setOnClickListener(v -> fabCompiler());
     binding.term.setOnClickListener(v -> startActivity(new Intent(this, TerminalActivity.class)));
     binding.search.setOnClickListener(v->{
@@ -210,10 +218,7 @@ public class MainActivity extends BaseActivity {
     binding.editor.setTypefaceText(
         Typeface.createFromAsset(getAssets(), "fonts/jetbrainsmono.ttf"));
 
-    var currentNightMode =
-        getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-    var scheme = new SparklesScheme(binding.editor);
-    scheme.apply();
+    
 
     ViewCompat.setOnApplyWindowInsetsListener(
         binding.fab,
@@ -367,6 +372,29 @@ public class MainActivity extends BaseActivity {
          binding.editor.setLineNumberEnabled(Preferences.Editor.isShowLineEnable(this));
          binding.editor.setFirstLineNumberAlwaysVisible(Preferences.Editor.isShowFirstLineEnable(this));
      }
+     public void themeSora(){
+         switch(Preferences.Editor.getEditorThemeMode(this)){
+                case 0 -> {
+                var currentNightMode =
+                getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                var scheme = new SparklesScheme(binding.editor);
+                scheme.apply();
+               }
+               case 1 ->  binding.editor.setColorScheme(new SchemeDarcula());
+               case 2 ->  binding.editor.setColorScheme(new SchemeEclipse());
+               case 3 ->  binding.editor.setColorScheme(new SchemeGitHub());
+               case 4 ->  binding.editor.setColorScheme(new SchemeNotepadXX());
+               case 5 ->  binding.editor.setColorScheme(new SchemeVS2019());
+               default -> {
+               var currentNightMode =
+               getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+               var scheme = new SparklesScheme(binding.editor);
+               scheme.apply();
+               }
+           
+           }
+    }
+     
 
     private int currentSearchIndex = 0;  
 }

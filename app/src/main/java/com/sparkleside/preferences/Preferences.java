@@ -52,7 +52,20 @@ public class Preferences {
     private static final String EDITOR_SHOW_LINE = "EDITOR_SHOW_LINE";
     private static final String EDITOR_USE_OVERSCROLL = "EDITOR_USE_OVERSCROLL";
     private static final String EDITOR_SHOW_TOOLBAR = "EDITOR_SHOW_TOOLBAR";             
-      
+    private static final String EDITOR_THEME = "EDITOR_THEME";
+    
+    public static void setThemeMode(Context ctx, int editorThemeMode) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putInt(EDITOR_THEME, editorThemeMode);
+      spEditor.apply();
+    } 
+     
+    public static int getEditorThemeMode(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getInt(EDITOR_THEME, 0);
+    }
+    
     public static void setWordWrapEnable(Context ctx, boolean isWordWrapEnable) {
       var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
       var spEditor = sp.edit();

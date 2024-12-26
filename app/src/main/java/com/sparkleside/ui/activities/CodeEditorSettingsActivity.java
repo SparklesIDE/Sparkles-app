@@ -41,6 +41,7 @@ public class CodeEditorSettingsActivity extends BaseActivity {
     binding.linear1.addView(getEditorLineNumbers());
     binding.linear1.addView(getEditorToolbar());
     binding.linear1.addView(getEditorTabs());
+    themeSora();
     }
     private PreferenceSwitch getEditorWrap() {
     PreferenceSwitch pref = new PreferenceSwitch(this);
@@ -109,6 +110,7 @@ public class CodeEditorSettingsActivity extends BaseActivity {
         (c, isChecked) -> { 
             Preferences.Editor.setShowToolbarEnable(this,isChecked);
             askForRestart();
+            
         });
         return pref;
     }
@@ -134,6 +136,50 @@ public class CodeEditorSettingsActivity extends BaseActivity {
             startActivity(intent);
             finish();
         }).show();
+    }
+    public void themeSora(){
+        switch(Preferences.Editor.getEditorThemeMode(this)){
+            case 0 -> binding.linear5.check(R.id.materialbutton1);
+            case 1 -> binding.linear5.check(R.id.materialbutton2);
+            case 2 -> binding.linear5.check(R.id.materialbutton3);
+            case 3 -> binding.linear5.check(R.id.materialbutton4);
+            case 4 -> binding.linear5.check(R.id.materialbutton5);
+            case 5 -> binding.linear5.check(R.id.materialbutton6);
+            default -> binding.linear5.check(R.id.materialbutton1);
+        }
+
+        
+        binding.materialbutton1.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 0);
+          askForRestart();
+        });
+        binding.materialbutton2.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 1);
+          askForRestart();
+        });
+        binding.materialbutton3.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 2);
+          askForRestart();
+        });
+        binding.materialbutton4.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 3);
+          askForRestart();
+        });
+        binding.materialbutton5.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 4);
+          askForRestart();
+        });
+        binding.materialbutton6.setOnClickListener(
+        v -> {
+          Preferences.Editor.setThemeMode(this, 5);
+          askForRestart();
+        });
+        
     }
 
 }
