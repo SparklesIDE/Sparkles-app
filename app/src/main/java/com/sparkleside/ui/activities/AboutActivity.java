@@ -62,8 +62,8 @@ public class AboutActivity extends BaseActivity {
 
   private void configureDevelopers() {
     Glide.with(this).load("https://github.com/syntaxspins.png").into(binding.imgSyn);
-    Glide.with(this).load("https://github.com/yamenher.png").into(binding.imgYamen);
-    Glide.with(this).load("https://github.com/trindadedev13.png").into(binding.imgTrindade);
+    Glide.with(this).load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP47A1nY33P6q_xMRDPZRDK-ydu0Q80X-7lg&usqp=CAU").into(binding.imgYamen);
+    Glide.with(this).load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP47A1nY33P6q_xMRDPZRDK-ydu0Q80X-7lg&usqp=CAU").into(binding.imgTrindade);
 
     peekAndPop(
         "SyntaxSpin",
