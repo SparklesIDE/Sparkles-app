@@ -5,8 +5,8 @@
 with Supporting full languages & Material Design 3</p>
   <br>
 
-  <img src="https://m3-markdown-badges.vercel.app/stars/12/2/sparkleside/sparkles-app">
- <img src="https://m3-markdown-badges.vercel.app/issues/12/2/sparkleside/sparkles-app">
+  <img src="https://m3-markdown-badges.vercel.app/stars/5/2/sparkleside/sparkles-app">
+ <img src="https://m3-markdown-badges.vercel.app/issues/5/1/sparkleside/sparkles-app">
 </div>
 
 ## Features &amp; Todo
