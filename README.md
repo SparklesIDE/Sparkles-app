@@ -1,4 +1,4 @@
-> Notice :
+> [Notice :]
 > this project might unavailable or sold so I take off all of my responsibilities 
 
 <div align="center">
