@@ -1,3 +1,6 @@
+> Notice :
+> this project might unavailable or sold so I take off all of my responsibilities 
+
 <div align="center">
   <img src="bannersp.png" style="width: 45rem; height: auto;"/>
   <p>Sparkles IDE is an All-in-one Integrated Development Environment 
