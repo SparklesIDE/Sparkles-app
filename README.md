@@ -1,7 +1,7 @@
 
 <div align="center">
   <img src="bannersparkle.png" style="width: 45rem; height: auto;"/>
-  <p>Sparkles IDE is an All-in-one Integrated Development Environment 
+  <p>Sparkles Editor is an All-in-one Integrated Development Environment 
 with Supporting full languages & Material Design 3</p>
   <br>
 
