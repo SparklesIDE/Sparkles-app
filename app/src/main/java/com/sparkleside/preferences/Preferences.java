@@ -7,6 +7,7 @@ import com.sparkleside.BuildConfig;
 /*
  * Basic class to manage preferences
  * TODO: use DataStore instead Preferences
+ * @author Syntaxspin (SyntaxSpins)
  * @author Aquiles Trindade (trindadedev)
  */
 
@@ -18,6 +19,7 @@ public class Preferences {
     private static final String THEME_PREFERENCE = BuildConfig.APPLICATION_ID + ".theme_prefs";
     private static final String THEME_MODE_KEY = "THEME_MODE";
     private static final String THEME_MONET_KEY = "THEME_MONET";
+    private static final String THEME_AMOLED_KEY = "THEME_AMOLED";    
 
     public static int getThemeMode(Context ctx) {
       var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
@@ -43,6 +45,19 @@ public class Preferences {
       spEditor.putBoolean(THEME_MONET_KEY, isMonetEnable);
       spEditor.apply();
     }
+    
+    /* Amoled Related Settings*/
+    public static boolean isAmoledEnable(Context ctx) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      return sp.getBoolean(THEME_AMOLED_KEY, false);
+    }
+    public static void setAmoledEnable(Context ctx, boolean isAmoledEnable) {
+      var sp = ctx.getSharedPreferences(THEME_PREFERENCE, Context.MODE_PRIVATE);
+      var spEditor = sp.edit();
+      spEditor.putBoolean(THEME_AMOLED_KEY, isAmoledEnable);
+      spEditor.apply();
+    }
+    
   }
     
   public static class Editor {

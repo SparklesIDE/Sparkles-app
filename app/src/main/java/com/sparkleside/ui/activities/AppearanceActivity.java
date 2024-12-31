@@ -12,6 +12,11 @@ import com.sparkleside.ui.base.BaseActivity;
 import com.google.android.material.snackbar.Snackbar;
 import dev.trindadedev.ui_utils.preferences.withicon.PreferenceSwitch;
 
+/* 
+* Appearance Activity of Sparkles Licensed by GPL-v3.0
+* @author Syntaxspin (SyntaxSpins)
+*/
+
 public class AppearanceActivity extends BaseActivity {
 
   private ActivityAppearanceBinding binding;
@@ -61,6 +66,8 @@ public class AppearanceActivity extends BaseActivity {
         });
 
     binding.linear1.addView(getMonetPreference());
+    binding.linear1.addView(getAmoledPreference());
+
   }
 
   private PreferenceSwitch getMonetPreference() {
@@ -69,6 +76,7 @@ public class AppearanceActivity extends BaseActivity {
     pref.setTitle(getString(R.string.monet_title));
     pref.setDescription(getString(R.string.monet_desc));
     pref.setValue(Preferences.Theme.isMonetEnable(this));
+    pref.setBackgroundPosition("0");
     pref.setSwitchChangedListener(
         (c, isChecked) -> {
           Preferences.Theme.setMonetEnable(this, isChecked);
@@ -76,6 +84,22 @@ public class AppearanceActivity extends BaseActivity {
         });
     return pref;
   }
+  private PreferenceSwitch getAmoledPreference() {
+    PreferenceSwitch pref = new PreferenceSwitch(this);
+    pref.setIcon(R.drawable.ic_pallete);
+    pref.setTitle(getString(R.string.amoled_title));
+    pref.setDescription(getString(R.string.amoled_desc));
+    pref.setValue(Preferences.Theme.isAmoledEnable(this));
+    pref.setBackgroundPosition("3");
+    pref.setSwitchChangedListener(
+        (c, isChecked) -> {
+          Preferences.Theme.setAmoledEnable(this, isChecked);
+          askForRestart();
+        });
+    return pref;
+  }  
+    
+    
     
   private void askForRestart() {
         Snackbar.make(binding.linear1, "To Apply Changes Restart the app", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).setAction("Restart", v-> {

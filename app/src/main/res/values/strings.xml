@@ -21,8 +21,11 @@
   <string name="tooltip_terminal">Open terminal</string>
   <string name="tooltip_new_file">New File</string>
   <string name="tooltip_search">Search in code</string>
+ <!--Appearance Settings-->
   <string name="monet_title">Use Dynamic Colors</string>
   <string name="monet_desc">Use your device color palette instead black and white</string>
+  <string name="amoled_title">Night theme</string>
+  <string name="amoled_desc">Amoled Blackish theme</string>
   <string name="need_restart">Need Restart</string>
 
   <!--TEAM BIO-->
@@ -64,4 +67,5 @@
   <string name="editor_tab_desc">Use tabs mode on Sparkles</string>
   <string name="editor_title">Formatting</string>
   <string name="editor_theme_title">Sora Editor Theme</string>
+  
 </resources>
