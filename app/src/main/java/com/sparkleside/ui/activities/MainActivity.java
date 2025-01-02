@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.widget.Toast;
 import android.os.Bundle;
 import android.os.Environment;
@@ -62,6 +64,7 @@ import org.robok.engine.feature.compiler.java.JavaCompiler;
 import org.robok.engine.feature.compiler.java.JavaCompiler.CompileItem;
 import com.google.android.material.transition.platform.MaterialContainerTransform;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+import com.sparkleside.ui.components.executorservice.FileOperationExecutor;
 
 public class MainActivity extends BaseActivity {
 
@@ -359,6 +362,16 @@ public class MainActivity extends BaseActivity {
           android.app.ActivityOptions.makeSceneTransitionAnimation(MainActivity.this , binding.markdown , "mark");
           startActivity(intent, optionsCompat.toBundle());
         });
+    binding.html.setOnClickListener(v->
+        {  
+          if(binding.editor.getText().toString() != ""){
+            Intent intent = new Intent(MainActivity.this, HtmlViewerActivity.class);
+            intent.putExtra("html", binding.editor.getText().toString());
+          android.app.ActivityOptions optionsCompat =
+          android.app.ActivityOptions.makeSceneTransitionAnimation(MainActivity.this , binding.html , "html");
+          startActivity(intent, optionsCompat.toBundle());
+          }
+        });    
     } 
     
      private MaterialContainerTransform buildContainerTransform(boolean entering) {

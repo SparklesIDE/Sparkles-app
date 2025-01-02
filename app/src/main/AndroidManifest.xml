@@ -52,9 +52,13 @@
       android:name="com.sparkleside.ui.activities.CodeEditorSettingsActivity"
       android:exported="true"
       android:enableOnBackInvokedCallback="false" />  
-       <activity
+    <activity
       android:name="com.sparkleside.ui.activities.MarkdownActivity"
       android:exported="true"
       android:enableOnBackInvokedCallback="false" />  
+      <activity
+      android:name="com.sparkleside.ui.activities.HtmlViewerActivity"
+      android:exported="true"
+      android:enableOnBackInvokedCallback="false" />    
   </application>
 </manifest>
